@@ -137,6 +137,24 @@ irgendwann doch mal ein Bestandsprojekt in Framer betreut werden muss.
   erfüllt Framer das **nicht** — dann aktiv auf EU-only-Alternativen oder
   Self-Hosting hinweisen, statt es zu verschweigen.
 
+# Regel: Umgang mit Blockern/Rate-Limits (z. B. Figma-Kontingent)
+
+Wenn eine laufende Aufgabe an einem externen Kontingent- oder Rate-Limit hängen bleibt
+(z. B. Figma-MCP-Tool-Call-Limit, oder vergleichbare Limits anderer Dienste), gilt für
+das gesamte Projekt automatisch, ohne dass der Nutzer das erneut anstoßen muss:
+
+1. Eine Stunde warten, dann automatisch erneut versuchen, die blockierte Aktion
+   fortzusetzen.
+2. Funktioniert es wieder: die aktuelle Aufgabe direkt zu Ende bringen (nicht nur den
+   einen Schritt, der eben ging, sondern bis die Aufgabe tatsächlich abgeschlossen ist).
+3. Funktioniert es noch nicht: erneut eine Stunde warten und wieder prüfen.
+4. Schritt 1–3 so oft wiederholen, bis die aktuelle Aufgabe erledigt ist — keine
+   Zwischen-Rückfrage beim Nutzer nötig, ob weiter gewartet werden soll.
+5. Nur wenn sich am Blocker grundsätzlich etwas ändert, das eine Entscheidung des
+   Nutzers braucht (z. B. ein Plan-Upgrade ist zwingend nötig, weil das Limit sich
+   nachweislich nicht von selbst zurücksetzt), aktiv Bescheid geben statt weiter
+   stumm im Stunden-Rhythmus zu pollen.
+
 ## Recherche-Ergebnis: Self-Hosting bei IONOS als EU-only-Alternative (Stand: 2026-09)
 
 - Reguläre IONOS-Webhosting-Pakete laufen auf Servern **in Deutschland**
