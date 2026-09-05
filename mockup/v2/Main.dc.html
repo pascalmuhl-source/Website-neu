@@ -34,10 +34,6 @@
     @keyframes navDropIn{from{opacity:0;transform:translateY(-14px);}to{opacity:1;transform:translateY(0);}}
     .nav-anim{opacity:0;transform:translateY(-14px);animation:navDropIn .5s ease-in both;}
     @media (prefers-reduced-motion: reduce){.nav-anim{animation:none;opacity:1;transform:none;}}
-
-    .reveal{opacity:0;transform:translateY(28px);transition:opacity .7s ease-out,transform .7s ease-out;}
-    .reveal.is-visible{opacity:1;transform:translateY(0);}
-    @media (prefers-reduced-motion: reduce){.reveal{transition:none;opacity:1;transform:none;}}
   </style>
 </helmet>
 
@@ -57,7 +53,7 @@
   </div>
 
   <!-- HERO -->
-  <div id="hero" class="reveal" style="padding:88px 64px 80px;display:grid;grid-template-columns:1.2fr 0.8fr;gap:72px;border-bottom:1px solid var(--rule);">
+  <div id="hero" style="padding:88px 64px 80px;display:grid;grid-template-columns:1.2fr 0.8fr;gap:72px;border-bottom:1px solid var(--rule);">
     <div style="display:flex;flex-direction:column;gap:24px;max-width:640px;justify-content:center;">
       <h1 style="font-size:clamp(2.6rem,4.2vw,4.2rem);line-height:1.1;">
         Websites, die für KMU mehr Kunden bringen.
@@ -90,7 +86,7 @@
   </div>
 
   <!-- LOGO ROW -->
-  <div class="reveal" style="padding:32px 64px;border-bottom:1px solid var(--rule);display:flex;align-items:center;gap:40px;flex-wrap:wrap;">
+  <div style="padding:32px 64px;border-bottom:1px solid var(--rule);display:flex;align-items:center;gap:40px;flex-wrap:wrap;">
     <span class="label" style="white-space:nowrap;">Vertrauen von KMU aus</span>
     <div style="display:flex;gap:32px;flex-wrap:wrap;opacity:.6;">
       <svg width="34" height="34" viewBox="0 0 34 34"><circle cx="17" cy="17" r="16" fill="none" stroke="currentColor" stroke-width="1.3"></circle><text x="17" y="22" text-anchor="middle" font-family="Cormorant Garamond, serif" font-size="15" fill="currentColor">A</text></svg>
@@ -102,7 +98,7 @@
   </div>
 
   <!-- LEISTUNGEN (stacked rows, not card grid) -->
-  <div id="leistungen" class="reveal" style="padding:96px 64px;border-bottom:1px solid var(--rule);">
+  <div id="leistungen" style="padding:96px 64px;border-bottom:1px solid var(--rule);">
     <div style="display:flex;flex-direction:column;gap:16px;max-width:600px;margin-bottom:56px;">
       <h2 style="font-size:clamp(2rem,3vw,2.6rem);">Was ich für dein Unternehmen baue</h2>
       <p style="font-size:15.5px;line-height:1.65;color:var(--ink-soft);">Drei klar geschnittene Leistungen. Kein Baukasten-Wirrwarr, sondern genau das, was ein KMU wirklich braucht.</p>
@@ -128,7 +124,7 @@
   </div>
 
   <!-- PORTFOLIO (asymmetric: one featured + two stacked) -->
-  <div id="portfolio" class="reveal" style="padding:96px 64px;border-bottom:1px solid var(--rule);background:var(--paper-2);">
+  <div id="portfolio" style="padding:96px 64px;border-bottom:1px solid var(--rule);background:var(--paper-2);">
     <h2 style="font-size:clamp(2rem,3vw,2.6rem);max-width:560px;margin-bottom:48px;">Ausgewählte Projekte mit messbarem Ergebnis</h2>
 
     <div style="display:grid;grid-template-columns:2fr 1fr;gap:28px;">
@@ -170,7 +166,7 @@
   </div>
 
   <!-- UEBER MICH -->
-  <div id="ueber-mich" class="reveal" style="padding:96px 64px;border-bottom:1px solid var(--rule);display:grid;grid-template-columns:0.85fr 1.15fr;gap:72px;">
+  <div id="ueber-mich" style="padding:96px 64px;border-bottom:1px solid var(--rule);display:grid;grid-template-columns:0.85fr 1.15fr;gap:72px;">
     <div style="width:100%;aspect-ratio:4/5;background:linear-gradient(165deg,#c9c6ba,#8f8c80);"></div>
     <div style="display:flex;flex-direction:column;justify-content:center;gap:22px;">
       <h2 style="font-size:clamp(1.9rem,2.6vw,2.4rem);">[Dein Name], Webdesigner:in für KMU</h2>
@@ -191,7 +187,7 @@
   </div>
 
   <!-- PROZESS -->
-  <div id="prozess" class="reveal" style="padding:96px 64px;border-bottom:1px solid var(--rule);background:var(--paper-2);">
+  <div id="prozess" style="padding:96px 64px;border-bottom:1px solid var(--rule);background:var(--paper-2);">
     <h2 style="font-size:clamp(2rem,3vw,2.6rem);max-width:560px;margin-bottom:56px;">So läuft die Zusammenarbeit ab</h2>
 
     <div style="display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:32px;">
@@ -219,7 +215,7 @@
   </div>
 
   <!-- TESTIMONIALS -->
-  <div id="testimonials" class="reveal" style="padding:96px 64px;border-bottom:1px solid var(--rule);">
+  <div id="testimonials" style="padding:96px 64px;border-bottom:1px solid var(--rule);">
     <h2 style="font-size:clamp(2rem,3vw,2.6rem);max-width:560px;margin-bottom:48px;">Was Kund:innen sagen</h2>
 
     <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;background:var(--rule);border:1px solid var(--rule);">
@@ -257,7 +253,7 @@
   </div>
 
   <!-- KONTAKT (deliberate single dark block, closing moment) -->
-  <div id="kontakt" class="reveal" style="padding:96px 64px;border-bottom:1px solid var(--rule);background:var(--ink);color:var(--paper);">
+  <div id="kontakt" style="padding:96px 64px;border-bottom:1px solid var(--rule);background:var(--ink);color:var(--paper);">
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:72px;">
       <div>
         <h2 style="font-size:clamp(2rem,3vw,2.6rem);color:var(--paper);margin-bottom:18px;">Lass uns über dein Projekt sprechen</h2>
@@ -297,7 +293,7 @@
   </div>
 
   <!-- FOOTER -->
-  <div class="reveal" style="padding:30px 64px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;">
+  <div style="padding:30px 64px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;">
     <span style="font-size:13px;color:var(--ink-soft);">© 2026 KONTUR. Alle Rechte vorbehalten.</span>
     <div style="display:flex;gap:26px;align-items:center;">
       <a href="./impressum.html" style="font-size:13px;color:var(--ink-soft);">Impressum</a>
@@ -309,20 +305,5 @@
 
 </div>
 </x-dc>
-<script>
-(function(){
-  var els = document.querySelectorAll('.reveal');
-  if (!els.length || !('IntersectionObserver' in window)) return;
-  var io = new IntersectionObserver(function(entries){
-    entries.forEach(function(entry){
-      if (entry.isIntersecting) {
-        entry.target.classList.add('is-visible');
-        io.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
-  els.forEach(function(el){ io.observe(el); });
-})();
-</script>
 </body>
 </html>
