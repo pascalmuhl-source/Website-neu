@@ -1,0 +1,186 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,500&family=Archivo:wght@400;500;600;700&display=swap">
+  <style>
+    :root{
+      --paper:#F5F5F2; --paper-2:#ECECE7; --ink:#1C1F1D; --ink-soft:#5B5F5B; --rule:#DBDDD8;
+      --accent:#147A55;
+    }
+    *{box-sizing:border-box;}
+    body{margin:0;background:var(--paper);font-family:'Archivo',-apple-system,'Segoe UI',sans-serif;color:var(--ink);}
+    h1,h2,h3{font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;margin:0;}
+    a{color:var(--ink);text-decoration:none;}
+    .label{font-size:13px;color:var(--ink-soft);}
+    .btn-solid{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:16px 22px;background:var(--ink);color:var(--paper);font-size:14px;font-weight:600;border:1px solid var(--ink);width:100%;}
+  </style>
+</helmet>
+
+<div style="width:100%;background:var(--paper);">
+
+  <!-- NAV -->
+  <div style="position:sticky;top:0;z-index:40;display:flex;align-items:center;justify-content:space-between;padding:16px 20px;background:rgba(245,245,242,0.95);border-bottom:1px solid var(--rule);">
+    <span style="font-family:'Cormorant Garamond',serif;font-size:21px;">KONTUR<span style="color:var(--accent);">.</span></span>
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><line x1="4" y1="7" x2="20" y2="7"></line><line x1="4" y1="12" x2="20" y2="12"></line><line x1="4" y1="17" x2="20" y2="17"></line></svg>
+  </div>
+
+  <!-- HERO -->
+  <div style="padding:44px 20px 40px;border-bottom:1px solid var(--rule);display:flex;flex-direction:column;gap:20px;">
+    <h1 style="font-size:2.2rem;line-height:1.15;">Websites, die für KMU mehr Kunden bringen.</h1>
+    <p style="font-size:16px;line-height:1.6;color:var(--ink-soft);">Ich baue Websites für Handwerksbetriebe, Kanzleien und Dienstleister, die Vertrauen schaffen und aus Besuchern echte Anfragen machen.</p>
+    <a class="btn-solid" href="#kontakt" style="margin-top:6px;">Kostenloses Erstgespräch buchen</a>
+
+    <div style="display:flex;flex-direction:column;margin-top:16px;border-top:1px solid var(--rule);">
+      <div style="display:flex;align-items:baseline;justify-content:space-between;padding:16px 0;border-bottom:1px solid var(--rule);">
+        <span style="font-family:'Cormorant Garamond',serif;font-size:30px;color:var(--accent);">[+XX %]</span>
+        <span style="font-size:12px;color:var(--ink-soft);text-align:right;max-width:140px;">mehr Anfragen nach Relaunch</span>
+      </div>
+      <div style="display:flex;align-items:baseline;justify-content:space-between;padding:16px 0;">
+        <span style="font-family:'Cormorant Garamond',serif;font-size:30px;">[X]</span>
+        <span style="font-size:12px;color:var(--ink-soft);text-align:right;max-width:140px;">Jahre Erfahrung</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- LEISTUNGEN -->
+  <div style="padding:52px 20px;border-bottom:1px solid var(--rule);display:flex;flex-direction:column;gap:28px;">
+    <h2 style="font-size:1.65rem;">Was ich für dich baue</h2>
+    <div style="display:flex;flex-direction:column;border-top:1px solid var(--rule);">
+      <div style="padding:22px 0;border-bottom:1px solid var(--rule);display:flex;flex-direction:column;gap:8px;">
+        <h3 style="font-size:19px;">Website-Erstellung</h3>
+        <p style="font-size:14px;line-height:1.6;color:var(--ink-soft);">Neue Website von Grund auf, abgestimmt auf dein Angebot.</p>
+        <div style="font-size:13px;font-weight:600;">ab [XXX] €</div>
+      </div>
+      <div style="padding:22px 0;border-bottom:1px solid var(--rule);display:flex;flex-direction:column;gap:8px;">
+        <h3 style="font-size:19px;">Redesign</h3>
+        <p style="font-size:14px;line-height:1.6;color:var(--ink-soft);">Überarbeitung von Struktur, Design und Text deiner bestehenden Seite.</p>
+        <div style="font-size:13px;font-weight:600;">ab [XXX] €</div>
+      </div>
+      <div style="padding:22px 0;display:flex;flex-direction:column;gap:8px;">
+        <h3 style="font-size:19px;">Wartung &amp; Support</h3>
+        <p style="font-size:14px;line-height:1.6;color:var(--ink-soft);">Laufende Betreuung, Updates und kleine Änderungen.</p>
+        <div style="font-size:13px;font-weight:600;">ab [XX] € / Monat</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PORTFOLIO -->
+  <div style="padding:52px 20px;border-bottom:1px solid var(--rule);background:var(--paper-2);display:flex;flex-direction:column;gap:28px;">
+    <h2 style="font-size:1.65rem;">Projekte mit Ergebnis</h2>
+    <a href="#" style="display:flex;flex-direction:column;gap:12px;">
+      <div style="width:100%;height:200px;background:linear-gradient(150deg,#e4e2da,#c9c6ba);"></div>
+      <div style="display:flex;justify-content:space-between;align-items:baseline;">
+        <div>
+          <div style="font-size:15px;font-weight:600;">[Kundenname 1]</div>
+          <div style="font-size:12.5px;color:var(--ink-soft);">Handwerksbetrieb, Relaunch</div>
+        </div>
+        <div style="font-family:'Cormorant Garamond',serif;font-size:24px;color:var(--accent);">+[40] %</div>
+      </div>
+    </a>
+    <a href="#" style="display:flex;flex-direction:column;gap:12px;">
+      <div style="width:100%;height:160px;background:linear-gradient(150deg,#dfe4de,#bcc7bd);"></div>
+      <div style="display:flex;justify-content:space-between;align-items:baseline;">
+        <div>
+          <div style="font-size:15px;font-weight:600;">[Kundenname 2]</div>
+          <div style="font-size:12.5px;color:var(--ink-soft);">Kanzlei, Neue Website</div>
+        </div>
+        <div style="font-family:'Cormorant Garamond',serif;font-size:20px;color:var(--accent);">+[25] %</div>
+      </div>
+    </a>
+  </div>
+
+  <!-- UEBER MICH -->
+  <div style="padding:52px 20px;border-bottom:1px solid var(--rule);display:flex;flex-direction:column;gap:22px;">
+    <div style="width:100%;aspect-ratio:4/3;background:linear-gradient(165deg,#c9c6ba,#8f8c80);"></div>
+    <h2 style="font-size:1.5rem;">[Dein Name], Webdesigner:in für KMU</h2>
+    <p style="font-size:14.5px;line-height:1.7;color:var(--ink-soft);">Ich kombiniere sauberes Design mit klarer Struktur und Texten, die verkaufen, direkt und mit einem festen Ansprechpartner: mir.</p>
+    <div style="display:flex;gap:1px;background:var(--rule);border:1px solid var(--rule);">
+      <div style="background:var(--paper);flex:1;padding:14px;">
+        <div style="font-family:'Cormorant Garamond',serif;font-size:24px;">[X]</div>
+        <div style="font-size:11.5px;color:var(--ink-soft);">Jahre</div>
+      </div>
+      <div style="background:var(--paper);flex:1;padding:14px;">
+        <div style="font-family:'Cormorant Garamond',serif;font-size:24px;">[XX]</div>
+        <div style="font-size:11.5px;color:var(--ink-soft);">Projekte</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PROZESS -->
+  <div style="padding:52px 20px;border-bottom:1px solid var(--rule);background:var(--paper-2);display:flex;flex-direction:column;gap:28px;">
+    <h2 style="font-size:1.65rem;">So läuft's ab</h2>
+    <div style="display:flex;flex-direction:column;">
+      <div style="display:flex;gap:16px;padding:16px 0;border-top:2px solid var(--accent);">
+        <span style="font-family:'Cormorant Garamond',serif;font-size:26px;color:var(--ink-soft);">01</span>
+        <div><h3 style="font-size:16px;">Erstgespräch</h3><p style="font-size:13px;color:var(--ink-soft);margin-top:4px;">Kostenloses Gespräch über deine Ziele.</p></div>
+      </div>
+      <div style="display:flex;gap:16px;padding:16px 0;border-top:2px solid var(--rule);">
+        <span style="font-family:'Cormorant Garamond',serif;font-size:26px;color:var(--ink-soft);">02</span>
+        <div><h3 style="font-size:16px;">Konzept</h3><p style="font-size:13px;color:var(--ink-soft);margin-top:4px;">Struktur und erster Design-Entwurf.</p></div>
+      </div>
+      <div style="display:flex;gap:16px;padding:16px 0;border-top:2px solid var(--rule);">
+        <span style="font-family:'Cormorant Garamond',serif;font-size:26px;color:var(--ink-soft);">03</span>
+        <div><h3 style="font-size:16px;">Umsetzung</h3><p style="font-size:13px;color:var(--ink-soft);margin-top:4px;">Deine Website wird gebaut.</p></div>
+      </div>
+      <div style="display:flex;gap:16px;padding:16px 0;border-top:2px solid var(--rule);">
+        <span style="font-family:'Cormorant Garamond',serif;font-size:26px;color:var(--ink-soft);">04</span>
+        <div><h3 style="font-size:16px;">Launch &amp; Support</h3><p style="font-size:13px;color:var(--ink-soft);margin-top:4px;">Deine Seite geht live.</p></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TESTIMONIALS -->
+  <div style="padding:52px 20px;border-bottom:1px solid var(--rule);display:flex;flex-direction:column;gap:24px;">
+    <h2 style="font-size:1.65rem;">Was Kund:innen sagen</h2>
+    <div style="display:flex;flex-direction:column;gap:10px;">
+      <p style="font-size:15px;line-height:1.65;font-style:italic;">Die Anfragen kommen jetzt über die Seite statt nur über Empfehlung.</p>
+      <div style="display:flex;align-items:center;gap:10px;margin-top:8px;">
+        <svg width="30" height="30" viewBox="0 0 34 34"><circle cx="17" cy="17" r="16" fill="none" stroke="currentColor" stroke-width="1.3" opacity="0.5"></circle><circle cx="17" cy="17" r="5" fill="currentColor" opacity="0.5"></circle></svg>
+        <div><div style="font-size:13px;font-weight:600;">[Name]</div><div style="font-size:11.5px;color:var(--ink-soft);">[Firma]</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- KONTAKT -->
+  <div id="kontakt" style="padding:52px 20px;border-bottom:1px solid var(--rule);background:var(--ink);color:var(--paper);display:flex;flex-direction:column;gap:26px;">
+    <div>
+      <h2 style="font-size:1.65rem;color:var(--paper);">Lass uns sprechen</h2>
+      <p style="font-size:14px;line-height:1.65;color:#B9C2BC;margin-top:12px;">Ich melde mich innerhalb von 24 Stunden für ein kostenloses Erstgespräch.</p>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:16px;">
+      <div style="display:flex;flex-direction:column;gap:6px;border-bottom:1px solid #3A3E3B;padding-bottom:8px;">
+        <label style="font-size:11px;color:#8F958F;">Name</label>
+        <span style="font-size:14px;color:#767C77;">Dein Name</span>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:6px;border-bottom:1px solid #3A3E3B;padding-bottom:8px;">
+        <label style="font-size:11px;color:#8F958F;">E-Mail</label>
+        <span style="font-size:14px;color:#767C77;">deine@email.de</span>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:6px;border-bottom:1px solid #3A3E3B;padding-bottom:8px;">
+        <label style="font-size:11px;color:#8F958F;">Nachricht</label>
+        <span style="font-size:14px;color:#767C77;">Erzähl mir kurz von deinem Projekt.</span>
+      </div>
+      <button class="btn-solid" style="background:var(--accent);border-color:var(--accent);color:var(--paper);">Nachricht senden</button>
+    </div>
+    <div style="border:1px dashed #3A3E3B;padding:20px;font-size:13px;color:#B9C2BC;">Platzhalter: Calendly-Buchungskalender.</div>
+  </div>
+
+  <!-- FOOTER -->
+  <div style="padding:26px 20px;display:flex;flex-direction:column;gap:14px;align-items:flex-start;">
+    <div style="display:flex;gap:20px;">
+      <a href="./impressum.html" style="font-size:12.5px;color:var(--ink-soft);">Impressum</a>
+      <a href="./datenschutz.html" style="font-size:12.5px;color:var(--ink-soft);">Datenschutz</a>
+    </div>
+    <span style="font-size:12.5px;color:var(--ink-soft);">© 2026 KONTUR. Alle Rechte vorbehalten.</span>
+  </div>
+
+</div>
+</x-dc>
+</body>
+</html>
