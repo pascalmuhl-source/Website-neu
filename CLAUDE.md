@@ -74,6 +74,23 @@ Erst nach explizitem Go ("passt, bau das" o. ä.) den Entwurf 1:1 übertragen:
 Ausnahme: Wenn der Nutzer explizit sagt, direkt im Code zu arbeiten (z. B.
 kleine, klar umrissene Änderung an einer bestehenden Seite), Phase 1 und 2 überspringen.
 
+# Regel: Artefakt-Link + Screenshot nach jeder Änderung — immer, ungefragt
+
+Bei jeder Änderung oder Verbesserung am aktuellen Mockup/Artefakt (Design-Canvas,
+egal ob Text, Farbe, Layout, Animation o. ä.), gilt für das gesamte Projekt automatisch,
+ohne dass der Nutzer das jedes Mal erneut einfordern muss:
+
+1. Nach dem Publizieren immer den aktuellen Artefakt-Link erneut ausgeben.
+2. Zusätzlich einen frischen Screenshot (PNG) der gesamten Seite mitschicken — nicht nur
+   den sichtbaren Ausschnitt, sondern die komplette Seite von oben bis unten (Desktop-
+   und, falls vorhanden, Mobile-Ansicht).
+3. Das passiert immer und ungefragt, nicht erst auf Nachfrage — Link und Screenshot
+   gehören zu jeder Änderungsmeldung dazu.
+4. Nebeneffekt, der aktiv genutzt werden soll: Der Screenshot dient auch als eigene
+   Qualitätskontrolle vor der Meldung an den Nutzer — bevor der Link rausgeht, den
+   Screenshot selbst kurz auf offensichtliche Fehler prüfen (z. B. leere/nicht
+   gerenderte Bereiche, kaputtes Layout), nicht blind durchreichen.
+
 # Regel: Kein KI-Slop — unumstößlich
 
 Jede Website, die ich baue, muss aussehen wie professionell von Hand gemacht — nie
