@@ -19,6 +19,28 @@
     a{color:var(--ink);text-decoration:none;}
     .label{font-size:13px;color:var(--ink-soft);}
     .btn-solid{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:16px 22px;background:var(--ink);color:var(--paper);font-size:14px;font-weight:600;border:1px solid var(--ink);width:100%;}
+
+    @keyframes navDropIn{from{opacity:0;transform:translateY(-14px);}to{opacity:1;transform:translateY(0);}}
+    .nav-anim{opacity:0;transform:translateY(-14px);animation:navDropIn .5s ease-in both;}
+    @media (prefers-reduced-motion: reduce){.nav-anim{animation:none;opacity:1;transform:none;}}
+
+    .reveal{opacity:0;transform:translateY(24px);transition:opacity .6s ease-out,transform .6s ease-out;}
+    .reveal.is-visible{opacity:1;transform:translateY(0);}
+    @media (prefers-reduced-motion: reduce){.reveal{transition:none;opacity:1;transform:none;}}
+
+    .hamburger{position:relative;width:24px;height:18px;padding:0;border:none;background:transparent;cursor:pointer;}
+    .hamburger .bar{position:absolute;left:0;width:100%;height:1.6px;background:var(--ink);transition:transform .3s ease,opacity .2s ease;}
+    .hamburger .bar:nth-child(1){top:0;}
+    .hamburger .bar:nth-child(2){top:50%;margin-top:-0.8px;}
+    .hamburger .bar:nth-child(3){bottom:0;}
+    .hamburger.is-open .bar:nth-child(1){transform:translateY(8px) rotate(45deg);}
+    .hamburger.is-open .bar:nth-child(2){opacity:0;}
+    .hamburger.is-open .bar:nth-child(3){transform:translateY(-8px) rotate(-45deg);}
+
+    .mobile-menu{position:fixed;top:57px;left:0;right:0;bottom:0;background:var(--paper);display:flex;flex-direction:column;padding:8px 20px;transform:translateY(-12px);opacity:0;visibility:hidden;pointer-events:none;transition:transform .3s ease-out,opacity .3s ease-out,visibility 0s linear .3s;z-index:39;}
+    .mobile-menu.open{transform:translateY(0);opacity:1;visibility:visible;pointer-events:auto;transition:transform .3s ease-out,opacity .3s ease-out,visibility 0s linear 0s;}
+    .mobile-menu a{font-size:17px;padding:16px 0;border-bottom:1px solid var(--rule);color:var(--ink);}
+    @media (prefers-reduced-motion: reduce){.hamburger .bar,.mobile-menu{transition:none;}}
   </style>
 </helmet>
 
@@ -26,12 +48,22 @@
 
   <!-- NAV -->
   <div style="position:sticky;top:0;z-index:40;display:flex;align-items:center;justify-content:space-between;padding:16px 20px;background:rgba(245,245,242,0.95);border-bottom:1px solid var(--rule);">
-    <span style="font-family:'Cormorant Garamond',serif;font-size:21px;">KONTUR<span style="color:var(--accent);">.</span></span>
-    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><line x1="4" y1="7" x2="20" y2="7"></line><line x1="4" y1="12" x2="20" y2="12"></line><line x1="4" y1="17" x2="20" y2="17"></line></svg>
+    <span class="nav-anim" style="font-family:'Cormorant Garamond',serif;font-size:21px;animation-delay:0ms;">KONTUR<span style="color:var(--accent);">.</span></span>
+    <button class="{{hamburgerClass}}" onClick="{{toggleMenu}}" aria-label="Menü öffnen" aria-expanded="{{menuOpenAria}}" style="animation-delay:100ms;">
+      <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+    </button>
+  </div>
+
+  <div class="{{menuClass}}">
+    <a href="#leistungen" onClick="{{closeMenu}}">Leistungen</a>
+    <a href="#portfolio" onClick="{{closeMenu}}">Portfolio</a>
+    <a href="#ueber-mich" onClick="{{closeMenu}}">Über mich</a>
+    <a href="#prozess" onClick="{{closeMenu}}">Prozess</a>
+    <a href="#kontakt" onClick="{{closeMenu}}">Kontakt</a>
   </div>
 
   <!-- HERO -->
-  <div style="padding:44px 20px 40px;border-bottom:1px solid var(--rule);display:flex;flex-direction:column;gap:20px;">
+  <div class="reveal" style="padding:44px 20px 40px;border-bottom:1px solid var(--rule);display:flex;flex-direction:column;gap:20px;">
     <h1 style="font-size:2.2rem;line-height:1.15;">Websites, die für KMU mehr Kunden bringen.</h1>
     <p style="font-size:16px;line-height:1.6;color:var(--ink-soft);">Ich baue Websites für Handwerksbetriebe, Kanzleien und Dienstleister, die Vertrauen schaffen und aus Besuchern echte Anfragen machen.</p>
     <a class="btn-solid" href="#kontakt" style="margin-top:6px;">Kostenloses Erstgespräch buchen</a>
@@ -49,7 +81,7 @@
   </div>
 
   <!-- LEISTUNGEN -->
-  <div style="padding:52px 20px;border-bottom:1px solid var(--rule);display:flex;flex-direction:column;gap:28px;">
+  <div class="reveal" style="padding:52px 20px;border-bottom:1px solid var(--rule);display:flex;flex-direction:column;gap:28px;">
     <h2 style="font-size:1.65rem;">Was ich für dich baue</h2>
     <div style="display:flex;flex-direction:column;border-top:1px solid var(--rule);">
       <div style="padding:22px 0;border-bottom:1px solid var(--rule);display:flex;flex-direction:column;gap:8px;">
@@ -71,7 +103,7 @@
   </div>
 
   <!-- PORTFOLIO -->
-  <div style="padding:52px 20px;border-bottom:1px solid var(--rule);background:var(--paper-2);display:flex;flex-direction:column;gap:28px;">
+  <div class="reveal" style="padding:52px 20px;border-bottom:1px solid var(--rule);background:var(--paper-2);display:flex;flex-direction:column;gap:28px;">
     <h2 style="font-size:1.65rem;">Projekte mit Ergebnis</h2>
     <a href="#" style="display:flex;flex-direction:column;gap:12px;">
       <div style="width:100%;height:200px;background:linear-gradient(150deg,#e4e2da,#c9c6ba);"></div>
@@ -96,7 +128,7 @@
   </div>
 
   <!-- UEBER MICH -->
-  <div style="padding:52px 20px;border-bottom:1px solid var(--rule);display:flex;flex-direction:column;gap:22px;">
+  <div class="reveal" style="padding:52px 20px;border-bottom:1px solid var(--rule);display:flex;flex-direction:column;gap:22px;">
     <div style="width:100%;aspect-ratio:4/3;background:linear-gradient(165deg,#c9c6ba,#8f8c80);"></div>
     <h2 style="font-size:1.5rem;">[Dein Name], Webdesigner:in für KMU</h2>
     <p style="font-size:14.5px;line-height:1.7;color:var(--ink-soft);">Ich kombiniere sauberes Design mit klarer Struktur und Texten, die verkaufen, direkt und mit einem festen Ansprechpartner: mir.</p>
@@ -113,7 +145,7 @@
   </div>
 
   <!-- PROZESS -->
-  <div style="padding:52px 20px;border-bottom:1px solid var(--rule);background:var(--paper-2);display:flex;flex-direction:column;gap:28px;">
+  <div class="reveal" style="padding:52px 20px;border-bottom:1px solid var(--rule);background:var(--paper-2);display:flex;flex-direction:column;gap:28px;">
     <h2 style="font-size:1.65rem;">So läuft's ab</h2>
     <div style="display:flex;flex-direction:column;">
       <div style="display:flex;gap:16px;padding:16px 0;border-top:2px solid var(--accent);">
@@ -136,7 +168,7 @@
   </div>
 
   <!-- TESTIMONIALS -->
-  <div style="padding:52px 20px;border-bottom:1px solid var(--rule);display:flex;flex-direction:column;gap:24px;">
+  <div class="reveal" style="padding:52px 20px;border-bottom:1px solid var(--rule);display:flex;flex-direction:column;gap:24px;">
     <h2 style="font-size:1.65rem;">Was Kund:innen sagen</h2>
     <div style="display:flex;flex-direction:column;gap:10px;">
       <p style="font-size:15px;line-height:1.65;font-style:italic;">Die Anfragen kommen jetzt über die Seite statt nur über Empfehlung.</p>
@@ -148,7 +180,7 @@
   </div>
 
   <!-- KONTAKT -->
-  <div id="kontakt" style="padding:52px 20px;border-bottom:1px solid var(--rule);background:var(--ink);color:var(--paper);display:flex;flex-direction:column;gap:26px;">
+  <div id="kontakt" class="reveal" style="padding:52px 20px;border-bottom:1px solid var(--rule);background:var(--ink);color:var(--paper);display:flex;flex-direction:column;gap:26px;">
     <div>
       <h2 style="font-size:1.65rem;color:var(--paper);">Lass uns sprechen</h2>
       <p style="font-size:14px;line-height:1.65;color:#B9C2BC;margin-top:12px;">Ich melde mich innerhalb von 24 Stunden für ein kostenloses Erstgespräch.</p>
@@ -172,7 +204,7 @@
   </div>
 
   <!-- FOOTER -->
-  <div style="padding:26px 20px;display:flex;flex-direction:column;gap:14px;align-items:flex-start;">
+  <div class="reveal" style="padding:26px 20px;display:flex;flex-direction:column;gap:14px;align-items:flex-start;">
     <div style="display:flex;gap:20px;">
       <a href="./impressum.html" style="font-size:12.5px;color:var(--ink-soft);">Impressum</a>
       <a href="./datenschutz.html" style="font-size:12.5px;color:var(--ink-soft);">Datenschutz</a>
@@ -182,5 +214,38 @@
 
 </div>
 </x-dc>
+<script data-dc-script>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { menuOpen: false };
+  }
+  renderVals() {
+    var open = this.state.menuOpen;
+    return {
+      hamburgerClass: 'hamburger nav-anim' + (open ? ' is-open' : ''),
+      menuClass: 'mobile-menu' + (open ? ' open' : ''),
+      menuOpenAria: open ? 'true' : 'false',
+      toggleMenu: () => this.setState({ menuOpen: !this.state.menuOpen }),
+      closeMenu: () => this.setState({ menuOpen: false }),
+    };
+  }
+}
+</script>
+<script>
+(function(){
+  var els = document.querySelectorAll('.reveal');
+  if (!els.length || !('IntersectionObserver' in window)) return;
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -30px 0px' });
+  els.forEach(function(el){ io.observe(el); });
+})();
+</script>
 </body>
 </html>
