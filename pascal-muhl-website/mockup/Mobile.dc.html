@@ -1,0 +1,164 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Bricolage+Grotesque:opsz,wght@12..96,200..800&display=swap">
+  <style>
+    *{box-sizing:border-box;}
+    body{margin:0;}
+    .page{
+      width:390px;
+      background:#1A1613;
+      color:#F3EEE7;
+      font-family:'Bricolage Grotesque',system-ui,sans-serif;
+      -webkit-font-smoothing:antialiased;
+    }
+    h1,h2,h3{font-family:'Instrument Serif',Georgia,serif;font-weight:400;margin:0;}
+    a{color:var(--accent);text-decoration:none;}
+    .eyebrow{
+      font-size:12px;letter-spacing:0.12em;text-transform:uppercase;
+      color:var(--accent);font-weight:600;
+    }
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;gap:10px;
+      background:var(--accent);color:#1A1613;font-weight:600;font-size:15px;
+      padding:16px 22px;border-radius:2px;font-family:'Bricolage Grotesque',sans-serif;
+      width:100%;
+    }
+    .chip{
+      border:1px solid #322B24;color:#A79C8E;font-size:13px;
+      padding:9px 14px;border-radius:2px;font-weight:500;
+    }
+    .row-num{
+      font-family:'Instrument Serif',Georgia,serif;font-size:20px;color:var(--accent);
+    }
+    input,textarea{
+      font-family:'Bricolage Grotesque',sans-serif;font-size:15px;color:#F3EEE7;
+      background:transparent;border:none;border-bottom:1px solid #322B24;
+      padding:12px 2px;outline:none;width:100%;
+    }
+    ::placeholder{color:#6E645A;}
+    label{font-size:12px;letter-spacing:0.06em;text-transform:uppercase;color:#A79C8E;}
+  </style>
+</helmet>
+<div class="page" style="--accent:{{accent}};">
+
+  <!-- Header -->
+  <div style="display:flex;align-items:center;justify-content:space-between;padding:22px 24px;border-bottom:1px solid #241F1A;">
+    <div style="font-family:'Instrument Serif',Georgia,serif;font-size:20px;">Pascal Muhl</div>
+    <a href="#kontakt" class="btn" style="width:auto;padding:11px 16px;font-size:13px;">Anfragen</a>
+  </div>
+
+  <!-- Hero -->
+  <div style="display:flex;flex-direction:column;gap:22px;padding:56px 24px 64px 24px;">
+    <div style="display:flex;align-items:center;gap:10px;">
+      <div style="width:22px;height:1px;background:var(--accent);"></div>
+      <div class="eyebrow">Webdesign für KMU</div>
+    </div>
+    <h1 style="font-size:38px;line-height:1.18;">
+      Sichtbar sind Sie schon.<br>Jetzt sollen Kunden <em style="font-style:italic;color:var(--accent);">anfragen.</em>
+    </h1>
+    <p style="font-size:16px;line-height:1.6;color:#A79C8E;margin:0;">
+      Viele Websites kleiner Unternehmen sehen ordentlich aus – und bringen trotzdem keine Anfragen. Ich baue Websites, die das ändern: klar, schnell, und so gestaltet, dass Ihre Kunden von selbst den nächsten Schritt gehen.
+    </p>
+    <a href="#kontakt" class="btn" style="margin-top:8px;">
+      Projekt anfragen
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1A1613" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+    </a>
+    <div style="font-size:13px;color:#6E645A;text-align:center;">Antwort innerhalb von 24 Stunden.</div>
+
+    <div style="display:flex;flex-direction:column;gap:16px;border:1px solid #241F1A;background:#211C17;padding:24px;border-radius:2px;margin-top:12px;">
+      <div style="font-size:12px;letter-spacing:0.06em;text-transform:uppercase;color:#A79C8E;">Für wen ich baue</div>
+      <div style="display:flex;flex-wrap:wrap;gap:8px;">
+        <div class="chip">Handwerk</div>
+        <div class="chip">Beratung &amp; Coaching</div>
+        <div class="chip">Freelancer</div>
+        <div class="chip">Einzelhandel</div>
+        <div class="chip">Lokale Dienstleister</div>
+        <div class="chip">Kleine Agenturen</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Leistungen -->
+  <div id="leistungen" style="background:#211C17;padding:64px 24px;border-top:1px solid #241F1A;border-bottom:1px solid #241F1A;">
+    <div style="display:flex;flex-direction:column;gap:12px;margin-bottom:40px;">
+      <div class="eyebrow">Leistungen</div>
+      <h2 style="font-size:28px;line-height:1.2;">Von der ersten Idee bis zur fertigen Seite</h2>
+    </div>
+
+    <div style="display:flex;flex-direction:column;">
+      <div style="display:flex;flex-direction:column;gap:10px;padding:28px 0;border-top:1px solid #322B24;">
+        <div class="row-num">01</div>
+        <h3 style="font-size:21px;font-weight:400;">Konzept &amp; Design</h3>
+        <p style="font-size:15px;line-height:1.6;color:#A79C8E;margin:0;">Struktur, Botschaft und Look, die zu Ihrem Angebot passen – abgestimmt auf das, was Ihre Kunden wirklich wissen wollen.</p>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:10px;padding:28px 0;border-top:1px solid #322B24;">
+        <div class="row-num">02</div>
+        <h3 style="font-size:21px;font-weight:400;">Umsetzung</h3>
+        <p style="font-size:15px;line-height:1.6;color:#A79C8E;margin:0;">Technische Umsetzung mit modernen Werkzeugen (React/Next.js) – schnell, sauber, ohne unnötigen Ballast.</p>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:10px;padding:28px 0;border-top:1px solid #322B24;border-bottom:1px solid #322B24;">
+        <div class="row-num">03</div>
+        <h3 style="font-size:21px;font-weight:400;">Betreuung</h3>
+        <p style="font-size:15px;line-height:1.6;color:#A79C8E;margin:0;">Nach dem Launch nicht allein gelassen: Anpassungen und Support, wenn sich etwas ändert.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Kontakt -->
+  <div id="kontakt" style="display:flex;flex-direction:column;gap:48px;padding:64px 24px;">
+    <div style="display:flex;flex-direction:column;gap:18px;">
+      <div class="eyebrow">Kontakt</div>
+      <h2 style="font-size:28px;line-height:1.2;">Lassen Sie uns über Ihr Projekt sprechen.</h2>
+      <p style="font-size:15px;line-height:1.6;color:#A79C8E;margin:0;">
+        Erzählen Sie mir kurz, was Sie vorhaben. Ich melde mich innerhalb eines Werktags – unverbindlich.
+      </p>
+      <div style="display:flex;flex-direction:column;gap:6px;margin-top:8px;padding-top:18px;border-top:1px solid #241F1A;">
+        <div style="font-size:13px;color:#6E645A;">E-Mail</div>
+        <a href="mailto:" style="font-size:16px;">[E-Mail-Adresse einfügen]</a>
+      </div>
+    </div>
+
+    <div style="display:flex;flex-direction:column;gap:22px;">
+      <div style="display:flex;flex-direction:column;gap:8px;">
+        <label for="m-name">Name</label>
+        <input id="m-name" type="text" placeholder="Ihr Name">
+      </div>
+      <div style="display:flex;flex-direction:column;gap:8px;">
+        <label for="m-email">E-Mail</label>
+        <input id="m-email" type="email" placeholder="ihre@email.de">
+      </div>
+      <div style="display:flex;flex-direction:column;gap:8px;">
+        <label for="m-nachricht">Nachricht</label>
+        <textarea id="m-nachricht" rows="4" placeholder="Kurz zu Ihrem Projekt …"></textarea>
+      </div>
+      <a href="#" class="btn" style="margin-top:4px;">Anfrage senden</a>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div style="display:flex;flex-direction:column;gap:16px;padding:32px 24px;border-top:1px solid #241F1A;">
+    <div style="font-size:13px;color:#6E645A;">Pascal Muhl — Webdesign für kleine &amp; mittlere Unternehmen</div>
+    <div style="display:flex;align-items:center;gap:22px;">
+      <a href="#" style="color:#A79C8E;font-size:13px;">Impressum</a>
+      <a href="#" style="color:#A79C8E;font-size:13px;">Datenschutz</a>
+    </div>
+  </div>
+
+</div>
+</x-dc>
+<script data-dc-script data-props='{"accent":{"editor":"color","default":"#C9A35F","options":["#C9A35F","#9CAA8C","#B5763F","#8C9AAA"],"section":"Farbe"}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return { accent: this.props.accent ?? '#C9A35F' };
+  }
+}
+</script>
+</body>
+</html>

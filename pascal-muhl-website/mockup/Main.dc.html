@@ -1,0 +1,178 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Bricolage+Grotesque:opsz,wght@12..96,200..800&display=swap">
+  <style>
+    *{box-sizing:border-box;}
+    body{margin:0;}
+    .page{
+      width:1440px;
+      background:#1A1613;
+      color:#F3EEE7;
+      font-family:'Bricolage Grotesque',system-ui,sans-serif;
+      -webkit-font-smoothing:antialiased;
+    }
+    h1,h2,h3{font-family:'Instrument Serif',Georgia,serif;font-weight:400;margin:0;}
+    a{color:var(--accent);text-decoration:none;}
+    a:hover{color:color-mix(in oklch, var(--accent) 75%, black);}
+    .eyebrow{
+      font-size:13px;letter-spacing:0.14em;text-transform:uppercase;
+      color:var(--accent);font-weight:600;
+    }
+    .btn{
+      display:inline-flex;align-items:center;gap:10px;
+      background:var(--accent);color:#1A1613;font-weight:600;font-size:15px;
+      padding:16px 26px;border-radius:2px;font-family:'Bricolage Grotesque',sans-serif;
+      white-space:nowrap;
+    }
+    .btn-ghost{
+      display:inline-flex;align-items:center;gap:8px;
+      background:transparent;color:#F3EEE7;font-weight:500;font-size:14px;
+      padding:11px 18px;border:1px solid #322B24;border-radius:2px;
+    }
+    .chip{
+      border:1px solid #322B24;color:#A79C8E;font-size:13px;
+      padding:9px 16px;border-radius:2px;font-weight:500;
+    }
+    .row-num{
+      font-family:'Instrument Serif',Georgia,serif;font-size:22px;color:var(--accent);
+    }
+    input,textarea{
+      font-family:'Bricolage Grotesque',sans-serif;font-size:15px;color:#F3EEE7;
+      background:transparent;border:none;border-bottom:1px solid #322B24;
+      padding:12px 2px;outline:none;width:100%;
+    }
+    ::placeholder{color:#6E645A;}
+    label{font-size:12px;letter-spacing:0.06em;text-transform:uppercase;color:#A79C8E;}
+  </style>
+</helmet>
+<div class="page" style="--accent:{{accent}};">
+
+  <!-- Header -->
+  <div style="display:flex;align-items:center;justify-content:space-between;padding:28px 72px;border-bottom:1px solid #241F1A;">
+    <div style="font-family:'Instrument Serif',Georgia,serif;font-size:22px;">Pascal Muhl</div>
+    <div style="display:flex;align-items:center;gap:40px;">
+      <a href="#leistungen" style="color:#A79C8E;font-size:14px;font-weight:500;">Leistungen</a>
+      <a href="#kontakt" style="color:#A79C8E;font-size:14px;font-weight:500;">Kontakt</a>
+      <a href="#kontakt" class="btn" style="padding:12px 20px;font-size:14px;">Projekt anfragen</a>
+    </div>
+  </div>
+
+  <!-- Hero -->
+  <div style="display:grid;grid-template-columns:1.35fr 1fr;gap:80px;padding:140px 72px 120px 72px;">
+    <div style="display:flex;flex-direction:column;gap:26px;">
+      <div style="display:flex;align-items:center;gap:12px;">
+        <div style="width:28px;height:1px;background:var(--accent);"></div>
+        <div class="eyebrow">Webdesign für kleine &amp; mittlere Unternehmen</div>
+      </div>
+      <h1 style="font-size:64px;line-height:1.12;max-width:720px;">
+        Sichtbar sind Sie schon.<br>Jetzt sollen Kunden <em style="font-style:italic;color:var(--accent);">anfragen.</em>
+      </h1>
+      <p style="font-size:18px;line-height:1.6;color:#A79C8E;max-width:560px;margin:0;">
+        Viele Websites kleiner Unternehmen sehen ordentlich aus – und bringen trotzdem keine Anfragen. Ich baue Websites, die das ändern: klar im Aufbau, schnell geladen und so gestaltet, dass Ihre Kunden von selbst den nächsten Schritt gehen.
+      </p>
+      <div style="display:flex;align-items:center;gap:18px;margin-top:6px;">
+        <a href="#kontakt" class="btn">
+          Projekt anfragen
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1A1613" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+        </a>
+        <div style="font-size:13px;color:#6E645A;">Antwort innerhalb von 24 Stunden.</div>
+      </div>
+    </div>
+
+    <div style="display:flex;flex-direction:column;gap:20px;border:1px solid #241F1A;background:#211C17;padding:32px;border-radius:2px;align-self:start;">
+      <div style="font-size:13px;letter-spacing:0.06em;text-transform:uppercase;color:#A79C8E;">Für wen ich baue</div>
+      <div style="display:flex;flex-wrap:wrap;gap:10px;">
+        <div class="chip">Handwerk</div>
+        <div class="chip">Beratung &amp; Coaching</div>
+        <div class="chip">Freelancer</div>
+        <div class="chip">Einzelhandel</div>
+        <div class="chip">Lokale Dienstleister</div>
+        <div class="chip">Kleine Agenturen</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Leistungen -->
+  <div id="leistungen" style="background:#211C17;padding:120px 72px;border-top:1px solid #241F1A;border-bottom:1px solid #241F1A;">
+    <div style="display:flex;flex-direction:column;gap:16px;max-width:640px;margin-bottom:64px;">
+      <div class="eyebrow">Leistungen</div>
+      <h2 style="font-size:38px;line-height:1.2;">Von der ersten Idee bis zur fertigen Seite</h2>
+    </div>
+
+    <div style="display:flex;flex-direction:column;">
+      <div style="display:grid;grid-template-columns:100px 1fr 1fr;gap:32px;padding:36px 0;border-top:1px solid #322B24;align-items:start;">
+        <div class="row-num">01</div>
+        <h3 style="font-size:24px;font-weight:400;">Konzept &amp; Design</h3>
+        <p style="font-size:16px;line-height:1.6;color:#A79C8E;margin:0;">Struktur, Botschaft und Look, die zu Ihrem Angebot passen – abgestimmt auf das, was Ihre Kunden wirklich wissen wollen, bevor sie anfragen.</p>
+      </div>
+      <div style="display:grid;grid-template-columns:100px 1fr 1fr;gap:32px;padding:36px 0;border-top:1px solid #322B24;align-items:start;">
+        <div class="row-num">02</div>
+        <h3 style="font-size:24px;font-weight:400;">Umsetzung</h3>
+        <p style="font-size:16px;line-height:1.6;color:#A79C8E;margin:0;">Technische Umsetzung mit modernen Werkzeugen (React/Next.js) – schnell, sauber, ohne unnötigen Ballast, bereit für Ihr eigenes Hosting.</p>
+      </div>
+      <div style="display:grid;grid-template-columns:100px 1fr 1fr;gap:32px;padding:36px 0;border-top:1px solid #322B24;border-bottom:1px solid #322B24;align-items:start;">
+        <div class="row-num">03</div>
+        <h3 style="font-size:24px;font-weight:400;">Betreuung</h3>
+        <p style="font-size:16px;line-height:1.6;color:#A79C8E;margin:0;">Nach dem Launch nicht allein gelassen: Anpassungen und Support, wenn sich in Ihrem Unternehmen etwas ändert.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Kontakt -->
+  <div id="kontakt" style="display:grid;grid-template-columns:1fr 1fr;gap:100px;padding:140px 72px;">
+    <div style="display:flex;flex-direction:column;gap:22px;max-width:460px;">
+      <div class="eyebrow">Kontakt</div>
+      <h2 style="font-size:38px;line-height:1.2;">Lassen Sie uns über Ihr Projekt sprechen.</h2>
+      <p style="font-size:16px;line-height:1.6;color:#A79C8E;margin:0;">
+        Erzählen Sie mir kurz, was Sie vorhaben. Ich melde mich innerhalb eines Werktags mit den nächsten Schritten – unverbindlich.
+      </p>
+      <div style="display:flex;flex-direction:column;gap:6px;margin-top:12px;padding-top:22px;border-top:1px solid #241F1A;">
+        <div style="font-size:13px;color:#6E645A;">E-Mail</div>
+        <a href="mailto:" style="font-size:17px;">[E-Mail-Adresse einfügen]</a>
+      </div>
+    </div>
+
+    <div style="display:flex;flex-direction:column;gap:26px;">
+      <div style="display:flex;flex-direction:column;gap:8px;">
+        <label for="name">Name</label>
+        <input id="name" type="text" placeholder="Ihr Name">
+      </div>
+      <div style="display:flex;flex-direction:column;gap:8px;">
+        <label for="email">E-Mail</label>
+        <input id="email" type="email" placeholder="ihre@email.de">
+      </div>
+      <div style="display:flex;flex-direction:column;gap:8px;">
+        <label for="nachricht">Nachricht</label>
+        <textarea id="nachricht" rows="4" placeholder="Kurz zu Ihrem Projekt …"></textarea>
+      </div>
+      <a href="#" class="btn" style="justify-content:center;margin-top:4px;">Anfrage senden</a>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div style="display:flex;align-items:center;justify-content:space-between;padding:40px 72px;border-top:1px solid #241F1A;">
+    <div style="font-size:14px;color:#6E645A;">Pascal Muhl — Webdesign für kleine &amp; mittlere Unternehmen</div>
+    <div style="display:flex;align-items:center;gap:28px;">
+      <a href="#" style="color:#A79C8E;font-size:13px;">Impressum</a>
+      <a href="#" style="color:#A79C8E;font-size:13px;">Datenschutz</a>
+    </div>
+  </div>
+
+</div>
+</x-dc>
+<script data-dc-script data-props='{"accent":{"editor":"color","default":"#C9A35F","options":["#C9A35F","#9CAA8C","#B5763F","#8C9AAA"],"section":"Farbe"}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return { accent: this.props.accent ?? '#C9A35F' };
+  }
+}
+</script>
+</body>
+</html>
