@@ -1,0 +1,11 @@
+{
+  "artboards": [
+    { "file": "Main.dc.html", "x": 0, "y": 0, "w": 1440, "h": 5300, "expand": "fit" },
+    { "file": "Mobile.dc.html", "x": 1560, "y": 0, "w": 390, "h": 5300, "expand": "fit" }
+  ],
+  "annotations": [
+    { "id": "note-desktop", "x": 0, "y": -90, "w": 300, "text": "Desktop — One-Page-Website" },
+    { "id": "note-mobile", "x": 1560, "y": -90, "w": 300, "text": "Mobile — Sticky-Nav mit Hamburger-Menü" }
+  ],
+  "launch": { "view": "focused", "file": "Main.dc.html" }
+}
