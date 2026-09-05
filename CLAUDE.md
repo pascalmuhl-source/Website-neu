@@ -193,3 +193,15 @@ das gesamte Projekt automatisch, ohne dass der Nutzer das erneut anstoßen muss:
   automatisch ladenden Dritt-Skripte, Consent-Banner nur bei Bedarf,
   Server-Logs (IP-Adressen) in der Datenschutzerklärung mit kurzer
   Löschfrist nennen, jedes eingebettete Dritt-Skript einzeln prüfen.
+
+## Offen für später: SEO-Optimierung (KONTUR-Website)
+
+Noch nicht umgesetzt, bewusst zurückgestellt bis Phase 3 (React-Umsetzung), da auf
+Mockup-Ebene (Design Canvas) kein echtes `<head>` mit Metadaten existiert:
+
+- Title-Tag und Meta-Description für die Seite
+- Strukturierte Daten (Schema.org, z. B. `ProfessionalService`/`LocalBusiness`)
+- Sitemap, saubere Heading-Hierarchie, Alt-Texte für die (noch fehlenden) echten Bilder
+- Ggf. Onpage-Keyword-Fokus je nach Zielgruppe, sobald die realen Texte/Leistungen final sind
+
+Den `seo`-Skill (`.claude/skills/seo/`) dafür nutzen, wenn es so weit ist.
