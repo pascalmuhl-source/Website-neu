@@ -6,7 +6,7 @@ export default function Hero() {
   return (
     <div id="hero" className="hero">
       <div className="hero-portrait-wrap">
-        <div className="hero-portrait" role="img" aria-label="Porträtfoto von [Dein Name]" />
+        <div className="hero-portrait" role="img" aria-label="Porträtfoto von Pascal Muhl" />
       </div>
       <Reveal as="div" className="hero-copy">
         <h1>

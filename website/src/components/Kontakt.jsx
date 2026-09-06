@@ -89,6 +89,16 @@ export default function Kontakt() {
             <a href="mailto:name@deine-domain.de">[name@deine-domain.de]</a>
             <a href="tel:+49XXXXXXXXX">[+49 XXX XXXXXXX]</a>
           </div>
+
+          <div className="contact-direct">
+            <span className="section-label" style={{ color: 'var(--contact-label)' }}>Standort</span>
+            <address className="contact-address">
+              Pascal Webdesign<br />
+              55452 Windesheim<br />
+              Deutschland
+            </address>
+            <span className="booking-note">Vor Ort im Raum Bad Kreuznach, im Projekt deutschlandweit.</span>
+          </div>
         </div>
       </div>
     </Reveal>

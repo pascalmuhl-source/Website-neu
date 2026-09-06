@@ -194,7 +194,7 @@ das gesamte Projekt automatisch, ohne dass der Nutzer das erneut anstoßen muss:
   Server-Logs (IP-Adressen) in der Datenschutzerklärung mit kurzer
   Löschfrist nennen, jedes eingebettete Dritt-Skript einzeln prüfen.
 
-## SEO-Status (KONTUR-Website, Stand: 2026-09, Phase 3 live)
+## SEO-Status (Pascal Webdesign, Stand: 2026-09, Phase 3 live)
 
 Erledigt: Title-Tag, Meta-Description, saubere Heading-Hierarchie (ein H1, H2 pro
 Sektion), `robots.txt` und `sitemap.xml` (siehe eigene Regel unten).
@@ -209,10 +209,12 @@ Noch offen (audit-basiert, siehe Chat-Verlauf für Details):
 
 Den `seo`-Skill (`.claude/skills/seo/`) dafür nutzen, wenn es so weit ist.
 
-# Launch-Checkliste (KONTUR-Website) — vor dem Sichtbarmachen abarbeiten
+# Launch-Checkliste (Pascal Webdesign) — vor dem Sichtbarmachen abarbeiten
 
-Die Seite steht seit 2026-09 unter `content-struktur.de` live, ist aber bewusst auf
-`noindex` gesetzt, solange Platzhalter-Inhalte drin sind. **Diese Punkte müssen vor dem
+Die Seite läuft seit 2026-09 unter `pascal-webdesign.de` (Marke: **Pascal Webdesign**,
+Inhaber Pascal Muhl, 55452 Windesheim, Zielgruppe KMU/Selbstständige/Freiberufler,
+Einzugsgebiet deutschlandweit). Sie ist bewusst auf `noindex` gesetzt, solange
+Platzhalter-Inhalte drin sind. **Diese Punkte müssen vor dem
 echten Launch erledigt werden — der erste ist der wichtigste:**
 
 1. **`noindex` entfernen** — in `website/index.html` die Zeile
@@ -220,9 +222,16 @@ echten Launch erledigt werden — der erste ist der wichtigste:**
    `noindex` ist der teuerste Fehler beim Livegang: die Seite bleibt dauerhaft
    unsichtbar in Google, ohne dass es jemandem auffällt. Bei jedem Gespräch über
    "die Seite ist jetzt fertig" aktiv daran erinnern.
-2. **Alle Platzhalter ersetzen** — `[Dein Name]`, `[Kundenname 1-3]`, `ab [XXX] €`,
+2. **Alle Platzhalter ersetzen** — `[Kundenname 1-3]`, `ab [XXX] €`,
    `[Name]`/`[Firma]` bei Testimonials, `[X] Jahre`, `[XX] Projekte`,
-   `[name@deine-domain.de]`, `[+49 XXX XXXXXXX]`.
+   `[name@deine-domain.de]`, `[+49 XXX XXXXXXX]`, `[Straße und Hausnummer]`
+   in Impressum und Datenschutz.
+2b. **Nachname prüfen** — "Pascal Muhl" wurde aus Domain/Account-Daten abgeleitet und
+   ist noch nicht vom Nutzer bestätigt. Steht in Über-mich, Impressum, Datenschutz
+   und im JSON-LD-Schema.
+2c. **Schema.org vervollständigen** — in `website/index.html` fehlen im JSON-LD noch
+   `streetAddress`, `telephone` und `email`. Ohne vollständige Adresse wertet Google
+   das LocalBusiness-Signal ab.
 3. **Empfängeradresse in `website/public/send-mail.php`** eintragen (steht noch auf
    `name@deine-domain.de`) und eine echte Testmail durchschicken.
 4. **Testimonials und Erfolgszahlen nur mit echter Kundenfreigabe.** Erfundene
@@ -235,6 +244,11 @@ echten Launch erledigt werden — der erste ist der wichtigste:**
    ausdrücklich Entwürfe (siehe DSGVO-Regel oben).
 7. **Sitemap prüfen** — `sitemap.xml` listet die Startseite bereits korrekt für den
    Launch-Zustand. Nach Entfernen des `noindex` `lastmod` aktualisieren.
+8. **Google-Unternehmensprofil anlegen** — kostenlos und für lokale Sichtbarkeit im
+   Raum Bad Kreuznach wirksamer als jede Onpage-Maßnahme.
+9. **content-struktur.de klären** — zeigt aktuell auf dasselbe Verzeichnis wie
+   pascal-webdesign.de. Vor dem Launch auf 301-Weiterleitung umstellen, sonst
+   liefern zwei Domains identischen Inhalt aus (Duplicate Content).
 
 # Regel: robots.txt und sitemap.xml immer aktuell halten — ungefragt
 
@@ -256,7 +270,7 @@ aktualisiert werden:
    Commit-Workflow (eigener, beschreibender Commit) und werden dem Nutzer als Teil der
    Änderungsmeldung genannt — aber ohne vorher separat nachzufragen, ob das gewünscht ist.
 
-## Offene Prüfpunkte für Phase 3 (KONTUR-Website)
+## Offene Prüfpunkte für Phase 3 (Pascal Webdesign)
 
 Punkte, die sich erst mit echten Assets/Inhalten beantworten lassen, deshalb erst bei
 der React-Umsetzung prüfen, nicht schon am Mockup:

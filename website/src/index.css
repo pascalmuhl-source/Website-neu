@@ -131,6 +131,7 @@ button { font-family: inherit; cursor: pointer; }
 .nav-logo {
   font-family: 'Cormorant Garamond', serif;
   font-size: 21px;
+  white-space: nowrap;
 }
 .nav-logo .dot { color: var(--accent); }
 
@@ -347,6 +348,12 @@ a.portfolio-item:hover .portfolio-name { color: var(--accent); }
 .booking-load-btn:hover { border-color: var(--accent); color: var(--accent); }
 .booking-embed { width: 100%; min-height: 480px; border: none; }
 .booking-note { font-size: 11.5px; color: var(--contact-label); }
+.contact-address {
+  font-style: normal;
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--contact-text);
+}
 
 /* Footer */
 .footer {
@@ -368,16 +375,6 @@ a.portfolio-item:hover .portfolio-name { color: var(--accent); }
 
   .nav { padding: 20px 64px; }
   .nav-logo { font-size: 24px; }
-  .nav-toggle { display: none; }
-  .nav-links { display: flex; align-items: center; gap: 36px; }
-  .nav-links a {
-    font-size: 14px;
-    font-weight: 500;
-    padding-bottom: 4px;
-    border-bottom: 1px solid transparent;
-  }
-  .nav-links a:hover { border-bottom-color: var(--accent); color: var(--ink); }
-  .nav-menu { display: none; }
 
   .hero {
     padding: 88px 64px 0;
@@ -505,4 +502,22 @@ a.portfolio-item:hover .portfolio-name { color: var(--accent); }
 
   .footer { padding: 30px 64px; flex-direction: row; align-items: center; justify-content: space-between; flex-wrap: wrap; }
   .footer-social { display: flex; gap: 26px; align-items: center; }
+}
+
+/* ---------- Volle Navigation erst ab 1000px ----------
+   Der Markenname "Pascal Webdesign" ist deutlich breiter als ein kurzes
+   Wortzeichen. Bei 880-1000px kollidierte er mit der Linkleiste und brach um.
+   Deshalb bleibt dort das Hamburger-Menü, obwohl das Seitenlayout schon
+   auf Desktop steht. */
+@media (min-width: 1000px) {
+  .nav-toggle { display: none; }
+  .nav-links { display: flex; align-items: center; gap: 36px; }
+  .nav-links a {
+    font-size: 14px;
+    font-weight: 500;
+    padding-bottom: 4px;
+    border-bottom: 1px solid transparent;
+  }
+  .nav-links a:hover { border-bottom-color: var(--accent); color: var(--ink); }
+  .nav-menu { display: none; }
 }

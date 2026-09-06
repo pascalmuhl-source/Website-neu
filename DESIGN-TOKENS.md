@@ -1,4 +1,4 @@
-# Design Tokens — KONTUR (Webdesigner-KMU-Onepager)
+# Design Tokens — Pascal Webdesign (Webdesigner-KMU-Onepager)
 
 Reine Referenzdatei, kein Kundendokument. Werte 1:1 aus dem freigegebenen
 Mockup (`mockup/v2/`) übernommen, umgesetzt in `website/src/index.css`.

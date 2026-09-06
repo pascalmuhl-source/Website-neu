@@ -15,7 +15,7 @@ export default function Nav() {
     <>
       <div className="nav">
         <a href="#hero" className="nav-logo nav-anim" style={{ animationDelay: '0ms' }} onClick={() => setOpen(false)}>
-          KONTUR<span className="dot">.</span>
+          Pascal Webdesign<span className="dot">.</span>
         </a>
 
         <nav className="nav-links">

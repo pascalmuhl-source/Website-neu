@@ -26,7 +26,7 @@ export default function Leistungen() {
     <Reveal id="leistungen" className="section">
       <div className="section-head">
         <h2>Was ich für dein Unternehmen baue</h2>
-        <p>Drei klar geschnittene Leistungen. Kein Baukasten-Wirrwarr, sondern genau das, was ein KMU wirklich braucht.</p>
+        <p>Drei klar geschnittene Leistungen. Kein Baukasten-Wirrwarr, sondern genau das, was ein kleiner Betrieb wirklich braucht.</p>
       </div>
       <div className="services-list">
         {SERVICES.map((service) => (
