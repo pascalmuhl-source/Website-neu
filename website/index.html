@@ -37,7 +37,9 @@
 
     <!-- Strukturierte Daten: Standort verankert die lokale Sichtbarkeit,
          areaServed sagt Google zugleich, dass bundesweit gearbeitet wird.
-         VOR LAUNCH ERGÄNZEN: streetAddress, telephone, email. -->
+         sameAs verknüpft das Google-Unternehmensprofil — Adresse/Telefon hier
+         müssen exakt mit dem Profil übereinstimmen, sonst erkennt Google die
+         Zusammengehörigkeit nicht zuverlässig. -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -46,12 +48,18 @@
       "description": "Webdesign für kleine und mittlere Unternehmen, Selbstständige und Freiberufler. Website-Erstellung, Redesign und laufende Betreuung.",
       "url": "https://pascal-webdesign.de/",
       "image": "https://pascal-webdesign.de/og-image.png",
+      "telephone": "+491731043823",
+      "email": "pascal@pascal-webdesign.de",
+      "sameAs": [
+        "https://share.google/AIW6wayHq9MifU8qP"
+      ],
       "founder": {
         "@type": "Person",
         "name": "Pascal Muhl"
       },
       "address": {
         "@type": "PostalAddress",
+        "streetAddress": "Ringstraße 2",
         "postalCode": "55452",
         "addressLocality": "Windesheim",
         "addressRegion": "Rheinland-Pfalz",

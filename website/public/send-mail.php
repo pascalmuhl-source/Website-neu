@@ -1,8 +1,7 @@
 <?php
 declare(strict_types=1);
 
-// Empfänger-Adresse eintragen, bevor der Build hochgeladen wird.
-$recipient = 'name@deine-domain.de';
+$recipient = 'pascal@pascal-webdesign.de';
 
 header('Content-Type: application/json; charset=utf-8');
 

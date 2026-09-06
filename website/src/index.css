@@ -302,6 +302,14 @@ a.portfolio-item:hover .portfolio-name { color: var(--accent); }
 /* Kontakt */
 .contact { background: var(--ink); color: var(--paper); display: flex; flex-direction: column; gap: 26px; }
 .contact h2 { color: var(--paper); font-size: 1.65rem; }
+.contact-direct { display: flex; flex-direction: column; gap: 12px; padding-top: 6px; }
+.contact-direct a {
+  color: var(--paper);
+  font-size: 15px;
+  border-bottom: 1px solid var(--contact-rule);
+  padding-bottom: 2px;
+  align-self: flex-start;
+}
 .contact-intro p { font-size: 14px; line-height: 1.65; color: var(--contact-text); margin-top: 12px; }
 .contact-form { display: flex; flex-direction: column; gap: 16px; }
 .form-field { display: flex; flex-direction: column; gap: 6px; }
@@ -497,8 +505,7 @@ a.portfolio-item:hover .portfolio-name { color: var(--accent); }
   .contact-submit { align-self: flex-start; width: auto; padding: 15px 28px; margin-top: 8px; }
   .contact-side { display: flex; flex-direction: column; gap: 26px; }
   .booking-placeholder { padding: 30px; align-items: flex-start; }
-  .contact-direct { display: flex; flex-direction: column; gap: 12px; padding-top: 6px; }
-  .contact-direct a { color: var(--paper); font-size: 16px; border-bottom: 1px solid var(--contact-rule); padding-bottom: 2px; align-self: flex-start; }
+  .contact-direct a { font-size: 16px; }
 
   .footer { padding: 30px 64px; flex-direction: row; align-items: center; justify-content: space-between; flex-wrap: wrap; }
   .footer-social { display: flex; gap: 26px; align-items: center; }

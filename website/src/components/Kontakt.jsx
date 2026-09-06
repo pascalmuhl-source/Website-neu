@@ -63,7 +63,7 @@ export default function Kontakt() {
             )}
             {status === STATUS.error && (
               <p className="form-status error">
-                Das hat leider nicht geklappt. Schreib mir gern direkt an [name@deine-domain.de].
+                Das hat leider nicht geklappt. Schreib mir gern direkt an pascal@pascal-webdesign.de.
               </p>
             )}
           </form>
@@ -86,18 +86,19 @@ export default function Kontakt() {
           </div>
           <div className="contact-direct">
             <span className="section-label" style={{ color: 'var(--contact-label)' }}>Oder direkt</span>
-            <a href="mailto:name@deine-domain.de">[name@deine-domain.de]</a>
-            <a href="tel:+49XXXXXXXXX">[+49 XXX XXXXXXX]</a>
+            <a href="mailto:pascal@pascal-webdesign.de">pascal@pascal-webdesign.de</a>
+            <a href="tel:+491731043823">0173 1043823</a>
           </div>
 
           <div className="contact-direct">
             <span className="section-label" style={{ color: 'var(--contact-label)' }}>Standort</span>
             <address className="contact-address">
               Pascal Webdesign<br />
-              55452 Windesheim<br />
-              Deutschland
+              Ringstraße 2<br />
+              55452 Windesheim
             </address>
             <span className="booking-note">Vor Ort im Raum Bad Kreuznach, im Projekt deutschlandweit.</span>
+            <a href="https://share.google/AIW6wayHq9MifU8qP" target="_blank" rel="noopener">Auf Google ansehen</a>
           </div>
         </div>
       </div>
