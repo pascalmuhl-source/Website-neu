@@ -35,7 +35,7 @@ export default function Testimonials() {
 
       <div className="testimonial-grid only-desktop">
         {QUOTES.map((q, i) => (
-          <Reveal as="div" className="testimonial" style={{ transitionDelay: `${i * 90}ms` }} key={i}>
+          <Reveal as="div" className="testimonial" style={{ transitionDelay: `${i * 130}ms` }} key={i}>
             <p>{q.text}</p>
             <div className="testimonial-person">
               <QuoteIcon />

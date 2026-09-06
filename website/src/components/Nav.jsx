@@ -20,14 +20,14 @@ export default function Nav() {
 
         <nav className="nav-links">
           {LINKS.map((link, i) => (
-            <a key={link.href} className="nav-anim" href={link.href} style={{ animationDelay: `${70 + i * 70}ms` }}>
+            <a key={link.href} className="nav-anim" href={link.href} style={{ animationDelay: `${100 + i * 100}ms` }}>
               {link.label}
             </a>
           ))}
           <a
             className="btn-outline nav-anim"
             href="#kontakt"
-            style={{ animationDelay: `${70 + LINKS.length * 70}ms` }}
+            style={{ animationDelay: `${100 + LINKS.length * 100}ms` }}
           >
             Erstgespräch buchen
           </a>

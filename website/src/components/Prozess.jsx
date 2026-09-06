@@ -18,7 +18,7 @@ export default function Prozess() {
           <Reveal
             as="div"
             className={`process-step${i === 0 ? ' first' : ''}`}
-            style={{ transitionDelay: `${i * 90}ms` }}
+            style={{ transitionDelay: `${i * 130}ms` }}
             key={step.index}
           >
             <span className="index">{step.index}</span>
