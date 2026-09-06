@@ -212,7 +212,7 @@ Den `seo`-Skill (`.claude/skills/seo/`) dafür nutzen, wenn es so weit ist.
 # Launch-Checkliste (Pascal Webdesign) — vor dem Sichtbarmachen abarbeiten
 
 Die Seite läuft seit 2026-09 unter `pascal-webdesign.de` (Marke: **Pascal Webdesign**,
-Inhaber Pascal Muhl, 55452 Windesheim, Zielgruppe KMU/Selbstständige/Freiberufler,
+Inhaber Pascal Muhl (bestätigt), 55452 Windesheim, Zielgruppe KMU/Selbstständige/Freiberufler,
 Einzugsgebiet deutschlandweit). Sie ist bewusst auf `noindex` gesetzt, solange
 Platzhalter-Inhalte drin sind. **Diese Punkte müssen vor dem
 echten Launch erledigt werden — der erste ist der wichtigste:**
@@ -226,10 +226,7 @@ echten Launch erledigt werden — der erste ist der wichtigste:**
    `[Name]`/`[Firma]` bei Testimonials, `[X] Jahre`, `[XX] Projekte`,
    `[name@deine-domain.de]`, `[+49 XXX XXXXXXX]`, `[Straße und Hausnummer]`
    in Impressum und Datenschutz.
-2b. **Nachname prüfen** — "Pascal Muhl" wurde aus Domain/Account-Daten abgeleitet und
-   ist noch nicht vom Nutzer bestätigt. Steht in Über-mich, Impressum, Datenschutz
-   und im JSON-LD-Schema.
-2c. **Schema.org vervollständigen** — in `website/index.html` fehlen im JSON-LD noch
+2b. **Schema.org vervollständigen** — in `website/index.html` fehlen im JSON-LD noch
    `streetAddress`, `telephone` und `email`. Ohne vollständige Adresse wertet Google
    das LocalBusiness-Signal ab.
 3. **Empfängeradresse in `website/public/send-mail.php`** eintragen (steht noch auf
@@ -246,9 +243,8 @@ echten Launch erledigt werden — der erste ist der wichtigste:**
    Launch-Zustand. Nach Entfernen des `noindex` `lastmod` aktualisieren.
 8. **Google-Unternehmensprofil anlegen** — kostenlos und für lokale Sichtbarkeit im
    Raum Bad Kreuznach wirksamer als jede Onpage-Maßnahme.
-9. **content-struktur.de klären** — zeigt aktuell auf dasselbe Verzeichnis wie
-   pascal-webdesign.de. Vor dem Launch auf 301-Weiterleitung umstellen, sonst
-   liefern zwei Domains identischen Inhalt aus (Duplicate Content).
+9. **content-struktur.de** — erledigt: leitet per 301 auf pascal-webdesign.de weiter,
+   kein Duplicate Content mehr.
 
 # Regel: robots.txt und sitemap.xml immer aktuell halten — ungefragt
 
