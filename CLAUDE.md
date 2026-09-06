@@ -1,3 +1,9 @@
+**Vor dem Einstieg in dieses Projekt immer zuerst `PROJECT-STATUS.md` lesen.** Diese
+Datei hier (`CLAUDE.md`) enthält die Arbeitsregeln; `PROJECT-STATUS.md` enthält den
+tatsächlichen Verlauf und aktuellen Live-Stand (Hosting, Domains, Deploy-Fehlerquellen,
+offene Punkte) — ohne die Datei fehlt der Kontext, den frühere Sessions bereits
+erarbeitet haben.
+
 # Workflow: Website-Design (Briefing → Mockup → Umsetzung)
 
 Wenn der Nutzer eine neue Website oder ein neues Seiten-/Komponenten-Design anfragt
