@@ -4,6 +4,16 @@ tatsächlichen Verlauf und aktuellen Live-Stand (Hosting, Domains, Deploy-Fehler
 offene Punkte) — ohne die Datei fehlt der Kontext, den frühere Sessions bereits
 erarbeitet haben.
 
+# Regel: Commit & Push nach abgeschlossenen Änderungen — ohne erneute Nachfrage
+
+Sobald eine inhaltlich abgeschlossene Änderung an diesem Repo vorliegt (Code, Texte,
+Konfiguration, Doku wie diese Datei oder `PROJECT-STATUS.md`), wird sie automatisch mit
+einer beschreibenden Commit-Message committet und auf den aktuell zugewiesenen
+Arbeits-Branch gepusht — ohne den Nutzer jedes Mal einzeln um Erlaubnis zu fragen.
+Ausnahmen bleiben: destruktive Git-Operationen (Force-Push, Reset --hard,
+Branch-Löschung) und alles, was diese Datei oder die Systemregeln ausdrücklich als
+bestätigungspflichtig kennzeichnen.
+
 # Workflow: Website-Design (Briefing → Mockup → Umsetzung)
 
 Wenn der Nutzer eine neue Website oder ein neues Seiten-/Komponenten-Design anfragt
