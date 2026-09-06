@@ -1,3 +1,5 @@
+import Reveal from './Reveal.jsx';
+
 const SERVICES = [
   {
     title: 'Website-Erstellung',
@@ -21,7 +23,7 @@ const SERVICES = [
 
 export default function Leistungen() {
   return (
-    <div id="leistungen" className="section">
+    <Reveal id="leistungen" className="section">
       <div className="section-head">
         <h2>Was ich für dein Unternehmen baue</h2>
         <p>Drei klar geschnittene Leistungen. Kein Baukasten-Wirrwarr, sondern genau das, was ein KMU wirklich braucht.</p>
@@ -36,6 +38,6 @@ export default function Leistungen() {
           </div>
         ))}
       </div>
-    </div>
+    </Reveal>
   );
 }

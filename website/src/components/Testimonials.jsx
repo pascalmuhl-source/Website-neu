@@ -1,3 +1,5 @@
+import Reveal from './Reveal.jsx';
+
 function QuoteIcon() {
   return (
     <svg width="30" height="30" viewBox="0 0 34 34">
@@ -16,11 +18,11 @@ const QUOTES = [
 export default function Testimonials() {
   return (
     <div id="testimonials" className="section">
-      <div className="section-head" style={{ marginBottom: 28 }}>
+      <Reveal className="section-head" style={{ marginBottom: 28 }}>
         <h2>Was Kund:innen sagen</h2>
-      </div>
+      </Reveal>
 
-      <div className="testimonial only-mobile">
+      <Reveal as="div" className="testimonial only-mobile">
         <p>{QUOTES[0].textShort}</p>
         <div className="testimonial-person">
           <QuoteIcon />
@@ -29,11 +31,11 @@ export default function Testimonials() {
             <div className="company">[Firma]</div>
           </div>
         </div>
-      </div>
+      </Reveal>
 
       <div className="testimonial-grid only-desktop">
         {QUOTES.map((q, i) => (
-          <div className="testimonial" key={i}>
+          <Reveal as="div" className="testimonial" style={{ transitionDelay: `${i * 90}ms` }} key={i}>
             <p>{q.text}</p>
             <div className="testimonial-person">
               <QuoteIcon />
@@ -42,7 +44,7 @@ export default function Testimonials() {
                 <div className="company">[Firma]</div>
               </div>
             </div>
-          </div>
+          </Reveal>
         ))}
       </div>
     </div>

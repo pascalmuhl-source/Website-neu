@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import Reveal from './Reveal.jsx';
 
 const STATUS = { idle: 'idle', sending: 'sending', success: 'success', error: 'error' };
 
@@ -26,7 +27,7 @@ export default function Kontakt() {
   }
 
   return (
-    <div id="kontakt" className="section contact">
+    <Reveal id="kontakt" className="section contact">
       <div className="contact-grid">
         <div>
           <div className="contact-intro">
@@ -90,6 +91,6 @@ export default function Kontakt() {
           </div>
         </div>
       </div>
-    </div>
+    </Reveal>
   );
 }

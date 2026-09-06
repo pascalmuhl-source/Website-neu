@@ -1,3 +1,5 @@
+import Reveal from './Reveal.jsx';
+
 const ROWS = [
   {
     title: 'Kein klarer nächster Schritt',
@@ -18,7 +20,7 @@ const ROWS = [
 
 export default function Problem() {
   return (
-    <div id="problem" className="section section-alt">
+    <Reveal id="problem" className="section section-alt">
       <div className="section-head">
         <h2>Was eine schlechte Website wirklich kostet</h2>
         <p>
@@ -50,6 +52,6 @@ export default function Problem() {
           ))}
         </div>
       </div>
-    </div>
+    </Reveal>
   );
 }

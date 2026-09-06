@@ -1,6 +1,8 @@
+import Reveal from './Reveal.jsx';
+
 export default function UeberMich() {
   return (
-    <div id="ueber-mich" className="section about">
+    <Reveal id="ueber-mich" className="section about">
       <div className="about-photo" role="img" aria-label="Porträtfoto von [Dein Name]" />
       <div className="about-copy">
         <h2>[Dein Name], Webdesigner:in für KMU</h2>
@@ -20,6 +22,6 @@ export default function UeberMich() {
           </div>
         </div>
       </div>
-    </div>
+    </Reveal>
   );
 }

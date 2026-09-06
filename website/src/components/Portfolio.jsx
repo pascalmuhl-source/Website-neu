@@ -1,3 +1,5 @@
+import Reveal from './Reveal.jsx';
+
 const CASES = [
   { name: '[Kundenname 1]', type: 'Handwerksbetrieb, Relaunch', num: '+[8]', label: 'Aufträge mehr pro Monat', labelShort: 'Aufträge/Monat', thumbClass: '' },
   { name: '[Kundenname 2]', type: 'Kanzlei, Neue Website', num: '+[12]', label: 'Anfragen mehr pro Monat', labelShort: 'Anfragen/Monat', thumbClass: 'alt' },
@@ -7,7 +9,7 @@ const CASES = [
 export default function Portfolio() {
   const [featured, ...rest] = CASES;
   return (
-    <div id="portfolio" className="section section-alt">
+    <Reveal id="portfolio" className="section section-alt">
       <div className="section-head" style={{ marginBottom: 28 }}>
         <h2>Ausgewählte Projekte mit spürbarem Ergebnis</h2>
       </div>
@@ -16,7 +18,9 @@ export default function Portfolio() {
       <div className="portfolio-list only-mobile">
         {CASES.slice(0, 2).map((c) => (
           <a href="#" className="portfolio-item" key={c.name}>
-            <div className={`portfolio-thumb ${c.thumbClass}`} />
+            <div className={`portfolio-thumb ${c.thumbClass}`}>
+              <div className="portfolio-thumb-inner" />
+            </div>
             <div className="portfolio-meta">
               <div>
                 <div className="portfolio-name">{c.name}</div>
@@ -34,7 +38,9 @@ export default function Portfolio() {
       {/* Desktop: asymmetric grid, one featured + two stacked */}
       <div className="portfolio-grid only-desktop">
         <a href="#" className="portfolio-item portfolio-featured">
-          <div className="portfolio-thumb" />
+          <div className="portfolio-thumb">
+            <div className="portfolio-thumb-inner" />
+          </div>
           <div className="portfolio-meta">
             <div>
               <div className="portfolio-name">{featured.name}</div>
@@ -50,7 +56,9 @@ export default function Portfolio() {
         <div className="portfolio-side">
           {rest.map((c) => (
             <a href="#" className="portfolio-item" key={c.name}>
-              <div className={`portfolio-thumb ${c.thumbClass}`} />
+              <div className={`portfolio-thumb ${c.thumbClass}`}>
+                <div className="portfolio-thumb-inner" />
+              </div>
               <div className="portfolio-meta">
                 <div>
                   <div className="portfolio-name">{c.name}</div>
@@ -65,6 +73,6 @@ export default function Portfolio() {
           ))}
         </div>
       </div>
-    </div>
+    </Reveal>
   );
 }
