@@ -194,17 +194,40 @@ das gesamte Projekt automatisch, ohne dass der Nutzer das erneut anstoßen muss:
   Server-Logs (IP-Adressen) in der Datenschutzerklärung mit kurzer
   Löschfrist nennen, jedes eingebettete Dritt-Skript einzeln prüfen.
 
-## Offen für später: SEO-Optimierung (KONTUR-Website)
+## SEO-Status (KONTUR-Website, Stand: 2026-09, Phase 3 live)
 
-Noch nicht umgesetzt, bewusst zurückgestellt bis Phase 3 (React-Umsetzung), da auf
-Mockup-Ebene (Design Canvas) kein echtes `<head>` mit Metadaten existiert:
+Erledigt: Title-Tag, Meta-Description, saubere Heading-Hierarchie (ein H1, H2 pro
+Sektion), `robots.txt` und `sitemap.xml` (siehe eigene Regel unten).
 
-- Title-Tag und Meta-Description für die Seite
+Noch offen (audit-basiert, siehe Chat-Verlauf für Details):
+- Social-Share-Tags (Open Graph/Twitter Card) — fehlen komplett
+- Canonical-URL (`<link rel="canonical">`) — fehlt
 - Strukturierte Daten (Schema.org, z. B. `ProfessionalService`/`LocalBusiness`)
-- Sitemap, saubere Heading-Hierarchie, Alt-Texte für die (noch fehlenden) echten Bilder
-- Ggf. Onpage-Keyword-Fokus je nach Zielgruppe, sobald die realen Texte/Leistungen final sind
+- Custom-404-Seite (aktuell liefert lima-city den generischen Apache-Standard-404)
+- Alt-Text-Struktur für Bilder, sobald echte Fotos die Platzhalter-Gradients ersetzen
+- Ggf. Onpage-Keyword-Fokus, sobald die realen Texte/Leistungen final sind
 
 Den `seo`-Skill (`.claude/skills/seo/`) dafür nutzen, wenn es so weit ist.
+
+# Regel: robots.txt und sitemap.xml immer aktuell halten — ungefragt
+
+`website/public/robots.txt` und `website/public/sitemap.xml` sind Pflichtdateien, die bei
+jeder strukturellen Änderung an der Website ohne erneute Anfrage des Nutzers mit
+aktualisiert werden:
+
+1. Neue Seiten/Routen mit eigenem `<title>` und ohne `noindex` (z. B. eine künftige
+   Mehrseiten-Struktur, Blog, weitere Unterseiten) → URL in `sitemap.xml` ergänzen,
+   `lastmod` aktualisieren.
+2. Seiten, die bewusst `noindex` bekommen (wie `impressum.html`/`datenschutz.html`),
+   gehören NICHT in die Sitemap — sie sollen crawlbar bleiben (damit Google das
+   `noindex`-Meta-Tag überhaupt sieht), aber nicht gelistet werden.
+3. Domain-Wechsel oder Umzug auf eine andere Basis-URL → `Sitemap:`-Zeile in
+   `robots.txt` und alle `<loc>`-Einträge in `sitemap.xml` entsprechend anpassen.
+4. Soll ein Bereich künftig von der Indexierung ausgeschlossen werden (z. B. ein
+   internes Tool, ein Entwurfsbereich) → `Disallow`-Zeile in `robots.txt` ergänzen.
+5. Diese Änderungen laufen wie jede andere Code-Änderung durch den normalen
+   Commit-Workflow (eigener, beschreibender Commit) und werden dem Nutzer als Teil der
+   Änderungsmeldung genannt — aber ohne vorher separat nachzufragen, ob das gewünscht ist.
 
 ## Offene Prüfpunkte für Phase 3 (KONTUR-Website)
 
