@@ -194,6 +194,17 @@ das gesamte Projekt automatisch, ohne dass der Nutzer das erneut anstoßen muss:
   Server-Logs (IP-Adressen) in der Datenschutzerklärung mit kurzer
   Löschfrist nennen, jedes eingebettete Dritt-Skript einzeln prüfen.
 
+# Regel: FTPS-Upload automatisieren (nur auf expliziten Wunsch des Nutzers)
+
+- Kein Skill nötig — FTPS ist ein Standardprotokoll, direkt über Bordmittel lösbar
+  (z. B. `curl --ftp-ssl` oder `lftp`), kein Zusatz-Tool/Skill installieren.
+- **Zugangsdaten niemals im Chat abfragen oder ins Repo committen.** Stattdessen als
+  Umgebungsvariablen im Cloud-Environment hinterlegen (claude.ai/code → Environment →
+  Environment Variables), z. B. `FTP_HOST`, `FTP_USER`, `FTP_PASS` — und zur Laufzeit
+  nur darüber referenzieren.
+- Beispiel-Befehl: `curl --ftp-ssl -T <datei> ftps://$FTP_HOST/<pfad>/ --user "$FTP_USER:$FTP_PASS"`
+  bzw. für ganze Ordner ein `lftp mirror --reverse`-Kommando.
+
 ## SEO-Status (Pascal Webdesign, Stand: 2026-09, Phase 3 live)
 
 Erledigt: Title-Tag, Meta-Description, saubere Heading-Hierarchie (ein H1, H2 pro
