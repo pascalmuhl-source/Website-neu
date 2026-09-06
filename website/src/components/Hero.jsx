@@ -1,5 +1,7 @@
 import Reveal from './Reveal.jsx';
 
+const HEADLINE_LINES = ['Websites, die für KMU', 'mehr Kunden bringen.'];
+
 export default function Hero() {
   return (
     <div id="hero" className="hero">
@@ -7,7 +9,15 @@ export default function Hero() {
         <div className="hero-portrait" role="img" aria-label="Porträtfoto von [Dein Name]" />
       </div>
       <Reveal as="div" className="hero-copy">
-        <h1>Websites, die für KMU mehr Kunden bringen.</h1>
+        <h1>
+          {HEADLINE_LINES.map((line, i) => (
+            <span className="line-mask" key={line}>
+              <span className="line-inner" style={{ animationDelay: `${i * 120}ms` }}>
+                {line}
+              </span>
+            </span>
+          ))}
+        </h1>
         <p>
           Eine schlechte Website kostet dich täglich Anfragen. Ich baue dir eine, die stattdessen Kunden bringt.
         </p>

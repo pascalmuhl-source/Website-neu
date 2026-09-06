@@ -218,6 +218,18 @@ button { font-family: inherit; cursor: pointer; }
   gap: 20px;
 }
 .hero-copy h1 { font-size: 2.2rem; line-height: 1.15; }
+.line-mask { display: block; overflow: hidden; }
+.line-inner {
+  display: block;
+  animation: lineIn 0.9s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+@keyframes lineIn {
+  from { transform: translateY(110%); }
+  to { transform: translateY(0); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .line-inner { animation: none; }
+}
 .hero-copy p { font-size: 16px; line-height: 1.6; color: var(--ink-soft); }
 .hero-cta { margin-top: 6px; }
 
