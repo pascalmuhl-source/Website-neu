@@ -240,14 +240,13 @@ echten Launch erledigt werden — der erste ist der wichtigste:**
    unsichtbar in Google, ohne dass es jemandem auffällt. Bei jedem Gespräch über
    "die Seite ist jetzt fertig" aktiv daran erinnern.
 2. **Alle Platzhalter ersetzen** — `[Kundenname 1-3]`, `ab [XXX] €`,
-   `[Name]`/`[Firma]` bei Testimonials, `[X] Jahre`, `[XX] Projekte`,
-   `[name@deine-domain.de]`, `[+49 XXX XXXXXXX]`, `[Straße und Hausnummer]`
-   in Impressum und Datenschutz.
-2b. **Schema.org vervollständigen** — in `website/index.html` fehlen im JSON-LD noch
-   `streetAddress`, `telephone` und `email`. Ohne vollständige Adresse wertet Google
-   das LocalBusiness-Signal ab.
-3. **Empfängeradresse in `website/public/send-mail.php`** eintragen (steht noch auf
-   `name@deine-domain.de`) und eine echte Testmail durchschicken.
+   `[Name]`/`[Firma]` bei Testimonials, `[X] Jahre`, `[XX] Projekte`.
+   Kontaktdaten (Adresse, Telefon, E-Mail) sind bereits erledigt.
+2b. **Schema.org** — erledigt: `streetAddress`, `telephone`, `email` und `sameAs`
+   (Google-Unternehmensprofil-Link) sind im JSON-LD in `website/index.html` gesetzt.
+3. **Empfängeradresse in `website/public/send-mail.php`** — erledigt
+   (`pascal@pascal-webdesign.de`). Vor Launch trotzdem eine echte Testmail
+   durchschicken, um die tatsächliche Zustellung zu bestätigen.
 4. **Testimonials und Erfolgszahlen nur mit echter Kundenfreigabe.** Erfundene
    Referenzen oder unbelegte Zahlen ("+8 Aufträge pro Monat") sind eine
    wettbewerbswidrige Irreführung nach § 5 UWG — ausgerechnet in dieser Branche
@@ -258,8 +257,10 @@ echten Launch erledigt werden — der erste ist der wichtigste:**
    ausdrücklich Entwürfe (siehe DSGVO-Regel oben).
 7. **Sitemap prüfen** — `sitemap.xml` listet die Startseite bereits korrekt für den
    Launch-Zustand. Nach Entfernen des `noindex` `lastmod` aktualisieren.
-8. **Google-Unternehmensprofil anlegen** — kostenlos und für lokale Sichtbarkeit im
-   Raum Bad Kreuznach wirksamer als jede Onpage-Maßnahme.
+8. **Google-Unternehmensprofil** — angelegt und mit der Website verknüpft (Adresse/
+   Telefon/E-Mail stimmen überein, `sameAs` im Schema verweist auf das Profil:
+   https://share.google/AIW6wayHq9MifU8qP). Noch offen: Google-seitige Verifizierung
+   (Postkarte/Telefon/Video) abschließen, falls noch nicht geschehen.
 9. **content-struktur.de** — erledigt: leitet per 301 auf pascal-webdesign.de weiter,
    kein Duplicate Content mehr.
 
