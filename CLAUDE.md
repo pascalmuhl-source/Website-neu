@@ -205,3 +205,13 @@ Mockup-Ebene (Design Canvas) kein echtes `<head>` mit Metadaten existiert:
 - Ggf. Onpage-Keyword-Fokus je nach Zielgruppe, sobald die realen Texte/Leistungen final sind
 
 Den `seo`-Skill (`.claude/skills/seo/`) dafür nutzen, wenn es so weit ist.
+
+## Offene Prüfpunkte für Phase 3 (KONTUR-Website)
+
+Punkte, die sich erst mit echten Assets/Inhalten beantworten lassen, deshalb erst bei
+der React-Umsetzung prüfen, nicht schon am Mockup:
+
+- **Hero-Bild-Kontrast (Mobile):** Sobald das echte Portraitfoto anstelle des Platzhalters
+  eingesetzt wird, prüfen ob Headline/Subheadline/CTA (dunkler Text) darüber noch
+  ausreichend lesbar sind. Falls nicht: leichtes Abdunkeln/Scrim oder Weichzeichnen
+  hinter dem Text ergänzen, statt es stillschweigend unleserlich zu lassen.
