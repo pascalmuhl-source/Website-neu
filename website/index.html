@@ -2,10 +2,48 @@
 <html lang="de">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- ENTFERNEN VOR LAUNCH: Solange Platzhalter-Inhalte live sind, darf die
+         Seite nicht indexiert werden. Siehe CLAUDE.md, Abschnitt "Launch-Checkliste". -->
+    <meta name="robots" content="noindex, nofollow" />
+
     <title>KONTUR — Websites für KMU</title>
     <meta name="description" content="Webdesign für kleine und mittlere Unternehmen: Websites, die Anfragen bringen statt nur gut auszusehen." />
+    <link rel="canonical" href="https://content-struktur.de/" />
+
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <!-- Schriften früh anstoßen, damit die Headline nicht erst in der
+         Fallback-Serife erscheint und dann umspringt. -->
+    <link rel="preload" href="/fonts/cormorant-garamond-latin-variable-normal.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/archivo-latin-variable.woff2" as="font" type="font/woff2" crossorigin />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="de_DE" />
+    <meta property="og:site_name" content="KONTUR" />
+    <meta property="og:title" content="KONTUR — Websites für KMU" />
+    <meta property="og:description" content="Webdesign für kleine und mittlere Unternehmen: Websites, die Anfragen bringen statt nur gut auszusehen." />
+    <meta property="og:url" content="https://content-struktur.de/" />
+    <meta property="og:image" content="https://content-struktur.de/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="KONTUR — Webdesign für kleine und mittlere Unternehmen" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="KONTUR — Websites für KMU" />
+    <meta name="twitter:description" content="Webdesign für kleine und mittlere Unternehmen: Websites, die Anfragen bringen statt nur gut auszusehen." />
+    <meta name="twitter:image" content="https://content-struktur.de/og-image.png" />
+
+    <!-- Ohne JavaScript laufen die Reveal-Animationen nie an. Der prerenderte
+         Inhalt ist da, also hier sichtbar schalten statt auf opacity:0 stehen lassen. -->
+    <noscript>
+      <style>
+        .reveal { opacity: 1 !important; transform: none !important; }
+        .line-inner { animation: none !important; }
+        .nav-anim { opacity: 1 !important; transform: none !important; animation: none !important; }
+      </style>
+    </noscript>
   </head>
   <body>
     <div id="root"></div>

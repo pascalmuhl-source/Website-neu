@@ -1,0 +1,53 @@
+# KONTUR — Serverkonfiguration (lima-city, Apache 2.4)
+# Alle Blöcke sind mit IfModule abgesichert: fehlt ein Modul, wird der Block
+# ignoriert statt einen 500er auszulösen.
+
+# --- Eigene Fehlerseite statt Apache-Standard ---
+ErrorDocument 404 /404.html
+
+# --- Komprimierung ---
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css
+  AddOutputFilterByType DEFLATE application/javascript application/x-javascript
+  AddOutputFilterByType DEFLATE application/json application/xml
+  AddOutputFilterByType DEFLATE image/svg+xml
+</IfModule>
+
+# --- Caching ---
+# Assets tragen einen Content-Hash im Dateinamen (index-DTu9y37M.js), ändern
+# sich also nie unter gleichem Namen und dürfen dauerhaft gecacht werden.
+# HTML dagegen muss bei jedem Deploy frisch geholt werden.
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresDefault                          "access plus 1 month"
+  ExpiresByType text/html                 "access plus 0 seconds"
+  ExpiresByType text/css                  "access plus 1 year"
+  ExpiresByType application/javascript    "access plus 1 year"
+  ExpiresByType font/woff2                "access plus 1 year"
+  ExpiresByType image/svg+xml             "access plus 1 month"
+  ExpiresByType image/png                 "access plus 1 month"
+  ExpiresByType text/xml                  "access plus 1 day"
+  ExpiresByType text/plain                "access plus 1 day"
+</IfModule>
+
+<IfModule mod_headers.c>
+  # Gehashte Assets: unveränderlich, Browser muss nie nachfragen.
+  <FilesMatch "\.(js|css|woff2)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+
+  # HTML immer revalidieren, sonst sehen Besucher nach einem Deploy die alte Seite.
+  <FilesMatch "\.html$">
+    Header set Cache-Control "public, max-age=0, must-revalidate"
+  </FilesMatch>
+
+  # Grundlegende Sicherheits-Header.
+  Header set X-Content-Type-Options "nosniff"
+  Header set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>
+
+# --- MIME-Typen absichern ---
+<IfModule mod_mime.c>
+  AddType font/woff2 .woff2
+  AddType image/svg+xml .svg
+</IfModule>

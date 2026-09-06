@@ -209,6 +209,33 @@ Noch offen (audit-basiert, siehe Chat-Verlauf für Details):
 
 Den `seo`-Skill (`.claude/skills/seo/`) dafür nutzen, wenn es so weit ist.
 
+# Launch-Checkliste (KONTUR-Website) — vor dem Sichtbarmachen abarbeiten
+
+Die Seite steht seit 2026-09 unter `content-struktur.de` live, ist aber bewusst auf
+`noindex` gesetzt, solange Platzhalter-Inhalte drin sind. **Diese Punkte müssen vor dem
+echten Launch erledigt werden — der erste ist der wichtigste:**
+
+1. **`noindex` entfernen** — in `website/index.html` die Zeile
+   `<meta name="robots" content="noindex, nofollow" />` löschen. Ein vergessenes
+   `noindex` ist der teuerste Fehler beim Livegang: die Seite bleibt dauerhaft
+   unsichtbar in Google, ohne dass es jemandem auffällt. Bei jedem Gespräch über
+   "die Seite ist jetzt fertig" aktiv daran erinnern.
+2. **Alle Platzhalter ersetzen** — `[Dein Name]`, `[Kundenname 1-3]`, `ab [XXX] €`,
+   `[Name]`/`[Firma]` bei Testimonials, `[X] Jahre`, `[XX] Projekte`,
+   `[name@deine-domain.de]`, `[+49 XXX XXXXXXX]`.
+3. **Empfängeradresse in `website/public/send-mail.php`** eintragen (steht noch auf
+   `name@deine-domain.de`) und eine echte Testmail durchschicken.
+4. **Testimonials und Erfolgszahlen nur mit echter Kundenfreigabe.** Erfundene
+   Referenzen oder unbelegte Zahlen ("+8 Aufträge pro Monat") sind eine
+   wettbewerbswidrige Irreführung nach § 5 UWG — ausgerechnet in dieser Branche
+   ein vermeidbares Abmahnrisiko.
+5. **Platzhalter-Links auflösen** — die 5 `href="#"` (2 Social-Icons, 3 Portfolio-Cases)
+   entweder mit echten Zielen versehen oder entfernen.
+6. **Rechtstexte final prüfen lassen** — Impressum und Datenschutzerklärung sind
+   ausdrücklich Entwürfe (siehe DSGVO-Regel oben).
+7. **Sitemap prüfen** — `sitemap.xml` listet die Startseite bereits korrekt für den
+   Launch-Zustand. Nach Entfernen des `noindex` `lastmod` aktualisieren.
+
 # Regel: robots.txt und sitemap.xml immer aktuell halten — ungefragt
 
 `website/public/robots.txt` und `website/public/sitemap.xml` sind Pflichtdateien, die bei
