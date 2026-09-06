@@ -117,14 +117,17 @@ Eine One-Page-React-Website für einen selbstständigen Webdesigner:
   lief der Transfer fehlerfrei. **Nach jedem Upload einzeln byte-genau verifizieren**
   (`curl -s -o /dev/null -w '%{size_download}'` je Datei gegen die lokale Größe
   vergleichen) — ein `HTTP 200` allein beweist nicht, dass der Inhalt vollständig ist.
-- **Perspektivisch:** Nutzer hat `FTP_HOST`/`FTP_USER`/`FTP_PASS` als Environment
-  Variables im Cloud-Environment (claude.ai/code → Environment → Environment
-  Variables) hinterlegt. Laut Doku (und in dieser Session auch praktisch bestätigt)
-  wirken Env-Var-Änderungen erst in **neu gestarteten Sessions**, nicht rückwirkend in
-  einer bereits laufenden. **Eine neue Session sollte diese Variablen also bereits
-  vorfinden** — kurz mit `env | grep FTP` prüfen. Falls vorhanden: Upload direkt per
-  `curl --ftp-ssl -T <datei> ftps://$FTP_HOST/<pfad>/ --user "$FTP_USER:$FTP_PASS"`
-  (Details/Beispiel für Ordner-Sync via `lftp` in CLAUDE.md).
+- **Getestet und verworfen (2026-09-06):** `FTP_HOST`/`FTP_USER`/`FTP_PASS` sind als
+  Environment Variables im Cloud-Environment hinterlegt und in der Session auch
+  sichtbar (`env | grep FTP`). Ein direkter Verbindungsversuch von dieser
+  Cloud-Umgebung aus schlägt aber fehl — sowohl explizites FTPS auf Port 21 als auch
+  implizites FTPS auf Port 990 laufen in einen Connect-Timeout (`curl --ftp-ssl`).
+  Grund: Diese Umgebung leitet ausschließlich HTTPS-Traffic über ihren Proxy durch,
+  rohe TCP-Verbindungen auf anderen Ports werden nicht durchgereicht — das ist eine
+  feste Umgebungsgrenze, keine Konfigurationsfrage der Env-Variablen. **Automatisierter
+  FTP-Upload aus dieser Session ist damit ausgeschlossen**, solange sich diese
+  Netzwerk-Beschränkung nicht ändert. Der Nutzer muss `dist/` weiterhin manuell hochladen
+  (siehe Workflow oben).
 
 ## Technischer Aufbau
 
