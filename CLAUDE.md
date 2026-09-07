@@ -71,6 +71,27 @@ Ziel: Diese Regeln senken die laufenden Tokenkosten jeder neuen Session dauerhaf
 ohne dass Qualität oder Nachvollziehbarkeit leiden — im Zweifel hat eine korrekte,
 vollständige Antwort/Änderung immer Vorrang vor dem Tokensparen.
 
+## Unterregel: Aktiv einen Session-Neustart empfehlen, wenn die Session zu lang wird
+
+Sehr lange Sessions verbrauchen pro Antwort mehr Tokens, weil der komplette bisherige
+Gesprächsverlauf mitverarbeitet werden muss. Deshalb gilt zusätzlich, ohne dass der
+Nutzer danach fragen muss:
+
+1. Wird eine Session spürbar lang (viele Themenwechsel, sehr viele Hin-und-Her-Schritte,
+   oder ein deutlich spürbarer werdender Anstieg der Antwortzeiten), aktiv und von mir
+   aus ansprechen — nicht erst warten, bis der Nutzer selbst merkt, dass es zäh wird.
+2. Dabei konkret vorschlagen: aktuellen Stand fertigstellen (laufende Änderung
+   abschließen, nicht mittendrin abbrechen), `CLAUDE.md`/`PROJECT-STATUS.md` auf den
+   neuesten Stand bringen, committen und pushen — und danach eine neue Session zu
+   starten.
+3. Der Sinn dahinter: Eine neue Session liest zu Beginn automatisch `CLAUDE.md` und
+   `PROJECT-STATUS.md` (siehe Regel oben) und ist dadurch sofort auf demselben
+   inhaltlichen Stand, aber ohne den aufgeblähten Gesprächsverlauf der alten Session
+   mitschleppen zu müssen.
+4. Das ist eine aktive Empfehlung, keine automatische Aktion — die Entscheidung, jetzt
+   wirklich eine neue Session zu starten, bleibt beim Nutzer. Ich weise nur proaktiv
+   darauf hin, wenn es so weit ist.
+
 # Workflow: Website-Design (Briefing → Mockup → Umsetzung)
 
 Wenn der Nutzer eine neue Website oder ein neues Seiten-/Komponenten-Design anfragt
