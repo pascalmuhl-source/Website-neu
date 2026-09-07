@@ -8,10 +8,12 @@ Projekt technisch aufgebaut ist, und was aktuell live steht — damit eine neue 
 sich nicht durch den gesamten Chat-Verlauf arbeiten muss, um auf demselben Stand
 weiterzumachen.
 
-**Zuletzt aktualisiert:** 2026-09-07 (Stand nach Nischen-Pivot auf „Sachverständige
-und Gutachter" — Preise, Über-mich-Stats, Portfolio und komplette Copy umgeschrieben,
-Sie-Form eingeführt; davor: Verwerfen des `competitor-analysis`-Skills,
-Kontaktdaten-Eintrag, Google-Business-Profil-Verknüpfung, Google-Ads-Setup und
+**Zuletzt aktualisiert:** 2026-09-07 (Stand nach Kontaktformular-Audit: Datenschutz-
+Hinweis direkt am Formular ergänzt, letzte Du-Form in `datenschutz.html` auf Sie
+umgestellt; davor: Nischen-Pivot auf „Sachverständige und Gutachter" — Preise,
+Über-mich-Stats, Portfolio und komplette Copy umgeschrieben, Sie-Form eingeführt;
+davor: Verwerfen des `competitor-analysis`-Skills, Kontaktdaten-Eintrag,
+Google-Business-Profil-Verknüpfung, Google-Ads-Setup und
 Einführung der Selbstpflege-Regel für diese beiden Dateien).
 
 ## Worum es geht
@@ -158,6 +160,22 @@ Eine One-Page-React-Website für einen selbstständigen Webdesigner:
       rechte Spalte gequetscht statt darunter zu laufen. Fix: eigene Klasse
       `.portfolio-single-meta` (Spalten-Layout) statt der wiederverwendeten
       Zwei-Spalten-Klasse.
+11. **Kontaktformular-Audit:** Nutzer fragte, ob die Formularfelder passen, ob
+    Budget/Zeitrahmen ergänzt werden sollten und welcher Datenschutzhinweis am
+    Formular fehlt. Felder (Name, E-Mail, Nachricht) als bewusst schlank bewertet
+    und so belassen — das eigentliche Briefing passiert laut Prozess-Sektion ohnehin
+    erst im Erstgespräch. Budget-/Zeitrahmen-Feld nicht ergänzt (Abwägung
+    Lead-Qualität vs. Formular-Conversion dem Nutzer zur Entscheidung vorgelegt,
+    noch offen). Echte Lücke gefunden und behoben: Der Datenschutzhinweis zum
+    Kontaktformular stand nur in `datenschutz.html` (nur über Footer-Link
+    erreichbar), nicht direkt am Formular selbst — Art. 13 DSGVO verlangt die
+    Informationspflicht aber zum Zeitpunkt der Datenerhebung. Jetzt ein kurzer
+    Hinweistext mit Link zur Datenschutzerklärung direkt über dem Absenden-Button
+    (`Kontakt.jsx`). Eine Checkbox/Opt-in ist bei reiner Anfragebearbeitung ohne
+    Marketing-Einwilligung nicht zwingend nötig, daher nicht ergänzt. Nebenbei
+    Stilbruch behoben: `datenschutz.html` war in Abschnitt 5 („Kontaktformular")
+    und 8 („Deine Rechte") noch in Du-Form, obwohl die restliche Website seit dem
+    Nischen-Pivot durchgängig Sie-Form nutzt — beide Abschnitte umgestellt.
 
 ## Hosting & Domains — aktueller Live-Stand (verifiziert 2026-09-06)
 
