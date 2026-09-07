@@ -9,7 +9,8 @@ sich nicht durch den gesamten Chat-Verlauf arbeiten muss, um auf demselben Stand
 weiterzumachen.
 
 **Zuletzt aktualisiert:** 2026-09-06 (Stand nach Kontaktdaten-Eintrag, Google-Business-
-Profil-Verknüpfung und Google-Ads-Setup).
+Profil-Verknüpfung, Google-Ads-Setup und Einführung der Selbstpflege-Regel für diese
+beiden Dateien).
 
 ## Worum es geht
 
@@ -102,6 +103,12 @@ Eine One-Page-React-Website für einen selbstständigen Webdesigner:
    Bewertungen) wurde durch „Vertrauen/Prozess"-Headlines ersetzt, weil die
    Portfolio-Zahlen auf der Website noch Platzhalter sind — erfundene Zahlen in
    einer bezahlten Anzeige wären dasselbe § 5-UWG-Risiko wie bei den Testimonials.
+9. **Standing Rule zur Selbstpflege dieser beiden Dateien ergänzt:** Auf Wunsch des
+   Nutzers steht jetzt in `CLAUDE.md` verbindlich, dass `CLAUDE.md` und
+   `PROJECT-STATUS.md` zu Sessionbeginn immer gelesen, nach jedem relevanten Schritt
+   ungefragt aktualisiert und im selben Zug committet/gepusht werden — der Nutzer
+   soll nie manuell um einen Push bitten müssen. Diese Zeile hier ist bereits ein
+   Beispiel dafür, wie diese Regel in der Praxis aussieht.
 
 ## Hosting & Domains — aktueller Live-Stand (verifiziert 2026-09-06)
 

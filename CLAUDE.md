@@ -1,8 +1,39 @@
-**Vor dem Einstieg in dieses Projekt immer zuerst `PROJECT-STATUS.md` lesen.** Diese
-Datei hier (`CLAUDE.md`) enthält die Arbeitsregeln; `PROJECT-STATUS.md` enthält den
-tatsächlichen Verlauf und aktuellen Live-Stand (Hosting, Domains, Deploy-Fehlerquellen,
-offene Punkte) — ohne die Datei fehlt der Kontext, den frühere Sessions bereits
-erarbeitet haben.
+**Zu Beginn jeder Session immer zuerst diese Datei (`CLAUDE.md`) UND
+`PROJECT-STATUS.md` lesen**, bevor mit der eigentlichen Aufgabe begonnen wird.
+`CLAUDE.md` enthält die Arbeitsregeln; `PROJECT-STATUS.md` enthält den tatsächlichen
+Verlauf und aktuellen Live-Stand (Hosting, Domains, Deploy-Fehlerquellen, offene
+Punkte). Ohne beide Dateien fehlt der Kontext, den frühere Sessions bereits
+erarbeitet haben — siehe dazu auch die Regel „Beide Dateien automatisch aktuell
+halten und pushen" weiter unten.
+
+# Regel: CLAUDE.md und PROJECT-STATUS.md automatisch aktuell halten und pushen
+
+Diese Regel gilt für das gesamte Projekt, ab sofort und ohne dass der Nutzer sie je
+erneut anstoßen muss:
+
+1. **Lesen zu Sessionbeginn:** Beide Dateien (`CLAUDE.md`, `PROJECT-STATUS.md`)
+   werden zu Beginn jeder Session gelesen, bevor an der eigentlichen Aufgabe
+   gearbeitet wird (siehe Hinweis oben).
+2. **Schreiben nach jedem abgeschlossenen Schritt:** Nach jeder inhaltlich
+   relevanten Änderung — Code-Änderung, Deploy, Konfigurations-/Domain-/Hosting-
+   Änderung, neu gefundener Bug, neue Entscheidung des Nutzers, neue Standing Rule —
+   wird sofort geprüft und bei Bedarf ergänzt:
+   - **`PROJECT-STATUS.md`** bekommt den neuen Verlaufspunkt bzw. den aktualisierten
+     Live-Stand (siehe bestehende Abschnitte „Werdegang" und „Was noch offen ist").
+   - **`CLAUDE.md`** bekommt eine neue Regel, falls der Nutzer eine neue
+     projektweite Arbeitsweise festgelegt hat (wie diese Regel hier gerade).
+   - Das passiert ungefragt, nicht erst auf Nachfrage — genau wie bei der
+     Artefakt-Screenshot-Regel und der robots.txt/sitemap.xml-Regel oben.
+3. **Committen und Pushen ist Teil desselben Arbeitsschritts, nicht optional:**
+   Jede Aktualisierung dieser beiden Dateien wird im selben Zug committet und nach
+   GitHub gepusht (`git push -u origin claude/webdesigner-one-page-site-grlozr` bzw.
+   den jeweils aktuellen Arbeits-Branch) — im selben Commit wie die zugehörige
+   Code-Änderung oder als eigener kurzer Commit, falls es sich um eine reine
+   Doku-Aktualisierung handelt. Der Nutzer soll nie manuell "jetzt pushen" sagen
+   müssen.
+4. **Ziel:** Eine neue Session soll allein durch Lesen dieser zwei Dateien exakt auf
+   dem aktuellen Stand sein — ohne im Chat-Verlauf einer alten Session nachschlagen
+   zu müssen. Jeder erledigte Schritt muss darin kurz nachvollziehbar sein.
 
 # Workflow: Website-Design (Briefing → Mockup → Umsetzung)
 
