@@ -299,6 +299,29 @@ das gesamte Projekt automatisch, ohne dass der Nutzer das erneut anstoßen muss:
 - Beispiel-Befehl: `curl --ftp-ssl -T <datei> ftps://$FTP_HOST/<pfad>/ --user "$FTP_USER:$FTP_PASS"`
   bzw. für ganze Ordner ein `lftp mirror --reverse`-Kommando.
 
+# Regel: Bei manuellem Upload nur geänderte Dateien bereitstellen
+
+Wenn kein automatisierter FTPS-Upload läuft (siehe Regel oben) und der Nutzer die
+Dateien stattdessen selbst hochladen muss, gilt ab sofort für jede Website-Änderung,
+in jeder Session, ohne erneute Anfrage:
+
+1. Nach einer Code-Änderung `npm run build` ausführen wie bisher (der Build-Prozess
+   selbst bleibt unverändert — er erzeugt weiterhin den kompletten `dist/`-Ordner).
+2. Dem Nutzer zum Download aber **nur die tatsächlich geänderten Dateien** aus `dist/`
+   bereitstellen, nicht den ganzen Ordner erneut. Ermitteln z. B. per Zeitstempel-
+   Vergleich, `git diff --stat` auf dem Build-Output eines vorherigen Builds, oder
+   gezieltem Nachvollziehen, welche Quelldateien sich geändert haben und welche
+   Build-Ausgabedateien davon betroffen sind (bei gehashten Assets ändert sich der
+   Dateiname bei Inhaltsänderung automatisch — das erleichtert die Erkennung).
+3. In der Änderungsmeldung kurz auflisten, welche Datei(en) sich geändert haben und
+   wohin sie im Zielverzeichnis auf dem Server gehören (z. B. `dist/assets/index-
+   ABC123.js` → `htdocs/assets/`), damit der Nutzer beim manuellen Hochladen weiß,
+   was er ersetzen muss.
+4. Ausnahme: Ändert sich strukturell so viel, dass eine eindeutige Zuordnung nicht
+   mehr sinnvoll möglich ist (z. B. nach einem größeren Refactoring mit vielen neuen
+   Dateinamen), das explizit sagen und in diesem Einzelfall den kompletten Ordner
+   bereitstellen — aber das ist die Ausnahme, nicht der Standard.
+
 ## SEO-Status (Pascal Webdesign, Stand: 2026-09, Phase 3 live)
 
 Erledigt: Title-Tag, Meta-Description, saubere Heading-Hierarchie (ein H1, H2 pro
