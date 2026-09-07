@@ -8,7 +8,8 @@ Projekt technisch aufgebaut ist, und was aktuell live steht — damit eine neue 
 sich nicht durch den gesamten Chat-Verlauf arbeiten muss, um auf demselben Stand
 weiterzumachen.
 
-**Zuletzt aktualisiert:** 2026-09-06 (Stand nach Kontaktdaten-Eintrag, Google-Business-
+**Zuletzt aktualisiert:** 2026-09-07 (Stand nach Installation des
+`competitor-analysis`-Skills; davor: Kontaktdaten-Eintrag, Google-Business-
 Profil-Verknüpfung, Google-Ads-Setup und Einführung der Selbstpflege-Regel für diese
 beiden Dateien).
 
@@ -190,9 +191,13 @@ Eine One-Page-React-Website für einen selbstständigen Webdesigner:
 - `CLAUDE.md` — alle verbindlichen Arbeitsregeln (siehe oben, wird bei Bedarf von mir
   selbst erweitert, wenn der Nutzer eine neue Standing Rule festlegt).
 - `.claude/skills/` — Projekt-Skills, u. a. `google-ads-ad-copy` (vom Nutzer
-  hochgeladen, für RSA-Headlines/Beschreibungen), plus die bereits vorhandenen
-  `accessibility`, `copywriting`, `design-taste-frontend`, `frontend-design`,
-  `impeccable`, `performance`, `seo`.
+  hochgeladen, für RSA-Headlines/Beschreibungen), `competitor-analysis` (vom Nutzer
+  am 2026-09-07 als ZIP hochgeladen, für Wettbewerbsanalyse: Ranking-Keywords,
+  Content-Themen, Backlinks, Lücken — **braucht die OpenSEO-MCP-Tools**
+  `get_domain_overview`/`get_ranked_keywords`/etc., die in dieser Session nicht
+  verbunden sind, also aktuell ohne diesen MCP-Server nicht nutzbar), plus die
+  bereits vorhandenen `accessibility`, `copywriting`, `design-taste-frontend`,
+  `frontend-design`, `impeccable`, `performance`, `seo`.
 
 ## Was noch offen ist (siehe „Launch-Checkliste" in CLAUDE.md für die Langfassung)
 
