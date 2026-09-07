@@ -55,6 +55,10 @@ export default function Kontakt() {
               <label htmlFor="website">Website</label>
               <input id="website" name="website" type="text" tabIndex={-1} autoComplete="off" />
             </div>
+            <p className="form-privacy-note">
+              Mit dem Absenden werden Ihre Angaben zur Bearbeitung Ihrer Anfrage per E-Mail an mich
+              weitergeleitet. Mehr dazu in der <a href="./datenschutz.html">Datenschutzerklärung</a>.
+            </p>
             <button type="submit" className="btn-solid contact-submit" disabled={status === STATUS.sending}>
               {status === STATUS.sending ? 'Wird gesendet …' : 'Nachricht senden'}
             </button>

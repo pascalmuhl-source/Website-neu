@@ -336,6 +336,8 @@ a.portfolio-item:hover .portfolio-name { color: var(--accent); }
 .form-honeypot { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
 .contact-submit { background: var(--accent); border-color: var(--accent); }
 .contact-submit:hover { background: transparent; color: var(--paper); }
+.form-privacy-note { font-size: 12px; line-height: 1.5; color: var(--contact-placeholder); margin: -4px 0 0; }
+.form-privacy-note a { color: var(--contact-text); text-decoration: underline; }
 .form-status { font-size: 13px; color: var(--contact-text); }
 .form-status.error { color: #E8A0A0; }
 .form-status.success { color: var(--accent); }
