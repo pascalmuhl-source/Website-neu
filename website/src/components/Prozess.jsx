@@ -1,10 +1,10 @@
 import Reveal from './Reveal.jsx';
 
 const STEPS = [
-  { index: '01', title: 'Erstgespräch', text: 'Kostenloses Gespräch über dein Unternehmen, deine Ziele und was die Website leisten soll.', textShort: 'Kostenloses Gespräch über deine Ziele.' },
+  { index: '01', title: 'Erstgespräch', text: 'Kostenloses Gespräch über Ihr Fachgebiet, Ihre Ziele und was die Website leisten soll.', textShort: 'Kostenloses Gespräch über Ihre Ziele.' },
   { index: '02', title: 'Konzept', text: 'Struktur, Text-Gerüst und erster Design-Entwurf, abgestimmt bevor etwas gebaut wird.', textShort: 'Struktur und erster Design-Entwurf.' },
-  { index: '03', title: 'Umsetzung', text: 'Deine Website wird gebaut, mit dir abgestimmt und laufend feinjustiert.', textShort: 'Deine Website wird gebaut.' },
-  { index: '04', title: 'Launch & Support', text: 'Deine Seite geht live. Danach bleibe ich für Updates und Fragen erreichbar.', textShort: 'Deine Seite geht live.' },
+  { index: '03', title: 'Umsetzung', text: 'Ihre Website wird gebaut, mit Ihnen abgestimmt und laufend feinjustiert.', textShort: 'Ihre Website wird gebaut.' },
+  { index: '04', title: 'Launch & Support', text: 'Ihre Seite geht live. Danach bleibe ich für Updates und Fragen erreichbar.', textShort: 'Ihre Seite geht live.' },
 ];
 
 export default function Prozess() {

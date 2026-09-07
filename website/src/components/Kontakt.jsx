@@ -31,25 +31,25 @@ export default function Kontakt() {
       <div className="contact-grid">
         <div>
           <div className="contact-intro">
-            <h2>Lass uns über dein Projekt sprechen</h2>
+            <h2>Lassen Sie uns über Ihr Projekt sprechen</h2>
             <p>
-              Erzähl mir kurz, was du vorhast. Ich melde mich innerhalb von 24 Stunden für ein
-              kostenloses, unverbindliches Erstgespräch.
+              Erzählen Sie mir kurz, was Sie vorhaben. Ich melde mich innerhalb von 24 Stunden für
+              ein kostenloses, unverbindliches Erstgespräch.
             </p>
           </div>
 
           <form className="contact-form" onSubmit={handleSubmit}>
             <div className="form-field">
               <label htmlFor="name">Name</label>
-              <input id="name" name="name" type="text" placeholder="Dein Name" required autoComplete="name" />
+              <input id="name" name="name" type="text" placeholder="Ihr Name" required autoComplete="name" />
             </div>
             <div className="form-field">
               <label htmlFor="email">E-Mail</label>
-              <input id="email" name="email" type="email" placeholder="deine@email.de" required autoComplete="email" />
+              <input id="email" name="email" type="email" placeholder="ihre@email.de" required autoComplete="email" />
             </div>
             <div className="form-field">
               <label htmlFor="message">Nachricht</label>
-              <textarea id="message" name="message" rows={4} placeholder="Erzähl mir kurz von deinem Projekt." required />
+              <textarea id="message" name="message" rows={4} placeholder="Erzählen Sie mir kurz von Ihrem Projekt." required />
             </div>
             <div className="form-honeypot" aria-hidden="true">
               <label htmlFor="website">Website</label>
@@ -59,11 +59,11 @@ export default function Kontakt() {
               {status === STATUS.sending ? 'Wird gesendet …' : 'Nachricht senden'}
             </button>
             {status === STATUS.success && (
-              <p className="form-status success">Danke! Deine Nachricht ist angekommen, ich melde mich zeitnah.</p>
+              <p className="form-status success">Danke! Ihre Nachricht ist angekommen, ich melde mich zeitnah.</p>
             )}
             {status === STATUS.error && (
               <p className="form-status error">
-                Das hat leider nicht geklappt. Schreib mir gern direkt an pascal@pascal-webdesign.de.
+                Das hat leider nicht geklappt. Schreiben Sie mir gern direkt an pascal@pascal-webdesign.de.
               </p>
             )}
           </form>

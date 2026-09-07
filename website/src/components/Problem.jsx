@@ -2,19 +2,19 @@ import Reveal from './Reveal.jsx';
 
 const ROWS = [
   {
-    title: 'Kein klarer nächster Schritt',
-    mobile: 'Jemand will einen Termin oder ein Angebot, findet aber keinen Weg dahin und ruft stattdessen woanders an.',
-    desktop: 'Jemand will einen Termin oder ein Angebot, findet auf der Seite aber keinen Weg dahin und ruft stattdessen woanders an.',
+    title: 'Keine erkennbare Qualifikation',
+    mobile: 'Fehlt Fachrichtung oder Zulassung auf der Seite, geht die Anfrage von Anwälten oder Versicherungen woanders hin.',
+    desktop: 'Auftraggeber wie Anwälte oder Versicherungen entscheiden in Sekunden, ob sie Ihnen ein Gutachten zutrauen. Fehlt die Fachrichtung oder Zulassung auf der Seite, geht die Anfrage woanders hin.',
   },
   {
     title: 'Nicht für das Handy gemacht',
-    mobile: 'Die meisten suchen unterwegs auf dem Handy nach dir und geben auf, bevor sie dich erreichen.',
-    desktop: 'Die meisten suchen unterwegs auf dem Handy nach dir. Ist die Seite dort kaum lesbar, geben sie auf, bevor sie dich erreichen.',
+    mobile: 'Viele suchen unterwegs auf dem Handy nach Ihnen und geben auf, bevor sie Sie erreichen.',
+    desktop: 'Viele Auftraggeber suchen unterwegs oder direkt bei einem Schadensfall auf dem Handy. Ist die Seite dort kaum lesbar, geben sie auf, bevor sie Sie erreichen.',
   },
   {
-    title: 'Wirkt veraltet',
+    title: 'Wirkt nicht seriös genug',
     mobile: 'Das Vertrauen ist weg, bevor überhaupt jemand anruft.',
-    desktop: 'Eine veraltete Seite wirkt, als wäre auch der Betrieb nicht mehr aktuell. Das Vertrauen ist weg, bevor überhaupt jemand anruft.',
+    desktop: 'Eine veraltete oder unstrukturierte Seite wirkt, als wäre auch die Arbeit dahinter nicht mehr aktuell. Gerade bei Gutachten, die vor Gericht bestehen müssen, ist das Vertrauen weg, bevor überhaupt jemand anruft.',
   },
 ];
 
@@ -22,10 +22,10 @@ export default function Problem() {
   return (
     <Reveal id="problem" className="section section-alt">
       <div className="section-head">
-        <h2>Was eine schlechte Website wirklich kostet</h2>
+        <h2>Was eine schwache Website Sachverständige wirklich kostet</h2>
         <p>
-          Ob Arztpraxis, Handwerksbetrieb oder Kanzlei: Meistens ist nicht das Problem, dass niemand die
-          Website findet. Das Problem ist, dass Besucher sie sich ansehen und trotzdem nicht anrufen.
+          Ob Bau, Kfz, Immobilien oder ein anderes Fachgebiet: Meistens ist nicht das Problem, dass niemand
+          Ihre Website findet. Das Problem ist, dass Auftraggeber sie sich ansehen und trotzdem nicht anrufen.
         </p>
       </div>
 

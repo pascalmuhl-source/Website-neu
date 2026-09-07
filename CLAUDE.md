@@ -270,8 +270,11 @@ echten Launch erledigt werden — der erste ist der wichtigste:**
    `noindex` ist der teuerste Fehler beim Livegang: die Seite bleibt dauerhaft
    unsichtbar in Google, ohne dass es jemandem auffällt. Bei jedem Gespräch über
    "die Seite ist jetzt fertig" aktiv daran erinnern.
-2. **Alle Platzhalter ersetzen** — `[Kundenname 1-3]`, `ab [XXX] €`,
-   `[Name]`/`[Firma]` bei Testimonials, `[X] Jahre`, `[XX] Projekte`.
+2. **Alle Platzhalter ersetzen** — erledigt seit dem Nischen-Pivot auf
+   „Sachverständige und Gutachter" (2026-09-07): Preise (Website-Erstellung ab
+   1.499 €, Redesign ab 1.199 €, Wartung ab 35 €/Monat), Erfahrung (6 Jahre),
+   Portfolio (1 echter Case statt 3 erfundener). **Noch offen:** `[Name]`/`[Firma]`
+   bei Testimonials — bewusst zurückgestellt, bis echte Kundenzitate vorliegen.
    Kontaktdaten (Adresse, Telefon, E-Mail) sind bereits erledigt.
 2b. **Schema.org** — erledigt: `streetAddress`, `telephone`, `email` und `sameAs`
    (Google-Unternehmensprofil-Link) sind im JSON-LD in `website/index.html` gesetzt.

@@ -5,24 +5,30 @@ export default function UeberMich() {
     <Reveal id="ueber-mich" className="section about">
       <div className="about-photo" role="img" aria-label="Porträtfoto von Pascal Muhl" />
       <div className="about-copy">
-        <h2>Pascal Muhl, Webdesigner für KMU und Selbstständige</h2>
+        <h2>Pascal Muhl, Webdesigner für Sachverständige und Gutachter</h2>
         <p>
-          Ich habe selbst lange in kleinen Teams gearbeitet und weiß, dass eine Website Ergebnisse
-          liefern muss, nicht nur gut aussehen. Deshalb kombiniere ich sauberes Design mit klarer
-          Struktur und Texten, die verkaufen, direkt und mit einem festen Ansprechpartner: mir.
+          Ich habe selbst lange in kleinen Teams gearbeitet und weiß, dass eine Website Vertrauen
+          schaffen muss, nicht nur gut aussehen. Deshalb kombiniere ich sauberes Design mit klarer
+          Struktur und Texten, die Ihre Qualifikation zeigen, direkt und mit einem festen
+          Ansprechpartner: mir.
+        </p>
+        <p>
+          Technisch baue ich Ihre Website ohne Google-Fonts-CDN und ohne Tracking-Skripte im
+          Hintergrund, schlank und schnell statt träger Baukasten-Lösung — Punkte, die gerade bei
+          Auftraggebern aus Justiz und Versicherungswesen zählen.
         </p>
         <p>
           Mein Büro sitzt in Windesheim bei Bad Kreuznach, gearbeitet wird deutschlandweit. Ob wir
-          uns vor Ort treffen oder alles per Telefon und Video läuft, entscheidest du.
+          uns vor Ort treffen oder alles per Telefon und Video läuft, entscheiden Sie.
         </p>
         <div className="about-stats">
           <div className="about-stat">
-            <div className="num">[X]</div>
+            <div className="num">6</div>
             <div className="label">Jahre Erfahrung</div>
           </div>
           <div className="about-stat">
-            <div className="num">[XX]</div>
-            <div className="label">Projekte</div>
+            <div className="num">1:1</div>
+            <div className="label">Fester Ansprechpartner</div>
           </div>
         </div>
       </div>

@@ -8,9 +8,11 @@ Projekt technisch aufgebaut ist, und was aktuell live steht — damit eine neue 
 sich nicht durch den gesamten Chat-Verlauf arbeiten muss, um auf demselben Stand
 weiterzumachen.
 
-**Zuletzt aktualisiert:** 2026-09-07 (Stand nach Verwerfen des `competitor-analysis`-
-Skills; davor: Kontaktdaten-Eintrag, Google-Business-Profil-Verknüpfung,
-Google-Ads-Setup und Einführung der Selbstpflege-Regel für diese beiden Dateien).
+**Zuletzt aktualisiert:** 2026-09-07 (Stand nach Nischen-Pivot auf „Sachverständige
+und Gutachter" — Preise, Über-mich-Stats, Portfolio und komplette Copy umgeschrieben,
+Sie-Form eingeführt; davor: Verwerfen des `competitor-analysis`-Skills,
+Kontaktdaten-Eintrag, Google-Business-Profil-Verknüpfung, Google-Ads-Setup und
+Einführung der Selbstpflege-Regel für diese beiden Dateien).
 
 ## Worum es geht
 
@@ -19,8 +21,13 @@ Eine One-Page-React-Website für einen selbstständigen Webdesigner:
 - **Marke:** Pascal Webdesign
 - **Inhaber:** Pascal Muhl
 - **Standort:** 55452 Windesheim (bei Bad Kreuznach)
-- **Zielgruppe:** KMU, Selbstständige, Freiberufler — Einzugsgebiet deutschlandweit,
-  nicht nur lokal
+- **Zielgruppe/Nische (seit 2026-09-07):** Sachverständige und Gutachter,
+  deutschlandweit — nicht mehr die vorherige breite KMU/Selbstständigen-Zielgruppe.
+  Entscheidung nach Marktrecherche (siehe Werdegang, Punkt „Nischen-Pivot" unten):
+  ~15.270 Sachverständige in Deutschland, überwiegend Kleingewerbe/Freiberufler ohne
+  eigenes Marketing, hohe Passung zum DSGVO-/Vertrauens-USP, Preisniveau vertretbar
+  höher als im vorherigen Massenmarkt-Ansatz. Anrede auf der Website durchgängig
+  „Sie" (vorher „du") — passt zur formelleren Zielgruppe.
 - **Live-Domain:** `pascal-webdesign.de`
 - **Alt-Domain:** `content-struktur.de` — leitet per 301 auf die neue Domain um
   (kein eigener Inhalt mehr, siehe „Hosting & Domains" unten)
@@ -109,6 +116,48 @@ Eine One-Page-React-Website für einen selbstständigen Webdesigner:
    ungefragt aktualisiert und im selben Zug committet/gepusht werden — der Nutzer
    soll nie manuell um einen Push bitten müssen. Diese Zeile hier ist bereits ein
    Beispiel dafür, wie diese Regel in der Praxis aussieht.
+10. **Nischen-Pivot auf „Sachverständige und Gutachter":** Nutzer wollte sich auf
+    eine Nische festlegen, Kundengewinnung hat oberste Priorität, Copy darf sich dafür
+    ändern. Zunächst versucht, den vom Nutzer hochgeladenen `competitor-analysis`-Skill
+    zu nutzen (bräuchte einen selbst zu betreibenden/zu bezahlenden OpenSEO-MCP-Server
+    plus DataForSEO-API-Key) — dafür zusätzlich ein `find-skills`-Skill installiert, mit
+    dem der Nutzer den ersten Skill gefunden hatte. Nach Abwägung lohnt sich der
+    MCP-Server-Aufwand für ein einzelnes Projekt nicht — `competitor-analysis` wieder
+    entfernt (`find-skills` bleibt installiert), stattdessen normale Web-Recherche
+    (Marktzahlen, Preisrecherche) verwendet.
+    - **Recherche:** Preisrecherche zu Webdesign-Kosten in Deutschland (One-Pager
+      500–2.500 €, Stundensätze 60–120 €/h Freelancer) sowie eine Top-10-Scoring-Liste
+      möglicher Nischen (Marktgröße, Nachfrage, Website-Wichtigkeit, Preisrange) auf
+      Basis von Statistiken (BRAK, Bundessteuerberaterkammer, listflix.de u. a.).
+      Sachverständige & Gutachter gewann (Score 8,5/10): ~15.270 Sachverständige in
+      Deutschland, größtenteils Kleingewerbe/Freiberufler ohne eigenes Marketing,
+      passt zum bestehenden DSGVO-/Technik-USP (self-hosted Fonts, kein Tracking,
+      SSR-Prerendering) und zum „deutschlandweit remote, fester Ansprechpartner"-Modell.
+      Der Nutzer hatte bereits einen echten Kunden in dieser Kategorie (Sachverständigenbüro
+      für Fenster-/Glasgutachten) — das war der Ausgangspunkt der Empfehlung.
+    - **Umsetzung:** Alle Platzhalter-Preise ersetzt (Website-Erstellung ab 1.499 €,
+      Redesign ab 1.199 €, Wartung ab 35 €/Monat — Preisniveau bewusst über dem
+      vorherigen Massenmarkt-Ansatz angesetzt). „Über mich"-Stats auf echte Werte
+      umgestellt (6 Jahre Erfahrung; die zweite Stat-Kachel zeigt bewusst „1:1 Fester
+      Ansprechpartner" statt einer Projektanzahl, da der Nutzer aktuell nur 1 reales
+      Projekt hat und eine so niedrige Zahl eher schadet als nutzt). Portfolio-Sektion
+      von 3 erfundenen Cases auf 1 echten Case umgebaut (Sachverständigenbüro für
+      Fenster-/Glasgutachten, ohne erfundene Erfolgszahlen — nur Beschreibung dessen,
+      was geliefert wurde). Testimonials bewusst unverändert mit Platzhaltern belassen
+      (Nutzer besorgt echte Zitate später). Komplette Copy (Hero, Problem, Leistungen,
+      Über mich, Prozess, Kontakt) von Du- auf Sie-Form umgestellt und inhaltlich auf
+      die neue Zielgruppe zugeschnitten (Meta-Tags/JSON-LD in `index.html` ebenfalls
+      angepasst). OG-Bild (`website/public/og-image.png`) mit neuer Headline neu
+      gerendert (per Playwright-Screenshot einer lokalen HTML-Vorlage, Design-Tokens
+      1:1 aus `DESIGN-TOKENS.md` übernommen — die Vorlage selbst ist nicht im Repo,
+      nur das fertige PNG).
+    - **Bug gefunden und behoben:** Die neue Portfolio-Einzelkarte nutzte zunächst
+      die bestehende Klasse `.portfolio-meta` (CSS: `display:flex;
+      justify-content:space-between`, gedacht für Name links/Stat-Zahl rechts
+      nebeneinander) — dadurch wurde der neue Beschreibungstext in eine schmale
+      rechte Spalte gequetscht statt darunter zu laufen. Fix: eigene Klasse
+      `.portfolio-single-meta` (Spalten-Layout) statt der wiederverwendeten
+      Zwei-Spalten-Klasse.
 
 ## Hosting & Domains — aktueller Live-Stand (verifiziert 2026-09-06)
 
@@ -207,10 +256,13 @@ Eine One-Page-React-Website für einen selbstständigen Webdesigner:
 Kurzfassung der wichtigsten Punkte, die vor einem echten Launch fehlen:
 
 1. `noindex` entfernen (aktuell absichtlich gesetzt)
-2. Platzhalter ersetzen: Preise, Kundennamen/-zahlen in Portfolio & Testimonials
-   (nur mit echter Kundenfreigabe — sonst § 5 UWG-Risiko). Adresse/Telefon/E-Mail sind
-   bereits erledigt (siehe Werdegang Punkt 7).
-3. Die 5 `href="#"`-Platzhalter-Links (2 Social-Icons, 3 Portfolio-Cases) auflösen
+2. Testimonial-Platzhalter (`[Name]`/`[Firma]`) durch echte Zitate mit Kundenfreigabe
+   ersetzen, sobald vorhanden (siehe Werdegang Punkt 10 — bewusst zurückgestellt).
+   Preise, Erfahrung und der Portfolio-Case sind bereits mit echten Angaben gefüllt
+   (siehe Werdegang Punkt 10).
+3. Die 2 verbleibenden `href="#"`-Platzhalter-Links (Social-Icons im Footer) auflösen
+   oder entfernen — die Portfolio-Cases sind seit dem Nischen-Pivot kein Link mehr,
+   nur noch eine reine Textkarte.
 4. Rechtstexte (Impressum/Datenschutz) sind ausdrücklich Entwürfe, brauchen externe
    Prüfung vor Launch
 5. Google-Unternehmensprofil ist verknüpft (siehe Werdegang Punkt 7) — offen ist nur
