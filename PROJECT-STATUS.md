@@ -195,8 +195,11 @@ Eine One-Page-React-Website für einen selbstständigen Webdesigner:
   am 2026-09-07 als ZIP hochgeladen, für Wettbewerbsanalyse: Ranking-Keywords,
   Content-Themen, Backlinks, Lücken — **braucht die OpenSEO-MCP-Tools**
   `get_domain_overview`/`get_ranked_keywords`/etc., die in dieser Session nicht
-  verbunden sind, also aktuell ohne diesen MCP-Server nicht nutzbar), plus die
-  bereits vorhandenen `accessibility`, `copywriting`, `design-taste-frontend`,
+  verbunden sind, also aktuell ohne diesen MCP-Server nicht nutzbar), `find-skills`
+  (vom Nutzer am 2026-09-07 als ZIP hochgeladen, damit wurde `competitor-analysis`
+  ursprünglich gefunden — nutzt die externe `npx skills`-CLI/skills.sh-Ökosystem,
+  um weitere Skills von GitHub zu suchen und zu installieren), plus die bereits
+  vorhandenen `accessibility`, `copywriting`, `design-taste-frontend`,
   `frontend-design`, `impeccable`, `performance`, `seo`.
 
 ## Was noch offen ist (siehe „Launch-Checkliste" in CLAUDE.md für die Langfassung)
