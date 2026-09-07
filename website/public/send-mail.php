@@ -45,8 +45,16 @@ if ($message === '') {
     exit;
 }
 
-$subject = 'Neue Anfrage über die Website';
-$body = "Name: $name\nE-Mail: $emailRaw\n\nNachricht:\n$message\n";
+// Allow-Liste statt Freitext: verhindert Header-Injection und hält den
+// Wert konsistent mit den Dropdown-Optionen im Formular.
+$anliegenOptions = ['Neue Website', 'Redesign', 'Wartung & Support', 'Sonstiges'];
+$anliegen = (string) ($_POST['anliegen'] ?? '');
+if (!in_array($anliegen, $anliegenOptions, true)) {
+    $anliegen = 'Sonstiges';
+}
+
+$subject = "Neue Anfrage über die Website: $anliegen";
+$body = "Name: $name\nE-Mail: $emailRaw\nWorum geht's: $anliegen\n\nNachricht:\n$message\n";
 $headers = "From: no-reply@" . ($_SERVER['HTTP_HOST'] ?? 'localhost') . "\r\n"
     . "Reply-To: $emailRaw\r\n"
     . "Content-Type: text/plain; charset=UTF-8";

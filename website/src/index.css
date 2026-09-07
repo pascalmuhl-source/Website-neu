@@ -319,6 +319,7 @@ a.portfolio-item:hover .portfolio-name { color: var(--accent); }
 .form-field { display: flex; flex-direction: column; gap: 6px; }
 .form-field label { font-size: 11px; letter-spacing: 0.04em; color: var(--contact-label); }
 .form-field input,
+.form-field select,
 .form-field textarea {
   font-family: inherit;
   font-size: 14px;
@@ -329,6 +330,7 @@ a.portfolio-item:hover .portfolio-name { color: var(--accent); }
   padding-bottom: 8px;
   resize: vertical;
 }
+.form-field select { color-scheme: dark; }
 .form-field input::placeholder,
 .form-field textarea::placeholder { color: var(--contact-placeholder); }
 .form-field input:focus,

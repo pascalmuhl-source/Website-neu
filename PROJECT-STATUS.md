@@ -8,13 +8,15 @@ Projekt technisch aufgebaut ist, und was aktuell live steht — damit eine neue 
 sich nicht durch den gesamten Chat-Verlauf arbeiten muss, um auf demselben Stand
 weiterzumachen.
 
-**Zuletzt aktualisiert:** 2026-09-07 (Stand nach Kontaktformular-Audit: Datenschutz-
-Hinweis direkt am Formular ergänzt, letzte Du-Form in `datenschutz.html` auf Sie
-umgestellt; davor: Nischen-Pivot auf „Sachverständige und Gutachter" — Preise,
-Über-mich-Stats, Portfolio und komplette Copy umgeschrieben, Sie-Form eingeführt;
-davor: Verwerfen des `competitor-analysis`-Skills, Kontaktdaten-Eintrag,
-Google-Business-Profil-Verknüpfung, Google-Ads-Setup und
-Einführung der Selbstpflege-Regel für diese beiden Dateien).
+**Zuletzt aktualisiert:** 2026-09-07 (Stand nach „Worum geht's?"-Dropdown im
+Kontaktformular und eigenem „Positionierung & USPs"-Abschnitt in dieser Datei;
+davor: Kontaktformular-Audit mit Datenschutz-Hinweis direkt am Formular, letzte
+Du-Form in `datenschutz.html` auf Sie umgestellt; davor: Nischen-Pivot auf
+„Sachverständige und Gutachter" — Preise, Über-mich-Stats, Portfolio und komplette
+Copy umgeschrieben, Sie-Form eingeführt; davor: Verwerfen des
+`competitor-analysis`-Skills, Kontaktdaten-Eintrag, Google-Business-Profil-
+Verknüpfung, Google-Ads-Setup und Einführung der Selbstpflege-Regel für diese
+beiden Dateien).
 
 ## Worum es geht
 
@@ -33,6 +35,51 @@ Eine One-Page-React-Website für einen selbstständigen Webdesigner:
 - **Live-Domain:** `pascal-webdesign.de`
 - **Alt-Domain:** `content-struktur.de` — leitet per 301 auf die neue Domain um
   (kein eigener Inhalt mehr, siehe „Hosting & Domains" unten)
+
+## Positionierung & USPs (seit Nischen-Pivot 2026-09-07)
+
+Kompakte Referenz, damit das nicht bei jeder neuen Session erst aus dem Werdegang
+rekonstruiert werden muss — Details/Begründung stehen in Werdegang Punkt 10.
+
+- **Nische:** Sachverständige und Gutachter (branchenübergreifend — Bau, Kfz,
+  Immobilien, Glas/Fenster etc.), deutschlandweit. Nicht mehr die vorherige breite
+  Zielgruppe „KMU, Selbstständige, Freiberufler".
+- **Warum diese Nische:** ~15.270 Sachverständige in Deutschland (BRAK-/Kammerdaten),
+  überwiegend Kleingewerbe/Freiberufler ohne eigenes Marketing. In einer
+  Top-10-Nischen-Bewertung (Marktgröße, Nachfrage, Website-Wichtigkeit, Preisrange)
+  mit Score 8,5/10 auf Platz 1. Ausgangspunkt war ein bereits realer Kunde des
+  Nutzers in dieser Kategorie (Sachverständigenbüro für Fenster-/Glasgutachten).
+- **USPs / Positionierung:**
+  1. **DSGVO-/Vertrauens-first als technisches Fundament:** self-hosted Fonts,
+     kein Tracking ohne Einwilligung, keine automatisch ladenden Drittanbieter-
+     Skripte — kein Nice-to-have, sondern Vertrauensargument gegenüber
+     Auftraggebern aus Justiz/Versicherungswesen.
+  2. **Technische Qualität statt Baukasten:** React-Website mit echtem
+     SSR-Prerendering (kein leeres Client-Side-`<div id="root">`), schnell und
+     sauber crawlbar — Gegensatz zu trägen Wix-/WordPress-Baukasten-Lösungen, die
+     im Wettbewerbsumfeld üblich sind.
+  3. **Solo mit festem Ansprechpartner, deutschlandweit remote:** kein
+     Agentur-Overhead, passt zum meist ebenfalls solo/klein aufgestellten
+     Sachverständigen-Publikum. In der Über-mich-Sektion als Stat-Kachel
+     „1:1 Fester Ansprechpartner" statt einer Projektzahl abgebildet (siehe unten).
+- **Tonalität:** durchgängig Sie-Form (vorher Du-Form) — passt zur formelleren,
+  professionsgebundenen Zielgruppe. Gilt für die gesamte Website inkl. Rechtstexte
+  (`datenschutz.html`, `impressum.html`).
+- **Preisrange (Leistungen-Sektion):** Website-Erstellung ab 1.499 €, Redesign ab
+  1.199 €, Wartung & Support ab 35 €/Monat — bewusst über dem vorherigen
+  Massenmarkt-Ansatz angesetzt, da Sachverständige selbst oft 100+ €/h abrechnen und
+  eine professionelle Website für sie ein Vertrauens-Werkzeug ist, kein Kostenpunkt
+  zum Drücken.
+- **Über-mich-Stats:** 6 Jahre Erfahrung. Bewusst **keine** Projektanzahl genannt (nur
+  1 reales Projekt aktuell) — zweite Stat-Kachel zeigt stattdessen „1:1 Fester
+  Ansprechpartner" als ehrliche, nicht-fabrizierte Kennzahl.
+- **Portfolio:** 1 echter Case (Sachverständigenbüro für Fenster-/Glasgutachten,
+  Relaunch) statt der vorherigen 3 erfundenen Cases mit erfundenen Erfolgszahlen.
+  Keine Erfolgszahlen genannt, da keine echten vorliegen (§ 5 UWG-Risiko sonst).
+- **Noch offen:** Echte Testimonials (Nutzer besorgt sie später, Platzhalter bewusst
+  drin gelassen), Google-Ads-Copy ist noch auf die alte breite Zielgruppe
+  zugeschnitten und müsste bei Bedarf auf die neue Nische umgeschrieben werden
+  (siehe Werdegang Punkt 8 — bislang nicht nachgezogen).
 
 ## Werdegang (chronologisch, siehe `git log` für Details)
 
@@ -176,6 +223,18 @@ Eine One-Page-React-Website für einen selbstständigen Webdesigner:
     Stilbruch behoben: `datenschutz.html` war in Abschnitt 5 („Kontaktformular")
     und 8 („Deine Rechte") noch in Du-Form, obwohl die restliche Website seit dem
     Nischen-Pivot durchgängig Sie-Form nutzt — beide Abschnitte umgestellt.
+12. **„Worum geht's?"-Dropdown ergänzt:** Nutzer entschied sich gegen ein
+    Budget-/Zeitrahmen-Feld (Punkt 11 oben), aber für ein niedrig-friktives
+    Auswahlfeld zur Anfrage-Kategorisierung. Neues optionales Select-Feld
+    `anliegen` in `Kontakt.jsx` mit den vier Optionen aus der Leistungen-Sektion
+    (Neue Website / Redesign / Wartung & Support / Sonstiges), Default „Neue
+    Website" vorausgewählt, damit die Formular-Conversion nicht durch einen
+    Pflicht-Klick leidet. `send-mail.php` validiert den Wert gegen eine
+    Allow-Liste (verhindert Header-Injection über das Feld, fällt bei unbekanntem
+    Wert auf „Sonstiges" zurück) und nimmt ihn in Betreff und Mail-Body auf.
+    Zusätzlich in dieser Datei einen eigenen Abschnitt „Positionierung & USPs"
+    ergänzt, der Nische, USPs und Preisrange kompakt zusammenfasst — vorher nur
+    verstreut im Werdegang-Fließtext auffindbar.
 
 ## Hosting & Domains — aktueller Live-Stand (verifiziert 2026-09-06)
 

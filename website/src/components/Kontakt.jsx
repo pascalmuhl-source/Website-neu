@@ -48,6 +48,15 @@ export default function Kontakt() {
               <input id="email" name="email" type="email" placeholder="ihre@email.de" required autoComplete="email" />
             </div>
             <div className="form-field">
+              <label htmlFor="anliegen">Worum geht's?</label>
+              <select id="anliegen" name="anliegen" defaultValue="Neue Website">
+                <option value="Neue Website">Neue Website</option>
+                <option value="Redesign">Redesign</option>
+                <option value="Wartung & Support">Wartung & Support</option>
+                <option value="Sonstiges">Sonstiges</option>
+              </select>
+            </div>
+            <div className="form-field">
               <label htmlFor="message">Nachricht</label>
               <textarea id="message" name="message" rows={4} placeholder="Erzählen Sie mir kurz von Ihrem Projekt." required />
             </div>
