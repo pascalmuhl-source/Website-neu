@@ -35,6 +35,42 @@ erneut anstoßen muss:
    dem aktuellen Stand sein — ohne im Chat-Verlauf einer alten Session nachschlagen
    zu müssen. Jeder erledigte Schritt muss darin kurz nachvollziehbar sein.
 
+# Regel: Token-Sparen — dauerhaft, ungefragt anzuwenden
+
+Diese Punkte gelten ab sofort für jede Session in diesem Projekt, ohne dass der
+Nutzer sie erneut anstoßen muss:
+
+1. **Doku schlank halten:** `CLAUDE.md` und `PROJECT-STATUS.md` enthalten nur den
+   aktuellen Stand, keine ausführliche Verlaufsprosa. Erledigte/veraltete Abschnitte
+   (z. B. abgeschlossene Recherchen, überholte Zwischenstände) werden bei der
+   nächsten Bearbeitung auf einen kurzen Einzeiler zusammengefasst statt als
+   Fließtext stehen zu bleiben. Details, die nicht mehr gebraucht werden, gehören in
+   `git log`, nicht in diese Dateien.
+2. **Gezielt lesen statt ganze Dateien neu einlesen:** Bei großen Dateien (z. B.
+   `index.html`, `index.css`) mit `Grep`/gezieltem Offset nur den relevanten
+   Abschnitt lesen, nicht die komplette Datei bei jeder kleinen Änderung neu laden.
+3. **Keine Subagents für triviale Änderungen:** Ein Subagent (Task/Agent-Tool) lohnt
+   sich nur bei echter Breitensuche über viele Dateien/unklarem Ziel. Für eine klar
+   umrissene Einzeländerung (eine Zeile in `robots.txt`, ein Text in einer Sektion)
+   wird direkt editiert, kein Subagent gestartet.
+4. **Design-/Anti-Slop-Skills nur bei echtem Layout-/Design-Bedarf laden:**
+   `frontend-design`, `impeccable`, `design-taste-frontend` etc. nur aufrufen, wenn
+   tatsächlich Layout/Typografie/Visuelles entsteht oder überarbeitet wird. Reine
+   Text-, Daten- oder Konfigurationsänderungen ohne Design-Bezug laufen ohne
+   Skill-Aufruf.
+5. **Ein Screenshot pro Änderungsmeldung reicht:** Die Artefakt-Screenshot-Pflicht
+   (siehe eigene Regel unten) gilt am fertigen Zwischenstand, der dem Nutzer gemeldet
+   wird — nicht zusätzlich bei jedem kleinen Zwischenschritt auf dem Weg dahin.
+6. **Bash-Output klein halten:** Bei Befehlen mit potenziell langem Output (z. B.
+   `npm run build`) nur die relevanten Zeilen (Fehler, Zusammenfassung) im Chat
+   zeigen, nicht den kompletten Rohoutput.
+7. **Knapp antworten:** Kurze, direkte Antworten statt langer Erklärungen, wenn eine
+   knappe Antwort die Frage vollständig beantwortet.
+
+Ziel: Diese Regeln senken die laufenden Tokenkosten jeder neuen Session dauerhaft,
+ohne dass Qualität oder Nachvollziehbarkeit leiden — im Zweifel hat eine korrekte,
+vollständige Antwort/Änderung immer Vorrang vor dem Tokensparen.
+
 # Workflow: Website-Design (Briefing → Mockup → Umsetzung)
 
 Wenn der Nutzer eine neue Website oder ein neues Seiten-/Komponenten-Design anfragt

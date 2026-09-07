@@ -8,9 +8,8 @@ Projekt technisch aufgebaut ist, und was aktuell live steht — damit eine neue 
 sich nicht durch den gesamten Chat-Verlauf arbeiten muss, um auf demselben Stand
 weiterzumachen.
 
-**Zuletzt aktualisiert:** 2026-09-06 (Stand nach Kontaktdaten-Eintrag, Google-Business-
-Profil-Verknüpfung, Google-Ads-Setup und Einführung der Selbstpflege-Regel für diese
-beiden Dateien).
+**Zuletzt aktualisiert:** 2026-09-07 (Token-Sparen-Regel in CLAUDE.md ergänzt, dieser
+Werdegang-Abschnitt zur Tokenersparnis verschlankt — siehe Punkt 10).
 
 ## Worum es geht
 
@@ -25,90 +24,39 @@ Eine One-Page-React-Website für einen selbstständigen Webdesigner:
 - **Alt-Domain:** `content-struktur.de` — leitet per 301 auf die neue Domain um
   (kein eigener Inhalt mehr, siehe „Hosting & Domains" unten)
 
-## Werdegang (chronologisch, siehe `git log` für Details)
+## Werdegang (Kurzfassung, siehe `git log` für Details)
 
-1. **Briefing übersprungen** — Nutzer gab direkt eine detaillierte Struktur vor
-   (Header/Hero/Leistungen/Portfolio/Über-mich/Prozess/Testimonials/Kontakt/Footer).
-2. **Phase 2 (Mockup):** Erst über Figma versucht, dann wegen Rate-Limit auf den
-   `design`-Skill (Design Canvas) umgestellt. v1 gebaut, gegen die Anti-Slop-Skills
-   (`design-taste-frontend`, `frontend-design`, `accessibility`) geprüft und
-   durchgefallen (Standard-Font-Pairing, verbotene Farbpalette, Em-Dashes,
-   Eyebrow-Überladung, wiederholte Card-Grid-Layouts). **v2 komplett neu gebaut**,
-   alle Verstöße behoben. Mehrere Iterationsrunden: Problem-Sektion ergänzt (Kunde
-   soll sich in den Schmerzpunkten wiedererkennen), Hero-Bild/Text-Anordnung verfeinert,
-   Farbfehler bei einer Sektion korrigiert, Copy auf konkreten Kundennutzen statt KPIs
-   umgeschrieben.
-   - Ein echter Bug wurde dabei gefunden und behoben: `IntersectionObserver`-basierte
-     Scroll-Reveal-Animationen blieben im Design-Canvas-Rendering-Kontext hängen
-     (Inhalt ab Portfolio blieb bei `opacity:0`) → deshalb dort entfernt. **Wichtig:**
-     Dieser Bug war spezifisch für den Design-Canvas-Kontext, nicht für echtes React —
-     im späteren Phase-3-Build wurden Scroll-Reveal-Animationen erneut eingebaut und
-     funktionieren dort einwandfrei (siehe unten).
-3. **Phase 3 (React-Umsetzung):** Vite + React, mobile-first, minimale Dependencies
-   (nur `react`/`react-dom`). Mockup 1:1 in Komponenten übertragen, self-hosted
-   Variable-Fonts (Archivo, Cormorant Garamond, SIL OFL 1.1 — kommerzielle Nutzung
-   ausdrücklich erlaubt), echtes Kontaktformular mit PHP-Mail-Handler.
-   - **Bug gefunden und behoben:** Mobiles Hamburger-Menü war in der Sticky-Nav
-     verschachtelt, die `backdrop-filter` nutzt — das macht die Nav laut CSS-Spec zum
-     Containing Block für `position:fixed`-Kinder, wodurch das Menü sich nur über die
-     Nav-Höhe statt den ganzen Bildschirm legte. Fix: Menü liegt jetzt als
-     Geschwister-Element außerhalb der Nav.
-4. **Animationen ergänzt** (auf Nutzerwunsch, nach Analyse von apple.com als
-   Referenz): Scroll-Reveal pro Sektion, gestaffelte Reveals bei Prozess-Schritten/
-   Testimonials, zeilenweise Headline-Reveal in der Hero, Hover-Effekte bei Buttons/
-   Portfolio-Karten. Bewusst NICHT übernommen: scroll-gekoppelte Video-Sequenzen,
-   gepinnte Sektionen — zu aufwändig/unpassend für dieses Projekt. Auf Nutzer-Feedback
-   („zu schnell") wurden alle Timings um ca. 40-60 % verlangsamt.
-5. **SEO-Audit** (20-Punkte-Checkliste durchgegangen, live gegen den damaligen Stand
-   geprüft) ergab kritische Lücken: Seite lieferte für Crawler nur ein leeres
-   `<div id="root">` aus (reines Client-Side-Rendering), keine Local-SEO-Signale,
-   Marke/Domain passten nicht zusammen. Behoben:
-   - **Prerendering** eingebaut (Vite-SSR-Build, kein neues Framework/Dependency —
-     `react-dom/server` ist Teil von React). Baut jetzt echtes HTML zur Build-Zeit,
-     der Client hydratisiert nur noch.
-   - `noindex` gesetzt, bis Platzhalter-Inhalte ersetzt sind
-   - Canonical, Open-Graph/Twitter-Tags, gerendertes OG-Bild (1200×630)
-   - `ProfessionalService`-JSON-LD-Schema mit Adresse (Windesheim) und
-     `areaServed: Deutschland`
-   - Custom-404-Seite, `.htaccess` mit Cache-Headern (gehashte Assets 1 Jahr
-     `immutable`, HTML `must-revalidate`) und Security-Headern
-   - `robots.txt`/`sitemap.xml` (Sitemap listet nur die indexierbare Startseite,
-     nicht die `noindex`-Rechtsseiten)
-6. **Rebranding:** Ursprüngliche Platzhalter-Marke „KONTUR" auf Domain
-   `content-struktur.de` → umbenannt in „Pascal Webdesign" auf `pascal-webdesign.de`.
-   Dabei ein Layout-Bug gefunden: Der längere Markenname kollidierte zwischen 880 und
-   1000px mit der Nav-Linkleiste und brach um → Umbruchpunkt für die volle Nav auf
-   1000px verschoben (`.nav-logo { white-space: nowrap }` ergänzt).
-7. **Echte Kontaktdaten eingetragen** (Adresse Ringstraße 2/55452 Windesheim, Telefon
-   0173 1043823, E-Mail pascal@pascal-webdesign.de) in Impressum, Datenschutz,
-   Kontakt-Sektion, `send-mail.php` und im JSON-LD-Schema (`streetAddress`,
-   `telephone`, `email`). Google-Unternehmensprofil verknüpft über `sameAs` im Schema
-   plus einen sichtbaren „Auf Google ansehen"-Link im Kontaktbereich
-   (https://share.google/AIW6wayHq9MifU8qP — vom Nutzer bereitgestellt, aus dieser
-   Umgebung heraus nicht erreichbar/verifizierbar, da `share.google` nicht in der
-   Netzwerk-Freigabe steht).
-   - **Zwei echte Bugs gefunden und behoben**, die erst mit echtem Inhalt statt
-     Platzhalter-Klammern sichtbar wurden: `.contact-direct` hatte nur im
-     Desktop-Media-Query eine Flex-Column-Layout-Regel, dadurch liefen die
-     E-Mail-/Telefon-/Google-Links auf Mobile ohne Zeilenumbruch ineinander. Und
-     dieselben Links hatten unterhalb 880px keine eigene Farbregel, fielen also auf
-     `a { color: var(--ink) }` zurück — dunkler Text auf dem dunklen Kontakt-Hintergrund,
-     unsichtbar. Beide Regeln sind jetzt mobile-first Standard statt nur Desktop-Zusatz.
-8. **Google-Ads-Vorbereitung:** Skill `google-ads-ad-copy` (vom Nutzer als ZIP
-   hochgeladen) nach `.claude/skills/google-ads-ad-copy/` entpackt und committet.
-   Damit RSA-Headlines (15, je max. 30 Zeichen, nach den 5 Kategorien des Skills:
-   Kernaussage/Kundennutzen/Vertrauen/CTA/Differenzierung) und 4 Beschreibungszeilen
-   (je max. 90 Zeichen) entworfen — nicht Teil des Repos, nur im Chat besprochen.
-   **Bewusste Lücke:** Die Social-Proof-Kategorie des Skills (echte Kundenzahlen/
-   Bewertungen) wurde durch „Vertrauen/Prozess"-Headlines ersetzt, weil die
-   Portfolio-Zahlen auf der Website noch Platzhalter sind — erfundene Zahlen in
-   einer bezahlten Anzeige wären dasselbe § 5-UWG-Risiko wie bei den Testimonials.
-9. **Standing Rule zur Selbstpflege dieser beiden Dateien ergänzt:** Auf Wunsch des
-   Nutzers steht jetzt in `CLAUDE.md` verbindlich, dass `CLAUDE.md` und
-   `PROJECT-STATUS.md` zu Sessionbeginn immer gelesen, nach jedem relevanten Schritt
-   ungefragt aktualisiert und im selben Zug committet/gepusht werden — der Nutzer
-   soll nie manuell um einen Push bitten müssen. Diese Zeile hier ist bereits ein
-   Beispiel dafür, wie diese Regel in der Praxis aussieht.
+1. Briefing übersprungen — Nutzer gab Struktur direkt vor (Header/Hero/Leistungen/
+   Portfolio/Über-mich/Prozess/Testimonials/Kontakt/Footer).
+2. Phase 2 (Mockup): über `design`-Skill (Design Canvas) gebaut, v1 gegen Anti-Slop-
+   Skills durchgefallen, v2 alle Verstöße behoben und freigegeben.
+3. Phase 3 (React-Umsetzung): Vite + React, mobile-first, minimale Dependencies,
+   Mockup 1:1 übertragen, self-hosted Fonts, PHP-Kontaktformular. Bug behoben: Mobiles
+   Menü lag verschachtelt in der Sticky-Nav (`backdrop-filter` erzeugt Containing
+   Block) → Menü liegt jetzt als Geschwister-Element außerhalb der Nav.
+4. Animationen ergänzt (Scroll-Reveal, gestaffelte Reveals, Hover-Effekte), Timings
+   nach Nutzer-Feedback um 40-60 % verlangsamt.
+5. SEO-Audit ergab kritische Lücken (reines Client-Side-Rendering ohne Local-SEO-
+   Signale) → behoben: Prerendering (Vite-SSR), `noindex` bis Launch, Canonical/OG/
+   Twitter-Tags, `ProfessionalService`-JSON-LD, Custom-404, `.htaccess` Cache-/
+   Security-Header, `robots.txt`/`sitemap.xml`.
+6. Rebranding „KONTUR"/`content-struktur.de` → „Pascal Webdesign"/`pascal-webdesign.de`.
+   Bug behoben: Markenname kollidierte 880-1000px mit Nav → Umbruchpunkt verschoben.
+7. Echte Kontaktdaten eingetragen (Adresse, Telefon, E-Mail) in Impressum, Datenschutz,
+   Kontakt-Sektion, `send-mail.php`, JSON-LD. Google-Unternehmensprofil per `sameAs`
+   verknüpft (https://share.google/AIW6wayHq9MifU8qP). Zwei Mobile-Bugs behoben:
+   fehlende Flex-Column- und Farbregel bei `.contact-direct` unterhalb 880px.
+8. Google-Ads-Vorbereitung: Skill `google-ads-ad-copy` eingebunden, RSA-Headlines/
+   Beschreibungen entworfen (nur im Chat, nicht im Repo). Bewusste Lücke: Social-Proof-
+   Kategorie durch „Vertrauen/Prozess" ersetzt, da Portfolio-Zahlen noch Platzhalter
+   sind (§ 5 UWG-Risiko bei erfundenen Zahlen).
+9. Selbstpflege-Regel für `CLAUDE.md`/`PROJECT-STATUS.md` eingeführt (lesen zu
+   Sessionbeginn, ungefragt aktualisieren, im selben Zug committen/pushen).
+10. Token-Sparen-Regel eingeführt (2026-09-07): schlanke Doku (dieser Abschnitt wurde
+    dafür bereits verschlankt), gezieltes Lesen statt ganzer Dateien, keine Subagents
+    für triviale Änderungen, Design-Skills nur bei echtem Design-Bedarf, ein
+    Screenshot pro Änderungsmeldung, kompakter Bash-Output, knappe Antworten —
+    Details siehe „Regel: Token-Sparen" in `CLAUDE.md`.
 
 ## Hosting & Domains — aktueller Live-Stand (verifiziert 2026-09-06)
 
