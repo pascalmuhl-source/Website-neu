@@ -8,7 +8,8 @@ Projekt technisch aufgebaut ist, und was aktuell live steht — damit eine neue 
 sich nicht durch den gesamten Chat-Verlauf arbeiten muss, um auf demselben Stand
 weiterzumachen.
 
-**Zuletzt aktualisiert:** 2026-09-06 (Stand nach vollständig verifiziertem Live-Deploy).
+**Zuletzt aktualisiert:** 2026-09-06 (Stand nach Kontaktdaten-Eintrag, Google-Business-
+Profil-Verknüpfung und Google-Ads-Setup).
 
 ## Worum es geht
 
@@ -77,6 +78,30 @@ Eine One-Page-React-Website für einen selbstständigen Webdesigner:
    Dabei ein Layout-Bug gefunden: Der längere Markenname kollidierte zwischen 880 und
    1000px mit der Nav-Linkleiste und brach um → Umbruchpunkt für die volle Nav auf
    1000px verschoben (`.nav-logo { white-space: nowrap }` ergänzt).
+7. **Echte Kontaktdaten eingetragen** (Adresse Ringstraße 2/55452 Windesheim, Telefon
+   0173 1043823, E-Mail pascal@pascal-webdesign.de) in Impressum, Datenschutz,
+   Kontakt-Sektion, `send-mail.php` und im JSON-LD-Schema (`streetAddress`,
+   `telephone`, `email`). Google-Unternehmensprofil verknüpft über `sameAs` im Schema
+   plus einen sichtbaren „Auf Google ansehen"-Link im Kontaktbereich
+   (https://share.google/AIW6wayHq9MifU8qP — vom Nutzer bereitgestellt, aus dieser
+   Umgebung heraus nicht erreichbar/verifizierbar, da `share.google` nicht in der
+   Netzwerk-Freigabe steht).
+   - **Zwei echte Bugs gefunden und behoben**, die erst mit echtem Inhalt statt
+     Platzhalter-Klammern sichtbar wurden: `.contact-direct` hatte nur im
+     Desktop-Media-Query eine Flex-Column-Layout-Regel, dadurch liefen die
+     E-Mail-/Telefon-/Google-Links auf Mobile ohne Zeilenumbruch ineinander. Und
+     dieselben Links hatten unterhalb 880px keine eigene Farbregel, fielen also auf
+     `a { color: var(--ink) }` zurück — dunkler Text auf dem dunklen Kontakt-Hintergrund,
+     unsichtbar. Beide Regeln sind jetzt mobile-first Standard statt nur Desktop-Zusatz.
+8. **Google-Ads-Vorbereitung:** Skill `google-ads-ad-copy` (vom Nutzer als ZIP
+   hochgeladen) nach `.claude/skills/google-ads-ad-copy/` entpackt und committet.
+   Damit RSA-Headlines (15, je max. 30 Zeichen, nach den 5 Kategorien des Skills:
+   Kernaussage/Kundennutzen/Vertrauen/CTA/Differenzierung) und 4 Beschreibungszeilen
+   (je max. 90 Zeichen) entworfen — nicht Teil des Repos, nur im Chat besprochen.
+   **Bewusste Lücke:** Die Social-Proof-Kategorie des Skills (echte Kundenzahlen/
+   Bewertungen) wurde durch „Vertrauen/Prozess"-Headlines ersetzt, weil die
+   Portfolio-Zahlen auf der Website noch Platzhalter sind — erfundene Zahlen in
+   einer bezahlten Anzeige wären dasselbe § 5-UWG-Risiko wie bei den Testimonials.
 
 ## Hosting & Domains — aktueller Live-Stand (verifiziert 2026-09-06)
 
@@ -157,6 +182,10 @@ Eine One-Page-React-Website für einen selbstständigen Webdesigner:
 - `DESIGN-TOKENS.md` — Schriften/Farben/Größen als reine Werte-Referenz.
 - `CLAUDE.md` — alle verbindlichen Arbeitsregeln (siehe oben, wird bei Bedarf von mir
   selbst erweitert, wenn der Nutzer eine neue Standing Rule festlegt).
+- `.claude/skills/` — Projekt-Skills, u. a. `google-ads-ad-copy` (vom Nutzer
+  hochgeladen, für RSA-Headlines/Beschreibungen), plus die bereits vorhandenen
+  `accessibility`, `copywriting`, `design-taste-frontend`, `frontend-design`,
+  `impeccable`, `performance`, `seo`.
 
 ## Was noch offen ist (siehe „Launch-Checkliste" in CLAUDE.md für die Langfassung)
 
@@ -164,14 +193,19 @@ Kurzfassung der wichtigsten Punkte, die vor einem echten Launch fehlen:
 
 1. `noindex` entfernen (aktuell absichtlich gesetzt)
 2. Platzhalter ersetzen: Preise, Kundennamen/-zahlen in Portfolio & Testimonials
-   (nur mit echter Kundenfreigabe — sonst § 5 UWG-Risiko), Straße im Impressum,
-   Telefonnummer, Empfänger-E-Mail in `send-mail.php`
+   (nur mit echter Kundenfreigabe — sonst § 5 UWG-Risiko). Adresse/Telefon/E-Mail sind
+   bereits erledigt (siehe Werdegang Punkt 7).
 3. Die 5 `href="#"`-Platzhalter-Links (2 Social-Icons, 3 Portfolio-Cases) auflösen
 4. Rechtstexte (Impressum/Datenschutz) sind ausdrücklich Entwürfe, brauchen externe
    Prüfung vor Launch
-5. Google-Unternehmensprofil anlegen (noch nicht gemacht)
+5. Google-Unternehmensprofil ist verknüpft (siehe Werdegang Punkt 7) — offen ist nur
+   noch, ob die Google-seitige Verifizierung (Postkarte/Telefon/Video) beim Nutzer
+   bereits abgeschlossen ist.
 6. Hero-Bild-Kontrast auf Mobile neu prüfen, sobald ein echtes Foto das
    Platzhalter-Gradient ersetzt (rechnerisch grenzwertig unter WCAG AA)
+7. Google Ads: sobald echte Google-Bewertungen oder eine dokumentierte Kundenzahl
+   vorliegen, die „Vertrauen/Prozess"-Headlines (siehe Werdegang Punkt 8) durch echte
+   Social-Proof-Headlines ersetzen/ergänzen.
 
 ## Wie man den aktuellen Live-Stand schnell verifiziert
 
