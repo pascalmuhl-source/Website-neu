@@ -261,6 +261,27 @@ rekonstruiert werden muss — Details/Begründung stehen in Werdegang Punkt 10.
       anderen Sektionen über die CSS-Klasse auf 48px gehen — dadurch wirkten
       genau diese drei Sektionen oben „gedrückt". Inline-Override entfernt,
       jetzt einheitlicher Abstand unter jeder Section-Überschrift.
+31. **Typografie-Skala bereinigt** (2026-09-08): Auf Nachfrage geprüft, wie
+    viele unterschiedliche Schriftgrößen im Einsatz sind — 25 verschiedene
+    `font-size`-Werte in `index.css`, viele davon nur 0,5px auseinander
+    (13/13.5/14/14.5/15/15.5 als Fließtext, 9.5/10.5/11/11.5/12/12.5 als
+    Label-/Meta-Text) ohne erkennbaren Hierarchie-Zweck — reine Drift durch
+    viele kleine Einzeländerungen über die Zeit, keine Best Practice.
+    Bereinigt auf eine disziplinierte Skala: zwei Label-Größen (11px für
+    kompakte Badges/Feldlabels wie `tag-new`, `process-duration`,
+    `process-fields dt`; 12px für alle anderen Bildunterschriften/Meta-Texte),
+    fünf Fließtext-Größen (13/14/15/16/18), plus die bestehenden, bereits
+    sinnvoll unterschiedlichen Überschriften-Größen (17/19/21/22/24/26/30/32
+    sowie die fluiden `clamp()`-Überschriften). `section-head h2` und
+    `contact h2` liefen mobil auf `1.65rem` (≈26,4px) statt auf dem bereits
+    genutzten `26px` — auf px vereinheitlicht, dadurch ein Wert weniger.
+    `.selftest-head` lag mobil bei 14.5px und deckte sich erst auf Desktop
+    zufällig mit `branchen-card h3` (15px) — jetzt beide Breakpoints auf 15px,
+    doppelte Desktop-Regel dadurch überflüssig und entfernt. Ergebnis: 25 auf
+    15 echte Werte reduziert. Dead Code `.text-link` (seit Entfernung des
+    Portfolio-Links im Hero ungenutzt) mit entfernt. Visuell auf Desktop und
+    Mobile gegengeprüft (Playwright/Chromium) — keine sichtbare Änderung am
+    Gesamteindruck, nur konsistentere Werte darunter.
 
 ## Hosting & Domains — aktueller Live-Stand (verifiziert 2026-09-06)
 
