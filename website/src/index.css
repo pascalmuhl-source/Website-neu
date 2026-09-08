@@ -569,13 +569,13 @@ button { font-family: inherit; cursor: pointer; }
   .process-step > div { display: grid; grid-template-columns: 1.3fr 1fr; gap: 40px; flex: 1; align-items: start; }
   .process-step-head, .process-step .only-mobile, .process-step .only-desktop { grid-column: 1; }
   .process-step h3 { font-size: 18px; }
-  .process-step p { font-size: 14px; line-height: 1.6; max-width: 52ch; }
+  .process-step p { font-size: 14px; line-height: 1.6; }
   .process-fields { grid-column: 2; grid-template-columns: 230px 1fr; gap: 4px 32px; margin-top: 0; }
   .process-fields div { font-size: 13px; }
   .process-fields dt { font-size: 10.5px; }
 
   .faq-summary { font-size: 15.5px; padding: 18px 4px; }
-  .faq-item p { font-size: 14.5px; max-width: 68ch; }
+  .faq-item p { font-size: 14.5px; }
 
   .testimonial-grid {
     display: grid;

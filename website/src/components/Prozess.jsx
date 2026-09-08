@@ -62,7 +62,7 @@ const STEPS = [
 export default function Prozess() {
   return (
     <div id="prozess" className="section section-alt">
-      <Reveal className="section-head" style={{ marginBottom: 28 }}>
+      <Reveal className="section-head">
         <h2>So läuft die Zusammenarbeit ab</h2>
       </Reveal>
       <div className="process-list">

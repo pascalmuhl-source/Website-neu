@@ -244,6 +244,23 @@ rekonstruiert werden muss — Details/Begründung stehen in Werdegang Punkt 10.
       React-State + CSS-Grid-Rows-Technik (`grid-template-rows: 0fr → 1fr`)
       umgestellt — animiert jetzt weich beim Öffnen/Schließen, mit
       `prefers-reduced-motion`-Fallback.
+30. **Skill-Regel nachträglich eingehalten + weitere Feinschliffe** (2026-09-08):
+    Nutzer merkte an, dass die vier Pflicht-Design-Skills bei den letzten
+    CSS-Fixes nicht erneut geladen wurden — Standing Rule gilt ausnahmslos,
+    auch bei kleinen Layout-Korrekturen. Nachgeholt, danach drei weitere
+    gemeldete Probleme behoben:
+    - `.process-step p` und `.faq-item p` hatten je ein `max-width` in
+      Zeichen (52ch/68ch) auf Desktop, das Text unnötig früh umbrechen ließ,
+      obwohl in der Grid-Spalte mehr Platz vorhanden war (z. B. bei
+      „Unverbindliche Anfrage" entstand dadurch ein großer Leerraum vor der
+      Aufwand-Spalte). Entfernt — Text läuft jetzt bis zur tatsächlichen
+      Spaltenbreite durch.
+    - Spacing-Audit der ganzen Seite: `Portfolio.jsx`, `Prozess.jsx` und
+      `Testimonials.jsx` hatten ein inline `style={{ marginBottom: 28 }}` auf
+      `.section-head`, das auf Desktop fix bei 28px blieb, während alle
+      anderen Sektionen über die CSS-Klasse auf 48px gehen — dadurch wirkten
+      genau diese drei Sektionen oben „gedrückt". Inline-Override entfernt,
+      jetzt einheitlicher Abstand unter jeder Section-Überschrift.
 
 ## Hosting & Domains — aktueller Live-Stand (verifiziert 2026-09-06)
 

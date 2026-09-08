@@ -18,7 +18,7 @@ const QUOTES = [
 export default function Testimonials() {
   return (
     <div id="testimonials" className="section">
-      <Reveal className="section-head" style={{ marginBottom: 28 }}>
+      <Reveal className="section-head">
         <h2>Was Kund:innen sagen</h2>
       </Reveal>
 

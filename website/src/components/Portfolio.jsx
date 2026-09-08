@@ -3,7 +3,7 @@ import Reveal from './Reveal.jsx';
 export default function Portfolio() {
   return (
     <Reveal id="portfolio" className="section section-alt">
-      <div className="section-head" style={{ marginBottom: 28 }}>
+      <div className="section-head">
         <h2>Ein Projekt aus der Praxis</h2>
       </div>
       <div className="portfolio-single">
