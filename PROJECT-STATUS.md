@@ -8,11 +8,13 @@ Projekt technisch aufgebaut ist, und was aktuell live steht — damit eine neue 
 sich nicht durch den gesamten Chat-Verlauf arbeiten muss, um auf demselben Stand
 weiterzumachen.
 
-**Zuletzt aktualisiert:** 2026-09-08 (Stand nach Verwerfen der Flat-Vector-
-Post-Bilder: Nutzer-Feedback „sieht zu sehr nach KI aus, erzeugt keine
-Aufmerksamkeit" — alle 16 `Prompt.txt` auf fotorealistische, dokumentarische
-Prompts umgeschrieben, alte `Bild.png`-Dateien entfernt, siehe Werdegang
-unten; davor: Erstellung aller 48 Post-Bilder als `Bild.png` in
+**Zuletzt aktualisiert:** 2026-09-08 (Stand nach Erstellung des Markenkits
+(`brandkit`-Skill, Artefakt veröffentlicht, als PNG geliefert) und Verankerung
+als verbindliche Grundlage für alle künftigen Inhalte in `CLAUDE.md`, siehe
+Werdegang unten; davor: Verwerfen der Flat-Vector-Post-Bilder — Nutzer-Feedback
+„sieht zu sehr nach KI aus, erzeugt keine Aufmerksamkeit" — alle 16 `Prompt.txt`
+auf fotorealistische, dokumentarische Prompts umgeschrieben, alte `Bild.png`-
+Dateien entfernt; davor: Erstellung aller 48 Post-Bilder als `Bild.png` in
 `social-media-posts/` — handgebaute Flat-Vector-Grafiken statt KI-generierter
 Fotos, da kein Bild-API-Zugang in dieser Session verfügbar war; davor:
 Design-/Motion-Audit der Website mit `impeccable`, `design-taste-frontend`,
@@ -407,6 +409,30 @@ rekonstruiert werden muss — Details/Begründung stehen in Werdegang Punkt 10.
     sie selbst als `Bild.png` ab. `social-media-posts/README.md` entsprechend
     aktualisiert (Struktur-Beispiel ohne `Bild.png`, 2. Fassung der Prompts
     dokumentiert).
+19. **Markenkit erstellt und als verbindliche Grundlage verankert:** Nutzer
+    fragte nach einem Skill auf skills.sh, der ein Brand Kit erstellt — über
+    `find-skills` gefunden: `leonxlnx/taste-skill@brandkit` (85.300 GitHub-
+    Stars, 277K Installs, klarer Marktführer), installiert unter
+    `.claude/skills/brandkit/`. Skill selbst erzeugt nur Bild-Prompts, kein
+    Bild direkt — Nutzer wollte aber ein tatsächlich sichtbares Ergebnis
+    („als Artefakt oder PNG"), daher stattdessen ein eigenes HTML/SVG-
+    Markenkit-Board gebaut (3×3-Raster: Wortmarke, Konstruktion, digitale
+    Anwendung, Markenversprechen, Farbsystem, Typografie, Visitenkarte,
+    Markenkern-Badges, UI-Bausteine) — alle Werte 1:1 aus `DESIGN-TOKENS.md`
+    übernommen, keine neue Stilrichtung erfunden. Als Artefakt veröffentlicht:
+    https://claude.ai/code/artifact/20ff79ac-26dc-4afd-b9f0-726732473e71 —
+    zusätzlich als PNG-Screenshot geliefert. **Logo-Konzept:** Siegel-Monogramm
+    „P" mit eingebettetem Häkchen (Prüf-/Verifikationssymbol) als Wortmarke,
+    passend zur Beglaubigungs-Metapher der Sachverständigen-Nische. **Bug
+    gefunden und behoben:** Zwei der SVG-Siegel-Grafiken (Panel „Konstruktion"
+    und „UI-Bausteine") fehlte die CSS-Klasse `seal`, wodurch sie mit dem
+    SVG-Standard-Fill schwarz gefüllt statt als Liniengrafik rendern — vor
+    Veröffentlichung bemerkt und korrigiert. **Standing Rule ergänzt:** Auf
+    Nutzerwunsch trägt `CLAUDE.md` jetzt eine neue Regel („Markenkit als
+    verbindliche Grundlage für alle künftigen Inhalte") mit allen Markenkit-
+    Werten als Kurzreferenz — gilt ab sofort für jeden neuen visuellen Inhalt
+    (Website, Social Media, Werbematerial etc.), nicht nur wenn explizit
+    danach gefragt wird.
 
 ## Hosting & Domains — aktueller Live-Stand (verifiziert 2026-09-06)
 
