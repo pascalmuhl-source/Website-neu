@@ -34,7 +34,7 @@
   --contact-text: #B9C2BC;
   --contact-label: #8F958F;
   --contact-rule: #3A3E3B;
-  --contact-placeholder: #767C77;
+  --contact-placeholder: #868C87;
   --contact-box: #2A2D2A;
 }
 
@@ -138,10 +138,12 @@ button { font-family: inherit; cursor: pointer; }
 .nav-toggle {
   background: none;
   border: none;
-  padding: 4px;
+  padding: 9px;
   line-height: 0;
   color: var(--ink);
+  transition: transform 160ms cubic-bezier(0.23, 1, 0.32, 1);
 }
+.nav-toggle:active { transform: scale(0.9); }
 
 .nav-links {
   display: none;
@@ -189,7 +191,7 @@ button { font-family: inherit; cursor: pointer; }
 .nav-anim {
   opacity: 0;
   transform: translateY(-14px);
-  animation: navDropIn 0.75s ease-in both;
+  animation: navDropIn 0.75s cubic-bezier(0.23, 1, 0.32, 1) both;
 }
 @media (prefers-reduced-motion: reduce) {
   .nav-anim { animation: none; opacity: 1; transform: none; }
@@ -263,9 +265,7 @@ button { font-family: inherit; cursor: pointer; }
 .portfolio-item { display: flex; flex-direction: column; gap: 12px; }
 .portfolio-thumb { width: 100%; height: 200px; overflow: hidden; background: linear-gradient(150deg, #e4e2da, #c9c6ba); }
 .portfolio-thumb.alt { background: linear-gradient(150deg, #dfe4de, #bcc7bd); height: 160px; }
-.portfolio-thumb-inner { width: 100%; height: 100%; background: inherit; transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1); }
-a.portfolio-item:hover .portfolio-thumb-inner { transform: scale(1.045); }
-a.portfolio-item:hover .portfolio-name { color: var(--accent); }
+.portfolio-thumb-inner { width: 100%; height: 100%; background: inherit; }
 .portfolio-meta { display: flex; justify-content: space-between; align-items: flex-end; }
 .portfolio-name { font-size: 15px; font-weight: 600; }
 .portfolio-type { font-size: 12.5px; color: var(--ink-soft); margin-top: 2px; }
@@ -273,6 +273,10 @@ a.portfolio-item:hover .portfolio-name { color: var(--accent); }
 .portfolio-stat .num { font-family: 'Cormorant Garamond', serif; font-size: 24px; color: var(--accent); white-space: nowrap; }
 .portfolio-stat .label { font-size: 10.5px; color: var(--ink-soft); }
 .portfolio-cta { font-size: 13px; font-weight: 600; border-bottom: 1px solid var(--ink); padding-bottom: 2px; align-self: flex-start; }
+.portfolio-single { display: flex; flex-direction: column; gap: 16px; max-width: 640px; }
+.portfolio-single .portfolio-thumb { height: 220px; }
+.portfolio-single-meta { display: flex; flex-direction: column; gap: 4px; }
+.portfolio-desc { font-size: 13.5px; line-height: 1.6; color: var(--ink-soft); margin-top: 8px; max-width: 480px; }
 
 /* Ueber mich */
 .about { display: flex; flex-direction: column; gap: 22px; }
@@ -315,6 +319,7 @@ a.portfolio-item:hover .portfolio-name { color: var(--accent); }
 .form-field { display: flex; flex-direction: column; gap: 6px; }
 .form-field label { font-size: 11px; letter-spacing: 0.04em; color: var(--contact-label); }
 .form-field input,
+.form-field select,
 .form-field textarea {
   font-family: inherit;
   font-size: 14px;
@@ -325,6 +330,7 @@ a.portfolio-item:hover .portfolio-name { color: var(--accent); }
   padding-bottom: 8px;
   resize: vertical;
 }
+.form-field select { color-scheme: dark; }
 .form-field input::placeholder,
 .form-field textarea::placeholder { color: var(--contact-placeholder); }
 .form-field input:focus,
@@ -332,9 +338,25 @@ a.portfolio-item:hover .portfolio-name { color: var(--accent); }
 .form-honeypot { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
 .contact-submit { background: var(--accent); border-color: var(--accent); }
 .contact-submit:hover { background: transparent; color: var(--paper); }
-.form-status { font-size: 13px; color: var(--contact-text); }
+.form-privacy-note { font-size: 12px; line-height: 1.5; color: var(--contact-placeholder); margin: -4px 0 0; }
+.form-privacy-note a { color: var(--contact-text); text-decoration: underline; }
+.form-status {
+  font-size: 13px;
+  color: var(--contact-text);
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 250ms cubic-bezier(0.23, 1, 0.32, 1), transform 250ms cubic-bezier(0.23, 1, 0.32, 1);
+
+  @starting-style {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+}
 .form-status.error { color: #E8A0A0; }
 .form-status.success { color: var(--accent); }
+@media (prefers-reduced-motion: reduce) {
+  .form-status { transition: opacity 200ms ease; transform: none; }
+}
 
 .booking-placeholder {
   border: 1px dashed var(--contact-rule);
@@ -351,9 +373,11 @@ a.portfolio-item:hover .portfolio-name { color: var(--accent); }
   border: 1px solid var(--contact-rule);
   color: var(--paper);
   font-size: 13px;
-  padding: 8px 16px;
+  padding: 15px 16px;
+  transition: transform 160ms cubic-bezier(0.23, 1, 0.32, 1), border-color 0.2s ease, color 0.2s ease;
 }
 .booking-load-btn:hover { border-color: var(--accent); color: var(--accent); }
+.booking-load-btn:active { transform: scale(0.97); }
 .booking-embed { width: 100%; min-height: 480px; border: none; }
 .booking-note { font-size: 11.5px; color: var(--contact-label); }
 .contact-address {
@@ -470,6 +494,9 @@ a.portfolio-item:hover .portfolio-name { color: var(--accent); }
   .portfolio-featured .num { font-size: 30px; }
   .portfolio-featured .label { font-size: 11.5px; }
   .portfolio-side { display: flex; flex-direction: column; gap: 28px; }
+  .portfolio-single .portfolio-thumb { height: 340px; }
+  .portfolio-single .portfolio-name { font-size: 17px; }
+  .portfolio-desc { font-size: 14.5px; max-width: 480px; }
 
   .about { display: grid; grid-template-columns: 0.85fr 1.15fr; gap: 72px; }
   .about-photo { aspect-ratio: 4 / 5; }

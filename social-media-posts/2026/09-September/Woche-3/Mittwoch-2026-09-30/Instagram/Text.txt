@@ -1,0 +1,9 @@
+Mythos: "Jede Website braucht einen Cookie-Banner."
+
+Stimmt nicht. Ohne Tracking, ohne Analyse-Tools braucht es keinen — weil es
+nichts gibt, dem zugestimmt werden müsste.
+
+Ein Banner ist oft ein Zeichen für mehr Tracking im Hintergrund, als nötig
+wäre.
+
+#dsgvo #mythos #datenschutz #sachverständiger

@@ -1,6 +1,6 @@
 import Reveal from './Reveal.jsx';
 
-const HEADLINE_LINES = ['Websites, die für KMU', 'mehr Kunden bringen.'];
+const HEADLINE_LINES = ['Websites für Sachverständige,', 'die Vertrauen schaffen.'];
 
 export default function Hero() {
   return (
@@ -19,7 +19,8 @@ export default function Hero() {
           ))}
         </h1>
         <p>
-          Eine schlechte Website kostet dich täglich Anfragen. Ich baue dir eine, die stattdessen Kunden bringt.
+          Eine unprofessionelle Website kostet Sie Aufträge, bevor das Telefon klingelt. Ich baue Ihnen
+          eine, die Kompetenz zeigt und Anfragen bringt.
         </p>
         <div className="hero-cta-row">
           <a className="btn-solid hero-cta" href="#kontakt">Kostenloses Erstgespräch buchen</a>

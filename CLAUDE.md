@@ -194,6 +194,49 @@ unabhängig davon, ob die Design-Taste-Skills (`frontend-design`, `design-taste-
 `impeccable`) im Einzelfall ausdrücklich getriggert werden — dieser Anspruch gilt immer,
 schon ab dem Mockup in Phase 2, nicht erst als nachträgliche Korrektur.
 
+# Regel: Markenkit als verbindliche Grundlage für alle künftigen Inhalte
+
+Am 2026-09-08 wurde mit dem Skill `brandkit` (`leonxlnx/taste-skill@brandkit`,
+installiert unter `.claude/skills/brandkit/`) ein Markenkit für Pascal Webdesign
+erstellt und als Artefakt veröffentlicht:
+https://claude.ai/code/artifact/20ff79ac-26dc-4afd-b9f0-726732473e71
+(Quelldatei zur Wiederverwendung/Bearbeitung: siehe `PROJECT-STATUS.md`, Werdegang
+Punkt 19 — bei Bedarf neu aus den Werten unten rekonstruierbar.)
+
+**Ab sofort gilt:** Jeder künftig erstellte Inhalt für Pascal Webdesign — Website-
+Komponenten, Social-Media-Bilder/Grafiken, Werbematerial, Präsentationen,
+Visitenkarten, weitere Markenkit-Erweiterungen etc. — muss auf diesem Markenkit
+aufbauen, nicht auf neu erfundenen Stilentscheidungen. Das gilt unabhängig davon,
+ob explizit nach dem Markenkit gefragt wird.
+
+**Verbindliche Markenkit-Werte** (identisch mit `DESIGN-TOKENS.md`, hier noch einmal
+gebündelt als Kurzreferenz):
+
+- **Wortmarke/Logo:** Siegel-Monogramm — ein „P" in einem Kreisring (R 44 außen,
+  R 36 Akzent-Ring innen), mit eingebettetem Häkchen als Prüf-/Verifikations-Symbol.
+  Metapher: Beglaubigung/Zertifizierung, passend zur Sachverständigen-Nische.
+  Wortmarke daneben: „Pascal Webdesign." (Punkt in Akzentfarbe).
+- **Farben:** Papier `#F5F5F2` (Hintergrund), Tinte `#1C1F1D` (Text/Linien),
+  Akzent `#147A55` (ein einziger Akzentton, bewusst kein zweiter — siehe Anti-KI-
+  Slop-Regel oben). Volle Palette inkl. Sekundärtöne in `DESIGN-TOKENS.md`.
+- **Typografie:** Cormorant Garamond (Serif, für Headlines/Wortmarke) + Archivo
+  (Sans, für Fließtext/UI). Self-hosted auf der eigentlichen Website (siehe DSGVO-
+  Regel unten), Google-Fonts-CDN nur zulässig für interne Artefakte/Präsentationen,
+  die nicht die öffentliche Website selbst sind.
+- **Formsprache:** Radius durchgängig `0` — scharfe Kanten überall, keine
+  abgerundeten Ecken, auch nicht bei neuen Grafiken/Präsentationen.
+- **Markenkern (für Copy/Bildsprache):** DSGVO-first/technisch sauber statt
+  Baukasten, solo mit festem Ansprechpartner, deutschlandweit remote, seriöser
+  Auftritt für eine B2B-Zielgruppe (Sachverständige, deren Auftraggeber wiederum
+  Anwälte/Versicherungen sind).
+
+**Praktisch bedeutet das:** Vor jedem neuen visuellen Inhalt kurz gegen diese Werte
+prüfen (oder direkt das Artefakt oben referenzieren), statt bei Bildprompts,
+Vektorgrafiken oder neuen Layouts eine eigene Farb-/Schrift-/Formsprache zu
+erfinden. Weicht ein Nutzerwunsch davon ab, gilt wie immer: der explizite
+Nutzerwunsch gewinnt — aber das Markenkit ist der Standardfall, nicht die
+Ausnahme.
+
 # Regel: DSGVO-Konformität bei Website-Umsetzung
 
 Bei jeder Website (Mockup und finale Umsetzung) gelten diese Standards, ohne dass der
@@ -350,8 +393,11 @@ echten Launch erledigt werden — der erste ist der wichtigste:**
    `noindex` ist der teuerste Fehler beim Livegang: die Seite bleibt dauerhaft
    unsichtbar in Google, ohne dass es jemandem auffällt. Bei jedem Gespräch über
    "die Seite ist jetzt fertig" aktiv daran erinnern.
-2. **Alle Platzhalter ersetzen** — `[Kundenname 1-3]`, `ab [XXX] €`,
-   `[Name]`/`[Firma]` bei Testimonials, `[X] Jahre`, `[XX] Projekte`.
+2. **Alle Platzhalter ersetzen** — erledigt seit dem Nischen-Pivot auf
+   „Sachverständige und Gutachter" (2026-09-07): Preise (Website-Erstellung ab
+   1.499 €, Redesign ab 1.199 €, Wartung ab 35 €/Monat), Erfahrung (6 Jahre),
+   Portfolio (1 echter Case statt 3 erfundener). **Noch offen:** `[Name]`/`[Firma]`
+   bei Testimonials — bewusst zurückgestellt, bis echte Kundenzitate vorliegen.
    Kontaktdaten (Adresse, Telefon, E-Mail) sind bereits erledigt.
 2b. **Schema.org** — erledigt: `streetAddress`, `telephone`, `email` und `sameAs`
    (Google-Unternehmensprofil-Link) sind im JSON-LD in `website/index.html` gesetzt.

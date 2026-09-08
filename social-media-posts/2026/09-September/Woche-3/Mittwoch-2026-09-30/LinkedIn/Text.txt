@@ -1,0 +1,17 @@
+Ein Mythos, der sich hartnäckig hält: "Jede Website braucht einen
+Cookie-Banner."
+
+Stimmt nicht. Eine Website ohne Tracking, ohne Analyse-Tools, ohne
+Marketing-Skripte braucht keinen Consent-Banner — weil es nichts gibt, dem
+zugestimmt werden müsste.
+
+Der Umkehrschluss überrascht viele: Ein Cookie-Banner auf einer eigentlich
+schlanken Website ist oft ein Zeichen dafür, dass im Hintergrund mehr
+mitläuft, als nötig wäre.
+
+Weniger Tracking bedeutet nicht automatisch weniger Professionalität.
+Oft ist das Gegenteil der Fall.
+
+Hat Ihre Website einen Cookie-Banner — und wissen Sie, wofür genau?
+
+#DSGVO #Sachverständige #Mythos

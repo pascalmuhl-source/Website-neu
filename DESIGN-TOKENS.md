@@ -47,7 +47,7 @@ Zeilenhöhen: Headlines 1.1–1.2, Fließtext 1.6–1.7.
 | Kontakt-Sektion Text hell | Fließtext auf dunklem Grund | `#B9C2BC` | rgb(185, 194, 188) |
 | Kontakt-Sektion Label | Feldlabels auf dunklem Grund | `#8F958F` | rgb(143, 149, 143) |
 | Kontakt-Sektion Rahmen | Trennlinien auf dunklem Grund | `#3A3E3B` | rgb(58, 62, 59) |
-| Kontakt-Sektion Platzhalter-Text | Eingabe-Platzhalter auf dunklem Grund | `#767C77` | rgb(118, 124, 119) |
+| Kontakt-Sektion Platzhalter-Text | Eingabe-Platzhalter auf dunklem Grund | `#868C87` | rgb(134, 140, 135) |
 | Kontakt-Sektion Box-Fläche | Calendly-Platzhalterfläche | `#2A2D2A` | rgb(42, 45, 42) |
 
 Ein Akzentton (Grün) — bewusst kein zweiter Akzent, siehe Anti-KI-Slop-Regel.
