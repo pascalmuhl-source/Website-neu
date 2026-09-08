@@ -1,5 +1,11 @@
 import Reveal from './Reveal.jsx';
 
+const SELFTEST = [
+  'Die letzte Anfrage kam per Telefon, weil niemand das Kontaktformular gefunden hat.',
+  'Auf dem Handy ist der Text so klein, dass Interessenten vorher abspringen.',
+  'Die Website nennt keine Fachrichtung: Anwälte und Versicherungen müssen raten, ob Sie passen.',
+];
+
 const ROWS = [
   {
     title: 'Keine erkennbare Qualifikation',
@@ -16,6 +22,12 @@ const ROWS = [
     mobile: 'Das Vertrauen ist weg, bevor überhaupt jemand anruft.',
     desktop: 'Eine veraltete oder unstrukturierte Seite wirkt, als wäre auch die Arbeit dahinter nicht mehr aktuell. Gerade bei Gutachten, die vor Gericht bestehen müssen, ist das Vertrauen weg, bevor überhaupt jemand anruft.',
   },
+  {
+    title: 'Keine nachvollziehbare Arbeitsweise',
+    mobile: 'Fehlt der grobe Ablauf, wirkt die Beauftragung wie ein Blindflug.',
+    desktop: 'Auftraggeber aus Justiz und Versicherungswesen wollen vor der Anfrage grob verstehen, wie ein Gutachten bei Ihnen abläuft. Fehlt das, wirkt die Beauftragung wie ein Blindflug.',
+    isNew: true,
+  },
 ];
 
 export default function Problem() {
@@ -29,11 +41,23 @@ export default function Problem() {
         </p>
       </div>
 
+      <div className="selftest">
+        <div className="selftest-head">Erkennen Sie sich wieder?</div>
+        <ul>
+          {SELFTEST.map((item) => (
+            <li key={item}>{item}</li>
+          ))}
+        </ul>
+      </div>
+
       {/* Mobile: stacked rows */}
       <div className="problem-table" aria-hidden="false">
         {ROWS.map((row) => (
           <div className="problem-row" key={row.title}>
-            <div className="title">{row.title}</div>
+            <div className="title">
+              {row.title}
+              {row.isNew && <span className="tag-new">neu</span>}
+            </div>
             <p>{row.mobile}</p>
           </div>
         ))}
@@ -43,14 +67,24 @@ export default function Problem() {
       <div className="problem-columns-wrap">
         <div className="problem-columns">
           <div className="col-head">Das Problem</div>
-          <div className="col-head right">Was das für dich bedeutet</div>
+          <div className="col-head right">Was das für Sie bedeutet</div>
           {ROWS.map((row, i) => (
             <div className="contents" key={row.title}>
-              <div className={`cell-title${i === ROWS.length - 1 ? ' row-last' : ''}`}>{row.title}</div>
+              <div className={`cell-title${i === ROWS.length - 1 ? ' row-last' : ''}`}>
+                {row.title}
+                {row.isNew && <span className="tag-new">neu</span>}
+              </div>
               <div className={`cell-body${i === ROWS.length - 1 ? ' row-last' : ''}`}>{row.desktop}</div>
             </div>
           ))}
         </div>
+      </div>
+
+      <div className="cost-note">
+        <p>
+          Ein einziges zusätzliches Gutachten deckt in der Regel die gesamten Kosten einer neuen Website.{' '}
+          <strong>Jede Anfrage, die vorher abspringt, kostet mehr als die Website selbst.</strong>
+        </p>
       </div>
     </Reveal>
   );

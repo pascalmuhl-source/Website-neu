@@ -181,12 +181,28 @@ rekonstruiert werden muss — Details/Begründung stehen in Werdegang Punkt 10.
 25. **Ausbauplan als Artefact erstellt** (2026-09-08): Auf Wunsch des Nutzers
     („Website zu kurz") Plan zur Vertiefung von Problem- und Zusammenarbeit-
     Sektion plus zwei neuen Sektionsvorschlägen (Branchen-Szenarien, FAQ) als
-    Artefact veröffentlicht: https://claude.ai/code/artifact/2354cff3-8867-4a2e-bd87-da9f3fa14c79
-    — wartet auf Freigabe, dann Umsetzung in `Prozess.jsx`/`Problem.jsx` + zwei
-    neue Komponenten. Neue Standing Rule in `CLAUDE.md`: Bei jeder Design-Arbeit
-    (Artefact wie Website-Code) ab sofort immer alle vier Skills `frontend-design`,
+    Artefact veröffentlicht: https://claude.ai/code/artifact/2354cff3-8867-4a2e-bd87-da9f3fa14c79.
+    Danach visuelles Mockup dazu als zweites Artefact:
+    https://claude.ai/code/artifact/7449c764-2114-4ce9-8c1b-3bcabc44fb2c.
+    Neue Standing Rule in `CLAUDE.md`: Bei jeder Design-Arbeit (Artefact wie
+    Website-Code) ab sofort immer alle vier Skills `frontend-design`,
     `emil-design-eng`, `impeccable`, `ui-ux-pro-max` heranziehen, zusätzlich zu
     `design-taste-frontend`.
+26. **Ausbau live umgesetzt** (2026-09-08): Vor der Umsetzung Backup-Branch
+    `backup/vor-sektionen-ausbau-2026-09-08` vom bisherigen Live-Stand
+    (`main`-Commit `a76d469`) gepusht, falls ein Rollback nötig wird
+    (Tag-Push scheiterte an einem 403 des GitHub-Zugriffs, deshalb Branch statt
+    Tag). Umsetzung: `Problem.jsx` um Selbsttest-Kasten, vierten Tabellenpunkt
+    „Keine nachvollziehbare Arbeitsweise" und Kosten-Einordnungs-Absatz
+    erweitert (dabei auch Restformulierung in Du-Form „was das für dich
+    bedeutet" auf Sie-Form korrigiert). `Prozess.jsx` von 4 auf 6 Schritte
+    ausgebaut (neu: „Unverbindliche Anfrage" und „Laufende Betreuung"), jeder
+    Schritt jetzt mit Dauer/Aufwand/Ergebnis-Feldern; Desktop-Darstellung dafür
+    von 4-Spalten-Grid auf eine breitere Timeline-Liste umgestellt. Zwei neue
+    Komponenten: `Branchen.jsx` („Für Ihr Fachgebiet", 4 Branchenkarten, nach
+    Problem-Sektion) und `Faq.jsx` (5 Fragen als natives `<details>`-Accordion,
+    vor Kontakt). Mit Playwright/Chromium lokal auf Desktop und Mobile
+    gegengeprüft (Build, Screenshots, Accordion-Interaktion) — alles fehlerfrei.
 
 ## Hosting & Domains — aktueller Live-Stand (verifiziert 2026-09-06)
 
