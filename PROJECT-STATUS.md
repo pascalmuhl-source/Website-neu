@@ -316,22 +316,37 @@ weiterhin abschickt. Systematisch eingegrenzt:
   maskiert — der gäbe einen 500er, wie einmal kurz beim Testen mit leerem
   Nachrichtenfeld gegen die alte Datei beobachtet)
 
-**Finale Diagnose:** `info.php` mit reinem `phpinfo()` lief einwandfrei (200) — PHP-
-Ausführung funktioniert auf dem vhost also generell. Entscheidender Test:
-`formtest.php` (gleicher Aufbau wie `send-mail.php` — `$_POST`, `header()`, JSON-
-Antwort — aber **ohne** `mail()`-Aufruf) lief ebenfalls fehlerfrei (200, korrekte
-JSON-Antwort per POST). Einziger Unterschied zu den fehlschlagenden Dateien
-(`send-mail.php`, `kontakt-handler.php`) ist der `mail()`-Aufruf.
+**Zwischendiagnose (verworfen):** `info.php` (reines `phpinfo()`) lief einwandfrei,
+`formtest.php` (ohne `mail()`) auch — Verdacht fiel zunächst auf `mail()` als
+Auslöser. Nutzer wies zu Recht darauf hin, dass die alte Datei bis kurz vorher noch
+funktioniert hatte, obwohl sie ebenfalls `mail()` aufrief — Widerspruch.
 
-→ **lima-city blockiert/quarantänisiert automatisch PHP-Dateien, die `mail()`
-aufrufen** (vermutlich ein Anti-Spam-Scanner beim Upload), und liefert dafür ein
-unauffälliges 404 statt einer klaren Fehlermeldung. Nicht per Code lösbar — das
-Kontaktformular muss zwingend eine Mail verschicken. **Nächster Schritt liegt beim
-Nutzer: lima-city-Support kontaktieren** mit dem Befund oben und der Bitte, `mail()`
-für den vhost freizuschalten bzw. die Datei aus der Quarantäne zu nehmen.
-Testdateien (`ftptest.txt`, `kontakt-handler.php`, `formtest.php`, `info.php`)
-liegen noch auf dem Server, sollten nach Klärung gelöscht werden (v. a. `info.php`
-wegen der offengelegten Serverdetails).
+**Tatsächliche Ursache gefunden:** Die alte, aus der Git-Historie rekonstruierte
+Version (`altversion.php`, identischer `mail()`-Aufruf, nur ohne Dropdown-Code) lief
+unter neuem Namen einwandfrei — widerlegt die `mail()`-Theorie endgültig. Sauberer
+Trenntest danach: derselbe neue Dropdown-Code unter bindestrichfreiem Namen
+(`kontakthandler.php`) lief fehlerfrei, derselbe Code mit Bindestrich im Namen
+(`send-mail.php`, `kontakt-handler.php`) lieferte konsequent 404.
+
+→ **Lima-city blockiert offenbar PHP-Dateien mit Bindestrich im Dateinamen**
+(vermutlich eine WAF-/Security-Regel, die Bindestrich-Namen wie typische
+Exploit-/Shell-Uploads behandelt) — unabhängig vom Code-Inhalt. Nutzer hatte den
+entscheidenden Hinweis geliefert: Der Live-Server hatte den Kontaktformular-Handler
+schon lange als `sendmail.php` (ohne Bindestrich) laufen, während unser Repo/JS auf
+`send-mail.php` (mit Bindestrich) zeigte — dieser Namens-Mismatch war vermutlich
+schon länger die eigentliche Fehlerquelle, nur durch Caching/alte Deploys überdeckt.
+
+**Fix (2026-09-08):** `website/public/send-mail.php` → `website/public/sendmail.php`
+umbenannt, Fetch-Aufruf in `Kontakt.jsx` auf `/sendmail.php` angepasst, neu gebaut.
+Upload nach `htdocs/sendmail.php` (ersetzt die dort bereits funktionierende,
+inhaltlich veraltete Version) steht noch aus/wird vom Nutzer bestätigt. Testdateien
+auf dem Server (`ftptest.txt`, `kontakt-handler.php`, `kontakthandler.php`,
+`formtest.php`, `info.php`, `altversion.php`, das alte `send-mail.php`) sollten
+danach gelöscht werden — v. a. `info.php` wegen offengelegter Serverdetails.
+
+**Standing Rule für künftige PHP-Dateien auf diesem Hosting:** Keine Bindestriche in
+`.php`-Dateinamen verwenden (lima-city blockiert das serverseitig mit einem
+unauffälligen 404, unabhängig vom Code-Inhalt).
 
 ## Wie man den aktuellen Live-Stand schnell verifiziert
 

@@ -358,6 +358,18 @@ das gesamte Projekt automatisch, ohne dass der Nutzer das erneut anstoßen muss:
   Server-Logs (IP-Adressen) in der Datenschutzerklärung mit kurzer
   Löschfrist nennen, jedes eingebettete Dritt-Skript einzeln prüfen.
 
+# Regel: Keine Bindestriche in .php-Dateinamen (lima-city-Hosting)
+
+lima-city blockiert PHP-Dateien mit Bindestrich im Dateinamen (z. B.
+`send-mail.php`) serverseitig — vermutlich eine WAF-/Security-Regel, die
+Bindestrich-Namen wie typische Exploit-/Shell-Uploads behandelt. Die Datei liegt
+korrekt auf dem Server (Größe/Rechte stimmen), liefert aber konsequent 404, ganz
+unabhängig vom Code-Inhalt (durch systematisches Testen am Kontaktformular-Handler
+am 2026-09-08 zweifelsfrei verifiziert — Details siehe `PROJECT-STATUS.md`).
+**Deshalb: jede künftige PHP-Datei für dieses Hosting ausschließlich mit
+durchgehendem Dateinamen ohne Bindestrich anlegen** (z. B. `sendmail.php`,
+`kontakthandler.php` statt `send-mail.php`, `kontakt-handler.php`).
+
 # Regel: FTPS-Upload automatisieren (nur auf expliziten Wunsch des Nutzers)
 
 - Kein Skill nötig — FTPS ist ein Standardprotokoll, direkt über Bordmittel lösbar
