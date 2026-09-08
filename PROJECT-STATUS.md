@@ -220,6 +220,13 @@ rekonstruiert werden muss — Details/Begründung stehen in Werdegang Punkt 10.
     weggelassenen Bindestrich im Dateinamen (z. B. `index-Bao5W_QE.css`),
     selbst korrigiert — ein Tippfehler beim Upload, nicht die lima-city-PHP-
     Bindestrich-Sperre weiter oben (die betrifft nur `.php`-Dateien).
+28. **Nachbesserung Zusammenarbeit-Sektion, Spaltenausrichtung** (2026-09-08):
+    Nutzer meldete uneinheitliche Abstände zwischen den Feldern je Schritt.
+    Ursache: `.process-fields` war `display:flex`, wodurch die Spaltenbreite
+    vom jeweiligen Textinhalt abhing und „Ergebnis" in jeder Zeile an anderer
+    Stelle stand. Behoben: `display:grid` mit fester Spaltenbreite
+    (`180px 1fr` auf Desktop) — beide Spalten stehen jetzt in jeder Zeile exakt
+    untereinander.
 
 ## Hosting & Domains — aktueller Live-Stand (verifiziert 2026-09-06)
 
