@@ -425,6 +425,18 @@ Kurzfassung der wichtigsten Punkte, die vor einem echten Launch fehlen:
     `Nav.jsx`/`Footer.jsx` 1:1 als statisches HTML/CSS/JS repliziert und ergänzt,
     live verifiziert.
 
+25. **Vollständiges SEO-Audit per `seo-audit`-Skill (2026-09-08):** Skill installiert
+    (`coreyhaines31/marketingskills@seo-audit`), Live-Site per curl geprüft (Header,
+    robots.txt/sitemap.xml, 404-Verhalten, Kompression). Ergebnis: OG/Twitter/
+    Canonical/Schema/Custom-404 waren entgegen dem veralteten CLAUDE.md-Stand
+    (Werdegang Punkt 5) schon lange erledigt — Doku korrigiert. Einziger echter
+    Befund: `noindex` weiterhin aktiv, blockiert einzig durch fehlende echte
+    Testimonials (siehe Punkt 2 unten). PageSpeed-Mobile-Screenshot vom Nutzer zeigte
+    "LCP/TBT Error/No_LCP" — als unvollständiger Lighthouse-Trace eingeordnet (CSS/JS
+    live nachweislich minifiziert + gzip-komprimiert), keine reale Baustelle.
+    `www.`-Subdomain ließ sich aus der Sandbox nicht prüfen (Proxy-Restriktion) —
+    offen für manuelle Prüfung durch den Nutzer.
+
 ## Wie man den aktuellen Live-Stand schnell verifiziert
 
 ```bash

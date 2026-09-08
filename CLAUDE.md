@@ -422,20 +422,31 @@ in jeder Session, ohne erneute Anfrage:
    Dateinamen), das explizit sagen und in diesem Einzelfall den kompletten Ordner
    bereitstellen — aber das ist die Ausnahme, nicht der Standard.
 
-## SEO-Status (Pascal Webdesign, Stand: 2026-09, Phase 3 live)
+## SEO-Status (Pascal Webdesign, Stand: 2026-09-08, `seo-audit`-Skill-Vollaudit)
 
-Erledigt: Title-Tag, Meta-Description, saubere Heading-Hierarchie (ein H1, H2 pro
-Sektion), `robots.txt` und `sitemap.xml` (siehe eigene Regel unten).
+Erledigt: Title-Tag, Meta-Description, saubere Heading-Hierarchie, `robots.txt`/
+`sitemap.xml`, Open Graph/Twitter Card (inkl. `og-image.png`, live 200 OK),
+Canonical-URL, `ProfessionalService`-JSON-LD (Adresse/Telefon/`sameAs`), Custom-
+404-Seite (liefert echten HTTP 404, kein generischer Apache-Standard mehr),
+HTTP→HTTPS-Redirect, HSTS, `content-struktur.de` → 301 auf Hauptdomain, CSS/JS
+live minifiziert + gzip-komprimiert mit `immutable`-Cache-Headern.
 
-Noch offen (audit-basiert, siehe Chat-Verlauf für Details):
-- Social-Share-Tags (Open Graph/Twitter Card) — fehlen komplett
-- Canonical-URL (`<link rel="canonical">`) — fehlt
-- Strukturierte Daten (Schema.org, z. B. `ProfessionalService`/`LocalBusiness`)
-- Custom-404-Seite (aktuell liefert lima-city den generischen Apache-Standard-404)
+Noch offen:
+- **`noindex, nofollow` weiterhin aktiv** (Live-Check 08.09.: bestätigt) — einziger
+  Blocker ist der bekannte Testimonial-Platzhalter `[Name]`/`[Firma]` (4× live im
+  HTML sichtbar). Sobald echte Zitate vorliegen: `noindex` entfernen (Launch-
+  Checkliste Punkt 1) und `sitemap.xml` `lastmod` aktualisieren.
+- PageSpeed-Mobile-Lauf vom 08.09. zeigte "LCP/TBT Error/No_LCP" und fehlgeschlagene
+  CSS/JS-Kompressions-Checks — das ist ein unvollständiger Lighthouse-Trace, kein
+  reales Problem (Server-seitig ist alles bereits minifiziert/komprimiert
+  verifiziert). Vor echter Performance-Optimierung: PageSpeed-Test einfach erneut
+  laufen lassen für saubere Zahlen.
+- `www.pascal-webdesign.de` ließ sich aus der Agent-Sandbox nicht sauber prüfen
+  (Proxy-Restriktion) — im echten Browser verifizieren, ob `www.` korrekt
+  weiterleitet.
 - Alt-Text-Struktur für Bilder, sobald echte Fotos die Platzhalter-Gradients ersetzen
-- Ggf. Onpage-Keyword-Fokus, sobald die realen Texte/Leistungen final sind
 
-Den `seo`-Skill (`.claude/skills/seo/`) dafür nutzen, wenn es so weit ist.
+Den `seo`-Skill (`.claude/skills/seo/`) bzw. `seo-audit`-Skill für Folge-Audits nutzen.
 
 # Launch-Checkliste (Pascal Webdesign) — vor dem Sichtbarmachen abarbeiten
 
