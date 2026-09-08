@@ -5,7 +5,6 @@ const STATUS = { idle: 'idle', sending: 'sending', success: 'success', error: 'e
 
 export default function Kontakt() {
   const [status, setStatus] = useState(STATUS.idle);
-  const [bookingLoaded, setBookingLoaded] = useState(false);
 
   async function handleSubmit(e) {
     e.preventDefault();
@@ -83,20 +82,6 @@ export default function Kontakt() {
         </div>
 
         <div className="contact-side">
-          <div className="booking-placeholder">
-            <span className="section-label" style={{ color: 'var(--contact-label)' }}>Terminbuchung</span>
-            {!bookingLoaded ? (
-              <>
-                <p>Hier lässt sich direkt ein Termin buchen. Der Kalender wird erst nach Klick geladen.</p>
-                <button type="button" className="booking-load-btn" onClick={() => setBookingLoaded(true)}>
-                  Terminkalender laden
-                </button>
-                <span className="booking-note">Beim Laden wird eine Verbindung zum Buchungsanbieter hergestellt.</span>
-              </>
-            ) : (
-              <p>Terminkalender folgt, sobald das Buchungstool final eingerichtet ist.</p>
-            )}
-          </div>
           <div className="contact-direct">
             <span className="section-label" style={{ color: 'var(--contact-label)' }}>Oder direkt</span>
             <a href="mailto:pascal@pascal-webdesign.de">pascal@pascal-webdesign.de</a>
