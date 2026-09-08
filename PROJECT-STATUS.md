@@ -203,6 +203,23 @@ rekonstruiert werden muss — Details/Begründung stehen in Werdegang Punkt 10.
     Problem-Sektion) und `Faq.jsx` (5 Fragen als natives `<details>`-Accordion,
     vor Kontakt). Mit Playwright/Chromium lokal auf Desktop und Mobile
     gegengeprüft (Build, Screenshots, Accordion-Interaktion) — alles fehlerfrei.
+27. **Layout-Nachbesserung nach Live-Check** (2026-09-08): Nutzer meldete nach
+    Upload einzelne linksbündige, zu schmale Elemente. Ursache: `max-width` auf
+    `.selftest`, `.cost-note`, `.process-list`, `.faq-list` (Desktop), die damit
+    von der sonst durchgängigen Full-Bleed-Optik der Seite abwichen. Behoben:
+    max-width entfernt, `.selftest`-Checkliste auf Desktop als 3-Spalten-Grid
+    (passt zu den 3 Punkten), `.process-step` auf Desktop als 2-Spalten-Grid
+    (Text links, Aufwand/Ergebnis-Felder rechts, füllt die Zeile wie
+    `.service-row`), FAQ ohne Breitenbegrenzung. Live-Check erfolgte, weil
+    direkter Playwright-Zugriff auf `pascal-webdesign.de` über den Cloud-Proxy
+    mit `ERR_CONNECTION_RESET` scheiterte (nur normales `curl` funktioniert
+    dort) — Workaround: Live-HTML/CSS/JS per `curl` geladen und lokal per
+    `python3 -m http.server` gespiegelt, dagegen gescreenshottet.
+    Der vorherige 404-Bug bei den Asset-Dateien (CSS/JS fehlten nach dem ersten
+    Upload) lag laut Nutzer an einem beim manuellen Hochladen versehentlich
+    weggelassenen Bindestrich im Dateinamen (z. B. `index-Bao5W_QE.css`),
+    selbst korrigiert — ein Tippfehler beim Upload, nicht die lima-city-PHP-
+    Bindestrich-Sperre weiter oben (die betrifft nur `.php`-Dateien).
 
 ## Hosting & Domains — aktueller Live-Stand (verifiziert 2026-09-06)
 

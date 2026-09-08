@@ -504,11 +504,12 @@ button { font-family: inherit; cursor: pointer; }
   .problem-columns .row-last .cell-title,
   .problem-columns .row-last .cell-body { border-bottom: none; }
 
-  .selftest { max-width: 720px; padding: 24px 28px; }
+  .selftest { padding: 24px 28px; }
   .selftest-head { font-size: 15px; }
+  .selftest ul { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px 32px; }
   .selftest li { font-size: 14px; }
-  .cost-note { max-width: 680px; padding: 22px 28px; }
-  .cost-note p { font-size: 15px; }
+  .cost-note { padding: 26px 32px; }
+  .cost-note p { font-size: 16px; max-width: 900px; }
 
   .branchen-grid { display: grid; grid-template-columns: repeat(4, 1fr); }
   .branchen-card { padding: 24px 22px; }
@@ -547,18 +548,19 @@ button { font-family: inherit; cursor: pointer; }
   .about-stat .num { font-size: 30px; }
   .about-stat .label { font-size: 12.5px; }
 
-  .process-list { display: flex; flex-direction: column; max-width: 780px; }
-  .process-step { flex-direction: row; gap: 24px; padding: 24px 0; }
+  .process-list { display: flex; flex-direction: column; }
+  .process-step { flex-direction: row; gap: 24px; padding: 24px 0; align-items: flex-start; }
   .process-step .index { font-size: 32px; flex: none; width: 48px; }
+  .process-step > div { display: grid; grid-template-columns: 1.3fr 1fr; gap: 40px; flex: 1; align-items: start; }
+  .process-step-head, .process-step .only-mobile, .process-step .only-desktop { grid-column: 1; }
   .process-step h3 { font-size: 18px; }
-  .process-step p { font-size: 14px; line-height: 1.6; max-width: 56ch; }
-  .process-fields { gap: 32px; margin-top: 12px; }
+  .process-step p { font-size: 14px; line-height: 1.6; max-width: 52ch; }
+  .process-fields { grid-column: 2; gap: 32px; margin-top: 0; }
   .process-fields div { font-size: 13px; }
   .process-fields dt { font-size: 10.5px; }
 
-  .faq-list { max-width: 760px; }
   .faq-item summary { font-size: 15.5px; padding: 18px 4px; }
-  .faq-item p { font-size: 14.5px; max-width: 64ch; }
+  .faq-item p { font-size: 14.5px; max-width: 68ch; }
 
   .testimonial-grid {
     display: grid;
