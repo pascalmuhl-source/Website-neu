@@ -336,13 +336,17 @@ schon lange als `sendmail.php` (ohne Bindestrich) laufen, während unser Repo/JS
 `send-mail.php` (mit Bindestrich) zeigte — dieser Namens-Mismatch war vermutlich
 schon länger die eigentliche Fehlerquelle, nur durch Caching/alte Deploys überdeckt.
 
-**Fix (2026-09-08):** `website/public/send-mail.php` → `website/public/sendmail.php`
-umbenannt, Fetch-Aufruf in `Kontakt.jsx` auf `/sendmail.php` angepasst, neu gebaut.
-Upload nach `htdocs/sendmail.php` (ersetzt die dort bereits funktionierende,
-inhaltlich veraltete Version) steht noch aus/wird vom Nutzer bestätigt. Testdateien
-auf dem Server (`ftptest.txt`, `kontakt-handler.php`, `kontakthandler.php`,
-`formtest.php`, `info.php`, `altversion.php`, das alte `send-mail.php`) sollten
-danach gelöscht werden — v. a. `info.php` wegen offengelegter Serverdetails.
+**Fix erfolgreich, Kontaktformular fertig (2026-09-08):**
+`website/public/send-mail.php` → `website/public/sendmail.php` umbenannt,
+Fetch-Aufruf in `Kontakt.jsx` auf `/sendmail.php` angepasst, neu gebaut, hochgeladen.
+Live-Verifikation: HTML/JS/CSS byte-genau deckungsgleich, `GET /sendmail.php` →
+korrektes `405`, vollständiger Test-POST mit `anliegen=Redesign` → `{"ok":true}` und
+vom Nutzer bestätigt in der Mailbox angekommen, inkl. Dropdown-Auswahl im Betreff/
+Text. **Kontaktformular ist damit vollständig verifiziert und einsatzbereit.**
+Testdateien auf dem Server (`ftptest.txt`, `kontakt-handler.php`,
+`kontakthandler.php`, `formtest.php`, `info.php`, `altversion.php`, das alte
+`send-mail.php`) sollten bei Gelegenheit gelöscht werden — v. a. `info.php` wegen
+offengelegter Serverdetails.
 
 **Standing Rule für künftige PHP-Dateien auf diesem Hosting:** Keine Bindestriche in
 `.php`-Dateinamen verwenden (lima-city blockiert das serverseitig mit einem
