@@ -287,11 +287,21 @@ Kurzfassung der wichtigsten Punkte, die vor einem echten Launch fehlen:
    vorliegen, die „Vertrauen/Prozess"-Headlines (siehe Werdegang Punkt 8) durch echte
    Social-Proof-Headlines ersetzen/ergänzen.
 
-Erledigt (2026-09-08): Google-Unternehmensprofil ist verifiziert. Kontaktformular
-passt (Empfänger korrekt, Nutzer bestätigt Zustellung). Social-Media-Icons im Footer
-(zwei `href="#"`-Platzhalter, LinkedIn/Instagram) entfernt, da noch keine echten
-Profile existieren — inkl. der jetzt ungenutzten `.footer-social`-CSS-Regel. Bei
-Bedarf später wieder einbaubar, sobald echte Profil-Links vorliegen.
+Erledigt (2026-09-08): Google-Unternehmensprofil ist verifiziert. Social-Media-Icons
+im Footer (zwei `href="#"`-Platzhalter, LinkedIn/Instagram) entfernt, da noch keine
+echten Profile existieren — inkl. der jetzt ungenutzten `.footer-social`-CSS-Regel.
+Bei Bedarf später wieder einbaubar, sobald echte Profil-Links vorliegen.
+
+**Deploy-Lücke gefunden und Fix geliefert (2026-09-08):** Nutzer meldete, dass das
+Dropdown-Feld „Worum geht's?" (`anliegen`) zwar im Formular sichtbar ist, aber nicht
+in den empfangenen Mails ankommt. Ursache: `send-mail.php` war seit dem Dropdown-
+Feature (Werdegang Punkt 12) nie neu hochgeladen worden — auf dem Server lag noch
+die alte Version ohne `anliegen`-Verarbeitung. Da diese Datei kein Build-Artefakt ist
+(liegt direkt in `public/`, nicht in `dist/assets/` mit Hash), wird sie bei einem
+reinen `dist/`-Diff-Upload leicht übersehen — **künftig bei jeder Änderung an
+`send-mail.php` explizit als eigene Datei zum Upload mitgeben, nicht nur den
+`dist/`-Vergleich prüfen.** Aktuelle Datei erneut an den Nutzer geliefert, Upload
+nach `htdocs/send-mail.php` steht noch aus/wird vom Nutzer bestätigt.
 
 ## Wie man den aktuellen Live-Stand schnell verifiziert
 
