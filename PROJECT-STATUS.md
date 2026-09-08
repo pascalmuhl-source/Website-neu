@@ -292,16 +292,40 @@ im Footer (zwei `href="#"`-Platzhalter, LinkedIn/Instagram) entfernt, da noch ke
 echten Profile existieren — inkl. der jetzt ungenutzten `.footer-social`-CSS-Regel.
 Bei Bedarf später wieder einbaubar, sobald echte Profil-Links vorliegen.
 
-**Deploy-Lücke gefunden und Fix geliefert (2026-09-08):** Nutzer meldete, dass das
-Dropdown-Feld „Worum geht's?" (`anliegen`) zwar im Formular sichtbar ist, aber nicht
-in den empfangenen Mails ankommt. Ursache: `send-mail.php` war seit dem Dropdown-
-Feature (Werdegang Punkt 12) nie neu hochgeladen worden — auf dem Server lag noch
-die alte Version ohne `anliegen`-Verarbeitung. Da diese Datei kein Build-Artefakt ist
-(liegt direkt in `public/`, nicht in `dist/assets/` mit Hash), wird sie bei einem
-reinen `dist/`-Diff-Upload leicht übersehen — **künftig bei jeder Änderung an
-`send-mail.php` explizit als eigene Datei zum Upload mitgeben, nicht nur den
-`dist/`-Vergleich prüfen.** Aktuelle Datei erneut an den Nutzer geliefert, Upload
-nach `htdocs/send-mail.php` steht noch aus/wird vom Nutzer bestätigt.
+**Deploy-Lücke gefunden, Fix geliefert, dabei neuen Bug entdeckt (2026-09-08):**
+Nutzer meldete, dass das Dropdown-Feld „Worum geht's?" (`anliegen`) zwar im Formular
+sichtbar ist, aber nicht in den empfangenen Mails ankommt. Ursache: `send-mail.php`
+war seit dem Dropdown-Feature (Werdegang Punkt 12) nie neu hochgeladen worden — auf
+dem Server lag noch die alte Version ohne `anliegen`-Verarbeitung. Da diese Datei
+kein Build-Artefakt ist (liegt direkt in `public/`, nicht in `dist/assets/` mit
+Hash), wird sie bei einem reinen `dist/`-Diff-Upload leicht übersehen — **künftig bei
+jeder Änderung an `send-mail.php` explizit als eigene Datei zum Upload mitgeben,
+nicht nur den `dist/`-Vergleich prüfen.**
+
+**Nach dem Reupload: `send-mail.php` liefert seitdem einen 404**, obwohl Formular
+weiterhin abschickt. Systematisch eingegrenzt:
+- Datei liegt nachweislich im richtigen Ordner (FileZilla, Größe 2.114 Bytes korrekt)
+- Rechte (0600) identisch mit funktionierenden Dateien wie `impressum.html`
+- FTP-Pfad verifiziert korrekt: Testdatei `ftptest.txt` im selben Ordner ist live
+  unter `/ftptest.txt` erreichbar (200) — kein falscher vhost/Account
+- Ein komplett neuer, nie zuvor benutzter Dateiname (`kontakt-handler.php`,
+  identischer Inhalt) scheitert exakt genauso mit 404
+- `.htaccess` enthält keine Rewrite-Regel, die `.php`-Aufrufe abfangen würde, nur
+  `ErrorDocument 404 /404.html` (ersetzt bei echtem 404 nur den Seiteninhalt)
+- Der 404 ist ein „echtes" Apache-404 (nicht durch einen PHP-Laufzeitfehler
+  maskiert — der gäbe einen 500er, wie einmal kurz beim Testen mit leerem
+  Nachrichtenfeld gegen die alte Datei beobachtet)
+
+→ **Schlussfolgerung: PHP-Ausführung greift auf diesem vhost aktuell generell
+nicht mehr**, obwohl die alte `send-mail.php` vor dem Reupload nachweislich Mails
+verschickt hat. Das ist kein Datei-/Rechte-/Pfadproblem mehr, sondern vermutlich
+eine Hosting-seitige Einstellung bei lima-city (z. B. PHP-Version/PHP-Aktivierung
+für den vhost `pascal-webdesign.de`, id 3685463), die sich geändert hat. Von dieser
+Cloud-Umgebung aus nicht behebbar (kein SSH/API-Zugriff in der Session) — **nächster
+Schritt: Nutzer prüft lima-city-Kundencenter auf eine PHP-Einstellung für den vhost,
+sonst lima-city-Support kontaktieren.** `kontakt-handler.php` und `ftptest.txt`
+liegen noch als Testdateien auf dem Server, können nach Klärung wieder gelöscht
+werden.
 
 ## Wie man den aktuellen Live-Stand schnell verifiziert
 
