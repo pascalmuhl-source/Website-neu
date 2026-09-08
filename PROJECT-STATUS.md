@@ -8,14 +8,14 @@ Projekt technisch aufgebaut ist, und was aktuell live steht — damit eine neue 
 sich nicht durch den gesamten Chat-Verlauf arbeiten muss, um auf demselben Stand
 weiterzumachen.
 
-**Zuletzt aktualisiert:** 2026-09-07 (Stand nach „Worum geht's?"-Dropdown im
-Kontaktformular und eigenem „Positionierung & USPs"-Abschnitt in dieser Datei;
-davor: Kontaktformular-Audit mit Datenschutz-Hinweis direkt am Formular, letzte
-Du-Form in `datenschutz.html` auf Sie umgestellt; davor: Nischen-Pivot auf
-„Sachverständige und Gutachter" — Preise, Über-mich-Stats, Portfolio und komplette
-Copy umgeschrieben, Sie-Form eingeführt; davor: Verwerfen des
-`competitor-analysis`-Skills, Kontaktdaten-Eintrag, Google-Business-Profil-
-Verknüpfung, Google-Ads-Setup und Einführung der Selbstpflege-Regel für diese
+**Zuletzt aktualisiert:** 2026-09-08 (Stand nach Installation des kompletten
+`blacktwist/social-media-skills`-Sets, 14 Skills für Social-Media-Content;
+davor: „Worum geht's?"-Dropdown im Kontaktformular und eigener „Positionierung &
+USPs"-Abschnitt in dieser Datei, Kontaktformular-Audit mit Datenschutz-Hinweis
+direkt am Formular, Nischen-Pivot auf „Sachverständige und Gutachter" — Details
+zu allen davor liegenden Schritten siehe Werdegang unten. Ältere Punkte
+(Kontaktdaten-Eintrag, Google-Business-Profil, Google-Ads-Setup,
+Selbstpflege-Regel für diese
 beiden Dateien).
 
 ## Worum es geht
@@ -235,6 +235,28 @@ rekonstruiert werden muss — Details/Begründung stehen in Werdegang Punkt 10.
     Zusätzlich in dieser Datei einen eigenen Abschnitt „Positionierung & USPs"
     ergänzt, der Nische, USPs und Preisrange kompakt zusammenfasst — vorher nur
     verstreut im Werdegang-Fließtext auffindbar.
+13. **Social-Media-Content-Skills installiert:** Nutzer wollte einen Skill zum
+    Erstellen von Social-Media-Content. Über `find-skills` (`npx skills find`)
+    recherchiert, mehrere Anbieter verglichen (Install-Zahlen, Quelle,
+    GitHub-Stars) und `blacktwist/social-media-skills` empfohlen (486 GitHub-
+    Stars, alle 14 Einzel-Skills mit 1,3K–1,8K Installs — deutlich seriöser als
+    kleinere Alternativen mit unter 250 Installs). Nutzer wollte das komplette
+    Set, alle 14 Skills installiert:
+    `social-media-context-sms` (Grundlagen: Stimme/Zielgruppe/Content-Pillars,
+    sollte als Erstes laufen, da andere Skills darauf aufbauen),
+    `content-strategy-sms`, `content-calendar-sms`, `platform-strategy-sms`
+    (Strategie-Ebene), `post-writer-sms`, `thread-writer-sms`,
+    `carousel-writer-sms`, `caption-writer-sms`, `content-repurposer-sms`,
+    `hook-writer-sms` (Content-Erstellung), `performance-analyzer-sms`,
+    `audience-growth-tracker-sms`, `content-pattern-analyzer-sms`,
+    `optimization-advisor-sms` (Analyse). Installiert über die `npx skills`-CLI
+    (via `find-skills`-Skill) — landen als echte Dateien unter `.agents/skills/`,
+    `.claude/skills/` enthält nur Symlinks dorthin (Standard-Verhalten der CLI).
+    `skills-lock.json` (Herkunfts-Hashes der installierten Skills) mit committet.
+    **Empfehlung für die Nutzung:** `social-media-context-sms` zuerst einmal
+    laufen lassen, damit die Sachverständigen-Nische/Positionierung (siehe
+    „Positionierung & USPs" oben) als Grundlage für alle anderen Skills gesetzt
+    ist, statt sie bei jedem Post erneut zu erklären.
 
 ## Hosting & Domains — aktueller Live-Stand (verifiziert 2026-09-06)
 
