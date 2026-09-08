@@ -279,19 +279,19 @@ Kurzfassung der wichtigsten Punkte, die vor einem echten Launch fehlen:
    ersetzen, sobald vorhanden (siehe Werdegang Punkt 10 — bewusst zurückgestellt).
    Preise, Erfahrung und der Portfolio-Case sind bereits mit echten Angaben gefüllt
    (siehe Werdegang Punkt 10).
-3. Die 2 verbleibenden `href="#"`-Platzhalter-Links (Social-Icons im Footer) auflösen
-   oder entfernen — die Portfolio-Cases sind seit dem Nischen-Pivot kein Link mehr,
-   nur noch eine reine Textkarte.
-4. Rechtstexte (Impressum/Datenschutz) sind ausdrücklich Entwürfe, brauchen externe
+3. Rechtstexte (Impressum/Datenschutz) sind ausdrücklich Entwürfe, brauchen externe
    Prüfung vor Launch
-5. Google-Unternehmensprofil ist verknüpft (siehe Werdegang Punkt 7) — offen ist nur
-   noch, ob die Google-seitige Verifizierung (Postkarte/Telefon/Video) beim Nutzer
-   bereits abgeschlossen ist.
-6. Hero-Bild-Kontrast auf Mobile neu prüfen, sobald ein echtes Foto das
+4. Hero-Bild-Kontrast auf Mobile neu prüfen, sobald ein echtes Foto das
    Platzhalter-Gradient ersetzt (rechnerisch grenzwertig unter WCAG AA)
-7. Google Ads: sobald echte Google-Bewertungen oder eine dokumentierte Kundenzahl
+5. Google Ads: sobald echte Google-Bewertungen oder eine dokumentierte Kundenzahl
    vorliegen, die „Vertrauen/Prozess"-Headlines (siehe Werdegang Punkt 8) durch echte
    Social-Proof-Headlines ersetzen/ergänzen.
+
+Erledigt (2026-09-08): Google-Unternehmensprofil ist verifiziert. Kontaktformular
+passt (Empfänger korrekt, Nutzer bestätigt Zustellung). Social-Media-Icons im Footer
+(zwei `href="#"`-Platzhalter, LinkedIn/Instagram) entfernt, da noch keine echten
+Profile existieren — inkl. der jetzt ungenutzten `.footer-social`-CSS-Regel. Bei
+Bedarf später wieder einbaubar, sobald echte Profil-Links vorliegen.
 
 ## Wie man den aktuellen Live-Stand schnell verifiziert
 

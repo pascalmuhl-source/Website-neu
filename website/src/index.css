@@ -535,7 +535,6 @@ button { font-family: inherit; cursor: pointer; }
   .contact-direct a { font-size: 16px; }
 
   .footer { padding: 30px 64px; flex-direction: row; align-items: center; justify-content: space-between; flex-wrap: wrap; }
-  .footer-social { display: flex; gap: 26px; align-items: center; }
 }
 
 /* ---------- Volle Navigation erst ab 1000px ----------
