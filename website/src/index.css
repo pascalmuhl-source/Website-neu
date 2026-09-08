@@ -331,6 +331,7 @@ button { font-family: inherit; cursor: pointer; }
   resize: vertical;
 }
 .form-field select { color-scheme: dark; }
+.form-field select option { color: var(--ink); background: var(--paper); }
 .form-field input::placeholder,
 .form-field textarea::placeholder { color: var(--contact-placeholder); }
 .form-field input:focus,
