@@ -8,11 +8,12 @@ Projekt technisch aufgebaut ist, und was aktuell live steht — damit eine neue 
 sich nicht durch den gesamten Chat-Verlauf arbeiten muss, um auf demselben Stand
 weiterzumachen.
 
-**Zuletzt aktualisiert:** 2026-09-08 (Markenkit erstellt und in `CLAUDE.md` als
-verbindliche Grundlage für alle künftigen Inhalte verankert, siehe Werdegang
-Punkt 19; außerdem Token-Sparen-Regel in `CLAUDE.md` ergänzt, dieser
-Werdegang-Abschnitt entsprechend verschlankt, siehe Punkt 20; Merge des
-Arbeits-Branches `claude/recherche-h43wk2` nach `main`).
+**Zuletzt aktualisiert:** 2026-09-08 (Kontaktformular-Deploy-Bug behoben — Ursache
+war ein Bindestrich im PHP-Dateinamen, siehe Werdegang Punkt 22 und die neue
+CLAUDE.md-Regel dazu; Terminbuchungs-Platzhalter entfernt, siehe Punkt 23; echte
+Rechtstexte samt Website-Header/Footer für Impressum/Datenschutz eingebaut, siehe
+Punkt 24; Merge des Arbeits-Branches
+`claude/website-live-launch-requirements-k67tit` nach `main`).
 
 ## Worum es geht
 
@@ -246,8 +247,10 @@ rekonstruiert werden muss — Details/Begründung stehen in Werdegang Punkt 10.
   - `public/` — alles, was Vite unverändert nach `dist/` kopiert: Fonts (3 `.woff2`,
     self-hosted), `favicon.svg`, `og-image.png` (gerendert aus einer HTML-Vorlage,
     nicht Teil des Repos — nur das fertige PNG ist eingecheckt), `404.html`,
-    `.htaccess`, `impressum.html`, `datenschutz.html`, `robots.txt`, `sitemap.xml`,
-    `send-mail.php` (Kontaktformular-Handler).
+    `.htaccess`, `impressum.html`, `datenschutz.html` (beide inkl. eigenem Header/
+    Footer, da außerhalb des React-Baums), `robots.txt`, `sitemap.xml`,
+    `sendmail.php` (Kontaktformular-Handler — **kein Bindestrich im Dateinamen**,
+    siehe CLAUDE.md-Regel dazu).
   - `index.html` — Meta-Tags, `noindex`, Preloads, JSON-LD-Schema. Bei jeder
     Marken-/Domain-Änderung hier zuerst nachsehen.
 - `mockup/` — der Design-Canvas-Verlauf (v1 verworfen, v2 freigegeben,
@@ -274,83 +277,49 @@ rekonstruiert werden muss — Details/Begründung stehen in Werdegang Punkt 10.
 
 Kurzfassung der wichtigsten Punkte, die vor einem echten Launch fehlen:
 
-1. `noindex` entfernen (aktuell absichtlich gesetzt)
+1. `noindex` entfernen (aktuell absichtlich gesetzt) — **wichtigster Punkt vor Launch**
 2. Testimonial-Platzhalter (`[Name]`/`[Firma]`) durch echte Zitate mit Kundenfreigabe
    ersetzen, sobald vorhanden (siehe Werdegang Punkt 10 — bewusst zurückgestellt).
    Preise, Erfahrung und der Portfolio-Case sind bereits mit echten Angaben gefüllt
    (siehe Werdegang Punkt 10).
-3. Rechtstexte (Impressum/Datenschutz) sind ausdrücklich Entwürfe, brauchen externe
-   Prüfung vor Launch
+3. Rechtstexte sind jetzt echte e-recht24-Fassungen (siehe Werdegang Punkt 24), aber
+   Löschfrist der Server-Logdaten in `datenschutz.html` (Abschnitt „Server-Log-
+   Dateien") ist noch als Platzhalter offen — bei lima-city erfragen und ergänzen.
 4. Hero-Bild-Kontrast auf Mobile neu prüfen, sobald ein echtes Foto das
    Platzhalter-Gradient ersetzt (rechnerisch grenzwertig unter WCAG AA)
 5. Google Ads: sobald echte Google-Bewertungen oder eine dokumentierte Kundenzahl
    vorliegen, die „Vertrauen/Prozess"-Headlines (siehe Werdegang Punkt 8) durch echte
    Social-Proof-Headlines ersetzen/ergänzen.
+6. Testdateien auf dem Server aufräumen, falls noch nicht geschehen: `ftptest.txt`,
+   `kontakt-handler.php`, `kontakthandler.php`, `formtest.php`, `info.php`,
+   `altversion.php`, das alte `send-mail.php` (mit Bindestrich, nie erreichbar) —
+   v. a. `info.php` wegen offengelegter Serverdetails.
 
-Erledigt (2026-09-08): Google-Unternehmensprofil ist verifiziert. Social-Media-Icons
-im Footer (zwei `href="#"`-Platzhalter, LinkedIn/Instagram) entfernt, da noch keine
-echten Profile existieren — inkl. der jetzt ungenutzten `.footer-social`-CSS-Regel.
-Bei Bedarf später wieder einbaubar, sobald echte Profil-Links vorliegen.
-
-**Deploy-Lücke gefunden, Fix geliefert, dabei neuen Bug entdeckt (2026-09-08):**
-Nutzer meldete, dass das Dropdown-Feld „Worum geht's?" (`anliegen`) zwar im Formular
-sichtbar ist, aber nicht in den empfangenen Mails ankommt. Ursache: `send-mail.php`
-war seit dem Dropdown-Feature (Werdegang Punkt 12) nie neu hochgeladen worden — auf
-dem Server lag noch die alte Version ohne `anliegen`-Verarbeitung. Da diese Datei
-kein Build-Artefakt ist (liegt direkt in `public/`, nicht in `dist/assets/` mit
-Hash), wird sie bei einem reinen `dist/`-Diff-Upload leicht übersehen — **künftig bei
-jeder Änderung an `send-mail.php` explizit als eigene Datei zum Upload mitgeben,
-nicht nur den `dist/`-Vergleich prüfen.**
-
-**Nach dem Reupload: `send-mail.php` liefert seitdem einen 404**, obwohl Formular
-weiterhin abschickt. Systematisch eingegrenzt:
-- Datei liegt nachweislich im richtigen Ordner (FileZilla, Größe 2.114 Bytes korrekt)
-- Rechte (0600) identisch mit funktionierenden Dateien wie `impressum.html`
-- FTP-Pfad verifiziert korrekt: Testdatei `ftptest.txt` im selben Ordner ist live
-  unter `/ftptest.txt` erreichbar (200) — kein falscher vhost/Account
-- Ein komplett neuer, nie zuvor benutzter Dateiname (`kontakt-handler.php`,
-  identischer Inhalt) scheitert exakt genauso mit 404
-- `.htaccess` enthält keine Rewrite-Regel, die `.php`-Aufrufe abfangen würde, nur
-  `ErrorDocument 404 /404.html` (ersetzt bei echtem 404 nur den Seiteninhalt)
-- Der 404 ist ein „echtes" Apache-404 (nicht durch einen PHP-Laufzeitfehler
-  maskiert — der gäbe einen 500er, wie einmal kurz beim Testen mit leerem
-  Nachrichtenfeld gegen die alte Datei beobachtet)
-
-**Zwischendiagnose (verworfen):** `info.php` (reines `phpinfo()`) lief einwandfrei,
-`formtest.php` (ohne `mail()`) auch — Verdacht fiel zunächst auf `mail()` als
-Auslöser. Nutzer wies zu Recht darauf hin, dass die alte Datei bis kurz vorher noch
-funktioniert hatte, obwohl sie ebenfalls `mail()` aufrief — Widerspruch.
-
-**Tatsächliche Ursache gefunden:** Die alte, aus der Git-Historie rekonstruierte
-Version (`altversion.php`, identischer `mail()`-Aufruf, nur ohne Dropdown-Code) lief
-unter neuem Namen einwandfrei — widerlegt die `mail()`-Theorie endgültig. Sauberer
-Trenntest danach: derselbe neue Dropdown-Code unter bindestrichfreiem Namen
-(`kontakthandler.php`) lief fehlerfrei, derselbe Code mit Bindestrich im Namen
-(`send-mail.php`, `kontakt-handler.php`) lieferte konsequent 404.
-
-→ **Lima-city blockiert offenbar PHP-Dateien mit Bindestrich im Dateinamen**
-(vermutlich eine WAF-/Security-Regel, die Bindestrich-Namen wie typische
-Exploit-/Shell-Uploads behandelt) — unabhängig vom Code-Inhalt. Nutzer hatte den
-entscheidenden Hinweis geliefert: Der Live-Server hatte den Kontaktformular-Handler
-schon lange als `sendmail.php` (ohne Bindestrich) laufen, während unser Repo/JS auf
-`send-mail.php` (mit Bindestrich) zeigte — dieser Namens-Mismatch war vermutlich
-schon länger die eigentliche Fehlerquelle, nur durch Caching/alte Deploys überdeckt.
-
-**Fix erfolgreich, Kontaktformular fertig (2026-09-08):**
-`website/public/send-mail.php` → `website/public/sendmail.php` umbenannt,
-Fetch-Aufruf in `Kontakt.jsx` auf `/sendmail.php` angepasst, neu gebaut, hochgeladen.
-Live-Verifikation: HTML/JS/CSS byte-genau deckungsgleich, `GET /sendmail.php` →
-korrektes `405`, vollständiger Test-POST mit `anliegen=Redesign` → `{"ok":true}` und
-vom Nutzer bestätigt in der Mailbox angekommen, inkl. Dropdown-Auswahl im Betreff/
-Text. **Kontaktformular ist damit vollständig verifiziert und einsatzbereit.**
-Testdateien auf dem Server (`ftptest.txt`, `kontakt-handler.php`,
-`kontakthandler.php`, `formtest.php`, `info.php`, `altversion.php`, das alte
-`send-mail.php`) sollten bei Gelegenheit gelöscht werden — v. a. `info.php` wegen
-offengelegter Serverdetails.
-
-**Standing Rule für künftige PHP-Dateien auf diesem Hosting:** Keine Bindestriche in
-`.php`-Dateinamen verwenden (lima-city blockiert das serverseitig mit einem
-unauffälligen 404, unabhängig vom Code-Inhalt).
+21. **Google-Unternehmensprofil verifiziert.** Social-Media-Icons im Footer (zwei
+    `href="#"`-Platzhalter, LinkedIn/Instagram) entfernt, da noch keine echten
+    Profile existieren.
+22. **Kontaktformular-Bug behoben (2026-09-08):** Dropdown „Worum geht's?" kam nicht
+    in den Mails an, da `send-mail.php` seit dem Dropdown-Feature nie neu hochgeladen
+    worden war (liegt in `public/`, kein `dist/`-Build-Artefakt — bei Änderungen
+    daran künftig explizit als eigene Datei zum Upload geben). Beim Reupload dann
+    durchgehend 404, obwohl Datei/Pfad/Rechte nachweislich korrekt — systematisches
+    Testen ergab: **lima-city blockiert PHP-Dateien mit Bindestrich im Dateinamen**
+    serverseitig (vermutlich WAF-Regel gegen Exploit-/Shell-typische Namen),
+    unabhängig vom Code-Inhalt. Fix: `send-mail.php` → `sendmail.php` umbenannt
+    (Fetch-Aufruf in `Kontakt.jsx` angepasst), live mit echter Testmail (inkl.
+    Dropdown-Wert) verifiziert. Standing Rule in `CLAUDE.md` ergänzt: keine
+    Bindestriche in `.php`-Dateinamen auf diesem Hosting.
+23. **Terminbuchungs-Platzhalter entfernt** (Nutzer nutzt kein Buchungstool) —
+    Block, State und CSS aus `Kontakt.jsx`/`index.css` entfernt.
+24. **Rechtstexte durch echte e-recht24-Fassungen ersetzt:** Nutzer lieferte reale
+    Impressum- und Datenschutz-Texte (Hoster laut AVV: TracPlex GmbH, Auftrags-
+    verarbeiter von lima-city). Datenschutz zusätzlich um zwei konkret bekannte
+    Fakten ergänzt (self-gehostete Schriftarten, lima-city-Cookies `_lcp`/`_lcp3` —
+    beide live verifiziert). Platzhalter-Entwurfshinweis aus dem Impressum entfernt.
+    Beide Seiten (`impressum.html`, `datenschutz.html`) waren bislang eigenständige
+    Seiten ohne Website-Navigation — Header (inkl. mobilem Menü) und Footer aus
+    `Nav.jsx`/`Footer.jsx` 1:1 als statisches HTML/CSS/JS repliziert und ergänzt,
+    live verifiziert.
 
 ## Wie man den aktuellen Live-Stand schnell verifiziert
 
