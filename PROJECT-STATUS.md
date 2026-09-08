@@ -178,6 +178,15 @@ rekonstruiert werden muss — Details/Begründung stehen in Werdegang Punkt 10.
     bei echtem Design-Bedarf, ein Screenshot pro Änderungsmeldung, kompakter
     Bash-Output, knappe Antworten — Details siehe „Regel: Token-Sparen" in
     `CLAUDE.md`.
+25. **Ausbauplan als Artefact erstellt** (2026-09-08): Auf Wunsch des Nutzers
+    („Website zu kurz") Plan zur Vertiefung von Problem- und Zusammenarbeit-
+    Sektion plus zwei neuen Sektionsvorschlägen (Branchen-Szenarien, FAQ) als
+    Artefact veröffentlicht: https://claude.ai/code/artifact/2354cff3-8867-4a2e-bd87-da9f3fa14c79
+    — wartet auf Freigabe, dann Umsetzung in `Prozess.jsx`/`Problem.jsx` + zwei
+    neue Komponenten. Neue Standing Rule in `CLAUDE.md`: Bei jeder Design-Arbeit
+    (Artefact wie Website-Code) ab sofort immer alle vier Skills `frontend-design`,
+    `emil-design-eng`, `impeccable`, `ui-ux-pro-max` heranziehen, zusätzlich zu
+    `design-taste-frontend`.
 
 ## Hosting & Domains — aktueller Live-Stand (verifiziert 2026-09-06)
 

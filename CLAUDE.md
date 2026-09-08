@@ -81,10 +81,12 @@ Nutzer sie erneut anstoßen muss:
    umrissene Einzeländerung (eine Zeile in `robots.txt`, ein Text in einer Sektion)
    wird direkt editiert, kein Subagent gestartet.
 4. **Design-/Anti-Slop-Skills nur bei echtem Layout-/Design-Bedarf laden:**
-   `frontend-design`, `impeccable`, `design-taste-frontend` etc. nur aufrufen, wenn
-   tatsächlich Layout/Typografie/Visuelles entsteht oder überarbeitet wird. Reine
-   Text-, Daten- oder Konfigurationsänderungen ohne Design-Bezug laufen ohne
-   Skill-Aufruf.
+   Nur aufrufen, wenn tatsächlich Layout/Typografie/Visuelles entsteht oder
+   überarbeitet wird (Artefakt-Design ebenso wie Website-Code). Reine Text-,
+   Daten- oder Konfigurationsänderungen ohne Design-Bezug laufen ohne Skill-Aufruf.
+   Ist Design-Bedarf gegeben, gilt die feste Skill-Liste in der Regel
+   „Pflicht-Skills bei Design-Arbeit" weiter unten — nicht mehr optional aussuchen,
+   welche der Design-Skills geladen werden.
 5. **Ein Screenshot pro Änderungsmeldung reicht:** Die Artefakt-Screenshot-Pflicht
    (siehe eigene Regel unten) gilt am fertigen Zwischenstand, der dem Nutzer gemeldet
    wird — nicht zusätzlich bei jedem kleinen Zwischenschritt auf dem Weg dahin.
@@ -118,6 +120,22 @@ Nutzer danach fragen muss:
 4. Das ist eine aktive Empfehlung, keine automatische Aktion — die Entscheidung, jetzt
    wirklich eine neue Session zu starten, bleibt beim Nutzer. Ich weise nur proaktiv
    darauf hin, wenn es so weit ist.
+
+# Regel: Pflicht-Skills bei Design-Arbeit — immer alle vier, ungefragt
+
+Sobald tatsächlich Design entsteht oder überarbeitet wird — egal ob als Artefact
+(Mockup, Design-Canvas, Ausbauplan o. ä.) oder direkt im Website-Code — werden ab
+sofort immer alle vier der folgenden Skills herangezogen, nicht nur einzelne davon:
+
+1. `frontend-design`
+2. `emil-design-eng` (Emil Kowalski)
+3. `impeccable`
+4. `ui-ux-pro-max`
+
+Das gilt zusätzlich zu und nicht anstelle von `design-taste-frontend` (Anti-Slop-
+Prüfung, siehe „Regel: Kein KI-Slop" weiter unten) — diese vier kommen ergänzend
+immer dazu. Gilt ab sofort dauerhaft für dieses Projekt, ohne dass der Nutzer das
+je erneut anstoßen muss.
 
 # Workflow: Website-Design (Briefing → Mockup → Umsetzung)
 
