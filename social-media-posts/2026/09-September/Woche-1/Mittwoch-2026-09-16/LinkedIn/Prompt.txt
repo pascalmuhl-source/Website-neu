@@ -1,0 +1,6 @@
+Flat vector icon composition, a simple padlock icon connected by a thin
+dashed line to a small "Aa" typography glyph icon, with a small red warning
+diagonal slash through the connecting line, dark ink (#1C1F1D) icons on
+paper-white background (#F5F5F2), one dark green accent element (#147A55),
+minimal line-icon style like a technical diagram, no realistic imagery,
+lots of negative space, single focal composition

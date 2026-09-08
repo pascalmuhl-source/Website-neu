@@ -1,0 +1,8 @@
+"Ab wann lohnt sich eine neue Website?" ist die falsche Frage.
+
+Die richtige: "Wie viele Anfragen verliere ich gerade, ohne es zu merken?"
+
+Eine schwache Website zeigt keine Fehlermeldung. Sie verliert einfach still
+Anfragen.
+
+#sachverständiger #webdesign #frage

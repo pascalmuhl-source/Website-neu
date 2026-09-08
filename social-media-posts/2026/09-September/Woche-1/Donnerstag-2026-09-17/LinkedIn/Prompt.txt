@@ -1,0 +1,6 @@
+Flat vector checklist illustration, five simple line-icon checkboxes stacked
+vertically (phone icon, telephone icon, calendar icon, speech-bubble icon,
+magnifying-glass-with-person icon), one checkbox shown unchecked in dark
+green accent (#147A55), rest in dark ink (#1C1F1D) outline on paper-white
+background (#F5F5F2), minimal technical-diagram style, sharp corners,
+generous whitespace, no photorealism

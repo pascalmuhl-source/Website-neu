@@ -1,0 +1,12 @@
+DSGVO-Checkliste für Ihre Website — ohne Juristendeutsch:
+
+✓ Schriftarten selbst gehostet?
+✓ Kein automatisches Tracking?
+✓ Eingebettete Inhalte erst nach Klick?
+✓ Datenschutzerklärung aktuell?
+✓ Klarer Hinweis im Kontaktformular?
+✓ Hoster mit EU-Standort + AVV?
+
+Wie viele davon schafft Ihre Seite?
+
+#dsgvo #datenschutz #checkliste #sachverständiger #website

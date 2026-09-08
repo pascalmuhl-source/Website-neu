@@ -1,0 +1,18 @@
+Ein Learning aus einem aktuellen Projekt, das ich mir selbst öfter in
+Erinnerung rufen sollte:
+
+Ich hatte einen ersten Entwurf für eine Startseite fertig — sauber
+strukturiert, aus meiner Sicht klar. Beim Gespräch mit dem Kunden kam dann
+eine einfache Frage zurück: "Würde das jemand verstehen, der noch nie mit
+einem Sachverständigen zu tun hatte?"
+
+Die ehrliche Antwort war: nicht auf den ersten Blick.
+
+Der Text war für Menschen geschrieben, die die Branche schon kennen. Nicht
+für die, die gerade zum ersten Mal ein Gutachten brauchen und unter Stress
+nach Hilfe suchen.
+
+Seitdem prüfe ich jeden Text mit genau dieser Frage — nicht "ist das
+korrekt", sondern "versteht das jemand ohne Vorwissen, unter Zeitdruck".
+
+#Sachverständige #Webdesign #Learning

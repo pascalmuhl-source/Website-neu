@@ -1,0 +1,16 @@
+Eine kurze DSGVO-Checkliste für Ihre eigene Website — in einfacher Sprache,
+ohne Juristendeutsch:
+
+→ Schriftarten selbst gehostet, nicht von Google-Servern geladen?
+→ Kein Tracking-Skript (Analytics, Pixel), das ohne Einwilligung lädt?
+→ Eingebettete Inhalte (Karten, Videos) erst nach Klick, nicht automatisch?
+→ Datenschutzerklärung vorhanden und aktuell?
+→ Kontaktformular mit klarem Hinweis, wofür die Daten verwendet werden?
+→ Hoster mit Serverstandort EU und abgeschlossenem AVV?
+
+Sechs Punkte. Keiner davon braucht ein großes Budget.
+Aber jeder einzelne zählt bei Auftraggebern, die selbst auf Datenschutz achten.
+
+Wie viele davon kann Ihre Website mit Ja beantworten?
+
+#DSGVO #Sachverständige #Checkliste

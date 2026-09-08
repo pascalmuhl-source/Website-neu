@@ -1,0 +1,16 @@
+Was in einem Website-Projekt für einen Sachverständigen tatsächlich passiert,
+bevor die erste Zeile Text geschrieben wird:
+
+Zuerst geht es nicht um Farben oder Schriftarten. Es geht um eine Frage:
+Wie erklärt diese Person ihr Fachgebiet, wenn sie es einem Laien beschreibt?
+
+Diese Antwort — meist ein einfacher, konkreter Satz — wird zur Grundlage für
+die ganze Seite. Struktur, Wortwahl, sogar die Reihenfolge der Inhalte
+entstehen daraus.
+
+Erst danach kommt Design. Nicht umgekehrt.
+
+Der häufigste Fehler bei Baukasten-Websites: Es wird mit der Vorlage
+angefangen, nicht mit dieser einen Frage.
+
+#Sachverständige #Prozess #Webdesign

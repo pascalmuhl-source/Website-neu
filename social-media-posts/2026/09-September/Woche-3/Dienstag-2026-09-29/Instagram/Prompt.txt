@@ -1,0 +1,5 @@
+Minimalist illustration of a simple thought-bubble containing a single bold
+question mark, connected by a thin line to a small wireframe sketch of a
+webpage layout below it, dark ink outlines (#1C1F1D), one accent element in
+dark green (#147A55), paper-white background (#F5F5F2), flat vector style,
+sharp corners, no photorealism, generous whitespace

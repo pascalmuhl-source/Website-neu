@@ -8,13 +8,14 @@ Projekt technisch aufgebaut ist, und was aktuell live steht — damit eine neue 
 sich nicht durch den gesamten Chat-Verlauf arbeiten muss, um auf demselben Stand
 weiterzumachen.
 
-**Zuletzt aktualisiert:** 2026-09-08 (Stand nach komplettem 4-Wochen-Social-
-Media-Plan: Kontext-Datei, Strategie, Kalender und ausformulierte Post-Texte +
-Bild-Prompts für alle 3 Plattformen unter `.agents/social-media-*`; davor:
-Installation des kompletten `blacktwist/social-media-skills`-Sets — Details zu
-allen davor liegenden Schritten siehe Werdegang unten. Ältere Punkte
-(Kontaktdaten-Eintrag, Google-Business-Profil, Google-Ads-Setup,
-Selbstpflege-Regel für diese
+**Zuletzt aktualisiert:** 2026-09-08 (Stand nach Ablage der Social-Media-Posts
+in GitHub-Ordnerstruktur `social-media-posts/Jahr/Monat/Woche-N/Wochentag-Datum/
+Plattform/{Text.txt,Prompt.txt}`, Start Woche 1 = Montag 14.09.2026; davor:
+kompletter 4-Wochen-Social-Media-Plan (Kontext-Datei, Strategie, Kalender,
+Post-Texte) unter `.agents/social-media-*`, Installation des kompletten
+`blacktwist/social-media-skills`-Sets — Details zu allen davor liegenden
+Schritten siehe Werdegang unten. Ältere Punkte (Kontaktdaten-Eintrag,
+Google-Business-Profil, Google-Ads-Setup, Selbstpflege-Regel für diese
 beiden Dateien).
 
 ## Worum es geht
@@ -289,6 +290,24 @@ rekonstruiert werden muss — Details/Begründung stehen in Werdegang Punkt 10.
       Tool gerendert — nur die Text-Prompts liegen vor. Freitags-Slots pro Woche
       bewusst ungeschrieben (reaktiv/aktuell zu befüllen). Beispiel-Posts und
       echte Handles in der Kontext-Datei fehlen weiterhin.
+15. **Social-Media-Posts als GitHub-Ordnerstruktur abgelegt:** Nutzer wollte die
+    fertigen Texte/Prompts aus `.agents/social-media-content/` zusätzlich in
+    einer festen Ordnerstruktur im Repo, damit sie direkt aus GitHub heraus
+    einsehbar/kopierbar sind (nicht nur als lange Markdown-Dateien). Struktur:
+    `social-media-posts/Jahr/Monat/Woche-N/Wochentag-JJJJ-MM-TT/Plattform/
+    {Text.txt, Prompt.txt}`. Startdatum Woche 1 = Montag, 14.09.2026 (nächster
+    Montag ab Erstellungsdatum, auf Nutzerwunsch). Ein Python-Skript hat die
+    bereits vorhandenen `woche-1.md` bis `woche-4.md` geparst und automatisch in
+    100 Einzeldateien aufgeteilt (16 Wochentage × 3 Plattformen × 2 Dateien +
+    4 Freitags-`Hinweis.txt`) — Texte selbst wurden dabei nicht neu geschrieben,
+    nur strukturiert übernommen. **Entscheidung bei Monatsgrenzen:** Der
+    Monat-Ordner richtet sich nach dem Monat des Montags der jeweiligen Woche,
+    nicht nach dem Kalendertag jedes einzelnen Posts — sonst würde z. B. Woche 3
+    (Donnerstag/Freitag fallen in den Oktober) auf zwei Monatsordner
+    aufgesplittet. Diese Entscheidung + die genauen Wochentag-Daten stehen in
+    `social-media-posts/README.md`. **Wichtig bei Terminverschiebung:** Die
+    Ordnernamen enthalten feste Kalenderdaten, keine relative Zählung — bei
+    späterem Start müssten sie manuell umbenannt werden.
 
 ## Hosting & Domains — aktueller Live-Stand (verifiziert 2026-09-06)
 

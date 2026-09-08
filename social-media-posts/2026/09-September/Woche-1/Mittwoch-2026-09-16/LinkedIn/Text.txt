@@ -1,0 +1,22 @@
+Die meisten Websites laden Schriftarten direkt von Google-Servern.
+
+Bei jedem Seitenaufruf wird dabei die IP-Adresse des Besuchers an Google
+übertragen — ohne dass der Besucher davon erfährt oder zustimmt.
+
+Für die meisten Websites ist das ein Bußgeld-Risiko unter vielen.
+Für eine Sachverständigen-Website ist es etwas anderes:
+
+Ihre Auftraggeber sind oft Anwälte, Versicherungen, manchmal Gerichte.
+Genau die Klientel, die selbst am strengsten auf Datenschutz achtet.
+
+Eine Website, die schon bei den Grundlagen schlampt, wirft ein schlechtes
+Licht auf die Sorgfalt, mit der auch gearbeitet wird.
+
+Deshalb: Schriftarten selbst hosten, keine automatisch ladenden
+Drittanbieter-Skripte, kein Tracking ohne Einwilligung.
+
+Kein Compliance-Häkchen. Ein Vertrauensargument.
+
+Wissen Sie, ob Ihre eigene Website das schon einhält?
+
+#DSGVO #Sachverständige #Datenschutz

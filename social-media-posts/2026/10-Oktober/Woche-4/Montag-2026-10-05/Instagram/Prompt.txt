@@ -1,0 +1,6 @@
+Flat vector illustration, a simple stopwatch icon showing "5 Sek" next to
+three small checkmarked line-icons in a vertical list (a magnifying-glass-
+on-document icon, a scales-of-justice icon, a phone-with-checkmark icon),
+dark ink outlines (#1C1F1D), one accent element in dark green (#147A55),
+paper-white background (#F5F5F2), minimal technical-diagram style, sharp
+corners, no photorealism, generous whitespace

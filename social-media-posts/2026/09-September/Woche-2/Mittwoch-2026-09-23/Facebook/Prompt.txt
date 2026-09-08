@@ -1,0 +1,6 @@
+Flat vector checklist graphic, six checkbox rows with small line-icons
+(font glyph, eye-with-slash icon, click-cursor icon, document icon,
+envelope icon, server-with-EU-flag icon), all checkboxes checked in dark
+green (#147A55), dark ink outlines (#1C1F1D), paper-white background
+(#F5F5F2), minimal technical clipboard illustration, sharp corners, no
+photorealism, generous whitespace
