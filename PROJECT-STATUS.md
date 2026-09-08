@@ -8,11 +8,14 @@ Projekt technisch aufgebaut ist, und was aktuell live steht — damit eine neue 
 sich nicht durch den gesamten Chat-Verlauf arbeiten muss, um auf demselben Stand
 weiterzumachen.
 
-**Zuletzt aktualisiert:** 2026-09-08 (Stand nach Design-/Motion-Audit der
-Website mit `impeccable`, `design-taste-frontend`, `find-animation-
+**Zuletzt aktualisiert:** 2026-09-08 (Stand nach Erstellung aller 48
+Post-Bilder als `Bild.png` in `social-media-posts/` — handgebaute
+Flat-Vector-Grafiken statt KI-generierter Fotos, da kein Bild-API-Zugang in
+dieser Session verfügbar war, siehe Werdegang unten; davor: Design-/Motion-
+Audit der Website mit `impeccable`, `design-taste-frontend`, `find-animation-
 opportunities`, `improve-animations`, `emil-design-eng`, `apple-design` und
-`ui-ux-pro-max` — 3 echte Bugs und mehrere kleine Verbesserungen behoben, siehe
-Werdegang unten; davor: Ablage der Social-Media-Posts in GitHub-Ordnerstruktur
+`ui-ux-pro-max` — 3 echte Bugs und mehrere kleine Verbesserungen behoben;
+davor: Ablage der Social-Media-Posts in GitHub-Ordnerstruktur
 `social-media-posts/Jahr/Monat/Woche-N/Wochentag-Datum/Plattform/
 {Text.txt,Prompt.txt}`, Start Woche 1 = Montag 14.09.2026; davor: kompletter
 4-Wochen-Social-Media-Plan (Kontext-Datei, Strategie, Kalender, Post-Texte)
@@ -351,6 +354,33 @@ rekonstruiert werden muss — Details/Begründung stehen in Werdegang Punkt 10.
       Garamond), Ein-Akzent-Farbe, durchgängiger Radius 0 und Layout-Vielfalt
       über die Sektionen bestanden bereits vor dem Audit und wurden nicht
       angetastet.
+17. **Alle 48 Post-Bilder erstellt:** Nutzer wollte die `Prompt.txt`-Dateien aus
+    Punkt 15 tatsächlich als `Bild.png` in den jeweiligen Ordnern, im pro
+    Plattform richtigen Format. Zuerst über `find-skills` nach einem
+    Bild-Generierungs-Skill gesucht (mehrere gefunden, u. a.
+    `anycap-ai/anycap`, `nano-banana-prompts`, `gemini-3-image-generation`) —
+    aber keiner davon nutzbar: In dieser Cloud-Session ist kein Bild-API-Key
+    hinterlegt (`env` geprüft: kein `OPENAI_*`/`GEMINI_*`/etc.), und die
+    Netzwerk-Freigabe der Session deckt keine Bild-API-Hosts ab. Nutzer hat
+    sich daraufhin explizit für die dritte Option entschieden: eigene
+    handgebaute Vektorgrafiken statt KI-Foto. Umsetzung: 16 individuelle
+    Flat-Vector-Icon-Kompositionen (eine je Wochentag-Thema, exakt passend zum
+    jeweiligen `Prompt.txt`-Inhalt) als SVG gebaut, mit Playwright in 3
+    Formaten gerendert — LinkedIn 1200×627px, Facebook 1200×630px, Instagram
+    1080×1080px (quadratisch) — macht 48 PNGs, alle als `Bild.png` neben
+    `Text.txt`/`Prompt.txt` in den jeweiligen Plattform-Ordnern abgelegt.
+    Farben 1:1 aus `DESIGN-TOKENS.md`. **Bug beim ersten Rendering-Durchlauf
+    gefunden und behoben:** Die erste Fassung nutzte ein manuelles
+    JS-Resize der SVG-Größe (`setAttribute('width'/'height', ...)`), das die
+    Skalierung nicht korrekt anwendete — Motive wurden dadurch oben oder
+    unten abgeschnitten statt zentriert zu skalieren. Fix: SVG ohne feste
+    Pixel-Attribute, stattdessen `viewBox` + CSS-Prozent-Größe
+    (`width:92%;height:92%`) mit `preserveAspectRatio="xMidYMid meet"` —
+    danach sauber zentriert in allen drei Seitenverhältnissen, per
+    Screenshot verifiziert. `social-media-posts/README.md` erklärt den
+    Hintergrund (kein KI-Bild, sondern Vektor-Illustration) und wie man bei
+    Bedarf später echte KI-generierte Bilder aus den vorhandenen
+    `Prompt.txt`-Dateien nachträgt.
 
 ## Hosting & Domains — aktueller Live-Stand (verifiziert 2026-09-06)
 
