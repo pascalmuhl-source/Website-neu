@@ -6,20 +6,112 @@
   <meta name="robots" content="noindex">
   <title>Datenschutzerklärung — Pascal Webdesign</title>
   <style>
-    body { margin:0; background:#F5F5F2; color:#1C1F1D; font-family:-apple-system,'Segoe UI',Arial,sans-serif; }
+    @font-face {
+      font-family: 'Archivo';
+      font-style: normal;
+      font-weight: 400 700;
+      font-display: swap;
+      src: url('/fonts/archivo-latin-variable.woff2') format('woff2');
+    }
+    @font-face {
+      font-family: 'Cormorant Garamond';
+      font-style: normal;
+      font-weight: 400 600;
+      font-display: swap;
+      src: url('/fonts/cormorant-garamond-latin-variable-normal.woff2') format('woff2');
+    }
+
+    :root { --paper:#F5F5F2; --ink:#1C1F1D; --ink-soft:#5B5F5B; --rule:#DBDDD8; --accent:#147A55; }
+    *, *::before, *::after { box-sizing: border-box; }
+    .only-desktop { display: none; }
+    .only-mobile { display: block; }
+    html { -webkit-text-size-adjust: 100%; }
+    body { margin: 0; background: var(--paper); color: var(--ink); font-family: 'Archivo', -apple-system, 'Segoe UI', sans-serif; }
+    a { color: var(--ink); text-decoration: none; transition: color 0.18s ease; }
+    a:hover { color: var(--accent); }
+
+    .btn-outline {
+      display: inline-flex; align-items: center; gap: 10px; padding: 10px 20px;
+      background: transparent; color: var(--ink); font-size: 13px; letter-spacing: 0.02em;
+      font-weight: 600; border: 1px solid var(--ink); transition: background 0.2s ease, color 0.2s ease;
+    }
+    .btn-outline:hover { background: var(--ink); color: var(--paper); }
+
+    .nav {
+      position: sticky; top: 0; z-index: 40; display: flex; align-items: center; justify-content: space-between;
+      padding: 16px 20px; background: rgba(245, 245, 242, 0.95); backdrop-filter: blur(6px); border-bottom: 1px solid var(--rule);
+    }
+    .nav-logo { font-family: 'Cormorant Garamond', serif; font-size: 21px; white-space: nowrap; color: var(--ink); }
+    .nav-logo .dot { color: var(--accent); }
+    .nav-toggle { background: none; border: none; padding: 9px; line-height: 0; color: var(--ink); }
+    .nav-toggle:active { transform: scale(0.9); }
+    .nav-links { display: none; }
+    .nav-menu {
+      position: fixed; inset: 0; top: 58px; background: var(--paper); z-index: 39; display: flex; flex-direction: column;
+      padding: 32px 24px; gap: 28px; transform: translateY(-8px); opacity: 0; pointer-events: none;
+      transition: opacity 0.2s ease, transform 0.2s ease;
+    }
+    .nav-menu.is-open { opacity: 1; transform: translateY(0); pointer-events: auto; }
+    .nav-menu a { font-size: 22px; font-family: 'Cormorant Garamond', serif; color: var(--ink); }
+
+    .footer { padding: 26px 20px; display: flex; flex-direction: column; gap: 14px; align-items: flex-start; }
+    .footer-right { display: flex; align-items: center; gap: 26px; }
+    .footer-links { display: flex; gap: 20px; }
+    .footer-links a { font-size: 12.5px; color: var(--ink-soft); }
+    .footer-copy { font-size: 12.5px; color: var(--ink-soft); }
+
+    @media (min-width: 880px) {
+      .footer { padding: 30px 64px; flex-direction: row; align-items: center; justify-content: space-between; flex-wrap: wrap; }
+    }
+    @media (min-width: 1000px) {
+      .nav-toggle { display: none; }
+      .nav-links { display: flex; align-items: center; gap: 36px; }
+      .nav-links a { font-size: 14px; font-weight: 500; padding-bottom: 4px; border-bottom: 1px solid transparent; color: var(--ink); }
+      .nav-links a:hover { border-bottom-color: var(--accent); color: var(--ink); }
+      .nav-menu { display: none; }
+      .nav { padding: 16px 64px; }
+    }
+
     .wrap { max-width:720px; margin:0 auto; padding:64px 20px; }
-    h1 { font-size:1.8rem; margin:0 0 32px; }
-    h2 { font-size:1.3rem; margin:40px 0 16px; }
-    h3 { font-size:1.05rem; margin:28px 0 10px; }
+    h1 { font-size:1.8rem; margin:0 0 32px; font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 500; }
+    h2 { font-size:1.3rem; margin:40px 0 16px; font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 500; }
+    h3 { font-size:1.05rem; margin:28px 0 10px; font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 500; }
     h4 { font-size:0.95rem; margin:18px 0 6px; }
     p { line-height:1.65; margin:0 0 14px; }
     ul { line-height:1.65; margin:0 0 14px; padding-left:22px; }
     li { margin-bottom:4px; }
-    a { color:#147A55; }
+    .wrap a { color:#147A55; }
     .back { display:inline-block; margin-top:40px; font-size:14px; }
   </style>
 </head>
 <body>
+  <div class="nav">
+    <a href="./" class="nav-logo">Pascal Webdesign<span class="dot">.</span></a>
+    <nav class="nav-links">
+      <a href="./#leistungen">Leistungen</a>
+      <a href="./#portfolio">Portfolio</a>
+      <a href="./#ueber-mich">Über mich</a>
+      <a href="./#prozess">Prozess</a>
+      <a href="./#kontakt">Kontakt</a>
+      <a class="btn-outline" href="./#kontakt">Erstgespräch buchen</a>
+    </nav>
+    <button type="button" class="nav-toggle" id="navToggle" aria-expanded="false" aria-label="Menü öffnen">
+      <svg id="navIconOpen" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round">
+        <line x1="4" y1="7" x2="20" y2="7" /><line x1="4" y1="12" x2="20" y2="12" /><line x1="4" y1="17" x2="20" y2="17" />
+      </svg>
+      <svg id="navIconClose" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" hidden>
+        <line x1="5" y1="5" x2="19" y2="19" /><line x1="19" y1="5" x2="5" y2="19" />
+      </svg>
+    </button>
+  </div>
+  <div class="nav-menu" id="navMenu">
+    <a href="./#leistungen">Leistungen</a>
+    <a href="./#portfolio">Portfolio</a>
+    <a href="./#ueber-mich">Über mich</a>
+    <a href="./#prozess">Prozess</a>
+    <a href="./#kontakt">Kontakt</a>
+  </div>
+
   <div class="wrap">
     <h1>Datenschutz&shy;erkl&auml;rung</h1>
     <h2>1. Datenschutz auf einen Blick</h2>
@@ -129,5 +221,32 @@
 
     <a class="back" href="./">← Zur&uuml;ck zur Startseite</a>
   </div>
+
+  <div class="footer">
+    <span class="footer-copy only-desktop">© 2026 Pascal Webdesign. Alle Rechte vorbehalten.</span>
+    <div class="footer-right">
+      <div class="footer-links">
+        <a href="./impressum.html">Impressum</a>
+        <a href="./datenschutz.html">Datenschutz</a>
+      </div>
+    </div>
+    <span class="footer-copy only-mobile">© 2026 Pascal Webdesign. Alle Rechte vorbehalten.</span>
+  </div>
+
+  <script>
+    (function () {
+      var btn = document.getElementById('navToggle');
+      var menu = document.getElementById('navMenu');
+      var iconOpen = document.getElementById('navIconOpen');
+      var iconClose = document.getElementById('navIconClose');
+      btn.addEventListener('click', function () {
+        var isOpen = menu.classList.toggle('is-open');
+        btn.setAttribute('aria-expanded', isOpen);
+        btn.setAttribute('aria-label', isOpen ? 'Menü schließen' : 'Menü öffnen');
+        iconOpen.hidden = isOpen;
+        iconClose.hidden = !isOpen;
+      });
+    })();
+  </script>
 </body>
 </html>
