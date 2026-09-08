@@ -8,11 +8,15 @@ Projekt technisch aufgebaut ist, und was aktuell live steht — damit eine neue 
 sich nicht durch den gesamten Chat-Verlauf arbeiten muss, um auf demselben Stand
 weiterzumachen.
 
-**Zuletzt aktualisiert:** 2026-09-08 (Stand nach Ablage der Social-Media-Posts
-in GitHub-Ordnerstruktur `social-media-posts/Jahr/Monat/Woche-N/Wochentag-Datum/
-Plattform/{Text.txt,Prompt.txt}`, Start Woche 1 = Montag 14.09.2026; davor:
-kompletter 4-Wochen-Social-Media-Plan (Kontext-Datei, Strategie, Kalender,
-Post-Texte) unter `.agents/social-media-*`, Installation des kompletten
+**Zuletzt aktualisiert:** 2026-09-08 (Stand nach Design-/Motion-Audit der
+Website mit `impeccable`, `design-taste-frontend`, `find-animation-
+opportunities`, `improve-animations`, `emil-design-eng`, `apple-design` und
+`ui-ux-pro-max` — 3 echte Bugs und mehrere kleine Verbesserungen behoben, siehe
+Werdegang unten; davor: Ablage der Social-Media-Posts in GitHub-Ordnerstruktur
+`social-media-posts/Jahr/Monat/Woche-N/Wochentag-Datum/Plattform/
+{Text.txt,Prompt.txt}`, Start Woche 1 = Montag 14.09.2026; davor: kompletter
+4-Wochen-Social-Media-Plan (Kontext-Datei, Strategie, Kalender, Post-Texte)
+unter `.agents/social-media-*`, Installation des kompletten
 `blacktwist/social-media-skills`-Sets — Details zu allen davor liegenden
 Schritten siehe Werdegang unten. Ältere Punkte (Kontaktdaten-Eintrag,
 Google-Business-Profil, Google-Ads-Setup, Selbstpflege-Regel für diese
@@ -308,6 +312,45 @@ rekonstruiert werden muss — Details/Begründung stehen in Werdegang Punkt 10.
     `social-media-posts/README.md`. **Wichtig bei Terminverschiebung:** Die
     Ordnernamen enthalten feste Kalenderdaten, keine relative Zählung — bei
     späterem Start müssten sie manuell umbenannt werden.
+16. **Design-/Motion-Skills auf die Website angewendet:** Nutzer wollte wissen,
+    ob die neu installierten Skills (`emil-design-eng`, `apple-design`,
+    `find-animation-opportunities`, `improve-animations`, `animation-
+    vocabulary`, `animate`, `ui-ux-pro-max`) sowie die bereits vorhandenen
+    (`impeccable`, `frontend-design`, `design-taste-frontend`) auf die Website
+    angewendet werden — Antwort: bislang nicht, dann Audit + Umsetzung
+    angefragt. Geprüft wurde der lokale Code-Stand (`website/src/`, der zuletzt
+    als ZIP bereitgestellte, noch nicht zwingend live hochgeladene Stand),
+    nicht die tatsächlich unter `pascal-webdesign.de` laufende Seite. Ergebnis:
+    - **3 echte Bugs behoben:** (1) Toter CSS-Hover-Code in `index.css`
+      (`a.portfolio-item:hover ...`) — griff nicht mehr, seit `Portfolio.jsx`
+      beim Nischen-Pivot von `<a>` auf `<div>` umgebaut wurde, entfernt statt
+      ersetzt. (2) Ein Em-Dash in `UeberMich.jsx`, der bei der
+      Nischen-Pivot-Copy zurückgerutscht war (verstößt gegen die eigene
+      Anti-Slop-Vorgabe), durch Punkt ersetzt. (3) Nav-Item-Eingangsanimation
+      nutzte `ease-in` (`index.css`, `navDropIn`) — laut Emil Kowalskis Skill
+      kategorisch falsch für UI-Animationen (wirkt trägeanlaufend) — auf
+      `cubic-bezier(0.23, 1, 0.32, 1)` (ease-out) umgestellt.
+    - **Kleine Verbesserungen direkt mit umgesetzt:** Erfolgs-/Fehlermeldung
+      im Kontaktformular poppte zuvor ohne Übergang auf („teleporting state"
+      laut `find-animation-opportunities`) — jetzt mit `@starting-style`-
+      Fade-in samt `prefers-reduced-motion`-Fallback. Hamburger- und
+      Terminkalender-Button hatten kein `:active`-Press-Feedback (Inkonsistenz
+      zum bereits vorhandenen `.btn-solid:active`) — ergänzt. Touch-Targets zu
+      klein laut `ui-ux-pro-max` (44×44px-Richtwert): Hamburger-Button war nur
+      ~34×34px, jetzt exakt 44×44px (per Playwright-Messung verifiziert);
+      Terminkalender-Button-Padding ebenfalls erhöht. Hero-Subline lag bei ~21
+      Wörtern (Richtwert max. 20 laut `impeccable`), gekürzt. Placeholder-/
+      Datenschutzhinweis-Textfarbe im dunklen Kontaktformular
+      (`--contact-placeholder`) hatte nur ~3,9:1 Kontrast gegen den dunklen
+      Hintergrund — auf `#868C87` aufgehellt, jetzt ~4,84:1 (über WCAG-AA-
+      Schwelle 4,5:1), auch in `DESIGN-TOKENS.md` nachgezogen.
+    - **Bewusst nicht verändert:** Der Großteil des `apple-design`-Skills
+      (Velocity-Handoff, Rubber-Banding, Gesten) ist auf dieser Website nicht
+      anwendbar, da keine Drag-/Swipe-Flächen existieren — korrekt nicht
+      umgesetzt statt künstlich draufgesetzt. Serifenschrift (Cormorant
+      Garamond), Ein-Akzent-Farbe, durchgängiger Radius 0 und Layout-Vielfalt
+      über die Sektionen bestanden bereits vor dem Audit und wurden nicht
+      angetastet.
 
 ## Hosting & Domains — aktueller Live-Stand (verifiziert 2026-09-06)
 

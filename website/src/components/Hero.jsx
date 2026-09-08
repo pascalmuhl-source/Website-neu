@@ -19,8 +19,8 @@ export default function Hero() {
           ))}
         </h1>
         <p>
-          Eine unprofessionelle Website kostet Sie Aufträge, bevor das Telefon überhaupt klingelt. Ich baue
-          Ihnen eine, die Kompetenz zeigt und Anfragen bringt.
+          Eine unprofessionelle Website kostet Sie Aufträge, bevor das Telefon klingelt. Ich baue Ihnen
+          eine, die Kompetenz zeigt und Anfragen bringt.
         </p>
         <div className="hero-cta-row">
           <a className="btn-solid hero-cta" href="#kontakt">Kostenloses Erstgespräch buchen</a>

@@ -14,8 +14,8 @@ export default function UeberMich() {
         </p>
         <p>
           Technisch baue ich Ihre Website ohne Google-Fonts-CDN und ohne Tracking-Skripte im
-          Hintergrund, schlank und schnell statt träger Baukasten-Lösung — Punkte, die gerade bei
-          Auftraggebern aus Justiz und Versicherungswesen zählen.
+          Hintergrund, schlank und schnell statt träger Baukasten-Lösung. Das zählt gerade bei
+          Auftraggebern aus Justiz und Versicherungswesen.
         </p>
         <p>
           Mein Büro sitzt in Windesheim bei Bad Kreuznach, gearbeitet wird deutschlandweit. Ob wir
