@@ -316,16 +316,22 @@ weiterhin abschickt. Systematisch eingegrenzt:
   maskiert — der gäbe einen 500er, wie einmal kurz beim Testen mit leerem
   Nachrichtenfeld gegen die alte Datei beobachtet)
 
-→ **Schlussfolgerung: PHP-Ausführung greift auf diesem vhost aktuell generell
-nicht mehr**, obwohl die alte `send-mail.php` vor dem Reupload nachweislich Mails
-verschickt hat. Das ist kein Datei-/Rechte-/Pfadproblem mehr, sondern vermutlich
-eine Hosting-seitige Einstellung bei lima-city (z. B. PHP-Version/PHP-Aktivierung
-für den vhost `pascal-webdesign.de`, id 3685463), die sich geändert hat. Von dieser
-Cloud-Umgebung aus nicht behebbar (kein SSH/API-Zugriff in der Session) — **nächster
-Schritt: Nutzer prüft lima-city-Kundencenter auf eine PHP-Einstellung für den vhost,
-sonst lima-city-Support kontaktieren.** `kontakt-handler.php` und `ftptest.txt`
-liegen noch als Testdateien auf dem Server, können nach Klärung wieder gelöscht
-werden.
+**Finale Diagnose:** `info.php` mit reinem `phpinfo()` lief einwandfrei (200) — PHP-
+Ausführung funktioniert auf dem vhost also generell. Entscheidender Test:
+`formtest.php` (gleicher Aufbau wie `send-mail.php` — `$_POST`, `header()`, JSON-
+Antwort — aber **ohne** `mail()`-Aufruf) lief ebenfalls fehlerfrei (200, korrekte
+JSON-Antwort per POST). Einziger Unterschied zu den fehlschlagenden Dateien
+(`send-mail.php`, `kontakt-handler.php`) ist der `mail()`-Aufruf.
+
+→ **lima-city blockiert/quarantänisiert automatisch PHP-Dateien, die `mail()`
+aufrufen** (vermutlich ein Anti-Spam-Scanner beim Upload), und liefert dafür ein
+unauffälliges 404 statt einer klaren Fehlermeldung. Nicht per Code lösbar — das
+Kontaktformular muss zwingend eine Mail verschicken. **Nächster Schritt liegt beim
+Nutzer: lima-city-Support kontaktieren** mit dem Befund oben und der Bitte, `mail()`
+für den vhost freizuschalten bzw. die Datei aus der Quarantäne zu nehmen.
+Testdateien (`ftptest.txt`, `kontakt-handler.php`, `formtest.php`, `info.php`)
+liegen noch auf dem Server, sollten nach Klärung gelöscht werden (v. a. `info.php`
+wegen der offengelegten Serverdetails).
 
 ## Wie man den aktuellen Live-Stand schnell verifiziert
 
