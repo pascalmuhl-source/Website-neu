@@ -17,7 +17,7 @@ export default function Kontakt() {
 
     setStatus(STATUS.sending);
     try {
-      const res = await fetch('/send-mail.php', { method: 'POST', body: data });
+      const res = await fetch('/sendmail.php', { method: 'POST', body: data });
       if (!res.ok) throw new Error('request failed');
       setStatus(STATUS.success);
       form.reset();
