@@ -1,7 +1,13 @@
-Minimalist editorial illustration, top-down view of a smartphone screen showing
-a blurred generic website homepage, a stopwatch icon overlaid showing "5" in
-large serif numerals, muted olive-beige and dark green color palette
-(#F5F5F2 background, #147A55 accent, #1C1F1D ink), flat design, no photorealistic
-faces, no stock-photo business handshake, sharp edges no rounded corners,
-generous negative space, calm and professional mood, style: modern editorial
-magazine graphic, not corporate clipart
+Authentic documentary-style photograph, close-up over-the-shoulder view of a
+person's hand holding a smartphone at a wooden desk, scrolling through a
+generic-looking website (no real brand, no readable logos, just plausible
+blurred UI blocks and placeholder text), natural window light from the side,
+visible desk clutter in soft focus in the background (a coffee cup with a
+faint ring stain, a notebook, a pen), shallow depth of field with the phone
+screen sharp and the background softly blurred, shot on a mirrorless camera
+with a 50mm lens at f/1.8, slight natural film grain, realistic skin texture
+on the hand (visible knuckles, no airbrushing), muted warm-neutral color
+grading (not saturated, not teal-and-orange), candid unposed moment, no
+studio lighting, no symmetric composition, no glossy UI overlays, no
+glowing icons, no purple or blue gradient, looks like a real photo taken by
+a small business owner, not an AI-generated stock image

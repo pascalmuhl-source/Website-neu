@@ -1,6 +1,12 @@
-Flat vector checklist illustration, five simple line-icon checkboxes stacked
-vertically (phone icon, telephone icon, calendar icon, speech-bubble icon,
-magnifying-glass-with-person icon), one checkbox shown unchecked in dark
-green accent (#147A55), rest in dark ink (#1C1F1D) outline on paper-white
-background (#F5F5F2), minimal technical-diagram style, sharp corners,
-generous whitespace, no photorealism
+Authentic documentary-style photograph, overhead flat-lay shot of a real
+desk workspace: an open laptop showing a generic website homepage (muted
+colors, placeholder layout, unreadable text), a smartphone lying next to
+it also showing a website, a handwritten paper notepad with a short
+checklist scribbled in pen (illegible handwriting, just realistic
+scribbles), a half-full coffee cup, a pen, natural window light from one
+side creating soft realistic shadows, shot on a mirrorless camera with a
+35mm lens from directly above, slight film grain, muted warm-neutral color
+grading, authentic slightly messy desk arrangement, not perfectly styled,
+no digital checkmarks or icons added, no floating UI elements, no
+studio-perfect flat-lay styling, looks like a real freelancer's desk
+during a work session, not a staged product photo

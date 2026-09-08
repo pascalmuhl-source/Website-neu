@@ -1,5 +1,10 @@
-Flat vector illustration, a classic cookie-banner UI element crossed out with
-a bold diagonal line in dark green (#147A55), next to a simple clean webpage
-icon shown without any banner, dark ink outlines (#1C1F1D), paper-white
-background (#F5F5F2), minimal technical-diagram style, sharp corners, no
-photorealism, generous whitespace
+Authentic documentary-style photograph, close-up of a laptop screen showing
+a plain, clean website homepage with no visible cookie banner or popup
+(generic layout, muted colors, placeholder text, plausible but
+unreadable), natural window light with a soft realistic reflection on the
+screen, a hand resting near the trackpad, shot on a mirrorless camera with
+a 50mm lens at f/2, shallow depth of field, slight grain, muted
+warm-neutral tones, real desk clutter softly out of focus in the
+background, candid unposed working moment, no crossed-out banner graphic
+overlaid, no added icons, no studio lighting, looks like a real photo of
+an actual clean website being reviewed, not an illustrated privacy graphic

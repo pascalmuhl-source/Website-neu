@@ -1,5 +1,10 @@
-Minimalist typography-led illustration, two speech bubbles side by side, left
-bubble greyed out containing three wavy blurred lines representing vague text,
-right bubble in dark ink (#1C1F1D) with crisp bold short text lines, one
-underline accent in dark green (#147A55) beneath the right bubble, paper-
-white background (#F5F5F2), flat vector style, sharp corners, no photorealism
+Authentic documentary-style photograph, close-up of a laptop screen showing
+a plain text editor or simple website text-editing interface, cursor
+visible in a paragraph of placeholder text (not clearly readable), a
+person's hand resting on the keyboard mid-typing, natural window light,
+shot on a mirrorless camera with a 50mm lens at f/1.8, shallow depth of
+field with the screen sharp and the hand slightly soft, slight grain,
+muted warm-neutral tones, real desk clutter softly blurred in the
+background, candid unposed working moment, no speech bubble graphics, no
+digital text highlighting effects, no studio lighting, looks like a real
+photo taken mid-work, not an illustrated before/after copy graphic

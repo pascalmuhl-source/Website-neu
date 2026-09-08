@@ -1,6 +1,10 @@
-Flat vector illustration, a simple stopwatch icon showing "5 Sek" next to
-three small checkmarked line-icons in a vertical list (a magnifying-glass-
-on-document icon, a scales-of-justice icon, a phone-with-checkmark icon),
-dark ink outlines (#1C1F1D), one accent element in dark green (#147A55),
-paper-white background (#F5F5F2), minimal technical-diagram style, sharp
-corners, no photorealism, generous whitespace
+Authentic documentary-style photograph, close-up of a hand holding a
+smartphone with a visible timer/stopwatch app running, resting on top of a
+stack of printed legal-looking documents on a wooden desk (plausible
+report pages, unreadable text), natural window light, shot on a
+mirrorless camera with a 50mm lens at f/1.8, shallow depth of field with
+the phone screen sharp, slight grain, muted warm-neutral tones, realistic
+skin texture on the hand, candid unposed moment, no added checkmark icons,
+no illustration overlay, no studio lighting, looks like a real photo of
+someone timing how quickly they can judge a document, not an illustrated
+UX graphic
