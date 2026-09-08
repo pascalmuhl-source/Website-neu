@@ -8,11 +8,12 @@ Projekt technisch aufgebaut ist, und was aktuell live steht — damit eine neue 
 sich nicht durch den gesamten Chat-Verlauf arbeiten muss, um auf demselben Stand
 weiterzumachen.
 
-**Zuletzt aktualisiert:** 2026-09-08 (Markenkit erstellt und in `CLAUDE.md` als
-verbindliche Grundlage für alle künftigen Inhalte verankert, siehe Werdegang
-Punkt 19; außerdem Token-Sparen-Regel in `CLAUDE.md` ergänzt, dieser
-Werdegang-Abschnitt entsprechend verschlankt, siehe Punkt 20; Merge des
-Arbeits-Branches `claude/recherche-h43wk2` nach `main`).
+**Zuletzt aktualisiert:** 2026-09-08 (Kontaktformular-Deploy-Bug behoben — Ursache
+war ein Bindestrich im PHP-Dateinamen, siehe Werdegang Punkt 22 und die neue
+CLAUDE.md-Regel dazu; Terminbuchungs-Platzhalter entfernt, siehe Punkt 23; echte
+Rechtstexte samt Website-Header/Footer für Impressum/Datenschutz eingebaut, siehe
+Punkt 24; Merge des Arbeits-Branches
+`claude/website-live-launch-requirements-k67tit` nach `main`).
 
 ## Worum es geht
 
@@ -246,8 +247,10 @@ rekonstruiert werden muss — Details/Begründung stehen in Werdegang Punkt 10.
   - `public/` — alles, was Vite unverändert nach `dist/` kopiert: Fonts (3 `.woff2`,
     self-hosted), `favicon.svg`, `og-image.png` (gerendert aus einer HTML-Vorlage,
     nicht Teil des Repos — nur das fertige PNG ist eingecheckt), `404.html`,
-    `.htaccess`, `impressum.html`, `datenschutz.html`, `robots.txt`, `sitemap.xml`,
-    `send-mail.php` (Kontaktformular-Handler).
+    `.htaccess`, `impressum.html`, `datenschutz.html` (beide inkl. eigenem Header/
+    Footer, da außerhalb des React-Baums), `robots.txt`, `sitemap.xml`,
+    `sendmail.php` (Kontaktformular-Handler — **kein Bindestrich im Dateinamen**,
+    siehe CLAUDE.md-Regel dazu).
   - `index.html` — Meta-Tags, `noindex`, Preloads, JSON-LD-Schema. Bei jeder
     Marken-/Domain-Änderung hier zuerst nachsehen.
 - `mockup/` — der Design-Canvas-Verlauf (v1 verworfen, v2 freigegeben,
@@ -274,24 +277,49 @@ rekonstruiert werden muss — Details/Begründung stehen in Werdegang Punkt 10.
 
 Kurzfassung der wichtigsten Punkte, die vor einem echten Launch fehlen:
 
-1. `noindex` entfernen (aktuell absichtlich gesetzt)
+1. `noindex` entfernen (aktuell absichtlich gesetzt) — **wichtigster Punkt vor Launch**
 2. Testimonial-Platzhalter (`[Name]`/`[Firma]`) durch echte Zitate mit Kundenfreigabe
    ersetzen, sobald vorhanden (siehe Werdegang Punkt 10 — bewusst zurückgestellt).
    Preise, Erfahrung und der Portfolio-Case sind bereits mit echten Angaben gefüllt
    (siehe Werdegang Punkt 10).
-3. Die 2 verbleibenden `href="#"`-Platzhalter-Links (Social-Icons im Footer) auflösen
-   oder entfernen — die Portfolio-Cases sind seit dem Nischen-Pivot kein Link mehr,
-   nur noch eine reine Textkarte.
-4. Rechtstexte (Impressum/Datenschutz) sind ausdrücklich Entwürfe, brauchen externe
-   Prüfung vor Launch
-5. Google-Unternehmensprofil ist verknüpft (siehe Werdegang Punkt 7) — offen ist nur
-   noch, ob die Google-seitige Verifizierung (Postkarte/Telefon/Video) beim Nutzer
-   bereits abgeschlossen ist.
-6. Hero-Bild-Kontrast auf Mobile neu prüfen, sobald ein echtes Foto das
+3. Rechtstexte sind jetzt echte e-recht24-Fassungen (siehe Werdegang Punkt 24), aber
+   Löschfrist der Server-Logdaten in `datenschutz.html` (Abschnitt „Server-Log-
+   Dateien") ist noch als Platzhalter offen — bei lima-city erfragen und ergänzen.
+4. Hero-Bild-Kontrast auf Mobile neu prüfen, sobald ein echtes Foto das
    Platzhalter-Gradient ersetzt (rechnerisch grenzwertig unter WCAG AA)
-7. Google Ads: sobald echte Google-Bewertungen oder eine dokumentierte Kundenzahl
+5. Google Ads: sobald echte Google-Bewertungen oder eine dokumentierte Kundenzahl
    vorliegen, die „Vertrauen/Prozess"-Headlines (siehe Werdegang Punkt 8) durch echte
    Social-Proof-Headlines ersetzen/ergänzen.
+6. Testdateien auf dem Server aufräumen, falls noch nicht geschehen: `ftptest.txt`,
+   `kontakt-handler.php`, `kontakthandler.php`, `formtest.php`, `info.php`,
+   `altversion.php`, das alte `send-mail.php` (mit Bindestrich, nie erreichbar) —
+   v. a. `info.php` wegen offengelegter Serverdetails.
+
+21. **Google-Unternehmensprofil verifiziert.** Social-Media-Icons im Footer (zwei
+    `href="#"`-Platzhalter, LinkedIn/Instagram) entfernt, da noch keine echten
+    Profile existieren.
+22. **Kontaktformular-Bug behoben (2026-09-08):** Dropdown „Worum geht's?" kam nicht
+    in den Mails an, da `send-mail.php` seit dem Dropdown-Feature nie neu hochgeladen
+    worden war (liegt in `public/`, kein `dist/`-Build-Artefakt — bei Änderungen
+    daran künftig explizit als eigene Datei zum Upload geben). Beim Reupload dann
+    durchgehend 404, obwohl Datei/Pfad/Rechte nachweislich korrekt — systematisches
+    Testen ergab: **lima-city blockiert PHP-Dateien mit Bindestrich im Dateinamen**
+    serverseitig (vermutlich WAF-Regel gegen Exploit-/Shell-typische Namen),
+    unabhängig vom Code-Inhalt. Fix: `send-mail.php` → `sendmail.php` umbenannt
+    (Fetch-Aufruf in `Kontakt.jsx` angepasst), live mit echter Testmail (inkl.
+    Dropdown-Wert) verifiziert. Standing Rule in `CLAUDE.md` ergänzt: keine
+    Bindestriche in `.php`-Dateinamen auf diesem Hosting.
+23. **Terminbuchungs-Platzhalter entfernt** (Nutzer nutzt kein Buchungstool) —
+    Block, State und CSS aus `Kontakt.jsx`/`index.css` entfernt.
+24. **Rechtstexte durch echte e-recht24-Fassungen ersetzt:** Nutzer lieferte reale
+    Impressum- und Datenschutz-Texte (Hoster laut AVV: TracPlex GmbH, Auftrags-
+    verarbeiter von lima-city). Datenschutz zusätzlich um zwei konkret bekannte
+    Fakten ergänzt (self-gehostete Schriftarten, lima-city-Cookies `_lcp`/`_lcp3` —
+    beide live verifiziert). Platzhalter-Entwurfshinweis aus dem Impressum entfernt.
+    Beide Seiten (`impressum.html`, `datenschutz.html`) waren bislang eigenständige
+    Seiten ohne Website-Navigation — Header (inkl. mobilem Menü) und Footer aus
+    `Nav.jsx`/`Footer.jsx` 1:1 als statisches HTML/CSS/JS repliziert und ergänzt,
+    live verifiziert.
 
 ## Wie man den aktuellen Live-Stand schnell verifiziert
 
