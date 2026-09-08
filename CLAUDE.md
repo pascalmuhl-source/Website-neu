@@ -35,6 +35,33 @@ erneut anstoßen muss:
    dem aktuellen Stand sein — ohne im Chat-Verlauf einer alten Session nachschlagen
    zu müssen. Jeder erledigte Schritt muss darin kurz nachvollziehbar sein.
 
+# Regel: „Session beenden" — Merge nach main als fester Abschluss
+
+Gibt der Nutzer den Befehl **„Session beenden"** (oder erkennbar gleichbedeutend, z. B.
+„Sitzung beenden", „Session abschließen"), läuft dieser Ablauf, ohne dass er weiter
+spezifiziert werden muss:
+
+1. **Alle Dateien aktualisieren:** `CLAUDE.md` und `PROJECT-STATUS.md` auf den
+   aktuellen Stand bringen (siehe Regel oben) — jeder in dieser Session erledigte
+   Schritt muss darin nachvollziehbar sein, bevor gemergt wird.
+2. **Laufende Änderungen abschließen, nicht mittendrin abbrechen:** Angefangene
+   Code-Änderungen fertigstellen bzw. in einem sinnvollen Zwischenstand committen —
+   „Session beenden" ist kein Abbruch, sondern ein sauberer Abschluss.
+3. **Committen** auf dem aktuellen Arbeits-Branch (klare, beschreibende Commit-Message
+   wie gewohnt).
+4. **Nach `main` mergen und pushen:** Den aktuellen Arbeits-Branch direkt in `main`
+   mergen (Merge-Commit, kein Force-Push, kein Rebase fremder Historie) und nach
+   GitHub pushen — analog zum bereits durchgeführten Merge von
+   `claude/recherche-h43wk2` nach `main`. Bei Merge-Konflikten in `PROJECT-STATUS.md`
+   den bestehenden, verschlankten Werdegang-Stil beibehalten (siehe Token-Sparen-
+   Regel unten) und neue Punkte im gleichen Stil anhängen statt die alte, ausführliche
+   Fassung wiederherzustellen.
+5. **Ziel:** Jede neue Session kann direkt von `main` starten und ist durch das Lesen
+   von `CLAUDE.md`/`PROJECT-STATUS.md` (siehe Regel oben) sofort auf dem aktuellsten
+   Stand — unabhängig davon, auf welchem Branch die vorherige Session gearbeitet hat.
+6. Das gilt automatisch bei jedem „Session beenden"-Befehl, ohne dass der Nutzer die
+   einzelnen Schritte (aktualisieren, committen, mergen, pushen) erneut aufzählen muss.
+
 # Regel: Token-Sparen — dauerhaft, ungefragt anzuwenden
 
 Diese Punkte gelten ab sofort für jede Session in diesem Projekt, ohne dass der
