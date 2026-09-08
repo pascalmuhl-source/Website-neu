@@ -25,6 +25,12 @@
       "skillPath": "skills/audience-growth-tracker-sms/SKILL.md",
       "computedHash": "8a5f0e3803982ae713cbce6f0234cab538fceeb622d632c15ffcd0ecfecc2401"
     },
+    "brandkit": {
+      "source": "leonxlnx/taste-skill",
+      "sourceType": "github",
+      "skillPath": "skills/brandkit/SKILL.md",
+      "computedHash": "b63012f3c3d21197e0185d3e9cc7ec40c589fb10e0b5a32a561739de31aa3f20"
+    },
     "caption-writer-sms": {
       "source": "blacktwist/social-media-skills",
       "sourceType": "github",
