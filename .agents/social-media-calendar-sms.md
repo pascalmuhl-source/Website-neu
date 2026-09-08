@@ -49,9 +49,65 @@ Strategie (35/25/20/20), Rundungsdifferenz durch die kleine Stichprobenzahl.
 | Freitag | Instagram | Flexibel | [Reaktiv — z. B. Wochenrückblick] | TBD | 9–11 Uhr |
 | Freitag | Facebook | Flexibel | [Reaktiv] | TBD | 9–11 Uhr |
 
-**Wochen 2–4** folgen demselben Muster (Mo/Di/Mi/Do fest nach der Themen-Übersicht
-oben, Fr flexibel) — Plattform-Anpassung, Format-Logik und Zeitfenster identisch
-zu Woche 1. Nicht 1:1 wiederholt, um die Datei nicht unnötig aufzublähen.
+## Woche 2 — Detailplan (alle 3 Plattformen)
+
+| Tag | Plattform | Pillar | Topic / Angle | Format | Empfohlenes Zeitfenster |
+|---|---|---|---|---|---|
+| Montag | LinkedIn | Educational (Pain) | Die 3 häufigsten Fehler auf Sachverständigen-Websites | Carousel (Cornerstone) | 8–10 Uhr |
+| Montag | Instagram | Educational (Pain) | Gleiche 3 Fehler als Slide-Post | Carousel | 9–11 Uhr |
+| Montag | Facebook | Educational (Pain) | Gleiche 3 Fehler, kompakt im Text | Standalone Post | 9–11 Uhr |
+| Dienstag | LinkedIn | Storytelling | Warum ich mich auf Sachverständige spezialisiert habe | Standalone Post (Supporting) | 8–10 Uhr |
+| Dienstag | Instagram | Storytelling | Persönliche Positionierungs-Story, als Caption zu einem Portraitfoto | Caption/Post | 9–11 Uhr |
+| Dienstag | Facebook | Storytelling | Gleiche Geschichte, etwas ausführlicher erzählt | Standalone Post | 9–11 Uhr |
+| Mittwoch | LinkedIn | Educational (Datenschutz) | DSGVO-Checkliste für die eigene Website | Carousel (Cornerstone) | 12–13 Uhr |
+| Mittwoch | Instagram | Educational (Datenschutz) | Gleiche Checkliste als Slide-Post | Carousel | 9–11 Uhr |
+| Mittwoch | Facebook | Educational (Datenschutz) | Checkliste als einfache Textliste | Standalone Post | 9–11 Uhr |
+| Donnerstag | LinkedIn | Educational (Tipp) | Ein Satz, der auf vielen Sachverständigen-Websites fehlt | Standalone Post (Supporting) | 8–10 Uhr |
+| Donnerstag | Instagram | Educational (Tipp) | Gleicher Tipp als kurze Caption | Caption/Post | 9–11 Uhr |
+| Donnerstag | Facebook | Educational (Tipp) | Gleicher Tipp, direkt und kurz | Standalone Post | 9–11 Uhr |
+| Freitag | LinkedIn | Flexibel | [Reaktiv — aktuelles Thema/Kundenfrage] | TBD | 8–10 Uhr |
+| Freitag | Instagram | Flexibel | [Reaktiv] | TBD | 9–11 Uhr |
+| Freitag | Facebook | Flexibel | [Reaktiv] | TBD | 9–11 Uhr |
+
+## Woche 3 — Detailplan (alle 3 Plattformen)
+
+| Tag | Plattform | Pillar | Topic / Angle | Format | Empfohlenes Zeitfenster |
+|---|---|---|---|---|---|
+| Montag | LinkedIn | Educational (Pain) | Checkliste: Ist Ihre Website auf dem Handy wirklich nutzbar? | Standalone Post (Supporting) | 8–10 Uhr |
+| Montag | Instagram | Educational (Pain) | Gleiche Checkliste als kurze Caption zu Screenshot-Vergleich | Caption/Post | 9–11 Uhr |
+| Montag | Facebook | Educational (Pain) | Gleiche Checkliste, einfach erklärt | Standalone Post | 9–11 Uhr |
+| Dienstag | LinkedIn | Storytelling | Ein Blick hinter die Kulissen eines Projekts | Standalone Post (Supporting) | 8–10 Uhr |
+| Dienstag | Instagram | Storytelling | Gleicher Einblick als Story-Post/Caption zu Arbeitsplatz-Foto | Caption/Post | 9–11 Uhr |
+| Dienstag | Facebook | Storytelling | Gleicher Einblick, etwas ausführlicher | Standalone Post | 9–11 Uhr |
+| Mittwoch | LinkedIn | Educational (Datenschutz) | Ein Mythos über Cookie-Banner, den viele glauben | Standalone Post (Supporting) | 12–13 Uhr |
+| Mittwoch | Instagram | Educational (Datenschutz) | Gleicher Mythos als kurze Caption | Caption/Post | 9–11 Uhr |
+| Mittwoch | Facebook | Educational (Datenschutz) | Gleicher Mythos, sehr einfach erklärt | Standalone Post | 9–11 Uhr |
+| Donnerstag | LinkedIn | Educational (Tipp) | Warum „ab wann lohnt sich eine neue Website" die falsche Frage ist | Standalone Post (Supporting) | 8–10 Uhr |
+| Donnerstag | Instagram | Educational (Tipp) | Gleiche Aussage als Caption | Caption/Post | 9–11 Uhr |
+| Donnerstag | Facebook | Educational (Tipp) | Gleiche Aussage, direkt formuliert | Standalone Post | 9–11 Uhr |
+| Freitag | LinkedIn | Flexibel | [Reaktiv — aktuelles Thema/Kundenfrage] | TBD | 8–10 Uhr |
+| Freitag | Instagram | Flexibel | [Reaktiv] | TBD | 9–11 Uhr |
+| Freitag | Facebook | Flexibel | [Reaktiv] | TBD | 9–11 Uhr |
+
+## Woche 4 — Detailplan (alle 3 Plattformen)
+
+| Tag | Plattform | Pillar | Topic / Angle | Format | Empfohlenes Zeitfenster |
+|---|---|---|---|---|---|
+| Montag | LinkedIn | Educational (Pain) | Was Anwälte/Versicherungen in 5 Sekunden auf Ihrer Seite sehen müssen | Standalone Post (Supporting) | 8–10 Uhr |
+| Montag | Instagram | Educational (Pain) | Gleiche Aussage als Caption | Caption/Post | 9–11 Uhr |
+| Montag | Facebook | Educational (Pain) | Gleiche Aussage, kompakt | Standalone Post | 9–11 Uhr |
+| Dienstag | LinkedIn | Storytelling | Ein Learning aus einem laufenden Projekt | Standalone Post (Supporting) | 8–10 Uhr |
+| Dienstag | Instagram | Storytelling | Gleiches Learning als Caption zu Arbeits-Schnappschuss | Caption/Post | 9–11 Uhr |
+| Dienstag | Facebook | Storytelling | Gleiches Learning, etwas ausführlicher | Standalone Post | 9–11 Uhr |
+| Mittwoch | LinkedIn | Educational (Pain, Ausnahme-Slot) | Warum „wirkt veraltet" bei Gutachten doppelt schadet | Standalone Post (Supporting) | 12–13 Uhr |
+| Mittwoch | Instagram | Educational (Pain) | Gleiche Aussage als Caption zu Vorher/Nachher-Optik | Caption/Post | 9–11 Uhr |
+| Mittwoch | Facebook | Educational (Pain) | Gleiche Aussage, einfach erklärt | Standalone Post | 9–11 Uhr |
+| Donnerstag | LinkedIn | Educational (Tipp) | Kurzer Tipp zu Kontaktformularen & Erreichbarkeit | Standalone Post (Supporting) | 8–10 Uhr |
+| Donnerstag | Instagram | Educational (Tipp) | Gleicher Tipp als Caption | Caption/Post | 9–11 Uhr |
+| Donnerstag | Facebook | Educational (Tipp) | Gleicher Tipp, direkt | Standalone Post | 9–11 Uhr |
+| Freitag | LinkedIn | Flexibel | [Reaktiv — aktuelles Thema/Kundenfrage] | TBD | 8–10 Uhr |
+| Freitag | Instagram | Flexibel | [Reaktiv] | TBD | 9–11 Uhr |
+| Freitag | Facebook | Flexibel | [Reaktiv] | TBD | 9–11 Uhr |
 
 ---
 

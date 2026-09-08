@@ -8,12 +8,11 @@ Projekt technisch aufgebaut ist, und was aktuell live steht — damit eine neue 
 sich nicht durch den gesamten Chat-Verlauf arbeiten muss, um auf demselben Stand
 weiterzumachen.
 
-**Zuletzt aktualisiert:** 2026-09-08 (Stand nach Installation des kompletten
-`blacktwist/social-media-skills`-Sets, 14 Skills für Social-Media-Content;
-davor: „Worum geht's?"-Dropdown im Kontaktformular und eigener „Positionierung &
-USPs"-Abschnitt in dieser Datei, Kontaktformular-Audit mit Datenschutz-Hinweis
-direkt am Formular, Nischen-Pivot auf „Sachverständige und Gutachter" — Details
-zu allen davor liegenden Schritten siehe Werdegang unten. Ältere Punkte
+**Zuletzt aktualisiert:** 2026-09-08 (Stand nach komplettem 4-Wochen-Social-
+Media-Plan: Kontext-Datei, Strategie, Kalender und ausformulierte Post-Texte +
+Bild-Prompts für alle 3 Plattformen unter `.agents/social-media-*`; davor:
+Installation des kompletten `blacktwist/social-media-skills`-Sets — Details zu
+allen davor liegenden Schritten siehe Werdegang unten. Ältere Punkte
 (Kontaktdaten-Eintrag, Google-Business-Profil, Google-Ads-Setup,
 Selbstpflege-Regel für diese
 beiden Dateien).
@@ -257,6 +256,39 @@ rekonstruiert werden muss — Details/Begründung stehen in Werdegang Punkt 10.
     laufen lassen, damit die Sachverständigen-Nische/Positionierung (siehe
     „Positionierung & USPs" oben) als Grundlage für alle anderen Skills gesetzt
     ist, statt sie bei jedem Post erneut zu erklären.
+14. **Kompletter 4-Wochen-Social-Media-Plan erstellt:** Nacheinander
+    `social-media-context-sms` → `content-strategy-sms` → `content-calendar-sms`
+    → `post-writer-sms` durchlaufen, alle Ergebnisse unter `.agents/` abgelegt:
+    - `.agents/social-media-context-sms.md` — Identität, Zielgruppe, Voice,
+      4 Content-Pillars, Plattform-Konfiguration (LinkedIn/Instagram/Facebook).
+      Mehrere Felder bewusst als „noch offen" markiert (Handles, Formate,
+      Beispiel-Posts), da der Nutzer noch keine hatte — Website-Ton diente als
+      Ersatz-Referenz.
+    - `.agents/social-media-strategy-sms.md` — 4 Pillars mit Topic-Clustern
+      (Cornerstone/Supporting je Thema), Content-Typ-Balance (45% Educational,
+      25% Storytelling, 15% Promotional, 10% Personal, 5% Engagement — Promotion
+      bewusst nicht höher als 15%, um nicht werblich zu wirken).
+    - `.agents/social-media-calendar-sms.md` — 4-Wochen-Kalender, 15 Posts/Woche
+      (5 Kernstücke Mo–Do × 3 Plattformen + Freitag pro Plattform als offener/
+      reaktiver Slot, 20% Puffer wie von der Skill-Vorlage empfohlen). Alle 4
+      Wochen im gleichen Detailgrad wie Woche 1 ausformuliert (Thema, Pillar,
+      Format, empfohlenes Zeitfenster je Tag/Plattform).
+    - `.agents/social-media-content/woche-1.md` bis `woche-4.md` — für jedes der
+      16 festen Wochentags-Themen (Freitag bleibt bewusst leer/reaktiv) ein
+      fertiger LinkedIn-Text, ein fertiger Instagram-Text und ein fertiger
+      Facebook-Text (jeweils nach den Formatregeln aus `post-writer-sms":
+      LinkedIn Hook/Body/CTA mit Zeilenumbrüchen, Instagram/Facebook kürzer und
+      mit angepasster Hashtag-Zahl), plus je ein Bild-Prompt für eine KI-
+      Bildgenerierung. Bild-Stil bewusst einheitlich über alle Wochen: editorial/
+      Flat-Vector-Illustration statt Stockfoto-Klischee, Farbpalette 1:1 aus
+      `DESIGN-TOKENS.md` übernommen — keine Fotos von Personen, da keine echten
+      Fotos vorliegen.
+    - **Kein BlackTwist-MCP verbunden** — Posts sind reiner Text zum manuellen
+      Copy-Paste/Einplanen, keine automatische Veröffentlichung/Terminierung.
+    - **Noch offen:** Bild-Prompts sind bislang nicht durch ein Bildgenerierungs-
+      Tool gerendert — nur die Text-Prompts liegen vor. Freitags-Slots pro Woche
+      bewusst ungeschrieben (reaktiv/aktuell zu befüllen). Beispiel-Posts und
+      echte Handles in der Kontext-Datei fehlen weiterhin.
 
 ## Hosting & Domains — aktueller Live-Stand (verifiziert 2026-09-06)
 
