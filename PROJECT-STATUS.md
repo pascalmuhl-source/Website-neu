@@ -8,12 +8,16 @@ Projekt technisch aufgebaut ist, und was aktuell live steht — damit eine neue 
 sich nicht durch den gesamten Chat-Verlauf arbeiten muss, um auf demselben Stand
 weiterzumachen.
 
-**Zuletzt aktualisiert:** 2026-09-08 (Stand nach Erstellung aller 48
-Post-Bilder als `Bild.png` in `social-media-posts/` — handgebaute
-Flat-Vector-Grafiken statt KI-generierter Fotos, da kein Bild-API-Zugang in
-dieser Session verfügbar war, siehe Werdegang unten; davor: Design-/Motion-
-Audit der Website mit `impeccable`, `design-taste-frontend`, `find-animation-
-opportunities`, `improve-animations`, `emil-design-eng`, `apple-design` und
+**Zuletzt aktualisiert:** 2026-09-08 (Stand nach Verwerfen der Flat-Vector-
+Post-Bilder: Nutzer-Feedback „sieht zu sehr nach KI aus, erzeugt keine
+Aufmerksamkeit" — alle 16 `Prompt.txt` auf fotorealistische, dokumentarische
+Prompts umgeschrieben, alte `Bild.png`-Dateien entfernt, siehe Werdegang
+unten; davor: Erstellung aller 48 Post-Bilder als `Bild.png` in
+`social-media-posts/` — handgebaute Flat-Vector-Grafiken statt KI-generierter
+Fotos, da kein Bild-API-Zugang in dieser Session verfügbar war; davor:
+Design-/Motion-Audit der Website mit `impeccable`, `design-taste-frontend`,
+`find-animation-opportunities`, `improve-animations`, `emil-design-eng`,
+`apple-design` und
 `ui-ux-pro-max` — 3 echte Bugs und mehrere kleine Verbesserungen behoben;
 davor: Ablage der Social-Media-Posts in GitHub-Ordnerstruktur
 `social-media-posts/Jahr/Monat/Woche-N/Wochentag-Datum/Plattform/
@@ -381,6 +385,28 @@ rekonstruiert werden muss — Details/Begründung stehen in Werdegang Punkt 10.
     Hintergrund (kein KI-Bild, sondern Vektor-Illustration) und wie man bei
     Bedarf später echte KI-generierte Bilder aus den vorhandenen
     `Prompt.txt`-Dateien nachträgt.
+18. **Vektor-Bilder verworfen, Prompts komplett neu geschrieben:** Nutzer-
+    Feedback nach Punkt 17 war eindeutig: Die Flat-Vector-Icon-Bilder sehen
+    „nach KI aus" und würden auf Social Media keine Aufmerksamkeit erzeugen —
+    genau das Gegenteil vom Ziel. Auf Nachfrage („suche mir einen Skill der
+    mir aus einem Prompt Bilder erstellt") erneut geprüft, ob ein
+    Bild-Generierungs-Skill diesmal nutzbar wäre — Ergebnis unverändert: kein
+    API-Zugang in dieser Session. Nutzer hat sich dann bewusst für „bessere
+    Prompts für ein KI-Bildtool eigener Wahl" entschieden (nicht für echte
+    eigene Fotos, nicht für erneute Vektorgrafiken). Alle 16 `Prompt.txt`
+    (48 Dateien über die 3 Plattformen) komplett neu geschrieben: fotorealistische,
+    dokumentarische Foto-Prompts statt Icon-Illustration — echte Hände, echte
+    Schreibtische, natürliches Fensterlicht, Kamera-/Objektiv-Angaben (z. B.
+    „50mm f/1.8", „leichtes Filmkorn"), bewusst unperfekte/authentische Details
+    (Kaffeeflecken, Kabel, echte Handstruktur), und jeder Prompt endet mit
+    einem expliziten Negativ-Hinweis gegen generische KI-Bildästhetik (Glow-
+    Icons, perfekte Symmetrie, Lila/Blau-Verläufe, Stockfoto-Handshakes). Die
+    alten `Bild.png`-Dateien aus Punkt 17 wurden entfernt (nicht durch neue
+    ersetzt, da weiterhin kein Bild-API-Zugang in dieser Session besteht) —
+    Nutzer generiert die Bilder jetzt extern aus den neuen Prompts und legt
+    sie selbst als `Bild.png` ab. `social-media-posts/README.md` entsprechend
+    aktualisiert (Struktur-Beispiel ohne `Bild.png`, 2. Fassung der Prompts
+    dokumentiert).
 
 ## Hosting & Domains — aktueller Live-Stand (verifiziert 2026-09-06)
 
