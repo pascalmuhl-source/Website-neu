@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import Reveal from './Reveal.jsx';
 
 const FAQ = [
@@ -24,21 +25,44 @@ const FAQ = [
 ];
 
 export default function Faq() {
+  const [open, setOpen] = useState(() => new Set());
+
+  const toggle = (i) => {
+    setOpen((prev) => {
+      const next = new Set(prev);
+      if (next.has(i)) next.delete(i);
+      else next.add(i);
+      return next;
+    });
+  };
+
   return (
     <Reveal id="faq" className="section section-alt">
       <div className="section-head">
         <h2>Häufige Fragen</h2>
       </div>
       <div className="faq-list">
-        {FAQ.map((item) => (
-          <details className="faq-item" key={item.q}>
-            <summary>
-              {item.q}
-              <span className="faq-plus" aria-hidden="true" />
-            </summary>
-            <p>{item.a}</p>
-          </details>
-        ))}
+        {FAQ.map((item, i) => {
+          const isOpen = open.has(i);
+          return (
+            <div className={`faq-item${isOpen ? ' is-open' : ''}`} key={item.q}>
+              <button
+                type="button"
+                className="faq-summary"
+                aria-expanded={isOpen}
+                onClick={() => toggle(i)}
+              >
+                {item.q}
+                <span className="faq-plus" aria-hidden="true" />
+              </button>
+              <div className="faq-answer-wrap">
+                <div className="faq-answer-inner">
+                  <p>{item.a}</p>
+                </div>
+              </div>
+            </div>
+          );
+        })}
       </div>
     </Reveal>
   );

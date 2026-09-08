@@ -280,19 +280,34 @@ button { font-family: inherit; cursor: pointer; }
 /* FAQ */
 .faq-list { border-top: 1px solid var(--ink); }
 .faq-item { border-bottom: 1px solid var(--rule); }
-.faq-item summary {
-  list-style: none; cursor: pointer; padding: 16px 4px; font-size: 14.5px; font-weight: 600;
+.faq-summary {
+  all: unset;
+  box-sizing: border-box;
+  width: 100%;
+  cursor: pointer;
+  padding: 16px 4px;
+  font-size: 14.5px;
+  font-weight: 600;
   display: flex; justify-content: space-between; align-items: center; gap: 16px;
   min-height: 44px;
 }
-.faq-item summary::-webkit-details-marker { display: none; }
-.faq-item[open] summary { color: var(--accent-ink); }
-.faq-plus { position: relative; flex: none; width: 18px; height: 18px; }
+.faq-item.is-open .faq-summary { color: var(--accent-ink); }
+.faq-plus { position: relative; flex: none; width: 18px; height: 18px; transition: transform 200ms cubic-bezier(0.23, 1, 0.32, 1); }
 .faq-plus::before, .faq-plus::after { content: ''; position: absolute; background: var(--ink); transition: opacity 160ms ease; }
 .faq-plus::before { left: 0; top: 8px; width: 18px; height: 1.5px; }
 .faq-plus::after { left: 8px; top: 0; width: 1.5px; height: 18px; }
-.faq-item[open] .faq-plus::after { opacity: 0; }
+.faq-item.is-open .faq-plus::after { opacity: 0; }
+.faq-answer-wrap {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 320ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+.faq-item.is-open .faq-answer-wrap { grid-template-rows: 1fr; }
+.faq-answer-inner { overflow: hidden; }
 .faq-item p { font-size: 13.5px; line-height: 1.65; color: var(--ink-soft); padding: 0 4px 18px; }
+@media (prefers-reduced-motion: reduce) {
+  .faq-answer-wrap { transition: none; }
+}
 
 /* Leistungen */
 .services-list { display: flex; flex-direction: column; border-top: 1px solid var(--rule); }
@@ -469,7 +484,7 @@ button { font-family: inherit; cursor: pointer; }
   }
 
   .section { padding: 96px 64px; }
-  .section-head { max-width: 640px; margin-bottom: 48px; }
+  .section-head { margin-bottom: 48px; }
   .section-head h2 { font-size: clamp(2rem, 3vw, 2.6rem); }
   .section-head p { font-size: 15.5px; line-height: 1.65; }
 
@@ -518,14 +533,14 @@ button { font-family: inherit; cursor: pointer; }
   .services-list { flex-direction: column; }
   .service-row {
     display: grid;
-    grid-template-columns: 1fr 2fr auto;
+    grid-template-columns: 1fr 2fr 170px;
     gap: 32px;
     align-items: start;
     padding: 32px 0;
   }
   .service-row h3 { font-size: 26px; }
   .service-row p { font-size: 15px; }
-  .service-price { white-space: nowrap; }
+  .service-price { white-space: nowrap; text-align: right; }
 
   .portfolio-grid { display: grid; grid-template-columns: 2fr 1fr; gap: 28px; }
   .portfolio-featured .portfolio-thumb { height: 360px; }
@@ -555,11 +570,11 @@ button { font-family: inherit; cursor: pointer; }
   .process-step-head, .process-step .only-mobile, .process-step .only-desktop { grid-column: 1; }
   .process-step h3 { font-size: 18px; }
   .process-step p { font-size: 14px; line-height: 1.6; max-width: 52ch; }
-  .process-fields { grid-column: 2; grid-template-columns: 180px 1fr; gap: 4px 32px; margin-top: 0; }
+  .process-fields { grid-column: 2; grid-template-columns: 230px 1fr; gap: 4px 32px; margin-top: 0; }
   .process-fields div { font-size: 13px; }
   .process-fields dt { font-size: 10.5px; }
 
-  .faq-item summary { font-size: 15.5px; padding: 18px 4px; }
+  .faq-summary { font-size: 15.5px; padding: 18px 4px; }
   .faq-item p { font-size: 14.5px; max-width: 68ch; }
 
   .testimonial-grid {

@@ -227,6 +227,23 @@ rekonstruiert werden muss — Details/Begründung stehen in Werdegang Punkt 10.
     Stelle stand. Behoben: `display:grid` mit fester Spaltenbreite
     (`180px 1fr` auf Desktop) — beide Spalten stehen jetzt in jeder Zeile exakt
     untereinander.
+29. **Weitere Layout-/Interaktions-Nachbesserungen** (2026-09-08), nach erneutem
+    Live-Feedback:
+    - `.section-head` hatte ein globales `max-width: 640px` (Desktop), das
+      Überschriften/Einleitungstexte in mehreren Sektionen (u. a. Problem,
+      Leistungen) unnötig früh umbrechen ließ. Entfernt — Texte laufen jetzt
+      bis zur natürlichen Breite, ohne harte Grenze.
+    - `.service-row` (Leistungen-Tabelle) hatte dieselbe Ausrichtungs-Schwäche
+      wie zuvor `.process-fields`: dritte Spalte (Preis) war `auto`-breit statt
+      fest, dadurch je Zeile leicht verschoben. Auf feste `170px` umgestellt.
+    - `.process-fields`-Spalte 1 von `180px` auf `230px` verbreitert, da
+      längere Werte („Grobe Vorstellung, ggf. Beispiele") sonst umbrachen und
+      unnötigen Weißraum vor der Ergebnis-Spalte erzeugten.
+    - Hero: Sekundärlink „Portfolio ansehen" neben dem CTA entfernt.
+    - FAQ-Accordion von nativem `<details>` (hartes Auf-/Zuklappen) auf
+      React-State + CSS-Grid-Rows-Technik (`grid-template-rows: 0fr → 1fr`)
+      umgestellt — animiert jetzt weich beim Öffnen/Schließen, mit
+      `prefers-reduced-motion`-Fallback.
 
 ## Hosting & Domains — aktueller Live-Stand (verifiziert 2026-09-06)
 
