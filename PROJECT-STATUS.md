@@ -443,6 +443,13 @@ Kurzfassung der wichtigsten Punkte, die vor einem echten Launch fehlen:
     Blocker aus Punkt 25. Build erfolgreich (`dist/assets/index-B21cN7eN.js`,
     `dist/assets/index-C0ZGUROp.css`, `dist/index.html`) — noch nicht hochgeladen.
 
+27. **Text-Überarbeitung vorbereitet (2026-09-09):** Auf Nutzerwunsch `Website-
+    Texte.xlsx` erstellt (146 Zeilen, ein Textfeld pro Zeile, Spalten Sektion/Alter
+    Text/Neuer Text) und an den Nutzer geschickt. **Noch offen:** Nutzer befüllt
+    Spalte „Neuer Text" und schickt die Datei zurück — danach werden die
+    Änderungen 1:1 in die jeweiligen React-Komponenten übernommen. Falls die Datei
+    in einer künftigen Session noch nicht vorliegt: aktiv daran erinnern.
+
 ## Wie man den aktuellen Live-Stand schnell verifiziert
 
 ```bash
