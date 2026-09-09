@@ -453,6 +453,16 @@ Kurzfassung der wichtigsten Punkte, die vor einem echten Launch fehlen:
     Änderungen 1:1 in die jeweiligen React-Komponenten übernommen. Falls die Datei
     in einer künftigen Session noch nicht vorliegt: aktiv daran erinnern.
 
+28. **Animations-Feinschliff nach emil-design-eng-Review (2026-09-09):** `/emil-design-
+    eng` bewertete die bestehenden Transitions; sechs Punkte umgesetzt: Hover-Regeln
+    (`a`, `.btn-solid`, `.btn-outline`, `.contact-submit`, `.nav-links a` Desktop) hinter
+    `@media (hover: hover) and (pointer: fine)` gesetzt (verhindert "klebende" Hover-
+    States auf Touch-Geräten), `.nav-toggle:active`-Scale von 0.9 auf 0.95 entschärft,
+    `.reveal`-Transition von 1,1s auf 700ms gekürzt, `.nav-menu`-Übergang auf `ease-out`
+    (statt `ease`) gestellt, FAQ-Accordion asymmetrisch getimt (Öffnen 320ms, Schließen
+    220ms). Build erfolgreich, keine Layout-/Farbänderung, daher ohne Playwright-
+    Screenshot freigegeben.
+
 ## Wie man den aktuellen Live-Stand schnell verifiziert
 
 ```bash
