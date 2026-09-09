@@ -352,13 +352,6 @@ button { font-family: inherit; cursor: pointer; }
 .process-fields dt { text-transform: uppercase; letter-spacing: 0.05em; font-size: 11px; color: var(--ink-soft); font-weight: 700; }
 .process-fields dd { margin: 2px 0 0; }
 
-/* Testimonials */
-.testimonial { display: flex; flex-direction: column; gap: 10px; }
-.testimonial p { font-size: 15px; line-height: 1.65; font-style: italic; }
-.testimonial-person { display: flex; align-items: center; gap: 10px; margin-top: 8px; }
-.testimonial-person .name { font-size: 13px; font-weight: 600; }
-.testimonial-person .company { font-size: 12px; color: var(--ink-soft); }
-
 /* Kontakt */
 .contact { background: var(--ink); color: var(--paper); display: flex; flex-direction: column; gap: 26px; }
 .contact h2 { color: var(--paper); font-size: 26px; }
@@ -567,17 +560,6 @@ button { font-family: inherit; cursor: pointer; }
 
   .faq-summary { font-size: 16px; padding: 18px 4px; }
   .faq-item p { font-size: 14px; }
-
-  .testimonial-grid {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 1px;
-    background: var(--rule);
-    border: 1px solid var(--rule);
-  }
-  .testimonial { background: var(--paper); padding: 32px 30px; gap: 18px; }
-  .testimonial p { font-size: 15px; }
-  .testimonial-person { margin-top: auto; padding-top: 16px; border-top: 1px solid var(--rule); }
 
   .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; }
   .contact h2 { font-size: clamp(2rem, 3vw, 2.6rem); margin-bottom: 18px; }

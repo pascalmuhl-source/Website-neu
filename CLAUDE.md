@@ -432,10 +432,11 @@ HTTP→HTTPS-Redirect, HSTS, `content-struktur.de` → 301 auf Hauptdomain, CSS/
 live minifiziert + gzip-komprimiert mit `immutable`-Cache-Headern.
 
 Noch offen:
-- **`noindex, nofollow` weiterhin aktiv** (Live-Check 08.09.: bestätigt) — einziger
-  Blocker ist der bekannte Testimonial-Platzhalter `[Name]`/`[Firma]` (4× live im
-  HTML sichtbar). Sobald echte Zitate vorliegen: `noindex` entfernen (Launch-
-  Checkliste Punkt 1) und `sitemap.xml` `lastmod` aktualisieren.
+- **`noindex, nofollow` weiterhin aktiv.** Der bisherige Blocker (Testimonial-
+  Platzhalter `[Name]`/`[Firma]`) ist durch Entfernen der ganzen Sektion (2026-09-09)
+  erledigt, aber es gibt weitere offene Launch-Checkliste-Punkte (Löschfrist Server-
+  Logdaten, Hero-Bild-Kontrast, Testdateien auf dem Server) — `noindex` bleibt bis
+  dahin bestehen, siehe „Was noch offen ist" in `PROJECT-STATUS.md`.
 - PageSpeed-Mobile-Lauf vom 08.09. zeigte "LCP/TBT Error/No_LCP" und fehlgeschlagene
   CSS/JS-Kompressions-Checks — das ist ein unvollständiger Lighthouse-Trace, kein
   reales Problem (Server-seitig ist alles bereits minifiziert/komprimiert
@@ -464,9 +465,10 @@ echten Launch erledigt werden — der erste ist der wichtigste:**
 2. **Alle Platzhalter ersetzen** — erledigt seit dem Nischen-Pivot auf
    „Sachverständige und Gutachter" (2026-09-07): Preise (Website-Erstellung ab
    1.499 €, Redesign ab 1.199 €, Wartung ab 35 €/Monat), Erfahrung (6 Jahre),
-   Portfolio (1 echter Case statt 3 erfundener). **Noch offen:** `[Name]`/`[Firma]`
-   bei Testimonials — bewusst zurückgestellt, bis echte Kundenzitate vorliegen.
-   Kontaktdaten (Adresse, Telefon, E-Mail) sind bereits erledigt.
+   Portfolio (1 echter Case statt 3 erfundener). Kontaktdaten (Adresse, Telefon,
+   E-Mail) sind bereits erledigt. Testimonial-Platzhalter `[Name]`/`[Firma]`
+   erledigt: Sektion am 2026-09-09 komplett entfernt (Komponente, Nav-Anker, CSS),
+   statt zurückgehalten — kann bei echten Kundenzitaten neu aufgebaut werden.
 2b. **Schema.org** — erledigt: `streetAddress`, `telephone`, `email` und `sameAs`
    (Google-Unternehmensprofil-Link) sind im JSON-LD in `website/index.html` gesetzt.
 3. **Empfängeradresse in `website/public/send-mail.php`** — erledigt

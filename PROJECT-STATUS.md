@@ -382,10 +382,9 @@ rekonstruiert werden muss — Details/Begründung stehen in Werdegang Punkt 10.
 Kurzfassung der wichtigsten Punkte, die vor einem echten Launch fehlen:
 
 1. `noindex` entfernen (aktuell absichtlich gesetzt) — **wichtigster Punkt vor Launch**
-2. Testimonial-Platzhalter (`[Name]`/`[Firma]`) durch echte Zitate mit Kundenfreigabe
-   ersetzen, sobald vorhanden (siehe Werdegang Punkt 10 — bewusst zurückgestellt).
-   Preise, Erfahrung und der Portfolio-Case sind bereits mit echten Angaben gefüllt
-   (siehe Werdegang Punkt 10).
+2. ~~Testimonial-Platzhalter (`[Name]`/`[Firma]`) ersetzen~~ — erledigt: Sektion
+   komplett entfernt (Werdegang Punkt 26). Preise, Erfahrung und der Portfolio-Case
+   sind bereits mit echten Angaben gefüllt (siehe Werdegang Punkt 10).
 3. Rechtstexte sind jetzt echte e-recht24-Fassungen (siehe Werdegang Punkt 24), aber
    Löschfrist der Server-Logdaten in `datenschutz.html` (Abschnitt „Server-Log-
    Dateien") ist noch als Platzhalter offen — bei lima-city erfragen und ergänzen.
@@ -436,6 +435,13 @@ Kurzfassung der wichtigsten Punkte, die vor einem echten Launch fehlen:
     live nachweislich minifiziert + gzip-komprimiert), keine reale Baustelle.
     `www.`-Subdomain ließ sich aus der Sandbox nicht prüfen (Proxy-Restriktion) —
     offen für manuelle Prüfung durch den Nutzer.
+
+26. **Testimonials-Sektion entfernt (2026-09-09):** Auf Nutzerwunsch komplett
+    gestrichen statt auf echte Kundenzitate zu warten (`Testimonials.jsx` gelöscht,
+    Import/Einbindung in `App.jsx` und zugehöriges CSS in `index.css` entfernt, kein
+    Nav-Anker vorhanden gewesen). Löst nebenbei den `[Name]`/`[Firma]`-Launch-
+    Blocker aus Punkt 25. Build erfolgreich (`dist/assets/index-B21cN7eN.js`,
+    `dist/assets/index-C0ZGUROp.css`, `dist/index.html`) — noch nicht hochgeladen.
 
 ## Wie man den aktuellen Live-Stand schnell verifiziert
 
