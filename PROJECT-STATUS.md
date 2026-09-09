@@ -397,6 +397,9 @@ Kurzfassung der wichtigsten Punkte, die vor einem echten Launch fehlen:
    `kontakt-handler.php`, `kontakthandler.php`, `formtest.php`, `info.php`,
    `altversion.php`, das alte `send-mail.php` (mit Bindestrich, nie erreichbar) —
    v. a. `info.php` wegen offengelegter Serverdetails.
+7. Bing-Optimierung nach dem Launch: Bing Webmaster Tools + `msvalidate.01`-Tag,
+   IndexNow-Protokoll (siehe CLAUDE.md Launch-Checkliste Punkt 10) — Nutzer aktiv
+   erinnern, sobald über den Launch oder Suchmaschinen-Sichtbarkeit gesprochen wird.
 
 21. **Google-Unternehmensprofil verifiziert.** Social-Media-Icons im Footer (zwei
     `href="#"`-Platzhalter, LinkedIn/Instagram) entfernt, da noch keine echten

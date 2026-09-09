@@ -490,6 +490,13 @@ echten Launch erledigt werden — der erste ist der wichtigste:**
    (Postkarte/Telefon/Video) abschließen, falls noch nicht geschehen.
 9. **content-struktur.de** — erledigt: leitet per 301 auf pascal-webdesign.de weiter,
    kein Duplicate Content mehr.
+10. **Bing-Optimierung nach dem Launch** — noch offen, unabhängig vom `noindex`-Punkt
+    oben: Bing Webmaster Tools einrichten (inkl. `msvalidate.01`-Verifizierungs-Tag im
+    `<head>`, aktuell nicht vorhanden) und IndexNow-Protokoll implementieren (von Bing/
+    Yandex unterstützt, nicht von Google — meldet Änderungen sofort statt aufs Crawling
+    zu warten). **Aktiv ansprechen**, sobald über den echten Launch bzw. Bing/Suchmaschinen-
+    Sichtbarkeit gesprochen wird — nicht erst auf Nachfrage warten (Nutzerwunsch,
+    2026-09-09).
 
 # Regel: robots.txt und sitemap.xml immer aktuell halten — ungefragt
 
