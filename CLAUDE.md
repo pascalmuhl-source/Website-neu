@@ -471,10 +471,9 @@ Sachverständige/Gutachter), Einzugsgebiet deutschlandweit.
   `website/public/e5754afd3425459994764d198ffa4815.txt` (Inhalt = Dateiname ohne
   `.txt`) muss beim nächsten Upload mit hochgeladen werden, danach einmalig
   `https://api.indexnow.org/indexnow?url=https://pascal-webdesign.de/&key=e5754afd3425459994764d198ffa4815&keyLocation=https://pascal-webdesign.de/e5754afd3425459994764d198ffa4815.txt`
-  aufrufen (funktioniert erst, wenn die Key-Datei live erreichbar ist). **Noch offen,
-  nutzerseitig:** Bing Webmaster Tools Account einrichten + `msvalidate.01`-Meta-Tag
-  aus dem dortigen Verifizierungsschritt liefern, dann trage ich ihn in
-  `website/index.html` ein.
+  aufrufen (funktioniert erst, wenn die Key-Datei live erreichbar ist). `msvalidate.01`-
+  Meta-Tag vom Nutzer erhalten und in `website/index.html` eingetragen (2026-09-10) —
+  Bing-Verifizierung ist damit vorbereitet, muss nur noch mit hochgeladen werden.
 
 # Regel: robots.txt und sitemap.xml immer aktuell halten — ungefragt
 

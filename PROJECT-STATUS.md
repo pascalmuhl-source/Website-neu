@@ -395,10 +395,9 @@ Kein Launch-Blocker mehr, aber im Blick behalten:
    2026-09-10 abgelehnt): `ftptest.txt`, `kontakt-handler.php`, `kontakthandler.php`,
    `formtest.php`, `info.php`, `altversion.php`, altes `send-mail.php` (Bindestrich,
    nie erreichbar) — v. a. `info.php` wegen offengelegter Serverdetails.
-4. Bing-Optimierung: IndexNow-Key vorbereitet (Werdegang Punkt 33), muss beim nächsten
-   Upload mit hochgeladen werden, danach einmalige IndexNow-Meldung (siehe CLAUDE.md
-   für den genauen Befehl). `msvalidate.01`-Tag noch offen — braucht den
-   Verifizierungscode aus dem Bing-Webmaster-Tools-Account des Nutzers.
+4. Bing-Optimierung: IndexNow-Key + `msvalidate.01`-Tag (vom Nutzer geliefert,
+   2026-09-10) beide vorbereitet, müssen nur noch mit hochgeladen werden — danach
+   einmalige IndexNow-Meldung (Befehl siehe CLAUDE.md).
 
 21. **Google-Unternehmensprofil verifiziert.** Social-Media-Icons im Footer (zwei
     `href="#"`-Platzhalter, LinkedIn/Instagram) entfernt, da noch keine echten
