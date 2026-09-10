@@ -8,8 +8,8 @@ Projekt technisch aufgebaut ist, und was aktuell live steht — damit eine neue 
 sich nicht durch den gesamten Chat-Verlauf arbeiten muss, um auf demselben Stand
 weiterzumachen.
 
-**Zuletzt aktualisiert:** 2026-09-10 (Akquise-Strategie für erste zahlende Kunden
-erarbeitet, siehe Werdegang Punkt 36).
+**Zuletzt aktualisiert:** 2026-09-10 (Landingpage content-struktur.de als zweites
+React-Projekt gebaut, siehe Werdegang Punkt 38).
 
 ## Worum es geht
 
@@ -612,6 +612,27 @@ Kein Launch-Blocker mehr, aber im Blick behalten:
     301-Redirect auf `pascal-webdesign.de`) soll als Landingpage für das neue Angebot
     umgewidmet werden. Die Weiterleitung fällt damit weg. Pascal Webdesign läuft weiter,
     aber als Nebenprojekt mit ~1-2 h/Woche (LinkedIn-Ansprache, Google-Profil).
+
+38. **Landingpage `content-struktur.de` als zweites React-Projekt gebaut** (2026-09-10):
+    Prototyp zuerst als Artefakt
+    (https://claude.ai/code/artifact/d9b0508e-cc4d-47b4-8eb2-2dc857c89332), danach als
+    eigenständiges Vite/React-Projekt unter `content-struktur/` im selben Repo (getrennt
+    von `website/`, weil andere Zielgruppe und eigene Domain). Aufbau identisch zu
+    `website/`: SSR-Prerendering, self-hosted Fonts, gleiche `.htaccess`. Design: Farben,
+    Radius 0 und Archivo aus dem Markenkit übernommen, **Cormorant Garamond bewusst nicht**
+    (Serif-Anmutung ist auf die Sachverständigen-Nische zugeschnitten). Zweitschrift
+    DM Mono (nur für Datenwerte), von Google Fonts heruntergeladen und self-hosted.
+    Verifiziert: kein horizontaler Overflow (1440px/390px), **keine externen Requests zur
+    Laufzeit**, alle Unterseiten 200. `noindex` gesetzt bis Preise, E-Mail und Rechtstexte
+    final sind.
+    **Wichtiger Befund zur Domain:** `content-struktur.de` zeigt per DNS **bereits auf
+    lima-city** (liefert aktuell 301 auf `pascal-webdesign.de`). Eine IONOS-Umstellung ist
+    **nicht nötig** — entgegen der ursprünglichen Annahme. Zu tun bleibt allein die
+    Umstellung des lima-city-vhosts 3685431 von `content_strategy: redirect` auf `path`
+    mit eigenem Document Root. Das konnte diese Session nicht erledigen: **kein lima-city-
+    und kein IONOS-API-Key vorhanden** (nur `FTP_HOST`/`FTP_USER`/`FTP_PASS` als Env-Vars,
+    und FTP ist aus der Sandbox weiterhin nicht erreichbar). Nutzer macht es im Control
+    Panel, Upload wie gewohnt manuell.
 
 ## Wie man den aktuellen Live-Stand schnell verifiziert
 
