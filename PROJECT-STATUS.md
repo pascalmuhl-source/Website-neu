@@ -487,6 +487,13 @@ Kurzfassung der wichtigsten Punkte, die vor einem echten Launch fehlen:
     da LCP-Kandidat), Über-mich „Porträtfoto von Pascal Muhl" (`loading=lazy`). Mit
     Playwright auf Desktop (1440px) und Mobile (390px) visuell verifiziert, keine
     Layout-Fehler. Build erfolgreich.
+    **Korrektur (2026-09-10):** Nutzer wollte das ursprünglich angedachte Mobile-
+    Overlap (Headline über dem Foto) explizit beibehalten statt gestapeltem Layout.
+    `.hero-copy` zurück auf `position: absolute` über `.hero-portrait` gesetzt.
+    Lesbarkeit statt Layout-Umbau gelöst: `.hero-portrait` bekommt mobil `opacity: 0.2`
+    (Desktop weiterhin `opacity: 1`, da dort kein Overlap) — rechnerisch auch über den
+    dunkelsten Bildstellen (Haare, Brillenrahmen) Kontrast von 9–12:1 gegen den
+    dunklen Ink-Text, weit über dem WCAG-Minimum. Per Screenshot bestätigt.
 
 ## Wie man den aktuellen Live-Stand schnell verifiziert
 

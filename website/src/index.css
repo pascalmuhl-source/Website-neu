@@ -200,9 +200,7 @@ button { font-family: inherit; cursor: pointer; }
   position: relative;
   padding: 44px 20px 40px;
   border-bottom: 1px solid var(--rule);
-  display: flex;
-  flex-direction: column;
-  gap: 32px;
+  overflow: hidden;
 }
 .hero-portrait {
   display: block;
@@ -212,8 +210,16 @@ button { font-family: inherit; cursor: pointer; }
   margin: 0 auto;
   aspect-ratio: 3 / 4;
   object-fit: contain;
+  /* Mobile: Headline liegt bewusst über dem Foto (siehe .hero-copy). Damit der
+     dunkle Text auch über dunklen Bildstellen (Haare, Brille) lesbar bleibt,
+     wird das Foto stark aufgehellt statt es hinter den Text zu legen. */
+  opacity: 0.2;
 }
 .hero-copy {
+  position: absolute;
+  top: 44px;
+  left: 20px;
+  right: 20px;
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -474,6 +480,7 @@ button { font-family: inherit; cursor: pointer; }
     max-width: 380px;
     margin: 0 auto;
     aspect-ratio: 3 / 4;
+    opacity: 1;
   }
 
   .section { padding: 96px 64px; }
