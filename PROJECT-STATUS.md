@@ -399,12 +399,10 @@ Kein Launch-Blocker mehr, aber im Blick behalten:
    verifiziert (noindex weg, msvalidate.01 live, IndexNow-Key live). Nutzer hat die
    IndexNow-Meldung selbst per Browser ausgelöst (Sandbox-Proxy blockiert
    `api.indexnow.org`). Nur noch offen: Nutzer klickt „Verify" in Bing Webmaster Tools.
-5. **Letzter Upload-Stand prüfen:** Nach Werdegang Punkt 35 (Portfolio-Layout
-   Bild-links/Text-rechts + Nav-CTA-Stil + weitere Design-Fixes) wurde dem Nutzer
-   ein komplettes `dist/`-ZIP zum Hochladen geschickt — beim Sessionstart der
-   nächsten Session per `curl`/Byte-Vergleich verifizieren, ob es tatsächlich live
-   hochgeladen wurde (siehe Abschnitt „Wie man den aktuellen Live-Stand schnell
-   verifiziert" unten).
+5. ~~Letzter Upload-Stand prüfen~~ — erledigt (2026-09-10): Nutzer hat den Upload aus
+   Werdegang Punkt 35 bestätigt, per `curl`/Byte-Vergleich live verifiziert (CSS/JS-
+   Hashes, Größe, Nav-CTA-Klasse, Portfolio-Bild, entfernter „neu"-Badge — alles
+   stimmt exakt mit dem letzten Build überein).
 
 21. **Google-Unternehmensprofil verifiziert.** Social-Media-Icons im Footer (zwei
     `href="#"`-Platzhalter, LinkedIn/Instagram) entfernt, da noch keine echten
