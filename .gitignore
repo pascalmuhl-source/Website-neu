@@ -1,0 +1,4 @@
+# Python-Bytecode-Cache, entsteht beim Ausführen der Skill-Skripte
+# (z. B. .agents/skills/ui-ux-pro-max/scripts/search.py)
+__pycache__/
+*.pyc
