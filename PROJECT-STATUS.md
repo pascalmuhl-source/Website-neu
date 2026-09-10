@@ -377,29 +377,34 @@ rekonstruiert werden muss — Details/Begründung stehen in Werdegang Punkt 10.
   Konkurrenzanalysen laufen stattdessen über normale Web-Recherche ohne
   MCP-Server.)
 
-## Was noch offen ist (siehe „Launch-Checkliste" in CLAUDE.md für die Langfassung)
+## Was noch offen ist (siehe „Launch-Status" in CLAUDE.md für die Langfassung)
 
-Kurzfassung der wichtigsten Punkte, die vor einem echten Launch fehlen:
+**Launch abgeschlossen (2026-09-10):** `noindex` entfernt, Sitemap-`lastmod`
+aktualisiert, echtes Portfolio-Bild eingebaut (Werdegang Punkt 31/32). Alle
+ursprünglichen Launch-Checkliste-Punkte sind erledigt — Doku in CLAUDE.md auf
+Kurzform „Launch-Status" reduziert.
 
-1. `noindex` entfernen (aktuell absichtlich gesetzt) — **wichtigster Punkt vor Launch**
-2. ~~Testimonial-Platzhalter (`[Name]`/`[Firma]`) ersetzen~~ — erledigt: Sektion
-   komplett entfernt (Werdegang Punkt 26). Preise, Erfahrung und der Portfolio-Case
-   sind bereits mit echten Angaben gefüllt (siehe Werdegang Punkt 10).
-3. Rechtstexte sind jetzt echte e-recht24-Fassungen (siehe Werdegang Punkt 24), aber
-   Löschfrist der Server-Logdaten in `datenschutz.html` (Abschnitt „Server-Log-
-   Dateien") ist noch als Platzhalter offen — bei lima-city erfragen und ergänzen.
-4. Hero-Bild-Kontrast auf Mobile neu prüfen, sobald ein echtes Foto das
-   Platzhalter-Gradient ersetzt (rechnerisch grenzwertig unter WCAG AA)
-5. Google Ads: sobald echte Google-Bewertungen oder eine dokumentierte Kundenzahl
+Kein Launch-Blocker mehr, aber im Blick behalten:
+
+1. ~~Löschfrist Server-Logdaten~~ — erledigt (2026-09-10, Werdegang Punkt 33):
+   90 Tage bei lima-city, per Recherche ermittelt statt Support-Anfrage.
+2. Google Ads: sobald echte Google-Bewertungen oder eine dokumentierte Kundenzahl
    vorliegen, die „Vertrauen/Prozess"-Headlines (siehe Werdegang Punkt 8) durch echte
    Social-Proof-Headlines ersetzen/ergänzen.
-6. Testdateien auf dem Server aufräumen, falls noch nicht geschehen: `ftptest.txt`,
-   `kontakt-handler.php`, `kontakthandler.php`, `formtest.php`, `info.php`,
-   `altversion.php`, das alte `send-mail.php` (mit Bindestrich, nie erreichbar) —
-   v. a. `info.php` wegen offengelegter Serverdetails.
-7. Bing-Optimierung nach dem Launch: Bing Webmaster Tools + `msvalidate.01`-Tag,
-   IndexNow-Protokoll (siehe CLAUDE.md Launch-Checkliste Punkt 10) — Nutzer aktiv
-   erinnern, sobald über den Launch oder Suchmaschinen-Sichtbarkeit gesprochen wird.
+3. Testdateien auf dem Server aufräumen — Nutzer macht das manuell (FTP-Automatisierung
+   2026-09-10 abgelehnt): `ftptest.txt`, `kontakt-handler.php`, `kontakthandler.php`,
+   `formtest.php`, `info.php`, `altversion.php`, altes `send-mail.php` (Bindestrich,
+   nie erreichbar) — v. a. `info.php` wegen offengelegter Serverdetails.
+4. ~~Bing-Optimierung~~ — erledigt (2026-09-10, Werdegang Punkt 34): kompletter Upload
+   verifiziert (noindex weg, msvalidate.01 live, IndexNow-Key live). Nutzer hat die
+   IndexNow-Meldung selbst per Browser ausgelöst (Sandbox-Proxy blockiert
+   `api.indexnow.org`). Nur noch offen: Nutzer klickt „Verify" in Bing Webmaster Tools.
+5. **Letzter Upload-Stand prüfen:** Nach Werdegang Punkt 35 (Portfolio-Layout
+   Bild-links/Text-rechts + Nav-CTA-Stil + weitere Design-Fixes) wurde dem Nutzer
+   ein komplettes `dist/`-ZIP zum Hochladen geschickt — beim Sessionstart der
+   nächsten Session per `curl`/Byte-Vergleich verifizieren, ob es tatsächlich live
+   hochgeladen wurde (siehe Abschnitt „Wie man den aktuellen Live-Stand schnell
+   verifiziert" unten).
 
 21. **Google-Unternehmensprofil verifiziert.** Social-Media-Icons im Footer (zwei
     `href="#"`-Platzhalter, LinkedIn/Instagram) entfernt, da noch keine echten
@@ -499,6 +504,83 @@ Kurzfassung der wichtigsten Punkte, die vor einem echten Launch fehlen:
     von 4,8:1 gegen den Ink-Text (`#1C1F1D`) berechnet (≈0,515). `opacity: 0.5` gesetzt
     → rechnerisch ~5:1 Kontrast selbst an den dunkelsten Bildstellen, deutlich
     sichtbareres Foto als bei 0.2. Per Screenshot bestätigt.
+
+31. **Launch-Checkliste großteils final geklärt (2026-09-10):** Nutzer bestätigt:
+    Rechtstexte final, Testmail-Zustellung ok, Google-Unternehmensprofil verifiziert,
+    `www.`-Redirect im Browser ok. Platzhalter-Links geprüft: Social-Icons/zusätzliche
+    Portfolio-Cases waren bereits entfernt (Werdegang Punkt 21) — einziger Rest ist ein
+    echtes Bild für den verbliebenen Portfolio-Case (Kunde: wu-engineering.de).
+    Live-Screenshot per Playwright in dieser Sandbox versucht und verworfen: Chromium
+    bricht über den Proxy bei dieser Domain konsequent mit `ws_closed_mid_exchange`
+    ab (`curl` auf dieselbe Domain funktioniert dagegen einwandfrei; die Bild-CDN
+    `static.wixstatic.com` ist zusätzlich per Proxy-Policy mit 403 geblockt) —
+    kein sinnvoller weiterer Retry ohne anderes Netzwerk-Setup. Nutzer schickt
+    stattdessen selbst einen Screenshot der Kundenseite zum Einbauen.
+
+32. **Portfolio-Bild eingebaut, Live-Launch (2026-09-10):** Vom Nutzer gelieferten
+    Mobile-Screenshot von wu-engineering.de erhalten, iOS-Statusleiste/Safari-Chrome
+    weggeschnitten, auf Logo+Headline zugeschnitten (Aspect ~1,77:1, passend zu den
+    `.portfolio-thumb`-Seitenverhältnissen bei Mobile/Desktop), als
+    `portfolio-wu-engineering.webp`/`.jpg` (1280×722) gespeichert und in
+    `Portfolio.jsx` per `<picture>` eingebaut (`object-fit: cover; object-position: top`
+    in `index.css` ergänzt). Mit lokalem Playwright-Screenshot (Vite-Preview-Server,
+    kein externer Zugriff nötig) auf Desktop und Mobile verifiziert. Damit war der
+    letzte inhaltliche Launch-Blocker erledigt — auf Nutzer-Bestätigung `noindex` aus
+    `website/index.html` entfernt und `sitemap.xml`-`lastmod` auf 2026-09-10 gesetzt.
+    Die Seite ist damit für Google/Bing indexierbar; alle Launch-Checkliste-Punkte aus
+    CLAUDE.md sind erledigt (Doku dort auf Kurzform „Launch-Status" reduziert).
+
+33. **Post-Launch-Punkte abgearbeitet (2026-09-10):** FTP-Automatisierung für Upload/
+    Testdateien-Cleanup explizit vom Nutzer abgelehnt (macht er manuell) — FTP-
+    Zugangsdaten liegen als Env-Var bereit, falls später doch gewünscht. Log-
+    Löschfrist per `WebSearch`/`WebFetch` auf der öffentlichen lima-city-Hilfe-Seite
+    ermittelt (90 Tage) statt Support-Anfrage, in `datenschutz.html` ergänzt.
+    IndexNow-Key generiert (`e5754afd3425459994764d198ffa4815`) und als
+    `website/public/e5754afd3425459994764d198ffa4815.txt` hinterlegt — muss beim
+    nächsten Upload mit hochgeladen werden, danach einmaliger API-Aufruf zur
+    Bing/Yandex-Meldung nötig (Befehl siehe CLAUDE.md). `msvalidate.01`-Bing-
+    Verifizierung bleibt offen, da sie einen Code aus dem Bing-Webmaster-Tools-
+    Account des Nutzers braucht (kein Zugriff von hier aus möglich).
+
+34. **Kompletter Re-Upload, alles live verifiziert (2026-09-10):** Nutzer bat um alle
+    Dateien statt nur der geänderten ("ich lasse alles neu hoch") — kompletter
+    `dist/`-Ordner als ZIP inkl. `.htaccess` (per Ausnahme aus der Upload-Regel)
+    bereitgestellt und hochgeladen. Live-Verifikation per `curl`: `noindex` entfernt,
+    `msvalidate.01`-Tag da, IndexNow-Key-Datei 200 OK, Sitemap-`lastmod` aktuell,
+    Portfolio-Bild live, Datenschutz-Löschfrist (90 Tage) drin. IndexNow-API-Aufruf
+    aus der Sandbox schlug fehl (`api.indexnow.org` per Proxy-Policy blockiert, `connect_
+    rejected` — keine Retry-sinnvolle Organisationsrichtlinien-Sperre) — Nutzer hat die
+    Meldungs-URL stattdessen selbst im Browser geöffnet. Damit ist die komplette
+    Bing-Optimierung abgeschlossen bis auf den "Verify"-Klick in Bing Webmaster Tools
+    (nutzerseitig, kein Zugriff von hier aus möglich).
+
+35. **Post-Launch-Design-Feinschliff (2026-09-10):** Mehrere Nutzer-Feedback-Runden
+    nach dem Launch abgearbeitet, jeweils committet/gepusht und per komplettem
+    `dist/`-ZIP zum Hochladen bereitgestellt:
+    - Portfolio-Bild zweimal ausgetauscht (Nutzer schickte nacheinander zwei leicht
+      unterschiedliche Weber+Uhlig-Screenshots; Bilder als Base64 direkt im
+      Chat-Turn, nicht als Datei-Upload — Extraktion aus der Session-JSONL-Historie
+      via `python3`/`base64` nötig, da kein `/root/.claude/uploads/`-Pfad vorlag).
+    - Grid-Ausrichtung Problem-Sektion vs. Über-mich-Sektion exakt angeglichen
+      (0.85fr/1.15fr + 72px Gap statt fester 40px-Innenpolsterung).
+    - Über-mich: Fließtext-`max-width` entfernt, Textbreite = Überschriftenbreite.
+    - Portraitfoto (Desktop) auf 85% Breite verkleinert, Seitenverhältnis erhalten.
+    - Cost-Note-Kasten (Problem-Sektion): Fließtext-`max-width:900px` entfernt, Text
+      füllt jetzt die volle Kastenbreite (vorher großer Leerraum rechts).
+    - "neu"-Badge bei "Keine nachvollziehbare Arbeitsweise" entfernt.
+    - Nav-CTA ("Erstgespräch buchen" oben rechts) von `btn-outline` auf `btn-solid`
+      umgestellt (exakt Hero-CTA-Stil: Farbe, Hover, Typografie) — eigene
+      `.nav-cta`-Klasse nötig, da `.nav-links a` sonst mit höherer CSS-Spezifität
+      Font-Weight/Padding/Border durchgedrückt hätte.
+    - Portfolio-Sektion von gestapeltem Layout (Bild oben, Text unten) auf
+      Bild-links/Text-rechts umgestellt (wie Über-mich-Sektion): Desktop-Grid
+      640px-Bildspalte (fix, wie vom Nutzer verlangt) + 1fr-Textspalte, 72px Gap.
+      Bild wird dabei nicht mehr per `object-fit:cover` beschnitten, sondern
+      komplett bei 640px Breite mit automatischer Höhe angezeigt.
+    - Lokale Verifikation lief durchgehend über `vite preview` + Playwright
+      (Chromium via `/opt/pw-browsers/chromium`), da direkte Live-Screenshots der
+      Produktivdomain über den Sandbox-Proxy nicht möglich sind (bekanntes
+      `ws_closed_mid_exchange`-Problem, siehe Werdegang Punkt 31).
 
 ## Wie man den aktuellen Live-Stand schnell verifiziert
 

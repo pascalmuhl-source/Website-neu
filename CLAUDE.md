@@ -442,61 +442,46 @@ Noch offen:
   reales Problem (Server-seitig ist alles bereits minifiziert/komprimiert
   verifiziert). Vor echter Performance-Optimierung: PageSpeed-Test einfach erneut
   laufen lassen für saubere Zahlen.
-- `www.pascal-webdesign.de` ließ sich aus der Agent-Sandbox nicht sauber prüfen
-  (Proxy-Restriktion) — im echten Browser verifizieren, ob `www.` korrekt
-  weiterleitet.
+- `www.pascal-webdesign.de`-Weiterleitung vom Nutzer im echten Browser bestätigt
+  (2026-09-10): passt.
 - Alt-Text-Struktur für Bilder, sobald echte Fotos die Platzhalter-Gradients ersetzen
 
 Den `seo`-Skill (`.claude/skills/seo/`) bzw. `seo-audit`-Skill für Folge-Audits nutzen.
 
-# Launch-Checkliste (Pascal Webdesign) — vor dem Sichtbarmachen abarbeiten
+# Launch-Status (Pascal Webdesign)
 
-Die Seite läuft seit 2026-09 unter `pascal-webdesign.de` (Marke: **Pascal Webdesign**,
-Inhaber Pascal Muhl (bestätigt), 55452 Windesheim, Zielgruppe KMU/Selbstständige/Freiberufler,
-Einzugsgebiet deutschlandweit). Sie ist bewusst auf `noindex` gesetzt, solange
-Platzhalter-Inhalte drin sind. **Diese Punkte müssen vor dem
-echten Launch erledigt werden — der erste ist der wichtigste:**
+**Live seit 2026-09-10:** `noindex` entfernt, `sitemap.xml`-`lastmod` aktualisiert,
+Portfolio-Bild eingebaut (Screenshot von wu-engineering.de, Nutzer geliefert). Alle
+Launch-Checkliste-Punkte sind damit erledigt. Marke: **Pascal Webdesign**, Inhaber
+Pascal Muhl, 55452 Windesheim, Zielgruppe KMU/Selbstständige/Freiberufler (Nische:
+Sachverständige/Gutachter), Einzugsgebiet deutschlandweit.
 
-1. **`noindex` entfernen** — in `website/index.html` die Zeile
-   `<meta name="robots" content="noindex, nofollow" />` löschen. Ein vergessenes
-   `noindex` ist der teuerste Fehler beim Livegang: die Seite bleibt dauerhaft
-   unsichtbar in Google, ohne dass es jemandem auffällt. Bei jedem Gespräch über
-   "die Seite ist jetzt fertig" aktiv daran erinnern.
-2. **Alle Platzhalter ersetzen** — erledigt seit dem Nischen-Pivot auf
-   „Sachverständige und Gutachter" (2026-09-07): Preise (Website-Erstellung ab
-   1.499 €, Redesign ab 1.199 €, Wartung ab 35 €/Monat), Erfahrung (6 Jahre),
-   Portfolio (1 echter Case statt 3 erfundener). Kontaktdaten (Adresse, Telefon,
-   E-Mail) sind bereits erledigt. Testimonial-Platzhalter `[Name]`/`[Firma]`
-   erledigt: Sektion am 2026-09-09 komplett entfernt (Komponente, Nav-Anker, CSS),
-   statt zurückgehalten — kann bei echten Kundenzitaten neu aufgebaut werden.
-2b. **Schema.org** — erledigt: `streetAddress`, `telephone`, `email` und `sameAs`
-   (Google-Unternehmensprofil-Link) sind im JSON-LD in `website/index.html` gesetzt.
-3. **Empfängeradresse in `website/public/send-mail.php`** — erledigt
-   (`pascal@pascal-webdesign.de`). Vor Launch trotzdem eine echte Testmail
-   durchschicken, um die tatsächliche Zustellung zu bestätigen.
-4. **Testimonials und Erfolgszahlen nur mit echter Kundenfreigabe.** Erfundene
-   Referenzen oder unbelegte Zahlen ("+8 Aufträge pro Monat") sind eine
-   wettbewerbswidrige Irreführung nach § 5 UWG — ausgerechnet in dieser Branche
-   ein vermeidbares Abmahnrisiko.
-5. **Platzhalter-Links auflösen** — die 5 `href="#"` (2 Social-Icons, 3 Portfolio-Cases)
-   entweder mit echten Zielen versehen oder entfernen.
-6. **Rechtstexte final prüfen lassen** — Impressum und Datenschutzerklärung sind
-   ausdrücklich Entwürfe (siehe DSGVO-Regel oben).
-7. **Sitemap prüfen** — `sitemap.xml` listet die Startseite bereits korrekt für den
-   Launch-Zustand. Nach Entfernen des `noindex` `lastmod` aktualisieren.
-8. **Google-Unternehmensprofil** — angelegt und mit der Website verknüpft (Adresse/
-   Telefon/E-Mail stimmen überein, `sameAs` im Schema verweist auf das Profil:
-   https://share.google/AIW6wayHq9MifU8qP). Noch offen: Google-seitige Verifizierung
-   (Postkarte/Telefon/Video) abschließen, falls noch nicht geschehen.
-9. **content-struktur.de** — erledigt: leitet per 301 auf pascal-webdesign.de weiter,
-   kein Duplicate Content mehr.
-10. **Bing-Optimierung nach dem Launch** — noch offen, unabhängig vom `noindex`-Punkt
-    oben: Bing Webmaster Tools einrichten (inkl. `msvalidate.01`-Verifizierungs-Tag im
-    `<head>`, aktuell nicht vorhanden) und IndexNow-Protokoll implementieren (von Bing/
-    Yandex unterstützt, nicht von Google — meldet Änderungen sofort statt aufs Crawling
-    zu warten). **Aktiv ansprechen**, sobald über den echten Launch bzw. Bing/Suchmaschinen-
-    Sichtbarkeit gesprochen wird — nicht erst auf Nachfrage warten (Nutzerwunsch,
-    2026-09-09).
+**Noch offen (kein Launch-Blocker mehr, aber im Blick behalten):**
+- **Löschfrist Server-Logdaten** — erledigt (2026-09-10): per Recherche der
+  öffentlichen lima-city-Hilfe-Seite ermittelt (90 Tage), in `datenschutz.html`
+  ergänzt.
+- **Testdateien auf dem Server aufräumen**, falls noch nicht geschehen: `ftptest.txt`,
+  `kontakt-handler.php`, `kontakthandler.php`, `formtest.php`, `info.php`,
+  `altversion.php`, das alte `send-mail.php` (mit Bindestrich, nie erreichbar) —
+  v. a. `info.php` wegen offengelegter Serverdetails. Nutzer macht das manuell
+  (FTP-Automatisierung 2026-09-10 explizit abgelehnt, siehe Regel oben).
+- **Testimonials/Erfolgszahlen nur mit echter Kundenfreigabe** — erfundene Referenzen
+  oder unbelegte Zahlen sind eine wettbewerbswidrige Irreführung nach § 5 UWG.
+- **Bing-Optimierung — alles live (2026-09-10):** Kompletter `dist/`-Ordner vom Nutzer
+  hochgeladen (inkl. `.htaccess`). Verifiziert: `noindex` weg, `msvalidate.01`-Tag
+  live, IndexNow-Key-Datei live (200 OK), Sitemap-`lastmod`, Portfolio-Bild,
+  Datenschutz-Löschfrist. IndexNow-API (`api.indexnow.org`) ist aus der Sandbox per
+  Proxy-Policy blockiert — Nutzer hat die Meldungs-URL stattdessen selbst im Browser
+  aufgerufen. Noch offen: Nutzer klickt in Bing Webmaster Tools auf „Verify".
+- **Post-Launch-Design-Feinschliff (2026-09-10):** Mehrere Feedback-Runden umgesetzt
+  (Details siehe `PROJECT-STATUS.md`, Werdegang Punkt 35) — u. a. Portfolio-Bild
+  zweimal ausgetauscht, Grid-Ausrichtung Problem-/Über-mich-Sektion angeglichen,
+  Cost-Note-Kasten-Breite gefixt, Nav-CTA auf Hero-CTA-Stil umgestellt, Portfolio-
+  Sektion auf Bild-links/Text-rechts-Layout (640px feste Bildbreite) umgebaut.
+  Letztes komplettes `dist/`-ZIP wurde dem Nutzer geschickt — **zu Beginn der
+  nächsten Session per `curl` verifizieren, ob es tatsächlich hochgeladen wurde**
+  (siehe „Wie man den aktuellen Live-Stand schnell verifiziert" in
+  `PROJECT-STATUS.md`).
 
 # Regel: robots.txt und sitemap.xml immer aktuell halten — ungefragt
 

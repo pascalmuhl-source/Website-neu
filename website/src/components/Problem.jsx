@@ -26,7 +26,6 @@ const ROWS = [
     title: 'Keine nachvollziehbare Arbeitsweise',
     mobile: 'Fehlt der grobe Ablauf, wirkt die Beauftragung wie ein Blindflug.',
     desktop: 'Auftraggeber aus Justiz und Versicherungswesen wollen vor der Anfrage grob verstehen, wie ein Gutachten bei Ihnen abläuft. Fehlt das, wirkt die Beauftragung wie ein Blindflug.',
-    isNew: true,
   },
 ];
 

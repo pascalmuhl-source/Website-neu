@@ -8,7 +8,16 @@ export default function Portfolio() {
       </div>
       <div className="portfolio-single">
         <div className="portfolio-thumb">
-          <div className="portfolio-thumb-inner" />
+          <picture>
+            <source srcSet="/images/portfolio-wu-engineering.webp" type="image/webp" />
+            <img
+              src="/images/portfolio-wu-engineering.jpg"
+              alt="Startseite der Website von Weber + Uhlig Engineering"
+              loading="lazy"
+              width="1600"
+              height="600"
+            />
+          </picture>
         </div>
         <div className="portfolio-single-meta">
           <div className="portfolio-name">Sachverständigenbüro für Fenster- und Glasgutachten</div>

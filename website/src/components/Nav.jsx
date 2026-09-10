@@ -25,7 +25,7 @@ export default function Nav() {
             </a>
           ))}
           <a
-            className="btn-outline nav-anim"
+            className="btn-solid nav-cta nav-anim"
             href="#kontakt"
             style={{ animationDelay: `${100 + LINKS.length * 100}ms` }}
           >
