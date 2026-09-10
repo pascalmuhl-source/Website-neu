@@ -463,6 +463,14 @@ Kurzfassung der wichtigsten Punkte, die vor einem echten Launch fehlen:
     220ms). Build erfolgreich, keine Layout-/Farbänderung, daher ohne Playwright-
     Screenshot freigegeben.
 
+29. **Text-Überarbeitung übernommen (2026-09-10):** Ausgefüllte `Website-Texte.xlsx`
+    vom Nutzer erhalten, 8 der 9 befüllten Zeilen 1:1 übernommen (Hero-Headline/
+    Subtext, Problem-Überschrift, Fachgebiet-Intro, Portfolio-Projekttyp, zwei
+    Über-mich-Absätze, Statistik „1" statt „1:1", FAQ-Antwort 3). **Eine Zeile bewusst
+    nicht übernommen:** Nav-Link „Leistungen" → „Pascal Webdesign" wirkte wie ein
+    Versehen (Link zeigt weiter auf `#leistungen`, Logo-Text ist bereits „Pascal
+    Webdesign") — beim Nutzer nachgefragt, was dort eigentlich stehen soll.
+
 ## Wie man den aktuellen Live-Stand schnell verifiziert
 
 ```bash

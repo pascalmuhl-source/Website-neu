@@ -1,6 +1,6 @@
 import Reveal from './Reveal.jsx';
 
-const HEADLINE_LINES = ['Websites für Sachverständige,', 'die Vertrauen schaffen.'];
+const HEADLINE_LINES = ['Websites für Sachverständige,', 'die Vertrauen schaffen und Aufträge bringen.'];
 
 export default function Hero() {
   return (
@@ -20,7 +20,7 @@ export default function Hero() {
         </h1>
         <p>
           Eine unprofessionelle Website kostet Sie Aufträge, bevor das Telefon klingelt. Ich baue Ihnen
-          eine, die Kompetenz zeigt und Anfragen bringt.
+          eine, die Ihre Kompetenz zeigt und neue Anfragen bringt.
         </p>
         <div className="hero-cta-row">
           <a className="btn-solid hero-cta" href="#kontakt">Kostenloses Erstgespräch buchen</a>

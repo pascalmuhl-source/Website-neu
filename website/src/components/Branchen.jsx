@@ -28,7 +28,7 @@ export default function Branchen() {
     <Reveal id="fachgebiet" className="section">
       <div className="section-head">
         <h2>Für Ihr Fachgebiet</h2>
-        <p>Das Problem sieht je nach Fachrichtung anders aus, deshalb wird es hier konkret statt allgemein.</p>
+        <p>Das Problem sieht je nach Fachrichtung anders aus:</p>
       </div>
       <div className="branchen-grid">
         {BRANCHEN.map((b) => (

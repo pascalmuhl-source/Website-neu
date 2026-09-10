@@ -12,7 +12,7 @@ export default function Portfolio() {
         </div>
         <div className="portfolio-single-meta">
           <div className="portfolio-name">Sachverständigenbüro für Fenster- und Glasgutachten</div>
-          <div className="portfolio-type">Relaunch der bestehenden Website</div>
+          <div className="portfolio-type">Erstellung einer professionellen Website nach Gründung</div>
           <p className="portfolio-desc">
             Klare Struktur, verständliche Darstellung des Fachgebiets und ein direkter Weg zur
             Anfrage, statt einer Seite, die nur existiert.

@@ -12,7 +12,7 @@ const FAQ = [
   },
   {
     q: 'Muss ich mich um Datenschutz selbst kümmern?',
-    a: 'Die technische Basis ist von Anfang an DSGVO-konform umgesetzt. Rechtstexte liefere ich als geprüfte Entwürfe, eine anwaltliche Prüfung bleibt bei Ihnen.',
+    a: 'Die technische Basis ist von Anfang an DSGVO-konform umgesetzt. Rechtstexte liefere ich als Entwürfe, eine anwaltliche Prüfung bleibt bei Ihnen.',
   },
   {
     q: 'Kann ich Inhalte später selbst ändern?',

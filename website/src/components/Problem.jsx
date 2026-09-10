@@ -34,7 +34,7 @@ export default function Problem() {
   return (
     <Reveal id="problem" className="section section-alt">
       <div className="section-head">
-        <h2>Was eine schwache Website Sachverständige wirklich kostet</h2>
+        <h2>Wieso Sie Ihre Website ausbremst</h2>
         <p>
           Ob Bau, Kfz, Immobilien oder ein anderes Fachgebiet: Meistens ist nicht das Problem, dass niemand
           Ihre Website findet. Das Problem ist, dass Auftraggeber sie sich ansehen und trotzdem nicht anrufen.
