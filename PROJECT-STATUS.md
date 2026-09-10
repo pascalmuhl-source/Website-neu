@@ -399,6 +399,12 @@ Kein Launch-Blocker mehr, aber im Blick behalten:
    verifiziert (noindex weg, msvalidate.01 live, IndexNow-Key live). Nutzer hat die
    IndexNow-Meldung selbst per Browser ausgelöst (Sandbox-Proxy blockiert
    `api.indexnow.org`). Nur noch offen: Nutzer klickt „Verify" in Bing Webmaster Tools.
+5. **Letzter Upload-Stand prüfen:** Nach Werdegang Punkt 35 (Portfolio-Layout
+   Bild-links/Text-rechts + Nav-CTA-Stil + weitere Design-Fixes) wurde dem Nutzer
+   ein komplettes `dist/`-ZIP zum Hochladen geschickt — beim Sessionstart der
+   nächsten Session per `curl`/Byte-Vergleich verifizieren, ob es tatsächlich live
+   hochgeladen wurde (siehe Abschnitt „Wie man den aktuellen Live-Stand schnell
+   verifiziert" unten).
 
 21. **Google-Unternehmensprofil verifiziert.** Social-Media-Icons im Footer (zwei
     `href="#"`-Platzhalter, LinkedIn/Instagram) entfernt, da noch keine echten
@@ -547,6 +553,34 @@ Kein Launch-Blocker mehr, aber im Blick behalten:
     Meldungs-URL stattdessen selbst im Browser geöffnet. Damit ist die komplette
     Bing-Optimierung abgeschlossen bis auf den "Verify"-Klick in Bing Webmaster Tools
     (nutzerseitig, kein Zugriff von hier aus möglich).
+
+35. **Post-Launch-Design-Feinschliff (2026-09-10):** Mehrere Nutzer-Feedback-Runden
+    nach dem Launch abgearbeitet, jeweils committet/gepusht und per komplettem
+    `dist/`-ZIP zum Hochladen bereitgestellt:
+    - Portfolio-Bild zweimal ausgetauscht (Nutzer schickte nacheinander zwei leicht
+      unterschiedliche Weber+Uhlig-Screenshots; Bilder als Base64 direkt im
+      Chat-Turn, nicht als Datei-Upload — Extraktion aus der Session-JSONL-Historie
+      via `python3`/`base64` nötig, da kein `/root/.claude/uploads/`-Pfad vorlag).
+    - Grid-Ausrichtung Problem-Sektion vs. Über-mich-Sektion exakt angeglichen
+      (0.85fr/1.15fr + 72px Gap statt fester 40px-Innenpolsterung).
+    - Über-mich: Fließtext-`max-width` entfernt, Textbreite = Überschriftenbreite.
+    - Portraitfoto (Desktop) auf 85% Breite verkleinert, Seitenverhältnis erhalten.
+    - Cost-Note-Kasten (Problem-Sektion): Fließtext-`max-width:900px` entfernt, Text
+      füllt jetzt die volle Kastenbreite (vorher großer Leerraum rechts).
+    - "neu"-Badge bei "Keine nachvollziehbare Arbeitsweise" entfernt.
+    - Nav-CTA ("Erstgespräch buchen" oben rechts) von `btn-outline` auf `btn-solid`
+      umgestellt (exakt Hero-CTA-Stil: Farbe, Hover, Typografie) — eigene
+      `.nav-cta`-Klasse nötig, da `.nav-links a` sonst mit höherer CSS-Spezifität
+      Font-Weight/Padding/Border durchgedrückt hätte.
+    - Portfolio-Sektion von gestapeltem Layout (Bild oben, Text unten) auf
+      Bild-links/Text-rechts umgestellt (wie Über-mich-Sektion): Desktop-Grid
+      640px-Bildspalte (fix, wie vom Nutzer verlangt) + 1fr-Textspalte, 72px Gap.
+      Bild wird dabei nicht mehr per `object-fit:cover` beschnitten, sondern
+      komplett bei 640px Breite mit automatischer Höhe angezeigt.
+    - Lokale Verifikation lief durchgehend über `vite preview` + Playwright
+      (Chromium via `/opt/pw-browsers/chromium`), da direkte Live-Screenshots der
+      Produktivdomain über den Sandbox-Proxy nicht möglich sind (bekanntes
+      `ws_closed_mid_exchange`-Problem, siehe Werdegang Punkt 31).
 
 ## Wie man den aktuellen Live-Stand schnell verifiziert
 

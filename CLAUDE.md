@@ -473,6 +473,15 @@ Sachverständige/Gutachter), Einzugsgebiet deutschlandweit.
   Datenschutz-Löschfrist. IndexNow-API (`api.indexnow.org`) ist aus der Sandbox per
   Proxy-Policy blockiert — Nutzer hat die Meldungs-URL stattdessen selbst im Browser
   aufgerufen. Noch offen: Nutzer klickt in Bing Webmaster Tools auf „Verify".
+- **Post-Launch-Design-Feinschliff (2026-09-10):** Mehrere Feedback-Runden umgesetzt
+  (Details siehe `PROJECT-STATUS.md`, Werdegang Punkt 35) — u. a. Portfolio-Bild
+  zweimal ausgetauscht, Grid-Ausrichtung Problem-/Über-mich-Sektion angeglichen,
+  Cost-Note-Kasten-Breite gefixt, Nav-CTA auf Hero-CTA-Stil umgestellt, Portfolio-
+  Sektion auf Bild-links/Text-rechts-Layout (640px feste Bildbreite) umgebaut.
+  Letztes komplettes `dist/`-ZIP wurde dem Nutzer geschickt — **zu Beginn der
+  nächsten Session per `curl` verifizieren, ob es tatsächlich hochgeladen wurde**
+  (siehe „Wie man den aktuellen Live-Stand schnell verifiziert" in
+  `PROJECT-STATUS.md`).
 
 # Regel: robots.txt und sitemap.xml immer aktuell halten — ungefragt
 
