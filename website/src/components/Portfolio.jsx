@@ -15,7 +15,7 @@ export default function Portfolio() {
               alt="Startseite der Website von Weber + Uhlig Engineering"
               loading="lazy"
               width="1600"
-              height="598"
+              height="600"
             />
           </picture>
         </div>
