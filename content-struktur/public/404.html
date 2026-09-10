@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Seite nicht gefunden | Pascal Muhl</title>
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<style>
+  @font-face {
+    font-family: 'Archivo';
+    src: url('/fonts/archivo-latin-variable.woff2') format('woff2-variations');
+    font-weight: 400 700; font-style: normal; font-display: swap;
+  }
+  :root { color-scheme: light; --paper:#F5F5F2; --ink:#1C1F1D; --ink-soft:#5B5F5B; --accent-ink:#0F5F43; }
+  * { box-sizing: border-box; }
+  body {
+    margin:0; background:var(--paper); color:var(--ink);
+    font-family:'Archivo','Helvetica Neue',Arial,sans-serif; font-size:16px; line-height:1.65;
+    min-height:100dvh; display:grid; place-items:center;
+  }
+  .wrap { max-width:560px; padding-inline:24px; padding-block:48px; }
+  h1 { font-size:2rem; letter-spacing:-0.02em; line-height:1.15; margin:0 0 14px; }
+  p { margin:0 0 26px; color:var(--ink-soft); }
+  a.btn {
+    display:inline-block; background:var(--ink); color:var(--paper); text-decoration:none;
+    font-size:14px; font-weight:600; padding:14px 26px; border:1px solid var(--ink);
+    transition: background 160ms ease, color 160ms ease;
+  }
+  @media (hover:hover) and (pointer:fine) { a.btn:hover { background:transparent; color:var(--ink); } }
+  :focus-visible { outline:2px solid var(--accent-ink); outline-offset:3px; }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>Diese Seite gibt es nicht.</h1>
+    <p>Der Link ist veraltet oder enthält einen Tippfehler.</p>
+    <a class="btn" href="/">Zur Startseite</a>
+  </div>
+</body>
+</html>
