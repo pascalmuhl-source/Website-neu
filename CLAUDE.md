@@ -520,10 +520,5 @@ aktualisiert werden:
 
 ## Offene Prüfpunkte für Phase 3 (Pascal Webdesign)
 
-Punkte, die sich erst mit echten Assets/Inhalten beantworten lassen, deshalb erst bei
-der React-Umsetzung prüfen, nicht schon am Mockup:
-
-- **Hero-Bild-Kontrast (Mobile):** Sobald das echte Portraitfoto anstelle des Platzhalters
-  eingesetzt wird, prüfen ob Headline/Subheadline/CTA (dunkler Text) darüber noch
-  ausreichend lesbar sind. Falls nicht: leichtes Abdunkeln/Scrim oder Weichzeichnen
-  hinter dem Text ergänzen, statt es stillschweigend unleserlich zu lassen.
+- **Hero-Bild-Kontrast (Mobile)** — erledigt (2026-09-10): Echtes Portraitfoto eingesetzt,
+  siehe Werdegang-Punkt „Echtes Portraitfoto eingebaut" in `PROJECT-STATUS.md`.

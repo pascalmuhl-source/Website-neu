@@ -6,7 +6,18 @@ export default function Hero() {
   return (
     <div id="hero" className="hero">
       <div className="hero-portrait-wrap">
-        <div className="hero-portrait" role="img" aria-label="Porträtfoto von Pascal Muhl" />
+        <picture>
+          <source srcSet="/images/pascal-muhl.webp" type="image/webp" />
+          <img
+            className="hero-portrait"
+            src="/images/pascal-muhl.png"
+            alt="Pascal Muhl, Webdesigner für Sachverständige und Gutachter"
+            width="1000"
+            height="1333"
+            fetchPriority="high"
+            decoding="async"
+          />
+        </picture>
       </div>
       <Reveal as="div" className="hero-copy">
         <h1>

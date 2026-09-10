@@ -3,7 +3,18 @@ import Reveal from './Reveal.jsx';
 export default function UeberMich() {
   return (
     <Reveal id="ueber-mich" className="section about">
-      <div className="about-photo" role="img" aria-label="Porträtfoto von Pascal Muhl" />
+      <picture>
+        <source srcSet="/images/pascal-muhl.webp" type="image/webp" />
+        <img
+          className="about-photo"
+          src="/images/pascal-muhl.png"
+          alt="Porträtfoto von Pascal Muhl"
+          width="1000"
+          height="1333"
+          loading="lazy"
+          decoding="async"
+        />
+      </picture>
       <div className="about-copy">
         <h2>Pascal Muhl, Webdesigner für Sachverständige und Gutachter</h2>
         <p>

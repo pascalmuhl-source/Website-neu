@@ -472,6 +472,22 @@ Kurzfassung der wichtigsten Punkte, die vor einem echten Launch fehlen:
     Webdesign") — Nutzer bestätigt: war tatsächlich ein Versehen, Nav-Link bleibt
     unverändert bei „Leistungen".
 
+30. **Echtes Portraitfoto eingebaut (2026-09-10):** Vom Nutzer geliefertes Freisteller-
+    Foto (transparenter PNG-Hintergrund, 1086×1448) verkleinert auf 1000×1333, als
+    `website/public/images/pascal-muhl.webp` (96 KB) + `.png`-Fallback (Graustufen+Alpha,
+    507 KB) gespeichert, per `<picture>` in Hero und Über-mich-Sektion eingebunden
+    (ersetzt die Platzhalter-Gradient-Divs). **Bekanntes Kontrast-/Overlap-Risiko aus
+    der Launch-Checkliste dabei behoben:** Mobile Hero legte den Copy-Block bisher per
+    `position: absolute` direkt über das Bild — mit echtem Gesicht wäre Text über dem
+    Gesicht gelandet. Layout auf normalen Flex-Flow umgestellt (Foto oben, Text darunter,
+    kein Overlap mehr), Desktop-Grid (Text links, Foto rechts) war bereits unkritisch.
+    Seitenverhältnis beider Bild-Container von geschätzten 4/5 bzw. 4/3 auf das reale
+    3/4 des Fotos angepasst, `object-fit: contain` ergänzt. Alt-Texte gesetzt: Hero
+    „Pascal Muhl, Webdesigner für Sachverständige und Gutachter" (`fetchPriority=high`,
+    da LCP-Kandidat), Über-mich „Porträtfoto von Pascal Muhl" (`loading=lazy`). Mit
+    Playwright auf Desktop (1440px) und Mobile (390px) visuell verifiziert, keine
+    Layout-Fehler. Build erfolgreich.
+
 ## Wie man den aktuellen Live-Stand schnell verifiziert
 
 ```bash
