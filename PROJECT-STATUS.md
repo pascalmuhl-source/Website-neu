@@ -26,8 +26,11 @@ Eine One-Page-React-Website für einen selbstständigen Webdesigner:
   höher als im vorherigen Massenmarkt-Ansatz. Anrede auf der Website durchgängig
   „Sie" (vorher „du") — passt zur formelleren Zielgruppe.
 - **Live-Domain:** `pascal-webdesign.de`
-- **Alt-Domain:** `content-struktur.de` — leitet per 301 auf die neue Domain um
-  (kein eigener Inhalt mehr, siehe „Hosting & Domains" unten)
+- **Zweite Domain:** `content-struktur.de` — **wird umgewidmet**. Bis zur Umstellung
+  leitet sie per 301 auf `pascal-webdesign.de`; künftig trägt sie die eigenständige
+  Landingpage für das Freelance-Angebot Produktdaten/Feed-Management (Quellcode unter
+  `content-struktur/`, siehe Werdegang Punkt 38). Anderes Geschäft, andere Zielgruppe,
+  nicht Teil der Marke Pascal Webdesign.
 
 ## Positionierung & USPs (seit Nischen-Pivot 2026-09-07)
 
