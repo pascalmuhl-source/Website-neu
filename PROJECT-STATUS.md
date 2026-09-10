@@ -178,6 +178,110 @@ rekonstruiert werden muss — Details/Begründung stehen in Werdegang Punkt 10.
     bei echtem Design-Bedarf, ein Screenshot pro Änderungsmeldung, kompakter
     Bash-Output, knappe Antworten — Details siehe „Regel: Token-Sparen" in
     `CLAUDE.md`.
+25. **Ausbauplan als Artefact erstellt** (2026-09-08): Auf Wunsch des Nutzers
+    („Website zu kurz") Plan zur Vertiefung von Problem- und Zusammenarbeit-
+    Sektion plus zwei neuen Sektionsvorschlägen (Branchen-Szenarien, FAQ) als
+    Artefact veröffentlicht: https://claude.ai/code/artifact/2354cff3-8867-4a2e-bd87-da9f3fa14c79.
+    Danach visuelles Mockup dazu als zweites Artefact:
+    https://claude.ai/code/artifact/7449c764-2114-4ce9-8c1b-3bcabc44fb2c.
+    Neue Standing Rule in `CLAUDE.md`: Bei jeder Design-Arbeit (Artefact wie
+    Website-Code) ab sofort immer alle vier Skills `frontend-design`,
+    `emil-design-eng`, `impeccable`, `ui-ux-pro-max` heranziehen, zusätzlich zu
+    `design-taste-frontend`.
+26. **Ausbau live umgesetzt** (2026-09-08): Vor der Umsetzung Backup-Branch
+    `backup/vor-sektionen-ausbau-2026-09-08` vom bisherigen Live-Stand
+    (`main`-Commit `a76d469`) gepusht, falls ein Rollback nötig wird
+    (Tag-Push scheiterte an einem 403 des GitHub-Zugriffs, deshalb Branch statt
+    Tag). Umsetzung: `Problem.jsx` um Selbsttest-Kasten, vierten Tabellenpunkt
+    „Keine nachvollziehbare Arbeitsweise" und Kosten-Einordnungs-Absatz
+    erweitert (dabei auch Restformulierung in Du-Form „was das für dich
+    bedeutet" auf Sie-Form korrigiert). `Prozess.jsx` von 4 auf 6 Schritte
+    ausgebaut (neu: „Unverbindliche Anfrage" und „Laufende Betreuung"), jeder
+    Schritt jetzt mit Dauer/Aufwand/Ergebnis-Feldern; Desktop-Darstellung dafür
+    von 4-Spalten-Grid auf eine breitere Timeline-Liste umgestellt. Zwei neue
+    Komponenten: `Branchen.jsx` („Für Ihr Fachgebiet", 4 Branchenkarten, nach
+    Problem-Sektion) und `Faq.jsx` (5 Fragen als natives `<details>`-Accordion,
+    vor Kontakt). Mit Playwright/Chromium lokal auf Desktop und Mobile
+    gegengeprüft (Build, Screenshots, Accordion-Interaktion) — alles fehlerfrei.
+27. **Layout-Nachbesserung nach Live-Check** (2026-09-08): Nutzer meldete nach
+    Upload einzelne linksbündige, zu schmale Elemente. Ursache: `max-width` auf
+    `.selftest`, `.cost-note`, `.process-list`, `.faq-list` (Desktop), die damit
+    von der sonst durchgängigen Full-Bleed-Optik der Seite abwichen. Behoben:
+    max-width entfernt, `.selftest`-Checkliste auf Desktop als 3-Spalten-Grid
+    (passt zu den 3 Punkten), `.process-step` auf Desktop als 2-Spalten-Grid
+    (Text links, Aufwand/Ergebnis-Felder rechts, füllt die Zeile wie
+    `.service-row`), FAQ ohne Breitenbegrenzung. Live-Check erfolgte, weil
+    direkter Playwright-Zugriff auf `pascal-webdesign.de` über den Cloud-Proxy
+    mit `ERR_CONNECTION_RESET` scheiterte (nur normales `curl` funktioniert
+    dort) — Workaround: Live-HTML/CSS/JS per `curl` geladen und lokal per
+    `python3 -m http.server` gespiegelt, dagegen gescreenshottet.
+    Der vorherige 404-Bug bei den Asset-Dateien (CSS/JS fehlten nach dem ersten
+    Upload) lag laut Nutzer an einem beim manuellen Hochladen versehentlich
+    weggelassenen Bindestrich im Dateinamen (z. B. `index-Bao5W_QE.css`),
+    selbst korrigiert — ein Tippfehler beim Upload, nicht die lima-city-PHP-
+    Bindestrich-Sperre weiter oben (die betrifft nur `.php`-Dateien).
+28. **Nachbesserung Zusammenarbeit-Sektion, Spaltenausrichtung** (2026-09-08):
+    Nutzer meldete uneinheitliche Abstände zwischen den Feldern je Schritt.
+    Ursache: `.process-fields` war `display:flex`, wodurch die Spaltenbreite
+    vom jeweiligen Textinhalt abhing und „Ergebnis" in jeder Zeile an anderer
+    Stelle stand. Behoben: `display:grid` mit fester Spaltenbreite
+    (`180px 1fr` auf Desktop) — beide Spalten stehen jetzt in jeder Zeile exakt
+    untereinander.
+29. **Weitere Layout-/Interaktions-Nachbesserungen** (2026-09-08), nach erneutem
+    Live-Feedback:
+    - `.section-head` hatte ein globales `max-width: 640px` (Desktop), das
+      Überschriften/Einleitungstexte in mehreren Sektionen (u. a. Problem,
+      Leistungen) unnötig früh umbrechen ließ. Entfernt — Texte laufen jetzt
+      bis zur natürlichen Breite, ohne harte Grenze.
+    - `.service-row` (Leistungen-Tabelle) hatte dieselbe Ausrichtungs-Schwäche
+      wie zuvor `.process-fields`: dritte Spalte (Preis) war `auto`-breit statt
+      fest, dadurch je Zeile leicht verschoben. Auf feste `170px` umgestellt.
+    - `.process-fields`-Spalte 1 von `180px` auf `230px` verbreitert, da
+      längere Werte („Grobe Vorstellung, ggf. Beispiele") sonst umbrachen und
+      unnötigen Weißraum vor der Ergebnis-Spalte erzeugten.
+    - Hero: Sekundärlink „Portfolio ansehen" neben dem CTA entfernt.
+    - FAQ-Accordion von nativem `<details>` (hartes Auf-/Zuklappen) auf
+      React-State + CSS-Grid-Rows-Technik (`grid-template-rows: 0fr → 1fr`)
+      umgestellt — animiert jetzt weich beim Öffnen/Schließen, mit
+      `prefers-reduced-motion`-Fallback.
+30. **Skill-Regel nachträglich eingehalten + weitere Feinschliffe** (2026-09-08):
+    Nutzer merkte an, dass die vier Pflicht-Design-Skills bei den letzten
+    CSS-Fixes nicht erneut geladen wurden — Standing Rule gilt ausnahmslos,
+    auch bei kleinen Layout-Korrekturen. Nachgeholt, danach drei weitere
+    gemeldete Probleme behoben:
+    - `.process-step p` und `.faq-item p` hatten je ein `max-width` in
+      Zeichen (52ch/68ch) auf Desktop, das Text unnötig früh umbrechen ließ,
+      obwohl in der Grid-Spalte mehr Platz vorhanden war (z. B. bei
+      „Unverbindliche Anfrage" entstand dadurch ein großer Leerraum vor der
+      Aufwand-Spalte). Entfernt — Text läuft jetzt bis zur tatsächlichen
+      Spaltenbreite durch.
+    - Spacing-Audit der ganzen Seite: `Portfolio.jsx`, `Prozess.jsx` und
+      `Testimonials.jsx` hatten ein inline `style={{ marginBottom: 28 }}` auf
+      `.section-head`, das auf Desktop fix bei 28px blieb, während alle
+      anderen Sektionen über die CSS-Klasse auf 48px gehen — dadurch wirkten
+      genau diese drei Sektionen oben „gedrückt". Inline-Override entfernt,
+      jetzt einheitlicher Abstand unter jeder Section-Überschrift.
+31. **Typografie-Skala bereinigt** (2026-09-08): Auf Nachfrage geprüft, wie
+    viele unterschiedliche Schriftgrößen im Einsatz sind — 25 verschiedene
+    `font-size`-Werte in `index.css`, viele davon nur 0,5px auseinander
+    (13/13.5/14/14.5/15/15.5 als Fließtext, 9.5/10.5/11/11.5/12/12.5 als
+    Label-/Meta-Text) ohne erkennbaren Hierarchie-Zweck — reine Drift durch
+    viele kleine Einzeländerungen über die Zeit, keine Best Practice.
+    Bereinigt auf eine disziplinierte Skala: zwei Label-Größen (11px für
+    kompakte Badges/Feldlabels wie `tag-new`, `process-duration`,
+    `process-fields dt`; 12px für alle anderen Bildunterschriften/Meta-Texte),
+    fünf Fließtext-Größen (13/14/15/16/18), plus die bestehenden, bereits
+    sinnvoll unterschiedlichen Überschriften-Größen (17/19/21/22/24/26/30/32
+    sowie die fluiden `clamp()`-Überschriften). `section-head h2` und
+    `contact h2` liefen mobil auf `1.65rem` (≈26,4px) statt auf dem bereits
+    genutzten `26px` — auf px vereinheitlicht, dadurch ein Wert weniger.
+    `.selftest-head` lag mobil bei 14.5px und deckte sich erst auf Desktop
+    zufällig mit `branchen-card h3` (15px) — jetzt beide Breakpoints auf 15px,
+    doppelte Desktop-Regel dadurch überflüssig und entfernt. Ergebnis: 25 auf
+    15 echte Werte reduziert. Dead Code `.text-link` (seit Entfernung des
+    Portfolio-Links im Hero ungenutzt) mit entfernt. Visuell auf Desktop und
+    Mobile gegengeprüft (Playwright/Chromium) — keine sichtbare Änderung am
+    Gesamteindruck, nur konsistentere Werte darunter.
 
 ## Hosting & Domains — aktueller Live-Stand (verifiziert 2026-09-06)
 
@@ -278,10 +382,9 @@ rekonstruiert werden muss — Details/Begründung stehen in Werdegang Punkt 10.
 Kurzfassung der wichtigsten Punkte, die vor einem echten Launch fehlen:
 
 1. `noindex` entfernen (aktuell absichtlich gesetzt) — **wichtigster Punkt vor Launch**
-2. Testimonial-Platzhalter (`[Name]`/`[Firma]`) durch echte Zitate mit Kundenfreigabe
-   ersetzen, sobald vorhanden (siehe Werdegang Punkt 10 — bewusst zurückgestellt).
-   Preise, Erfahrung und der Portfolio-Case sind bereits mit echten Angaben gefüllt
-   (siehe Werdegang Punkt 10).
+2. ~~Testimonial-Platzhalter (`[Name]`/`[Firma]`) ersetzen~~ — erledigt: Sektion
+   komplett entfernt (Werdegang Punkt 26). Preise, Erfahrung und der Portfolio-Case
+   sind bereits mit echten Angaben gefüllt (siehe Werdegang Punkt 10).
 3. Rechtstexte sind jetzt echte e-recht24-Fassungen (siehe Werdegang Punkt 24), aber
    Löschfrist der Server-Logdaten in `datenschutz.html` (Abschnitt „Server-Log-
    Dateien") ist noch als Platzhalter offen — bei lima-city erfragen und ergänzen.
@@ -294,6 +397,9 @@ Kurzfassung der wichtigsten Punkte, die vor einem echten Launch fehlen:
    `kontakt-handler.php`, `kontakthandler.php`, `formtest.php`, `info.php`,
    `altversion.php`, das alte `send-mail.php` (mit Bindestrich, nie erreichbar) —
    v. a. `info.php` wegen offengelegter Serverdetails.
+7. Bing-Optimierung nach dem Launch: Bing Webmaster Tools + `msvalidate.01`-Tag,
+   IndexNow-Protokoll (siehe CLAUDE.md Launch-Checkliste Punkt 10) — Nutzer aktiv
+   erinnern, sobald über den Launch oder Suchmaschinen-Sichtbarkeit gesprochen wird.
 
 21. **Google-Unternehmensprofil verifiziert.** Social-Media-Icons im Footer (zwei
     `href="#"`-Platzhalter, LinkedIn/Instagram) entfernt, da noch keine echten
@@ -320,6 +426,79 @@ Kurzfassung der wichtigsten Punkte, die vor einem echten Launch fehlen:
     Seiten ohne Website-Navigation — Header (inkl. mobilem Menü) und Footer aus
     `Nav.jsx`/`Footer.jsx` 1:1 als statisches HTML/CSS/JS repliziert und ergänzt,
     live verifiziert.
+
+25. **Vollständiges SEO-Audit per `seo-audit`-Skill (2026-09-08):** Skill installiert
+    (`coreyhaines31/marketingskills@seo-audit`), Live-Site per curl geprüft (Header,
+    robots.txt/sitemap.xml, 404-Verhalten, Kompression). Ergebnis: OG/Twitter/
+    Canonical/Schema/Custom-404 waren entgegen dem veralteten CLAUDE.md-Stand
+    (Werdegang Punkt 5) schon lange erledigt — Doku korrigiert. Einziger echter
+    Befund: `noindex` weiterhin aktiv, blockiert einzig durch fehlende echte
+    Testimonials (siehe Punkt 2 unten). PageSpeed-Mobile-Screenshot vom Nutzer zeigte
+    "LCP/TBT Error/No_LCP" — als unvollständiger Lighthouse-Trace eingeordnet (CSS/JS
+    live nachweislich minifiziert + gzip-komprimiert), keine reale Baustelle.
+    `www.`-Subdomain ließ sich aus der Sandbox nicht prüfen (Proxy-Restriktion) —
+    offen für manuelle Prüfung durch den Nutzer.
+
+26. **Testimonials-Sektion entfernt (2026-09-09):** Auf Nutzerwunsch komplett
+    gestrichen statt auf echte Kundenzitate zu warten (`Testimonials.jsx` gelöscht,
+    Import/Einbindung in `App.jsx` und zugehöriges CSS in `index.css` entfernt, kein
+    Nav-Anker vorhanden gewesen). Löst nebenbei den `[Name]`/`[Firma]`-Launch-
+    Blocker aus Punkt 25. Build erfolgreich (`dist/assets/index-B21cN7eN.js`,
+    `dist/assets/index-C0ZGUROp.css`, `dist/index.html`) — noch nicht hochgeladen.
+
+27. **Text-Überarbeitung vorbereitet (2026-09-09):** Auf Nutzerwunsch `Website-
+    Texte.xlsx` erstellt (146 Zeilen, ein Textfeld pro Zeile, Spalten Sektion/Alter
+    Text/Neuer Text) und an den Nutzer geschickt. **Noch offen:** Nutzer befüllt
+    Spalte „Neuer Text" und schickt die Datei zurück — danach werden die
+    Änderungen 1:1 in die jeweiligen React-Komponenten übernommen. Falls die Datei
+    in einer künftigen Session noch nicht vorliegt: aktiv daran erinnern.
+
+28. **Animations-Feinschliff nach emil-design-eng-Review (2026-09-09):** `/emil-design-
+    eng` bewertete die bestehenden Transitions; sechs Punkte umgesetzt: Hover-Regeln
+    (`a`, `.btn-solid`, `.btn-outline`, `.contact-submit`, `.nav-links a` Desktop) hinter
+    `@media (hover: hover) and (pointer: fine)` gesetzt (verhindert "klebende" Hover-
+    States auf Touch-Geräten), `.nav-toggle:active`-Scale von 0.9 auf 0.95 entschärft,
+    `.reveal`-Transition von 1,1s auf 700ms gekürzt, `.nav-menu`-Übergang auf `ease-out`
+    (statt `ease`) gestellt, FAQ-Accordion asymmetrisch getimt (Öffnen 320ms, Schließen
+    220ms). Build erfolgreich, keine Layout-/Farbänderung, daher ohne Playwright-
+    Screenshot freigegeben.
+
+29. **Text-Überarbeitung übernommen (2026-09-10):** Ausgefüllte `Website-Texte.xlsx`
+    vom Nutzer erhalten, 8 der 9 befüllten Zeilen 1:1 übernommen (Hero-Headline/
+    Subtext, Problem-Überschrift, Fachgebiet-Intro, Portfolio-Projekttyp, zwei
+    Über-mich-Absätze, Statistik „1" statt „1:1", FAQ-Antwort 3). **Eine Zeile bewusst
+    nicht übernommen:** Nav-Link „Leistungen" → „Pascal Webdesign" wirkte wie ein
+    Versehen (Link zeigt weiter auf `#leistungen`, Logo-Text ist bereits „Pascal
+    Webdesign") — Nutzer bestätigt: war tatsächlich ein Versehen, Nav-Link bleibt
+    unverändert bei „Leistungen".
+
+30. **Echtes Portraitfoto eingebaut (2026-09-10):** Vom Nutzer geliefertes Freisteller-
+    Foto (transparenter PNG-Hintergrund, 1086×1448) verkleinert auf 1000×1333, als
+    `website/public/images/pascal-muhl.webp` (96 KB) + `.png`-Fallback (Graustufen+Alpha,
+    507 KB) gespeichert, per `<picture>` in Hero und Über-mich-Sektion eingebunden
+    (ersetzt die Platzhalter-Gradient-Divs). **Bekanntes Kontrast-/Overlap-Risiko aus
+    der Launch-Checkliste dabei behoben:** Mobile Hero legte den Copy-Block bisher per
+    `position: absolute` direkt über das Bild — mit echtem Gesicht wäre Text über dem
+    Gesicht gelandet. Layout auf normalen Flex-Flow umgestellt (Foto oben, Text darunter,
+    kein Overlap mehr), Desktop-Grid (Text links, Foto rechts) war bereits unkritisch.
+    Seitenverhältnis beider Bild-Container von geschätzten 4/5 bzw. 4/3 auf das reale
+    3/4 des Fotos angepasst, `object-fit: contain` ergänzt. Alt-Texte gesetzt: Hero
+    „Pascal Muhl, Webdesigner für Sachverständige und Gutachter" (`fetchPriority=high`,
+    da LCP-Kandidat), Über-mich „Porträtfoto von Pascal Muhl" (`loading=lazy`). Mit
+    Playwright auf Desktop (1440px) und Mobile (390px) visuell verifiziert, keine
+    Layout-Fehler. Build erfolgreich.
+    **Korrektur (2026-09-10):** Nutzer wollte das ursprünglich angedachte Mobile-
+    Overlap (Headline über dem Foto) explizit beibehalten statt gestapeltem Layout.
+    `.hero-copy` zurück auf `position: absolute` über `.hero-portrait` gesetzt.
+    Lesbarkeit statt Layout-Umbau gelöst: `.hero-portrait` bekommt mobil `opacity`
+    (Desktop weiterhin `opacity: 1`, da dort kein Overlap).
+    **Zweite Korrektur (2026-09-10):** Nutzer wollte das Foto sichtbarer, Kontrast
+    Richtung 4,8:1 ausreizen. Per Pillow/NumPy die dunkelsten sichtbaren Bildpixel
+    analysiert (1. Perzentil = 37/255, um einzelne Ausreißer wie Pupillen-Glanzpunkte
+    nicht überzugewichten) und die exakte Opacity für einen WCAG-Kontrast-Grenzwert
+    von 4,8:1 gegen den Ink-Text (`#1C1F1D`) berechnet (≈0,515). `opacity: 0.5` gesetzt
+    → rechnerisch ~5:1 Kontrast selbst an den dunkelsten Bildstellen, deutlich
+    sichtbareres Foto als bei 0.2. Per Screenshot bestätigt.
 
 ## Wie man den aktuellen Live-Stand schnell verifiziert
 

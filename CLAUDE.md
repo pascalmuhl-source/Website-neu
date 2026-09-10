@@ -81,10 +81,12 @@ Nutzer sie erneut anstoßen muss:
    umrissene Einzeländerung (eine Zeile in `robots.txt`, ein Text in einer Sektion)
    wird direkt editiert, kein Subagent gestartet.
 4. **Design-/Anti-Slop-Skills nur bei echtem Layout-/Design-Bedarf laden:**
-   `frontend-design`, `impeccable`, `design-taste-frontend` etc. nur aufrufen, wenn
-   tatsächlich Layout/Typografie/Visuelles entsteht oder überarbeitet wird. Reine
-   Text-, Daten- oder Konfigurationsänderungen ohne Design-Bezug laufen ohne
-   Skill-Aufruf.
+   Nur aufrufen, wenn tatsächlich Layout/Typografie/Visuelles entsteht oder
+   überarbeitet wird (Artefakt-Design ebenso wie Website-Code). Reine Text-,
+   Daten- oder Konfigurationsänderungen ohne Design-Bezug laufen ohne Skill-Aufruf.
+   Ist Design-Bedarf gegeben, gilt die feste Skill-Liste in der Regel
+   „Pflicht-Skills bei Design-Arbeit" weiter unten — nicht mehr optional aussuchen,
+   welche der Design-Skills geladen werden.
 5. **Ein Screenshot pro Änderungsmeldung reicht:** Die Artefakt-Screenshot-Pflicht
    (siehe eigene Regel unten) gilt am fertigen Zwischenstand, der dem Nutzer gemeldet
    wird — nicht zusätzlich bei jedem kleinen Zwischenschritt auf dem Weg dahin.
@@ -118,6 +120,22 @@ Nutzer danach fragen muss:
 4. Das ist eine aktive Empfehlung, keine automatische Aktion — die Entscheidung, jetzt
    wirklich eine neue Session zu starten, bleibt beim Nutzer. Ich weise nur proaktiv
    darauf hin, wenn es so weit ist.
+
+# Regel: Pflicht-Skills bei Design-Arbeit — immer alle vier, ungefragt
+
+Sobald tatsächlich Design entsteht oder überarbeitet wird — egal ob als Artefact
+(Mockup, Design-Canvas, Ausbauplan o. ä.) oder direkt im Website-Code — werden ab
+sofort immer alle vier der folgenden Skills herangezogen, nicht nur einzelne davon:
+
+1. `frontend-design`
+2. `emil-design-eng` (Emil Kowalski)
+3. `impeccable`
+4. `ui-ux-pro-max`
+
+Das gilt zusätzlich zu und nicht anstelle von `design-taste-frontend` (Anti-Slop-
+Prüfung, siehe „Regel: Kein KI-Slop" weiter unten) — diese vier kommen ergänzend
+immer dazu. Gilt ab sofort dauerhaft für dieses Projekt, ohne dass der Nutzer das
+je erneut anstoßen muss.
 
 # Workflow: Website-Design (Briefing → Mockup → Umsetzung)
 
@@ -404,20 +422,32 @@ in jeder Session, ohne erneute Anfrage:
    Dateinamen), das explizit sagen und in diesem Einzelfall den kompletten Ordner
    bereitstellen — aber das ist die Ausnahme, nicht der Standard.
 
-## SEO-Status (Pascal Webdesign, Stand: 2026-09, Phase 3 live)
+## SEO-Status (Pascal Webdesign, Stand: 2026-09-08, `seo-audit`-Skill-Vollaudit)
 
-Erledigt: Title-Tag, Meta-Description, saubere Heading-Hierarchie (ein H1, H2 pro
-Sektion), `robots.txt` und `sitemap.xml` (siehe eigene Regel unten).
+Erledigt: Title-Tag, Meta-Description, saubere Heading-Hierarchie, `robots.txt`/
+`sitemap.xml`, Open Graph/Twitter Card (inkl. `og-image.png`, live 200 OK),
+Canonical-URL, `ProfessionalService`-JSON-LD (Adresse/Telefon/`sameAs`), Custom-
+404-Seite (liefert echten HTTP 404, kein generischer Apache-Standard mehr),
+HTTP→HTTPS-Redirect, HSTS, `content-struktur.de` → 301 auf Hauptdomain, CSS/JS
+live minifiziert + gzip-komprimiert mit `immutable`-Cache-Headern.
 
-Noch offen (audit-basiert, siehe Chat-Verlauf für Details):
-- Social-Share-Tags (Open Graph/Twitter Card) — fehlen komplett
-- Canonical-URL (`<link rel="canonical">`) — fehlt
-- Strukturierte Daten (Schema.org, z. B. `ProfessionalService`/`LocalBusiness`)
-- Custom-404-Seite (aktuell liefert lima-city den generischen Apache-Standard-404)
+Noch offen:
+- **`noindex, nofollow` weiterhin aktiv.** Der bisherige Blocker (Testimonial-
+  Platzhalter `[Name]`/`[Firma]`) ist durch Entfernen der ganzen Sektion (2026-09-09)
+  erledigt, aber es gibt weitere offene Launch-Checkliste-Punkte (Löschfrist Server-
+  Logdaten, Hero-Bild-Kontrast, Testdateien auf dem Server) — `noindex` bleibt bis
+  dahin bestehen, siehe „Was noch offen ist" in `PROJECT-STATUS.md`.
+- PageSpeed-Mobile-Lauf vom 08.09. zeigte "LCP/TBT Error/No_LCP" und fehlgeschlagene
+  CSS/JS-Kompressions-Checks — das ist ein unvollständiger Lighthouse-Trace, kein
+  reales Problem (Server-seitig ist alles bereits minifiziert/komprimiert
+  verifiziert). Vor echter Performance-Optimierung: PageSpeed-Test einfach erneut
+  laufen lassen für saubere Zahlen.
+- `www.pascal-webdesign.de` ließ sich aus der Agent-Sandbox nicht sauber prüfen
+  (Proxy-Restriktion) — im echten Browser verifizieren, ob `www.` korrekt
+  weiterleitet.
 - Alt-Text-Struktur für Bilder, sobald echte Fotos die Platzhalter-Gradients ersetzen
-- Ggf. Onpage-Keyword-Fokus, sobald die realen Texte/Leistungen final sind
 
-Den `seo`-Skill (`.claude/skills/seo/`) dafür nutzen, wenn es so weit ist.
+Den `seo`-Skill (`.claude/skills/seo/`) bzw. `seo-audit`-Skill für Folge-Audits nutzen.
 
 # Launch-Checkliste (Pascal Webdesign) — vor dem Sichtbarmachen abarbeiten
 
@@ -435,9 +465,10 @@ echten Launch erledigt werden — der erste ist der wichtigste:**
 2. **Alle Platzhalter ersetzen** — erledigt seit dem Nischen-Pivot auf
    „Sachverständige und Gutachter" (2026-09-07): Preise (Website-Erstellung ab
    1.499 €, Redesign ab 1.199 €, Wartung ab 35 €/Monat), Erfahrung (6 Jahre),
-   Portfolio (1 echter Case statt 3 erfundener). **Noch offen:** `[Name]`/`[Firma]`
-   bei Testimonials — bewusst zurückgestellt, bis echte Kundenzitate vorliegen.
-   Kontaktdaten (Adresse, Telefon, E-Mail) sind bereits erledigt.
+   Portfolio (1 echter Case statt 3 erfundener). Kontaktdaten (Adresse, Telefon,
+   E-Mail) sind bereits erledigt. Testimonial-Platzhalter `[Name]`/`[Firma]`
+   erledigt: Sektion am 2026-09-09 komplett entfernt (Komponente, Nav-Anker, CSS),
+   statt zurückgehalten — kann bei echten Kundenzitaten neu aufgebaut werden.
 2b. **Schema.org** — erledigt: `streetAddress`, `telephone`, `email` und `sameAs`
    (Google-Unternehmensprofil-Link) sind im JSON-LD in `website/index.html` gesetzt.
 3. **Empfängeradresse in `website/public/send-mail.php`** — erledigt
@@ -459,6 +490,13 @@ echten Launch erledigt werden — der erste ist der wichtigste:**
    (Postkarte/Telefon/Video) abschließen, falls noch nicht geschehen.
 9. **content-struktur.de** — erledigt: leitet per 301 auf pascal-webdesign.de weiter,
    kein Duplicate Content mehr.
+10. **Bing-Optimierung nach dem Launch** — noch offen, unabhängig vom `noindex`-Punkt
+    oben: Bing Webmaster Tools einrichten (inkl. `msvalidate.01`-Verifizierungs-Tag im
+    `<head>`, aktuell nicht vorhanden) und IndexNow-Protokoll implementieren (von Bing/
+    Yandex unterstützt, nicht von Google — meldet Änderungen sofort statt aufs Crawling
+    zu warten). **Aktiv ansprechen**, sobald über den echten Launch bzw. Bing/Suchmaschinen-
+    Sichtbarkeit gesprochen wird — nicht erst auf Nachfrage warten (Nutzerwunsch,
+    2026-09-09).
 
 # Regel: robots.txt und sitemap.xml immer aktuell halten — ungefragt
 
@@ -482,10 +520,5 @@ aktualisiert werden:
 
 ## Offene Prüfpunkte für Phase 3 (Pascal Webdesign)
 
-Punkte, die sich erst mit echten Assets/Inhalten beantworten lassen, deshalb erst bei
-der React-Umsetzung prüfen, nicht schon am Mockup:
-
-- **Hero-Bild-Kontrast (Mobile):** Sobald das echte Portraitfoto anstelle des Platzhalters
-  eingesetzt wird, prüfen ob Headline/Subheadline/CTA (dunkler Text) darüber noch
-  ausreichend lesbar sind. Falls nicht: leichtes Abdunkeln/Scrim oder Weichzeichnen
-  hinter dem Text ergänzen, statt es stillschweigend unleserlich zu lassen.
+- **Hero-Bild-Kontrast (Mobile)** — erledigt (2026-09-10): Echtes Portraitfoto eingesetzt,
+  siehe Werdegang-Punkt „Echtes Portraitfoto eingebaut" in `PROJECT-STATUS.md`.
