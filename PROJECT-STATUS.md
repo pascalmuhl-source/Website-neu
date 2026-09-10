@@ -386,17 +386,19 @@ Kurzform „Launch-Status" reduziert.
 
 Kein Launch-Blocker mehr, aber im Blick behalten:
 
-1. Löschfrist der Server-Logdaten in `datenschutz.html` (Abschnitt „Server-Log-
-   Dateien") bleibt als offener Platzhalter — bei lima-city erfragen und ergänzen.
+1. ~~Löschfrist Server-Logdaten~~ — erledigt (2026-09-10, Werdegang Punkt 33):
+   90 Tage bei lima-city, per Recherche ermittelt statt Support-Anfrage.
 2. Google Ads: sobald echte Google-Bewertungen oder eine dokumentierte Kundenzahl
    vorliegen, die „Vertrauen/Prozess"-Headlines (siehe Werdegang Punkt 8) durch echte
    Social-Proof-Headlines ersetzen/ergänzen.
-3. Testdateien auf dem Server aufräumen, falls noch nicht geschehen: `ftptest.txt`,
-   `kontakt-handler.php`, `kontakthandler.php`, `formtest.php`, `info.php`,
-   `altversion.php`, das alte `send-mail.php` (mit Bindestrich, nie erreichbar) —
-   v. a. `info.php` wegen offengelegter Serverdetails.
-4. Bing-Optimierung: Bing Webmaster Tools + `msvalidate.01`-Tag, IndexNow-Protokoll —
-   jetzt nach dem Launch der richtige Zeitpunkt, aktiv ansprechen.
+3. Testdateien auf dem Server aufräumen — Nutzer macht das manuell (FTP-Automatisierung
+   2026-09-10 abgelehnt): `ftptest.txt`, `kontakt-handler.php`, `kontakthandler.php`,
+   `formtest.php`, `info.php`, `altversion.php`, altes `send-mail.php` (Bindestrich,
+   nie erreichbar) — v. a. `info.php` wegen offengelegter Serverdetails.
+4. Bing-Optimierung: IndexNow-Key vorbereitet (Werdegang Punkt 33), muss beim nächsten
+   Upload mit hochgeladen werden, danach einmalige IndexNow-Meldung (siehe CLAUDE.md
+   für den genauen Befehl). `msvalidate.01`-Tag noch offen — braucht den
+   Verifizierungscode aus dem Bing-Webmaster-Tools-Account des Nutzers.
 
 21. **Google-Unternehmensprofil verifiziert.** Social-Media-Icons im Footer (zwei
     `href="#"`-Platzhalter, LinkedIn/Instagram) entfernt, da noch keine echten
@@ -521,6 +523,18 @@ Kein Launch-Blocker mehr, aber im Blick behalten:
     `website/index.html` entfernt und `sitemap.xml`-`lastmod` auf 2026-09-10 gesetzt.
     Die Seite ist damit für Google/Bing indexierbar; alle Launch-Checkliste-Punkte aus
     CLAUDE.md sind erledigt (Doku dort auf Kurzform „Launch-Status" reduziert).
+
+33. **Post-Launch-Punkte abgearbeitet (2026-09-10):** FTP-Automatisierung für Upload/
+    Testdateien-Cleanup explizit vom Nutzer abgelehnt (macht er manuell) — FTP-
+    Zugangsdaten liegen als Env-Var bereit, falls später doch gewünscht. Log-
+    Löschfrist per `WebSearch`/`WebFetch` auf der öffentlichen lima-city-Hilfe-Seite
+    ermittelt (90 Tage) statt Support-Anfrage, in `datenschutz.html` ergänzt.
+    IndexNow-Key generiert (`e5754afd3425459994764d198ffa4815`) und als
+    `website/public/e5754afd3425459994764d198ffa4815.txt` hinterlegt — muss beim
+    nächsten Upload mit hochgeladen werden, danach einmaliger API-Aufruf zur
+    Bing/Yandex-Meldung nötig (Befehl siehe CLAUDE.md). `msvalidate.01`-Bing-
+    Verifizierung bleibt offen, da sie einen Code aus dem Bing-Webmaster-Tools-
+    Account des Nutzers braucht (kein Zugriff von hier aus möglich).
 
 ## Wie man den aktuellen Live-Stand schnell verifiziert
 

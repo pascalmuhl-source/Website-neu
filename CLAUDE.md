@@ -457,19 +457,24 @@ Pascal Muhl, 55452 Windesheim, Zielgruppe KMU/Selbstständige/Freiberufler (Nisc
 Sachverständige/Gutachter), Einzugsgebiet deutschlandweit.
 
 **Noch offen (kein Launch-Blocker mehr, aber im Blick behalten):**
-- **Löschfrist Server-Logdaten** in `datenschutz.html` (Abschnitt „Server-Log-
-  Dateien") ist noch als Platzhalter offen — bei lima-city erfragen und ergänzen.
+- **Löschfrist Server-Logdaten** — erledigt (2026-09-10): per Recherche der
+  öffentlichen lima-city-Hilfe-Seite ermittelt (90 Tage), in `datenschutz.html`
+  ergänzt.
 - **Testdateien auf dem Server aufräumen**, falls noch nicht geschehen: `ftptest.txt`,
   `kontakt-handler.php`, `kontakthandler.php`, `formtest.php`, `info.php`,
   `altversion.php`, das alte `send-mail.php` (mit Bindestrich, nie erreichbar) —
-  v. a. `info.php` wegen offengelegter Serverdetails.
+  v. a. `info.php` wegen offengelegter Serverdetails. Nutzer macht das manuell
+  (FTP-Automatisierung 2026-09-10 explizit abgelehnt, siehe Regel oben).
 - **Testimonials/Erfolgszahlen nur mit echter Kundenfreigabe** — erfundene Referenzen
   oder unbelegte Zahlen sind eine wettbewerbswidrige Irreführung nach § 5 UWG.
-- **Bing-Optimierung:** Bing Webmaster Tools einrichten (inkl. `msvalidate.01`-Tag im
-  `<head>`) und IndexNow-Protokoll implementieren (Bing/Yandex, nicht Google — meldet
-  Änderungen sofort statt aufs Crawling zu warten). **Aktiv ansprechen**, sobald über
-  Suchmaschinen-Sichtbarkeit gesprochen wird (Nutzerwunsch, 2026-09-09) — jetzt, nach
-  dem Launch, ist der richtige Zeitpunkt dafür.
+- **Bing-Optimierung — IndexNow-Key vorbereitet (2026-09-10):**
+  `website/public/e5754afd3425459994764d198ffa4815.txt` (Inhalt = Dateiname ohne
+  `.txt`) muss beim nächsten Upload mit hochgeladen werden, danach einmalig
+  `https://api.indexnow.org/indexnow?url=https://pascal-webdesign.de/&key=e5754afd3425459994764d198ffa4815&keyLocation=https://pascal-webdesign.de/e5754afd3425459994764d198ffa4815.txt`
+  aufrufen (funktioniert erst, wenn die Key-Datei live erreichbar ist). **Noch offen,
+  nutzerseitig:** Bing Webmaster Tools Account einrichten + `msvalidate.01`-Meta-Tag
+  aus dem dortigen Verifizierungsschritt liefern, dann trage ich ihn in
+  `website/index.html` ein.
 
 # Regel: robots.txt und sitemap.xml immer aktuell halten — ungefragt
 
