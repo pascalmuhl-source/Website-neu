@@ -604,8 +604,15 @@ button { font-family: inherit; cursor: pointer; }
     padding-bottom: 4px;
     border-bottom: 1px solid transparent;
   }
+  .nav-links a.nav-cta {
+    font-weight: 600;
+    padding: 16px 22px;
+    border: 1px solid var(--ink);
+    width: auto;
+  }
   .nav-menu { display: none; }
 }
 @media (min-width: 1000px) and (hover: hover) and (pointer: fine) {
   .nav-links a:hover { border-bottom-color: var(--accent); color: var(--ink); }
+  .nav-links a.nav-cta:hover { background: transparent; color: var(--ink); border-color: var(--ink); }
 }
