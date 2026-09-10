@@ -329,7 +329,7 @@ button { font-family: inherit; cursor: pointer; }
 .portfolio-thumb { width: 100%; height: 200px; overflow: hidden; background: linear-gradient(150deg, #e4e2da, #c9c6ba); }
 .portfolio-thumb.alt { background: linear-gradient(150deg, #dfe4de, #bcc7bd); height: 160px; }
 .portfolio-thumb-inner { width: 100%; height: 100%; background: inherit; }
-.portfolio-thumb img { width: 100%; height: 100%; object-fit: cover; object-position: top; display: block; }
+.portfolio-thumb img { width: 100%; height: 100%; object-fit: cover; object-position: left top; display: block; }
 .portfolio-meta { display: flex; justify-content: space-between; align-items: flex-end; }
 .portfolio-name { font-size: 15px; font-weight: 600; }
 .portfolio-type { font-size: 12px; color: var(--ink-soft); margin-top: 2px; }
@@ -495,7 +495,8 @@ button { font-family: inherit; cursor: pointer; }
   .problem-columns-wrap { display: block; }
   .problem-columns {
     display: grid;
-    grid-template-columns: 1fr 1.4fr;
+    grid-template-columns: 0.85fr 1.15fr;
+    column-gap: 72px;
     border-top: 1px solid var(--ink);
   }
   .problem-columns .col-head {
@@ -505,7 +506,6 @@ button { font-family: inherit; cursor: pointer; }
     color: var(--ink-soft);
     border-bottom: 1px solid var(--rule);
   }
-  .problem-columns .col-head.right { padding-left: 40px; }
   .problem-columns .cell-title {
     padding: 26px 0;
     font-size: 19px;
@@ -513,7 +513,7 @@ button { font-family: inherit; cursor: pointer; }
     border-bottom: 1px solid var(--rule);
   }
   .problem-columns .cell-body {
-    padding: 26px 0 26px 40px;
+    padding: 26px 0;
     font-size: 15px;
     line-height: 1.6;
     color: var(--ink-soft);
@@ -556,10 +556,10 @@ button { font-family: inherit; cursor: pointer; }
   .portfolio-desc { font-size: 14px; max-width: 480px; }
 
   .about { display: grid; grid-template-columns: 0.85fr 1.15fr; gap: 72px; }
-  .about-photo { max-width: none; margin: 0; aspect-ratio: 3 / 4; }
+  .about-photo { max-width: none; width: 85%; margin: 0; aspect-ratio: 3 / 4; }
   .about-copy { display: flex; flex-direction: column; justify-content: center; gap: 22px; }
   .about h2 { font-size: clamp(1.9rem, 2.6vw, 2.4rem); }
-  .about p { font-size: 16px; max-width: 540px; }
+  .about p { font-size: 16px; }
   .about-stats { margin-top: 6px; }
   .about-stat { padding: 18px 22px; }
   .about-stat .num { font-size: 30px; }
