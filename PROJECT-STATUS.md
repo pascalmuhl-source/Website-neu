@@ -377,30 +377,26 @@ rekonstruiert werden muss — Details/Begründung stehen in Werdegang Punkt 10.
   Konkurrenzanalysen laufen stattdessen über normale Web-Recherche ohne
   MCP-Server.)
 
-## Was noch offen ist (siehe „Launch-Checkliste" in CLAUDE.md für die Langfassung)
+## Was noch offen ist (siehe „Launch-Status" in CLAUDE.md für die Langfassung)
 
-Kurzfassung der wichtigsten Punkte, die vor einem echten Launch fehlen:
+**Launch abgeschlossen (2026-09-10):** `noindex` entfernt, Sitemap-`lastmod`
+aktualisiert, echtes Portfolio-Bild eingebaut (Werdegang Punkt 31/32). Alle
+ursprünglichen Launch-Checkliste-Punkte sind erledigt — Doku in CLAUDE.md auf
+Kurzform „Launch-Status" reduziert.
 
-1. `noindex` entfernen (aktuell absichtlich gesetzt) — **wichtigster Punkt vor Launch**,
-   hängt nur noch an Punkt 2 unten (Portfolio-Bild) und der Sitemap-`lastmod`.
-2. Echtes Bild für den Portfolio-Case (wu-engineering.de) einbauen — Nutzer schickt
-   Screenshot (siehe Werdegang Punkt 31), aktuell noch Gradient-Platzhalter.
-3. Rechtstexte final (Nutzer-Bestätigung 2026-09-10, Werdegang Punkt 31). Löschfrist
-   der Server-Logdaten in `datenschutz.html` (Abschnitt „Server-Log-Dateien") bleibt
-   als offener Platzhalter — bei lima-city erfragen und ergänzen.
-4. Google Ads: sobald echte Google-Bewertungen oder eine dokumentierte Kundenzahl
+Kein Launch-Blocker mehr, aber im Blick behalten:
+
+1. Löschfrist der Server-Logdaten in `datenschutz.html` (Abschnitt „Server-Log-
+   Dateien") bleibt als offener Platzhalter — bei lima-city erfragen und ergänzen.
+2. Google Ads: sobald echte Google-Bewertungen oder eine dokumentierte Kundenzahl
    vorliegen, die „Vertrauen/Prozess"-Headlines (siehe Werdegang Punkt 8) durch echte
    Social-Proof-Headlines ersetzen/ergänzen.
-5. Testdateien auf dem Server aufräumen, falls noch nicht geschehen: `ftptest.txt`,
+3. Testdateien auf dem Server aufräumen, falls noch nicht geschehen: `ftptest.txt`,
    `kontakt-handler.php`, `kontakthandler.php`, `formtest.php`, `info.php`,
    `altversion.php`, das alte `send-mail.php` (mit Bindestrich, nie erreichbar) —
    v. a. `info.php` wegen offengelegter Serverdetails.
-6. Bing-Optimierung nach dem Launch: Bing Webmaster Tools + `msvalidate.01`-Tag,
-   IndexNow-Protokoll (siehe CLAUDE.md Launch-Checkliste Punkt 10) — Nutzer aktiv
-   erinnern, sobald über den Launch oder Suchmaschinen-Sichtbarkeit gesprochen wird.
-
-Erledigt und bestätigt (2026-09-10): Testmail-Zustellung, Google-Unternehmensprofil-
-Verifizierung, `www.`-Redirect, Hero-Bild-Kontrast (echtes Foto, Werdegang Punkt 30).
+4. Bing-Optimierung: Bing Webmaster Tools + `msvalidate.01`-Tag, IndexNow-Protokoll —
+   jetzt nach dem Launch der richtige Zeitpunkt, aktiv ansprechen.
 
 21. **Google-Unternehmensprofil verifiziert.** Social-Media-Icons im Footer (zwei
     `href="#"`-Platzhalter, LinkedIn/Instagram) entfernt, da noch keine echten
@@ -512,6 +508,19 @@ Verifizierung, `www.`-Redirect, Hero-Bild-Kontrast (echtes Foto, Werdegang Punkt
     `static.wixstatic.com` ist zusätzlich per Proxy-Policy mit 403 geblockt) —
     kein sinnvoller weiterer Retry ohne anderes Netzwerk-Setup. Nutzer schickt
     stattdessen selbst einen Screenshot der Kundenseite zum Einbauen.
+
+32. **Portfolio-Bild eingebaut, Live-Launch (2026-09-10):** Vom Nutzer gelieferten
+    Mobile-Screenshot von wu-engineering.de erhalten, iOS-Statusleiste/Safari-Chrome
+    weggeschnitten, auf Logo+Headline zugeschnitten (Aspect ~1,77:1, passend zu den
+    `.portfolio-thumb`-Seitenverhältnissen bei Mobile/Desktop), als
+    `portfolio-wu-engineering.webp`/`.jpg` (1280×722) gespeichert und in
+    `Portfolio.jsx` per `<picture>` eingebaut (`object-fit: cover; object-position: top`
+    in `index.css` ergänzt). Mit lokalem Playwright-Screenshot (Vite-Preview-Server,
+    kein externer Zugriff nötig) auf Desktop und Mobile verifiziert. Damit war der
+    letzte inhaltliche Launch-Blocker erledigt — auf Nutzer-Bestätigung `noindex` aus
+    `website/index.html` entfernt und `sitemap.xml`-`lastmod` auf 2026-09-10 gesetzt.
+    Die Seite ist damit für Google/Bing indexierbar; alle Launch-Checkliste-Punkte aus
+    CLAUDE.md sind erledigt (Doku dort auf Kurzform „Launch-Status" reduziert).
 
 ## Wie man den aktuellen Live-Stand schnell verifiziert
 

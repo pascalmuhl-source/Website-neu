@@ -448,60 +448,28 @@ Noch offen:
 
 Den `seo`-Skill (`.claude/skills/seo/`) bzw. `seo-audit`-Skill für Folge-Audits nutzen.
 
-# Launch-Checkliste (Pascal Webdesign) — vor dem Sichtbarmachen abarbeiten
+# Launch-Status (Pascal Webdesign)
 
-Die Seite läuft seit 2026-09 unter `pascal-webdesign.de` (Marke: **Pascal Webdesign**,
-Inhaber Pascal Muhl (bestätigt), 55452 Windesheim, Zielgruppe KMU/Selbstständige/Freiberufler,
-Einzugsgebiet deutschlandweit). Sie ist bewusst auf `noindex` gesetzt, solange
-Platzhalter-Inhalte drin sind. **Diese Punkte müssen vor dem
-echten Launch erledigt werden — der erste ist der wichtigste:**
+**Live seit 2026-09-10:** `noindex` entfernt, `sitemap.xml`-`lastmod` aktualisiert,
+Portfolio-Bild eingebaut (Screenshot von wu-engineering.de, Nutzer geliefert). Alle
+Launch-Checkliste-Punkte sind damit erledigt. Marke: **Pascal Webdesign**, Inhaber
+Pascal Muhl, 55452 Windesheim, Zielgruppe KMU/Selbstständige/Freiberufler (Nische:
+Sachverständige/Gutachter), Einzugsgebiet deutschlandweit.
 
-1. **`noindex` entfernen** — in `website/index.html` die Zeile
-   `<meta name="robots" content="noindex, nofollow" />` löschen. Ein vergessenes
-   `noindex` ist der teuerste Fehler beim Livegang: die Seite bleibt dauerhaft
-   unsichtbar in Google, ohne dass es jemandem auffällt. Bei jedem Gespräch über
-   "die Seite ist jetzt fertig" aktiv daran erinnern.
-2. **Alle Platzhalter ersetzen** — erledigt seit dem Nischen-Pivot auf
-   „Sachverständige und Gutachter" (2026-09-07): Preise (Website-Erstellung ab
-   1.499 €, Redesign ab 1.199 €, Wartung ab 35 €/Monat), Erfahrung (6 Jahre),
-   Portfolio (1 echter Case statt 3 erfundener). Kontaktdaten (Adresse, Telefon,
-   E-Mail) sind bereits erledigt. Testimonial-Platzhalter `[Name]`/`[Firma]`
-   erledigt: Sektion am 2026-09-09 komplett entfernt (Komponente, Nav-Anker, CSS),
-   statt zurückgehalten — kann bei echten Kundenzitaten neu aufgebaut werden.
-2b. **Schema.org** — erledigt: `streetAddress`, `telephone`, `email` und `sameAs`
-   (Google-Unternehmensprofil-Link) sind im JSON-LD in `website/index.html` gesetzt.
-3. **Empfängeradresse in `website/public/send-mail.php`** — erledigt
-   (`pascal@pascal-webdesign.de`). Testmail-Zustellung vom Nutzer bestätigt
-   (2026-09-10). Erledigt.
-4. **Testimonials und Erfolgszahlen nur mit echter Kundenfreigabe.** Erfundene
-   Referenzen oder unbelegte Zahlen ("+8 Aufträge pro Monat") sind eine
-   wettbewerbswidrige Irreführung nach § 5 UWG — ausgerechnet in dieser Branche
-   ein vermeidbares Abmahnrisiko.
-5. **Platzhalter-Links auflösen** — erledigt: Social-Icons (LinkedIn/Instagram) und
-   die 2 zusätzlichen Portfolio-Cases wurden entfernt, nur der 1 echte Case bleibt.
-   Einziger Rest: `.portfolio-thumb-inner` bei diesem Case ist noch ein Gradient-
-   Platzhalter statt eines echten Bilds (Screenshot der Kundenseite
-   https://www.wu-engineering.de). Live-Screenshot per Playwright ist in dieser
-   Sandbox nicht möglich (Chromium bricht über den Proxy bei dieser Domain
-   konsequent mit `ws_closed_mid_exchange` ab, `curl` dagegen funktioniert
-   einwandfrei — vermutlich TLS-Fingerprint-bedingte Blockade auf Proxy- oder
-   Zielserver-Seite, kein Sinn in erneutem Retry ohne anderes Setup). Nutzer
-   schickt stattdessen selbst einen Screenshot der Seite.
-6. **Rechtstexte final geprüft (2026-09-10, Nutzer-Bestätigung)** — Impressum/
-   Datenschutz sind final, keine weitere Prüfung nötig.
-7. **Sitemap prüfen** — `sitemap.xml` listet die Startseite bereits korrekt für den
-   Launch-Zustand. Nach Entfernen des `noindex` `lastmod` aktualisieren.
-8. **Google-Unternehmensprofil** — angelegt, verknüpft und Google-seitig verifiziert
-   (2026-09-10, Nutzer-Bestätigung). Erledigt.
-9. **content-struktur.de** — erledigt: leitet per 301 auf pascal-webdesign.de weiter,
-   kein Duplicate Content mehr.
-10. **Bing-Optimierung nach dem Launch** — noch offen, unabhängig vom `noindex`-Punkt
-    oben: Bing Webmaster Tools einrichten (inkl. `msvalidate.01`-Verifizierungs-Tag im
-    `<head>`, aktuell nicht vorhanden) und IndexNow-Protokoll implementieren (von Bing/
-    Yandex unterstützt, nicht von Google — meldet Änderungen sofort statt aufs Crawling
-    zu warten). **Aktiv ansprechen**, sobald über den echten Launch bzw. Bing/Suchmaschinen-
-    Sichtbarkeit gesprochen wird — nicht erst auf Nachfrage warten (Nutzerwunsch,
-    2026-09-09).
+**Noch offen (kein Launch-Blocker mehr, aber im Blick behalten):**
+- **Löschfrist Server-Logdaten** in `datenschutz.html` (Abschnitt „Server-Log-
+  Dateien") ist noch als Platzhalter offen — bei lima-city erfragen und ergänzen.
+- **Testdateien auf dem Server aufräumen**, falls noch nicht geschehen: `ftptest.txt`,
+  `kontakt-handler.php`, `kontakthandler.php`, `formtest.php`, `info.php`,
+  `altversion.php`, das alte `send-mail.php` (mit Bindestrich, nie erreichbar) —
+  v. a. `info.php` wegen offengelegter Serverdetails.
+- **Testimonials/Erfolgszahlen nur mit echter Kundenfreigabe** — erfundene Referenzen
+  oder unbelegte Zahlen sind eine wettbewerbswidrige Irreführung nach § 5 UWG.
+- **Bing-Optimierung:** Bing Webmaster Tools einrichten (inkl. `msvalidate.01`-Tag im
+  `<head>`) und IndexNow-Protokoll implementieren (Bing/Yandex, nicht Google — meldet
+  Änderungen sofort statt aufs Crawling zu warten). **Aktiv ansprechen**, sobald über
+  Suchmaschinen-Sichtbarkeit gesprochen wird (Nutzerwunsch, 2026-09-09) — jetzt, nach
+  dem Launch, ist der richtige Zeitpunkt dafür.
 
 # Regel: robots.txt und sitemap.xml immer aktuell halten — ungefragt
 
