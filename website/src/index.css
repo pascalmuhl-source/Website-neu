@@ -526,7 +526,7 @@ button { font-family: inherit; cursor: pointer; }
   .selftest ul { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px 32px; }
   .selftest li { font-size: 14px; }
   .cost-note { padding: 26px 32px; }
-  .cost-note p { font-size: 16px; max-width: 900px; }
+  .cost-note p { font-size: 16px; }
 
   .branchen-grid { display: grid; grid-template-columns: repeat(4, 1fr); }
   .branchen-card { padding: 24px 22px; }
