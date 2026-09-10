@@ -490,10 +490,15 @@ Kurzfassung der wichtigsten Punkte, die vor einem echten Launch fehlen:
     **Korrektur (2026-09-10):** Nutzer wollte das ursprünglich angedachte Mobile-
     Overlap (Headline über dem Foto) explizit beibehalten statt gestapeltem Layout.
     `.hero-copy` zurück auf `position: absolute` über `.hero-portrait` gesetzt.
-    Lesbarkeit statt Layout-Umbau gelöst: `.hero-portrait` bekommt mobil `opacity: 0.2`
-    (Desktop weiterhin `opacity: 1`, da dort kein Overlap) — rechnerisch auch über den
-    dunkelsten Bildstellen (Haare, Brillenrahmen) Kontrast von 9–12:1 gegen den
-    dunklen Ink-Text, weit über dem WCAG-Minimum. Per Screenshot bestätigt.
+    Lesbarkeit statt Layout-Umbau gelöst: `.hero-portrait` bekommt mobil `opacity`
+    (Desktop weiterhin `opacity: 1`, da dort kein Overlap).
+    **Zweite Korrektur (2026-09-10):** Nutzer wollte das Foto sichtbarer, Kontrast
+    Richtung 4,8:1 ausreizen. Per Pillow/NumPy die dunkelsten sichtbaren Bildpixel
+    analysiert (1. Perzentil = 37/255, um einzelne Ausreißer wie Pupillen-Glanzpunkte
+    nicht überzugewichten) und die exakte Opacity für einen WCAG-Kontrast-Grenzwert
+    von 4,8:1 gegen den Ink-Text (`#1C1F1D`) berechnet (≈0,515). `opacity: 0.5` gesetzt
+    → rechnerisch ~5:1 Kontrast selbst an den dunkelsten Bildstellen, deutlich
+    sichtbareres Foto als bei 0.2. Per Screenshot bestätigt.
 
 ## Wie man den aktuellen Live-Stand schnell verifiziert
 

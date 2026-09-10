@@ -210,10 +210,12 @@ button { font-family: inherit; cursor: pointer; }
   margin: 0 auto;
   aspect-ratio: 3 / 4;
   object-fit: contain;
-  /* Mobile: Headline liegt bewusst über dem Foto (siehe .hero-copy). Damit der
-     dunkle Text auch über dunklen Bildstellen (Haare, Brille) lesbar bleibt,
-     wird das Foto stark aufgehellt statt es hinter den Text zu legen. */
-  opacity: 0.2;
+  /* Mobile: Headline liegt bewusst über dem Foto (siehe .hero-copy). 0.5 ist
+     rechnerisch die Grenze: Kontrast Ink-Text/dunkelste Bildstelle (1. Perzentil
+     der sichtbaren Pixel, ohne Ausreißer wie Pupillen-Glanzpunkte) liegt bei
+     ~5:1, knapp über dem Ziel von 4,8:1 — sichtbareres Foto als zuvor, ohne die
+     Lesbarkeit zu gefährden. */
+  opacity: 0.5;
 }
 .hero-copy {
   position: absolute;
