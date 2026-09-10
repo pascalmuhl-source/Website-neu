@@ -395,9 +395,10 @@ Kein Launch-Blocker mehr, aber im Blick behalten:
    2026-09-10 abgelehnt): `ftptest.txt`, `kontakt-handler.php`, `kontakthandler.php`,
    `formtest.php`, `info.php`, `altversion.php`, altes `send-mail.php` (Bindestrich,
    nie erreichbar) — v. a. `info.php` wegen offengelegter Serverdetails.
-4. Bing-Optimierung: IndexNow-Key + `msvalidate.01`-Tag (vom Nutzer geliefert,
-   2026-09-10) beide vorbereitet, müssen nur noch mit hochgeladen werden — danach
-   einmalige IndexNow-Meldung (Befehl siehe CLAUDE.md).
+4. ~~Bing-Optimierung~~ — erledigt (2026-09-10, Werdegang Punkt 34): kompletter Upload
+   verifiziert (noindex weg, msvalidate.01 live, IndexNow-Key live). Nutzer hat die
+   IndexNow-Meldung selbst per Browser ausgelöst (Sandbox-Proxy blockiert
+   `api.indexnow.org`). Nur noch offen: Nutzer klickt „Verify" in Bing Webmaster Tools.
 
 21. **Google-Unternehmensprofil verifiziert.** Social-Media-Icons im Footer (zwei
     `href="#"`-Platzhalter, LinkedIn/Instagram) entfernt, da noch keine echten
@@ -534,6 +535,18 @@ Kein Launch-Blocker mehr, aber im Blick behalten:
     Bing/Yandex-Meldung nötig (Befehl siehe CLAUDE.md). `msvalidate.01`-Bing-
     Verifizierung bleibt offen, da sie einen Code aus dem Bing-Webmaster-Tools-
     Account des Nutzers braucht (kein Zugriff von hier aus möglich).
+
+34. **Kompletter Re-Upload, alles live verifiziert (2026-09-10):** Nutzer bat um alle
+    Dateien statt nur der geänderten ("ich lasse alles neu hoch") — kompletter
+    `dist/`-Ordner als ZIP inkl. `.htaccess` (per Ausnahme aus der Upload-Regel)
+    bereitgestellt und hochgeladen. Live-Verifikation per `curl`: `noindex` entfernt,
+    `msvalidate.01`-Tag da, IndexNow-Key-Datei 200 OK, Sitemap-`lastmod` aktuell,
+    Portfolio-Bild live, Datenschutz-Löschfrist (90 Tage) drin. IndexNow-API-Aufruf
+    aus der Sandbox schlug fehl (`api.indexnow.org` per Proxy-Policy blockiert, `connect_
+    rejected` — keine Retry-sinnvolle Organisationsrichtlinien-Sperre) — Nutzer hat die
+    Meldungs-URL stattdessen selbst im Browser geöffnet. Damit ist die komplette
+    Bing-Optimierung abgeschlossen bis auf den "Verify"-Klick in Bing Webmaster Tools
+    (nutzerseitig, kein Zugriff von hier aus möglich).
 
 ## Wie man den aktuellen Live-Stand schnell verifiziert
 

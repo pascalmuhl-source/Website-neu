@@ -467,13 +467,12 @@ Sachverständige/Gutachter), Einzugsgebiet deutschlandweit.
   (FTP-Automatisierung 2026-09-10 explizit abgelehnt, siehe Regel oben).
 - **Testimonials/Erfolgszahlen nur mit echter Kundenfreigabe** — erfundene Referenzen
   oder unbelegte Zahlen sind eine wettbewerbswidrige Irreführung nach § 5 UWG.
-- **Bing-Optimierung — IndexNow-Key vorbereitet (2026-09-10):**
-  `website/public/e5754afd3425459994764d198ffa4815.txt` (Inhalt = Dateiname ohne
-  `.txt`) muss beim nächsten Upload mit hochgeladen werden, danach einmalig
-  `https://api.indexnow.org/indexnow?url=https://pascal-webdesign.de/&key=e5754afd3425459994764d198ffa4815&keyLocation=https://pascal-webdesign.de/e5754afd3425459994764d198ffa4815.txt`
-  aufrufen (funktioniert erst, wenn die Key-Datei live erreichbar ist). `msvalidate.01`-
-  Meta-Tag vom Nutzer erhalten und in `website/index.html` eingetragen (2026-09-10) —
-  Bing-Verifizierung ist damit vorbereitet, muss nur noch mit hochgeladen werden.
+- **Bing-Optimierung — alles live (2026-09-10):** Kompletter `dist/`-Ordner vom Nutzer
+  hochgeladen (inkl. `.htaccess`). Verifiziert: `noindex` weg, `msvalidate.01`-Tag
+  live, IndexNow-Key-Datei live (200 OK), Sitemap-`lastmod`, Portfolio-Bild,
+  Datenschutz-Löschfrist. IndexNow-API (`api.indexnow.org`) ist aus der Sandbox per
+  Proxy-Policy blockiert — Nutzer hat die Meldungs-URL stattdessen selbst im Browser
+  aufgerufen. Noch offen: Nutzer klickt in Bing Webmaster Tools auf „Verify".
 
 # Regel: robots.txt und sitemap.xml immer aktuell halten — ungefragt
 
