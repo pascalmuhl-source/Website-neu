@@ -593,6 +593,26 @@ Kein Launch-Blocker mehr, aber im Blick behalten:
     **Noch offen:** Nutzer setzt die Schritte selbst um (Bewertungsbitte,
     Outreach-Nachrichten, GBP-Anpassungen) — keine Automatisierung von hier aus.
 
+37. **Strategie-Entscheidung: zweites Standbein, Pascal Webdesign wird Nebenprojekt**
+    (2026-09-10): Aus dem Akquise-Gespräch (Punkt 36) heraus grundsätzlich neu bewertet.
+    Ergebnis: Das Webdesign-Modell trägt das Ziel des Nutzers (2.000 €/Monat zusätzlich)
+    nicht, weil es reines Einmalgeschäft ohne Wiederholungsstruktur ist — nicht wegen
+    schlechter Stundensätze (Nutzer beziffert die reine Bauzeit auf 2 Tage, das ergibt
+    ~500 €/Tag). Neues Hauptstandbein: **freiberufliche Produktdaten- und
+    Feed-Management-Dienstleistungen** (Marktplätze, Automatisierung), passend zum
+    Hauptberuf des Nutzers im E-Commerce. Einstieg über Agentur-Subunternehmerschaft und
+    Tool-Partnerprogramme (Channable u. a.), Ziel sind Monats-Retainer statt Einmalprojekte.
+    Arbeitgeber (Eurotops Versand / Sanpura, B2C-Versandhandel Zielgruppe 50+): Nebentätigkeit
+    erlaubt, keine direkten Wettbewerber. Ausschlusskriterium ist deshalb das Geschäftsmodell
+    (B2C-Versandhandel breit/50+), nicht die Produktkategorie — alles B2B ist unkritisch.
+    Checkliste (33 Aufgaben) und Agentur-Zielliste mit Ansprachetexten als
+    `Freelance-Aufbau-Produktdaten.xlsx` an den Nutzer geliefert (nicht im Repo, anderes
+    Geschäft).
+    **Relevant für dieses Repo:** `content-struktur.de` (lima-city vhost id 3685431, aktuell
+    301-Redirect auf `pascal-webdesign.de`) soll als Landingpage für das neue Angebot
+    umgewidmet werden. Die Weiterleitung fällt damit weg. Pascal Webdesign läuft weiter,
+    aber als Nebenprojekt mit ~1-2 h/Woche (LinkedIn-Ansprache, Google-Profil).
+
 ## Wie man den aktuellen Live-Stand schnell verifiziert
 
 ```bash
