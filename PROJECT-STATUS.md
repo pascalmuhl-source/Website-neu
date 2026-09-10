@@ -381,25 +381,26 @@ rekonstruiert werden muss — Details/Begründung stehen in Werdegang Punkt 10.
 
 Kurzfassung der wichtigsten Punkte, die vor einem echten Launch fehlen:
 
-1. `noindex` entfernen (aktuell absichtlich gesetzt) — **wichtigster Punkt vor Launch**
-2. ~~Testimonial-Platzhalter (`[Name]`/`[Firma]`) ersetzen~~ — erledigt: Sektion
-   komplett entfernt (Werdegang Punkt 26). Preise, Erfahrung und der Portfolio-Case
-   sind bereits mit echten Angaben gefüllt (siehe Werdegang Punkt 10).
-3. Rechtstexte sind jetzt echte e-recht24-Fassungen (siehe Werdegang Punkt 24), aber
-   Löschfrist der Server-Logdaten in `datenschutz.html` (Abschnitt „Server-Log-
-   Dateien") ist noch als Platzhalter offen — bei lima-city erfragen und ergänzen.
-4. Hero-Bild-Kontrast auf Mobile neu prüfen, sobald ein echtes Foto das
-   Platzhalter-Gradient ersetzt (rechnerisch grenzwertig unter WCAG AA)
-5. Google Ads: sobald echte Google-Bewertungen oder eine dokumentierte Kundenzahl
+1. `noindex` entfernen (aktuell absichtlich gesetzt) — **wichtigster Punkt vor Launch**,
+   hängt nur noch an Punkt 2 unten (Portfolio-Bild) und der Sitemap-`lastmod`.
+2. Echtes Bild für den Portfolio-Case (wu-engineering.de) einbauen — Nutzer schickt
+   Screenshot (siehe Werdegang Punkt 31), aktuell noch Gradient-Platzhalter.
+3. Rechtstexte final (Nutzer-Bestätigung 2026-09-10, Werdegang Punkt 31). Löschfrist
+   der Server-Logdaten in `datenschutz.html` (Abschnitt „Server-Log-Dateien") bleibt
+   als offener Platzhalter — bei lima-city erfragen und ergänzen.
+4. Google Ads: sobald echte Google-Bewertungen oder eine dokumentierte Kundenzahl
    vorliegen, die „Vertrauen/Prozess"-Headlines (siehe Werdegang Punkt 8) durch echte
    Social-Proof-Headlines ersetzen/ergänzen.
-6. Testdateien auf dem Server aufräumen, falls noch nicht geschehen: `ftptest.txt`,
+5. Testdateien auf dem Server aufräumen, falls noch nicht geschehen: `ftptest.txt`,
    `kontakt-handler.php`, `kontakthandler.php`, `formtest.php`, `info.php`,
    `altversion.php`, das alte `send-mail.php` (mit Bindestrich, nie erreichbar) —
    v. a. `info.php` wegen offengelegter Serverdetails.
-7. Bing-Optimierung nach dem Launch: Bing Webmaster Tools + `msvalidate.01`-Tag,
+6. Bing-Optimierung nach dem Launch: Bing Webmaster Tools + `msvalidate.01`-Tag,
    IndexNow-Protokoll (siehe CLAUDE.md Launch-Checkliste Punkt 10) — Nutzer aktiv
    erinnern, sobald über den Launch oder Suchmaschinen-Sichtbarkeit gesprochen wird.
+
+Erledigt und bestätigt (2026-09-10): Testmail-Zustellung, Google-Unternehmensprofil-
+Verifizierung, `www.`-Redirect, Hero-Bild-Kontrast (echtes Foto, Werdegang Punkt 30).
 
 21. **Google-Unternehmensprofil verifiziert.** Social-Media-Icons im Footer (zwei
     `href="#"`-Platzhalter, LinkedIn/Instagram) entfernt, da noch keine echten
@@ -499,6 +500,18 @@ Kurzfassung der wichtigsten Punkte, die vor einem echten Launch fehlen:
     von 4,8:1 gegen den Ink-Text (`#1C1F1D`) berechnet (≈0,515). `opacity: 0.5` gesetzt
     → rechnerisch ~5:1 Kontrast selbst an den dunkelsten Bildstellen, deutlich
     sichtbareres Foto als bei 0.2. Per Screenshot bestätigt.
+
+31. **Launch-Checkliste großteils final geklärt (2026-09-10):** Nutzer bestätigt:
+    Rechtstexte final, Testmail-Zustellung ok, Google-Unternehmensprofil verifiziert,
+    `www.`-Redirect im Browser ok. Platzhalter-Links geprüft: Social-Icons/zusätzliche
+    Portfolio-Cases waren bereits entfernt (Werdegang Punkt 21) — einziger Rest ist ein
+    echtes Bild für den verbliebenen Portfolio-Case (Kunde: wu-engineering.de).
+    Live-Screenshot per Playwright in dieser Sandbox versucht und verworfen: Chromium
+    bricht über den Proxy bei dieser Domain konsequent mit `ws_closed_mid_exchange`
+    ab (`curl` auf dieselbe Domain funktioniert dagegen einwandfrei; die Bild-CDN
+    `static.wixstatic.com` ist zusätzlich per Proxy-Policy mit 403 geblockt) —
+    kein sinnvoller weiterer Retry ohne anderes Netzwerk-Setup. Nutzer schickt
+    stattdessen selbst einen Screenshot der Kundenseite zum Einbauen.
 
 ## Wie man den aktuellen Live-Stand schnell verifiziert
 
