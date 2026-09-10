@@ -8,12 +8,8 @@ Projekt technisch aufgebaut ist, und was aktuell live steht — damit eine neue 
 sich nicht durch den gesamten Chat-Verlauf arbeiten muss, um auf demselben Stand
 weiterzumachen.
 
-**Zuletzt aktualisiert:** 2026-09-08 (Kontaktformular-Deploy-Bug behoben — Ursache
-war ein Bindestrich im PHP-Dateinamen, siehe Werdegang Punkt 22 und die neue
-CLAUDE.md-Regel dazu; Terminbuchungs-Platzhalter entfernt, siehe Punkt 23; echte
-Rechtstexte samt Website-Header/Footer für Impressum/Datenschutz eingebaut, siehe
-Punkt 24; Merge des Arbeits-Branches
-`claude/website-live-launch-requirements-k67tit` nach `main`).
+**Zuletzt aktualisiert:** 2026-09-10 (Akquise-Strategie für erste zahlende Kunden
+erarbeitet, siehe Werdegang Punkt 36).
 
 ## Worum es geht
 
@@ -579,6 +575,23 @@ Kein Launch-Blocker mehr, aber im Blick behalten:
       (Chromium via `/opt/pw-browsers/chromium`), da direkte Live-Screenshots der
       Produktivdomain über den Sandbox-Proxy nicht möglich sind (bekanntes
       `ws_closed_mid_exchange`-Problem, siehe Werdegang Punkt 31).
+
+36. **Akquise-Strategie erarbeitet (2026-09-10):** Skills `first-b2b-customers`,
+    `local-seo`, `cold-start-strategy` (über `find-skills`/`npx skills` installiert,
+    global unter `~/.agents/skills/`, Symlink für Claude Code) genutzt, um auf
+    Nutzerwunsch (50 € Budget, 2 Wochen bis zum ersten zahlenden Kunden, kein
+    Cold Calling) eine Strategie zu erarbeiten. Kern: Vertrauens-Kreise statt
+    Streuung — zuerst Bestandskunde (Weber+Uhlig/wu-engineering.de) um Google-
+    Bewertung + Empfehlung bitten, dann personalisierte Xing/LinkedIn-Ansprache
+    einzelner Sachverständiger (Advice-first, kein Pitch), dazu GBP-Optimierung
+    (Beschreibung, Dienstleistungsgebiet statt sichtbarer Hausadresse erwägen,
+    erste Bewertung) und kostenlose Verzeichniseinträge (Bing Places, Das
+    Örtliche, GelbeSeiten, 11880, Apple Maps). Budget-Empfehlung: ~15 € Xing
+    Premium für bessere Such-/Ansprachefilter, Rest als Reserve erst nach dem
+    ersten echten Vertrauenssignal einsetzen (kein bezahlter Traffic auf eine
+    Seite ohne Bewertungen). Volltext der Strategie nur im Chat, nicht im Repo.
+    **Noch offen:** Nutzer setzt die Schritte selbst um (Bewertungsbitte,
+    Outreach-Nachrichten, GBP-Anpassungen) — keine Automatisierung von hier aus.
 
 ## Wie man den aktuellen Live-Stand schnell verifiziert
 
