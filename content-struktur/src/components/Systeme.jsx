@@ -1,6 +1,6 @@
 const GROUPS = [
   { title: 'Marktplätze', items: 'Amazon, eBay, Otto, Kaufland, Google Shopping' },
-  { title: 'Feed-Tools', items: 'Channable, Productsup, DataFeedWatch, Google Merchant Center' },
+  { title: 'Feed-Tools', items: 'Channable, Google Merchant Center' },
   { title: 'Automatisierung', items: 'Python, CSV, XML, JSON, REST-APIs, Batch-Verarbeitung' },
   { title: 'Auswertung', items: 'Google Analytics 4, Tag Manager, Looker Studio' },
   { title: 'CRM und Kampagnen', items: 'Emarsys, Inxmail, Newsletter- und Automationsstrecken' },
